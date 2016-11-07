@@ -1,6 +1,6 @@
 # Hallo Kitty
 font = None
-greetings = u'Hello Kitty!'
+greetings = u'Hallo Hörnchen!'
 
 def setup():
     # Uncomment the following two lines to see the available fonts
@@ -16,4 +16,4 @@ def setup():
 def draw():
     background(0, 80, 125)
     image(img, 275, 100)
-    text(greetings, 160, 350)
+    text(greetings, 25, 350)
