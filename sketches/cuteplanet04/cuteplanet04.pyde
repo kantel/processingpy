@@ -7,6 +7,8 @@ rocket = Spaceship("rocketship.png", 300, 300)
 octopussy = Spaceship("octopussy.png", 400, 150)
 beetle = Spaceship("beetleship.png", 200, 100)
 
+ships = [planet, rocket, octopussy, beetle]
+
 def setup():
     size(640, 480)
     planet.loadPic()
@@ -20,11 +22,6 @@ def setup():
 
 def draw():
     background(0, 80, 125)
-    planet.move()
-    planet.display()
-    rocket.move()
-    rocket.display()
-    octopussy.move()
-    octopussy.display()
-    beetle.move()
-    beetle.display()
+    for i in range(len(ships)):
+        ships[i].move()
+        ships[i].display()
