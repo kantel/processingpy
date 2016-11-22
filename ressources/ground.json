@@ -1,0 +1,60 @@
+{ "height":10,
+ "layers":[
+        {
+         "data":[172, 172, 172, 172, 172, 172, 172, 172, 10, 172, 172, 10, 10, 10, 172, 10, 10, 10, 10, 172, 172, 172, 10, 10, 10, 10, 10, 10, 10, 172, 37, 172, 172, 172, 10, 10, 172, 172, 172, 172, 172, 172, 10, 10, 10, 10, 10, 10, 10, 172, 172, 10, 10, 10, 10, 10, 10, 10, 10, 172, 172, 10, 172, 172, 172, 10, 10, 172, 172, 172, 172, 10, 172, 10, 10, 10, 10, 10, 172, 37, 172, 172, 172, 172, 10, 172, 10, 10, 172, 37, 37, 37, 37, 172, 10, 172, 172, 172, 172, 37],
+         "height":10,
+         "name":"Kachelebene 1",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":10,
+         "x":0,
+         "y":0
+        }],
+ "nextobjectid":1,
+ "orientation":"orthogonal",
+ "properties":
+    {
+
+    },
+ "renderorder":"right-down",
+ "tileheight":32,
+ "tilesets":[
+        {
+         "firstgid":1,
+         "image":"..\/..\/..\/Dropbox\/pd_gamegraphics\/TomeTik\/AngbandTk\/dg_grounds32.gif",
+         "imageheight":608,
+         "imagewidth":288,
+         "margin":0,
+         "name":"Grounds und Walls",
+         "properties":
+            {
+
+            },
+         "spacing":0,
+         "tilecount":171,
+         "tileheight":32,
+         "tilewidth":32,
+         "transparentcolor":"#ffffff"
+        }, 
+        {
+         "firstgid":172,
+         "image":"..\/..\/..\/Dropbox\/pd_gamegraphics\/TomeTik\/AngbandTk\/dg_town632.gif",
+         "imageheight":128,
+         "imagewidth":288,
+         "margin":0,
+         "name":"Grounds und Walls 2",
+         "properties":
+            {
+
+            },
+         "spacing":0,
+         "tilecount":36,
+         "tileheight":32,
+         "tilewidth":32,
+         "transparentcolor":"#ffffff"
+        }],
+ "tilewidth":32,
+ "version":1,
+ "width":10
+}

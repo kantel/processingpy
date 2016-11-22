@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="10" height="10" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" name="Grounds und Walls" tilewidth="32" tileheight="32" tilecount="171">
+  <image source="../../../Dropbox/pd_gamegraphics/TomeTik/AngbandTk/dg_grounds32.gif" trans="ffffff" width="288" height="608"/>
+ </tileset>
+ <tileset firstgid="172" name="Grounds und Walls 2" tilewidth="32" tileheight="32" tilecount="36">
+  <image source="../../../Dropbox/pd_gamegraphics/TomeTik/AngbandTk/dg_town632.gif" trans="ffffff" width="288" height="128"/>
+ </tileset>
+ <layer name="Kachelebene 1" width="10" height="10">
+  <data encoding="csv">
+172,172,172,172,172,172,172,172,10,172,
+172,10,10,10,172,10,10,10,10,172,
+172,172,10,10,10,10,10,10,10,172,
+37,172,172,172,10,10,172,172,172,172,
+172,172,10,10,10,10,10,10,10,172,
+172,10,10,10,10,10,10,10,10,172,
+172,10,172,172,172,10,10,172,172,172,
+172,10,172,10,10,10,10,10,172,37,
+172,172,172,172,10,172,10,10,172,37,
+37,37,37,172,10,172,172,172,172,37
+</data>
+ </layer>
+</map>
