@@ -4,7 +4,7 @@ class Orc():
         self.x = posX
         self.y = posY
         self.dir = 1
-        self. dx = 0
+        self.dx = 0
         self.dy = 0
 
     def loadPics(self):
@@ -21,8 +21,8 @@ class Orc():
         if self.dir == 0:
             if self.x >= width - 32:
                 self.x = width - 32
-                self.image1 = self.orcrt1
-                self.image2 = self.orcrt1
+                self.image1 = self.orcrt2
+                self.image2 = self.orcrt2
             else:
                 self.x += self.dx
                 self.image1 = self.orcrt1
@@ -30,8 +30,8 @@ class Orc():
         elif self.dir == 1:
             if self.y >= height - 32:
                 self.y = height - 32
-                self.image1 = self.orcfr1
-                self.image2 = self.orcfr1
+                self.image1 = self.orcfr2
+                self.image2 = self.orcfr2
             else:
                 self.y += self.dy
                 self.image1 = self.orcfr1
@@ -39,8 +39,8 @@ class Orc():
         elif self.dir == 2:
             if self.x <= 0:
                 self.x = 0
-                self.image1 = self.orclf1
-                self.image2 = self.orclf1
+                self.image1 = self.orclf2
+                self.image2 = self.orclf2
             else:
                 self.x -= self.dx
                 self.image1 = self.orclf1
@@ -48,8 +48,8 @@ class Orc():
         elif self.dir == 3:
             if self.y <= 0:
                 self.y = 0
-                self.image1 = self.orcbk1
-                self.image2 = self.orcbk1
+                self.image1 = self.orcbk2
+                self.image2 = self.orcbk2
             else:
                 self.y -= self.dy
                 self.image1 = self.orcbk1
