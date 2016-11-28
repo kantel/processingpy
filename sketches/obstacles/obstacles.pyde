@@ -3,6 +3,7 @@
 tileSize = 32
 
 from sprites import Orc, Wall
+moving = True
 
 
 def setup():
@@ -20,11 +21,13 @@ def setup():
     wall1.loadPics()
 
 def draw():
+    global moving
     background(bg)
     wall1.display()
     orc.move()
-    orc.checkCollision(wall1)
     orc.display()
+    orc.checkCollision(wall1)
+         
     
 def keyPressed():
     if keyPressed and key == CODED:
