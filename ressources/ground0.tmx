@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="10" height="10" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" name="dg_features32" tilewidth="32" tileheight="32" tilecount="117">
+  <image source="../../../Dropbox/pd_gamegraphics/TomeTik/AngbandTk/dg_features32.gif" trans="ffffff" width="288" height="416"/>
+ </tileset>
+ <layer name="Kachelebene 1" width="10" height="10">
+  <data encoding="csv">
+46,46,46,46,46,46,46,46,46,46,
+46,46,46,46,46,46,46,46,46,46,
+46,46,46,46,46,46,46,46,46,46,
+46,46,46,46,46,46,46,46,46,46,
+46,46,46,46,46,46,46,46,46,46,
+46,46,46,46,46,46,46,46,46,46,
+46,46,46,46,46,46,46,46,46,46,
+46,46,46,46,46,46,46,46,46,46,
+46,46,46,46,46,46,46,46,46,46,
+46,46,46,46,46,46,46,46,46,46
+</data>
+ </layer>
+</map>
