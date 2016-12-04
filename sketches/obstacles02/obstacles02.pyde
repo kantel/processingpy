@@ -1,4 +1,4 @@
-# obstacles
+# obstacles 2
 
 tileSize = 32
 
