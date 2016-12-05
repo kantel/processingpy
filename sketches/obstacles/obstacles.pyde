@@ -3,8 +3,6 @@
 tileSize = 32
 
 from sprites import Orc, Wall
-moving = True
-
 
 def setup():
     global bg

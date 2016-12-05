@@ -1,10 +1,7 @@
 # obstacles 2
 
 tileSize = 32
-
 from sprites import Orc, Wall, Tree
-moving = True
-
 
 def setup():
     global bg
@@ -24,7 +21,6 @@ def setup():
     tree1.loadPics()
 
 def draw():
-    global moving
     background(bg)
     wall1.display()
     tree1.display()
@@ -38,10 +34,8 @@ def draw():
             orc.x += orc.dx
         elif orc.dir == 3:
             orc.y += orc.dy
-            
         orc.image1 = orc.image2
-            
-                
+        
     orc.display()
          
     

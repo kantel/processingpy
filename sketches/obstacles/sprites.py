@@ -17,7 +17,6 @@ class Sprite(object):
             println("Kollision")
             return True
         else:
-            # println("Keine Kollision")
             return False
 
 class Orc(Sprite):
@@ -70,20 +69,6 @@ class Orc(Sprite):
                 self.image1 = self.orcbk1
                 self.image2 = self.orcbk2
                 
-    def stand(self):
-        if self.dir == 0:
-            self.image1 = self.orcrt2
-            self.image2 = self.orcrt2
-        elif self.dir == 1:
-            self.image1 = self.orcfr2
-            self.image2 = self.orcfr2
-        elif self.dir == 2:
-            self.image1 = self.orclf2
-            self.image2 = self.orclf2
-        elif self.dir == 3:
-            self.image1 = self.orcbk2
-            self.image2 = self.orcbk2
-
     def display(self):
         if frameCount % 8 >= 4:
             image(self.image1, self.x, self.y)
