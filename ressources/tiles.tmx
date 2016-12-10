@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="32" tileheight="32" nextobjectid="1">
- <tileset firstgid="1" name="dg_dungeon32" tilewidth="32" tileheight="32" tilecount="90">
+ <tileset firstgid="1" name="dg_dungeon32" tilewidth="32" tileheight="32" tilecount="90" columns="9">
   <image source="../../../Dropbox/pd_gamegraphics/TomeTik/AngbandTk/dg_dungeon32.gif" trans="ffffff" width="288" height="320"/>
  </tileset>
- <tileset firstgid="91" name="dg_features32" tilewidth="32" tileheight="32" tilecount="117">
+ <tileset firstgid="91" name="dg_features32" tilewidth="32" tileheight="32" tilecount="117" columns="9">
   <image source="../../../Dropbox/pd_gamegraphics/TomeTik/AngbandTk/dg_features32.gif" trans="ffffff" width="288" height="416"/>
+ </tileset>
+ <tileset firstgid="208" name="Grounds und Walls 2" tilewidth="32" tileheight="32" tilecount="36" columns="9">
+  <image source="../../../Dropbox/pd_gamegraphics/TomeTik/AngbandTk/dg_town632.gif" trans="ffffff" width="288" height="128"/>
  </tileset>
  <layer name="Kachelebene 1" width="1" height="1">
   <data encoding="csv">
-133
+208
 </data>
  </layer>
 </map>
