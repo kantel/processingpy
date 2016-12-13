@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="10" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" name="dg_grounds32" tilewidth="32" tileheight="32" tilecount="171" columns="9">
+  <image source="angbandtiles/dg_grounds32.gif" width="288" height="608"/>
+ </tileset>
+ <tileset firstgid="172" name="dg_features32" tilewidth="32" tileheight="32" tilecount="117" columns="9">
+  <image source="angbandtiles/dg_features32.gif" width="288" height="416"/>
+ </tileset>
+ <layer name="Kachelebene 1" width="20" height="10">
+  <data encoding="csv">
+10,10,10,10,10,10,61,10,10,10,10,10,10,10,10,10,10,10,10,55,
+10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,55,55,
+10,10,10,10,10,61,10,10,10,10,10,10,10,10,10,10,10,10,10,55,
+10,10,10,10,10,61,61,10,10,10,10,10,10,10,10,10,10,10,10,10,
+10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,265,265,
+10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,265,265,10,
+10,10,10,10,10,10,10,10,10,10,61,10,10,10,10,265,265,265,10,10,
+94,169,10,169,169,10,10,10,10,10,10,10,61,10,10,10,10,10,10,10,
+169,94,169,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
+94,94,94,94,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10
+</data>
+ </layer>
+</map>
