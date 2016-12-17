@@ -1,0 +1,25 @@
+site_name: Processing.py lernen
+theme: readthedocs
+
+pages:
+- Home: "index.md"
+- Hallo Hörnchen: "hallohoernchen.md"
+- Moving Kitty: "movingkitty.md"
+- Klasse Kitty!: "klassekitty.md"
+- Cute Planet: "cuteplanet.md"
+- Running Orc 1: "runningorc.md"
+- Running Orc 2: "runningorc4dir.md"
+- Running Orc 3: "runningorc3.md"
+- Running Orc 4: "runningorc4.md"
+- Running Orc 5: "runningorc5.md"
+
+markdown_extensions:
+- footnotes
+- smarty:
+    smart_quotes: False
+
+site_dir: "/Applications/MAMP/htdocs/processingpy"
+
+repo_url: "https://github.com/kantel/processingpy"
+
+extra_css: [css/user.css]
