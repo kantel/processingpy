@@ -21,7 +21,7 @@ Hier möchte ich meine Tutorials zu [Processing.py][2], dem [Python][3]-Mode fü
 ## Server starten
 
 ~~~bash
-cd /Users/kantel/Dropbox/books/processingpy
+cd ~/git/processingpy
 mkdocs serve
 ~~~
 

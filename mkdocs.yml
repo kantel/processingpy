@@ -20,6 +20,8 @@ markdown_extensions:
 
 site_dir: "/Applications/MAMP/htdocs/processingpy"
 
+edit_uri: blob/master/docs
+
 repo_url: "https://github.com/kantel/processingpy"
 
 extra_css: [css/user.css]
