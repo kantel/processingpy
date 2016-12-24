@@ -23,10 +23,9 @@ site_dir: "/Applications/MAMP/htdocs/processingpy"
 
 edit_uri: blob/master/docs
 
+google_analytics: ["UA-89437459-1", "py.kantel-chaos-team.de"]
+
 repo_url: "https://github.com/kantel/processingpy"
 
 extra_css: [css/user.css]
-
-extra_javascript:
-    - js/piwik.js
 
