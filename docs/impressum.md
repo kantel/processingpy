@@ -4,7 +4,7 @@ Die nachstehenden Informationen enthalten die gesetzlich vorgesehene Anbieterken
 
 ## Anbieter
 
-Anbieter der Internetpräsenzen Der Schockwellenreiter ist das Kantel-Chaos-Team.
+Anbieter dieses Internetauftritts ist das *Kantel-Chaos-Team*.
 
 ## Adresse
 
