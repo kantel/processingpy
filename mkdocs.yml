@@ -26,3 +26,7 @@ edit_uri: blob/master/docs
 repo_url: "https://github.com/kantel/processingpy"
 
 extra_css: [css/user.css]
+
+extra_javascript:
+    - js/piwik.js
+
