@@ -1,11 +1,12 @@
-from time import *
+import datetime as dt
 
-letzterArbeitstag = "2016-12-31"
-rente = mktime(letzterArbeitstag)
+rente = dt.date(2018, 12, 31)
 println(rente)
-
-lt = localtime()
-println(lt)
-
-diff = rente - lt
-print(diff)
+heute = dt.date.today()
+println(heute)
+differenz = rente - heute
+println(differenz)
+s = str(differenz)
+println(s)
+s = s[:3]
+println(s)
