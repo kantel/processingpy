@@ -3,6 +3,7 @@ theme: readthedocs
 
 pages:
 - Home: "index.md"
+- Rentenuhr: "rentenuhr.md"
 - Hallo Hörnchen: "hallohoernchen.md"
 - Moving Kitty: "movingkitty.md"
 - Klasse Kitty!: "klassekitty.md"
