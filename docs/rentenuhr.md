@@ -21,8 +21,8 @@ das Python-Modul `datetime` aus der Standardbibliothek geladen und dann als erst
 ~~~python
 	myNow = dt.datetime.now()
 	myHour = str(myNow.hour)
-	myMinute = str(myMinute)
-	mySecond = str(mySecond)
+	myMinute = str(myNow.minute)
+	mySecond = str(myNow.second)
 ~~~
 
 und dann die `datetime`-Objekte in Strings verwandelt. Im eigentlichen Programm habe ich sie sogar noch ein wenig aufgehübscht und den einstelligen Sekunden und Minute eine führende Null verpaßt. Das könnt Ihr weiter unten im kompletten Quellcode nachlesen.
@@ -33,8 +33,7 @@ Jetzt kommt aber der eigentliche Gag: Mit den `datetime`-Objekten kann man näml
     rente = dt.date(2018, 12, 31)
     heute = dt.date.today()
     differenz = rente - heute
-    myDays = str(differenz)
-    myDays = myDays[:3]
+    myDays = str(differenz.days)
     workingDays = round(float(myDays)/7.0, 0) * 5
     workingDays = str(int(workingDays - 80))
 ~~~
@@ -57,24 +56,15 @@ def draw():
     background("#000000")
     myNow = dt.datetime.now()
     myHour = str(myNow.hour)
-    myMinute = myNow.minute
-    if myMinute < 10:
-        myMinute = "0" + str(myMinute)
-    else:
-        myMinute = str(myMinute)
-    mySecond = myNow.second
-    if mySecond < 10:
-        mySecond = "0" + str(mySecond)
-    else:
-        mySecond = str(mySecond)
+    myMinute = str(myNow.minute).rjust(2, "0")
+    mySecond = str(myNow.second).rjust(2, "0")
     myTime = myHour + " : " + myMinute + " : " + mySecond
     textSize(96)
     text(myTime, 60, 150)
     rente = dt.date(2018, 12, 31)
     heute = dt.date.today()
     differenz = rente - heute
-    myDays = str(differenz)
-    myDays = myDays[:3]
+    myDays = str(differenz.days)
     workingDays = round(float(myDays)/7.0, 0) * 5
     workingDays = str(int(workingDays - 80))
     myText = u"Lieber Jörg, es sind nur noch " + myDays + \

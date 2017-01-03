@@ -9,16 +9,8 @@ def draw():
     background("#000000")
     myNow = dt.datetime.now()
     myHour = str(myNow.hour)
-    myMinute = myNow.minute
-    if myMinute < 10:
-        myMinute = "0" + str(myMinute)
-    else:
-        myMinute = str(myMinute)
-    mySecond = myNow.second
-    if mySecond < 10:
-        mySecond = "0" + str(mySecond)
-    else:
-        mySecond = str(mySecond)
+    myMinute = str(myNow.minute).rjust(2, "0")
+    mySecond = str(myNow.second).rjust(2, "0")
     myTime = myHour + " : " + myMinute + " : " + mySecond
     textSize(96)
     text(myTime, 60, 150)
