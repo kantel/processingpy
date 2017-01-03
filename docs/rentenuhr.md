@@ -68,7 +68,7 @@ def draw():
     workingDays = round(float(myDays)/7.0, 0) * 5
     workingDays = str(int(workingDays - 80))
     myText = u"Lieber Jörg, es sind nur noch " + myDays + \
-    u" Tage bis zur Rente!\n Das sind etwa " + \
+    u" Tage bis zu Deiner Rente!\nDas sind etwa " + \
     workingDays + " Arbeits- tage. Das schaffst Du!"
     textSize(32)
     text(myText, 60, 200, 540, 300)
