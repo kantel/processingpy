@@ -25,8 +25,7 @@ def draw():
     rente = dt.date(2018, 12, 31)
     heute = dt.date.today()
     differenz = rente - heute
-    myDays = str(differenz)
-    myDays = myDays[:3]
+    myDays = str(differenz.days)
     workingDays = round(float(myDays)/7.0, 0) * 5
     workingDays = str(int(workingDays - 80))
     myText = u"Lieber Jörg, es sind nur noch " + myDays + \
