@@ -20,6 +20,8 @@ pages:
 
 markdown_extensions:
 - footnotes
+- admonition
+
 - smarty:
     smart_quotes: False
 
