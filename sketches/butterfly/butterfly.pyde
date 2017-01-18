@@ -17,7 +17,7 @@ def draw():
     xx = (x*60) + 300
     yy = (y*60) + 300
     if (theta == 0.0):
-        line(xx, yy, xx, yy)
+        point(xx, yy)
     else:
         line(xOld, yOld, xx, yy)
     xOld = xx
