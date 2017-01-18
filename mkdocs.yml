@@ -36,4 +36,5 @@ repo_url: "https://github.com/kantel/processingpy"
 
 extra_css: [css/user.css]
 
+extra_javascript: ["http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"]
 
