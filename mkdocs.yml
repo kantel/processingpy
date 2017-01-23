@@ -4,6 +4,7 @@ theme: readthedocs
 pages:
 - Home: "index.md"
 - Rentenuhr: "rentenuhr.md"
+- Sierpinksi-Dreieck: "sierpinski.md"
 - Butterfly Curve: "butterfly.md"
 - Lorenz Attratkor: "lorenz.md"
 - Hallo Hörnchen: "hallohoernchen.md"

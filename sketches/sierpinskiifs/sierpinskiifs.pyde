@@ -5,7 +5,8 @@ x = y = 0
 
 def setup():
     size(640, 480)
-    background(255)
+    background(0)
+    colorMode(HSB, 360, 100, 100)
     frameRate(1200)
 
 def draw():
@@ -20,7 +21,9 @@ def draw():
     else:
         x = (x + 640)/2
         y = (y + 480)/2
+    stroke(i%360, 100, 100)
     point(x, y)
+    i += 1
     if (i > 120000):
         print("I did it, Babe!")
         noLoop()
