@@ -25,7 +25,14 @@ class Spaceship():
 class Octopussy(Spaceship):
     
     def move(self):
+        self.y += self.dy
+        if self.dy >= 5:
+            self.dy = 5
+        elif self.dy <= -5:
+            self.dy = -5
         if self.y < 0:
             self.y = 0
+            self.dy = 0
         if self.y > height - 120:
             self.y = height - 120
+            self.dy = 0
