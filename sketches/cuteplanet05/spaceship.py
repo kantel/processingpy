@@ -5,6 +5,7 @@ class Spaceship():
         self.x = posX
         self.y = posY
         self.dx = 0
+        self.dy = 0
         
     def loadPic(self):
         self.img = loadImage(self.pic)
@@ -20,3 +21,11 @@ class Spaceship():
     
     def display(self):
         image(self.img, self.x, self.y)
+
+class Octopussy(Spaceship):
+    
+    def move(self):
+        if self.y < 0:
+            self.y = 0
+        if self.y > height - 120:
+            self.y = height - 120
