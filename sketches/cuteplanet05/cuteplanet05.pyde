@@ -1,5 +1,4 @@
 #Spaceship
-
 from spaceship import Spaceship, Octopussy
 
 octopussy = Octopussy("octopussy.png", 800, 150)
@@ -9,9 +8,11 @@ rocketboy2 = Spaceship("rocketship.png", -300, 250)
 beetle = Spaceship("beetleship.png", 200, 100)
 
 ships = [planet, rocketboy1, rocketboy2, beetle]
+fps = 30
 
 def setup():
     size(920, 480)
+    frameRate(fps)
     planet.loadPic()
     rocketboy1.loadPic()
     rocketboy2.loadPic()
@@ -31,10 +32,10 @@ def draw():
 
 def keyPressed():
     if keyPressed and key == CODED:
-        planet.dx = 1
-        rocketboy1.dx = 4
-        rocketboy2.dx = 5
-        beetle.dx = 3
+        planet.dx = 2
+        rocketboy1.dx = 8
+        rocketboy2.dx = 10
+        beetle.dx = 6
         if keyCode == UP:
             octopussy.dy -= 1
         elif keyCode == DOWN:
