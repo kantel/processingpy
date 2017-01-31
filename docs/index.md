@@ -4,6 +4,33 @@
 
 Hier möchte ich meine Tutorials zu [Processing.py][2], dem [Python][3]-Mode für [Processing][4], sammeln. Vielleicht wird ja einmal ein Buch daraus.
 
+## Mögliche Gliederung
+
+- Einleitung: Was ist Processing.py?
+- Installtion und erste Schritte
+    - Hallo Hörnchen
+    - Moving Kitty
+- Punkt, Punkt, Komma, Strich …
+    - Sierpinsky
+    - Butterfly
+    - Lorenz
+- Störe meine Kreise nicht
+- Vertizes
+- Text
+    - Rentenuhr
+- Interlude: Rauhnächte
+- Bilder und Bildbearbeitung
+- Projekt 1: Fluffy Planet
+    - Klasse Kitty
+    - Cute Planet
+    - Fluffy Planet
+- Interlude: Walking Pingus
+- Projekt 2: Running Orks
+    - Running Ork
+- 3D
+    - Kugeln und Kisten
+    - Menger-Schwamm
+
 ## Commands
 
 * `mkdocs new [dir-name]` - Create a new project.
