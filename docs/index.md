@@ -15,6 +15,8 @@ Hier möchte ich meine Tutorials zu [Processing.py][2], dem [Python][3]-Mode fü
     - Butterfly
     - Lorenz
 - Störe meine Kreise nicht
+    - Kreise und Ellipsen
+    - Cantorkäse und mehr
 - Vertizes
 - Text
     - Rentenuhr
