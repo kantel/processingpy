@@ -22,12 +22,11 @@ def drawPythagoras(a1, a2, b1, b2, level):
         d2 = a2 + n2
         # Start-Rechteck zeichnen
         fill(palette[(level-1)%10])
-        beginShape()
-        vertex(a1 + xmitte, ymax - a2)
-        vertex(b1 + xmitte, ymax - b2)
-        vertex(c1 + xmitte, ymax - c2)
-        vertex(d1 + xmitte, ymax - d2)
-        endShape(CLOSE)
+        with beginClosedShape():
+            vertex(a1 + xmitte, ymax - a2)
+            vertex(b1 + xmitte, ymax - b2)
+            vertex(c1 + xmitte, ymax - c2)
+            vertex(d1 + xmitte, ymax - d2)
         e1 = d1 + w1*(c1 - d1) + w2*n1
         e2 = d2 + w1*(c2 - d2) + w2*n2
         # Schenkel-Quadrate zeichnen
@@ -35,7 +34,7 @@ def drawPythagoras(a1, a2, b1, b2, level):
         drawPythagoras(d1, d2, e1, e2, level-1)
 ~~~
 
-Zum Zeichnen der einzelnen Quadrate habe ich nicht die `rect()`-Funktion genutzt, sondern *Shapes*, mit denen sich Punkte zu einem beliebigen Gebilde oder Polygon zusammefassen lassen. Hierzu müssen sie erst einmal mit `beginShape()` und `endShape()` geklammert werden. Darin werden dann mit `vertex(x, y)` nacheinander die einzelnen Punkt aufgerufen, die (im einfachten Fall) durch Linien miteinander verbunden werden sollen. Mit `endShape(CLOSE)` teile ich dem Sketch dann mit, daß das entstehende Polygon auf jeden Fall geschlossen werden soll.
+Zum Zeichnen der einzelnen Quadrate habe ich nicht die `rect()`-Funktion genutzt, sondern *Shapes*, mit denen sich Punkte zu einem beliebigen Gebilde oder Polygon zusammefassen lassen. Hierzu müssen sie erst einmal mit `with beginClosedShape()` geklammert werden. Darin werden dann mit `vertex(x, y)` nacheinander die einzelnen Punkt aufgerufen, die (im einfachten Fall) durch Linien miteinander verbunden werden sollen. Mit `beginClosedShape` teile ich dem Sketch auch mit, daß das entstehende Polygon auf jeden Fall geschlossen werden soll, ein einfaches `with beginShape()` würde es offen lassen.
 
 Der Aufruf ist rekursiv: Nachdem zuerst das Grundquadrat gezeichnet wurde, werden die rechten und die linken Schenkelquadrate gezeichnet, die dann wieder als Grundquadrate für den nächsten Rekursionslevel fungieren.
 
@@ -83,12 +82,11 @@ def drawPythagoras(a1, a2, b1, b2, level):
         d2 = a2 + n2
         # Start-Rechteck zeichnen
         fill(palette[(level-1)%10])
-        beginShape()
-        vertex(a1 + xmitte, ymax - a2)
-        vertex(b1 + xmitte, ymax - b2)
-        vertex(c1 + xmitte, ymax - c2)
-        vertex(d1 + xmitte, ymax - d2)
-        endShape(CLOSE)
+        with beginClosedShape():
+            vertex(a1 + xmitte, ymax - a2)
+            vertex(b1 + xmitte, ymax - b2)
+            vertex(c1 + xmitte, ymax - c2)
+            vertex(d1 + xmitte, ymax - d2)
         e1 = d1 + w1*(c1 - d1) + w2*n1
         e2 = d2 + w1*(c2 - d2) + w2*n2
         # Schenkel-Quadrate zeichnen

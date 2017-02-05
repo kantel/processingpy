@@ -41,12 +41,11 @@ def drawPythagoras(a1, a2, b1, b2, level):
         d2 = a2 + n2
         # Start-Rechteck zeichnen
         fill(palette[(level-1)%10])
-        beginShape()
-        vertex(a1 + xmitte, ymax - a2)
-        vertex(b1 + xmitte, ymax - b2)
-        vertex(c1 + xmitte, ymax - c2)
-        vertex(d1 + xmitte, ymax - d2)
-        endShape(CLOSE)
+        with beginClosedShape():
+            vertex(a1 + xmitte, ymax - a2)
+            vertex(b1 + xmitte, ymax - b2)
+            vertex(c1 + xmitte, ymax - c2)
+            vertex(d1 + xmitte, ymax - d2)
         e1 = d1 + w1*(c1 - d1) + w2*n1
         e2 = d2 + w1*(c2 - d2) + w2*n2
         # Schenkel-Quadrate zeichnen
