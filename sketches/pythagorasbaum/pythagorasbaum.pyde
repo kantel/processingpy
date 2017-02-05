@@ -23,6 +23,7 @@ w2 = 0.48   # Winkel 2
 
 def setup():
     size(640, 480)
+    frame.setTitle("Arbor Pythagorae")
     background(255)
     strokeWeight(1)
     noLoop()
