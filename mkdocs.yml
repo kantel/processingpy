@@ -3,7 +3,6 @@ theme: readthedocs
 
 pages:
 - Home: "index.md"
-- Rentenuhr: "rentenuhr.md"
 - Sierpinksi-Dreieck: "sierpinski.md"
 - Butterfly Curve: "butterfly.md"
 - Lorenz Attratkor: "lorenz.md"
@@ -11,6 +10,8 @@ pages:
 - Das with-Statement: "with.md"
 - Cantor-Käse: "cantor.md"
 - Pythagoras-Baum: "pythagoras.md"
+- Text: "text.md"
+- Rentenuhr: "rentenuhr.md"
 - Hallo Hörnchen: "hallohoernchen.md"
 - Moving Kitty: "movingkitty.md"
 - Klasse Kitty!: "klassekitty.md"
