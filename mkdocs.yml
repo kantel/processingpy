@@ -4,9 +4,9 @@ theme: readthedocs
 pages:
 - Home: "index.md"
 - Sierpinksi-Dreieck: "sierpinski.md"
+- Feather Fractal: "feather.md"
 - Butterfly Curve: "butterfly.md"
 - Lorenz Attratkor: "lorenz.md"
-- Feather Fractal: "feather.md"
 - Kreise und Ellipsen: "foryoureyesonly.md"
 - Das with-Statement: "with.md"
 - Cantor-Käse: "cantor.md"
