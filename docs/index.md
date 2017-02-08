@@ -33,6 +33,14 @@ Hier möchte ich meine Tutorials zu [Processing.py][2], dem [Python][3]-Mode fü
     - Kugeln und Kisten
     - Menger-Schwamm
 
+## Links
+
+- [Processing.py Homepage](http://py.processing.org/)
+- [Processing.py Reference](http://py.processing.org/reference/)
+- [Processing.py Tutorials](http://py.processing.org/tutorials/)
+- [Processing.py @ GitHub](https://github.com/jdf/processing.py)
+- [Processing Reference](https://processing.org/reference/)
+
 ## Commands
 
 * `mkdocs new [dir-name]` - Create a new project.
