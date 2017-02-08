@@ -1,3 +1,10 @@
+# Turmite
+
+[![Turmite](images/turmite.jpg)](https://www.flickr.com/photos/schockwellenreiter/32407973340/)
+
+## Quellcode
+
+~~~python
 south = 0
 east  = 1
 north = 2
@@ -49,4 +56,8 @@ def draw():
             dir = south
         else:
             dir += 1
-        
+~~~
+
+## Literatur
+
+- A.K. Dewdney: *Turmiten*, in: Christoph Pöppe (Hg.): *Computer-Kurzweil IV, Spektrum der Wissenschaft Sonderheft 10*, 1990, Seiten 90-94
