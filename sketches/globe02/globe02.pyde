@@ -30,7 +30,7 @@ def makeSphere(r, step):
         sinip = sin(radians(i + step))
         cosip = cos(radians(i + step))
         j = 0
-        while j < 360:
+        while j <= 360:
             sinj = sin(radians(j))
             cosj = cos(radians(j))
             s.vertex(r*cosj*sini, r*-cosi, r*sinj*sini)
