@@ -1,3 +1,10 @@
+# Geometrische Grundformen
+
+![Screenshot](images/dreivier.jpg)
+
+## Der Quelltext
+
+~~~python
 def setup():
     size(640, 480)
     frame.setTitle("Geometrische Grundformen in Processing.py")
@@ -43,3 +50,4 @@ def drawGrid():
         line(i, 0, i, height)
     for i in range(0, height, 20):
         line(0, i, width, i)
+~~~
