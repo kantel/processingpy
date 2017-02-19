@@ -1,5 +1,5 @@
 def setup():
-    size(640, 480)
+    size(640, 640)
     frame.setTitle("Geometrische Grundformen in Processing.py")
     # noLoop()
 
@@ -35,6 +35,19 @@ def draw():
         quad(180, 340, 300, 340, 300, 400, 180, 460)
         quad(400, 340, 460, 400, 400, 460, 340, 400)
         quad(500, 340, 620, 400, 500, 460, 560, 400)
+    
+    # Kreisbögen
+    with pushStyle():
+        fill(204, 53, 100)
+        arc(80, 560, 120, 120, 0, HALF_PI)
+        with pushStyle():
+            noFill()
+            arc(80, 560, 130, 130, HALF_PI, PI)
+            arc(80, 560, 140, 140, PI, PI+QUARTER_PI)
+            arc(80, 560, 150, 150, PI+QUARTER_PI, TWO_PI)
+        arc(240, 560, 120, 120, 0, PI+QUARTER_PI, OPEN)
+        arc(400, 560, 120, 120, 0, PI+QUARTER_PI, CHORD)
+        arc(560, 560, 120, 120, QUARTER_PI, TWO_PI-QUARTER_PI, PIE)
     
 
 def drawGrid():
