@@ -4,7 +4,7 @@ def setup():
     global globe
     size(400, 400, P3D)
     world = loadImage("bluemarble01.jpg")
-    globe = makeSphere(150, 1, world)
+    globe = makeSphere(150, 5, world)
     frameRate(30)
 
 def draw():
@@ -33,8 +33,10 @@ def makeSphere(r, step, tex):
         while j <= 360:
             sinj = sin(radians(j))
             cosj = cos(radians(j))
+            s.normal(cosj*sini, -cosi, sinj*sini)
             s.vertex(r*cosj*sini, r*-cosi, r*sinj*sini,
                      tex.width-j*tex.width/360.0, i*tex.height/180.0)
+            s.normal(cosj*sinip, -cosip, sinj*sinip)
             s.vertex(r*cosj*sinip, r*-cosip, r*sinj*sinip,
                      tex.width-j*tex.width/360.0, (i+step)*tex.height/180.0)
             j += step

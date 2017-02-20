@@ -3,7 +3,7 @@ a = 0.0
 def setup():
     global globe
     size(400, 400, P3D)
-    globe = makeSphere(150, 1)
+    globe = makeSphere(150, 5)
 
 def draw():
     global globe, a
@@ -33,7 +33,9 @@ def makeSphere(r, step):
         while j <= 360:
             sinj = sin(radians(j))
             cosj = cos(radians(j))
+            s.normal(cosj*sini, -cosi, sinj*sini)
             s.vertex(r*cosj*sini, r*-cosi, r*sinj*sini)
+            s.normal(cosj*sinip, -cosip, sinj*sinip)
             s.vertex(r*cosj*sinip, r*-cosip, r*sinj*sinip)
             j += step
         i += step
