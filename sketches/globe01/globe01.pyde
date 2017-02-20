@@ -18,6 +18,7 @@ def draw():
 def makeSphere(r, step):
     s = createShape()
     s.beginShape(QUAD_STRIP)
+    # s.beginShape(TRIANGLE_STRIP)
     s.noFill()
     s.stroke(255)
     s.strokeWeight(1)
