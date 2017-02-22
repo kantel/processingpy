@@ -38,3 +38,35 @@ def draw():
         a += 0.01
         shape(globe)
 ~~~
+
+## Und noch eine Textur
+
+[![Die Erde](images/earth.jpg)](https://www.flickr.com/photos/schockwellenreiter/32901118862/)
+
+Und hier noch einmal die Erdkugel mit einer anderen Textur, die ich [hier gefunden](http://www.inf-schule.de/information/informationsdarstellungxml/darstellunginformation/fallstudie_3dgrafiken/exkurs/farben) habe. Schaut man genau hin, entdeckt man, daß die Erde an der Datumsgrenze einen Riß aufweist -- ein Phänomen, daß ich hin und wieder schon beobachtet, für daß ich allerdings bis jetzt noch keine Erklärung habe.
+
+Der Quellcode wurde nur geringfügig geändert, aber der Vollständigkeit halber hier noch einmal:
+
+~~~python
+a = 0
+
+def setup():
+    global globe
+    earth = loadImage("earth.jpg")
+    size(400, 400, P3D)
+    noStroke()
+    globe = createShape(SPHERE, 160)
+    globe.setTexture(earth)
+
+def draw():
+    global a, globe
+    background(51)
+    lights()
+    translate(width*.5, height*.5, 0)
+    # sphereDetail(120)
+    with pushMatrix():
+        rotateX(radians(-25))
+        rotateY(a)
+        a += 0.01
+        shape(globe)
+~~~
