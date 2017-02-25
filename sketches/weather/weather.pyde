@@ -8,9 +8,10 @@ def setup():
     textFont(font)
     getWeatherData()
     frameRate(1)
+    text(u"Start …", 10, 180)
 
 def draw():
-    
-    if((minute() % 15 == 0) and (second() == 1)):
+    if(second() == 0):
         background(0)
         getWeatherData()
+        text(u"Update …", 10, 180)
