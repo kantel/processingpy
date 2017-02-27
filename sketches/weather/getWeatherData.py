@@ -15,7 +15,7 @@ def getWeatherData():
     # Wetter-Beschreibung
     wetter = weatherData["weather"][0]["description"]
     myWetter = u"Wetter: " + wetter + "."
-    text(myWetter, 10, 40)
+    text(myWetter, 10, 42)
     
     # Sonnenauf- und -untergang
     sunrise = weatherData["sys"]["sunrise"]
@@ -23,7 +23,7 @@ def getWeatherData():
     mySunrise = "Sonnenaufgang: " + datetime.datetime.fromtimestamp(sunrise).ctime() + "."
     mySunset =  "Sonnenuntergang: " + datetime.datetime.fromtimestamp(sunset).ctime() + "."                             
     text(mySunrise, 10, 80)
-    text(mySunset, 10, 100)
+    text(mySunset, 10, 102)
     
     # Luftdruck und -feuchtigkeit
     pressure = weatherData["main"]["pressure"]
@@ -31,7 +31,7 @@ def getWeatherData():
     text(myPressure, 10, 140)
     humidity = weatherData["main"]["humidity"]
     myHumidity = "Luftfeuchtigkeit: " + str(humidity) + " %."
-    text(myHumidity, 10, 160)
+    text(myHumidity, 10, 162)
     
     # Windgeschwindigkeit und Bewölkung
     wind = weatherData["wind"]["speed"]
@@ -39,7 +39,7 @@ def getWeatherData():
     text(myWind, 10, 200)
     clouds = weatherData["clouds"]["all"]
     myClouds = u"Bewölkung: " + str(clouds) + " %."
-    text(myClouds, 10, 220)
+    text(myClouds, 10, 222)
     
     # Wetter-Icon
     icon = weatherData["weather"][0]["icon"]
@@ -49,5 +49,13 @@ def getWeatherData():
     # Abfragezeit und -ort
     dt = weatherData["dt"]
     station = weatherData["name"]
-    myDt = "Stand : " + datetime.datetime.fromtimestamp(dt).ctime() + " aus " + station + "."
+    myDt = "Stand: " + datetime.datetime.fromtimestamp(dt).ctime() + " aus " + station + "."
     text(myDt, 10, 360)
+
+def getNow():
+    myNow = datetime.datetime.now()
+    myHour = str(myNow.hour)
+    myMinute = str(myNow.minute).rjust(2, "0")
+    mySecond = str(myNow.second).rjust(2, "0")
+    myTime = myHour + ":" + myMinute + ":" + mySecond              
+    text(u"Update: " + myTime, 10, 382)

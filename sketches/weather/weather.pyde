@@ -1,5 +1,4 @@
-from getWeatherData import getWeatherData
-import datetime
+from getWeatherData import getWeatherData, getNow
 
 def setup():
     size(600, 400)
@@ -8,21 +7,11 @@ def setup():
     font = createFont("American Typewriter", 18)
     textFont(font)
     getWeatherData()
+    getNow()
     frameRate(1)
-    myNow = datetime.datetime.now()
-    myHour = str(myNow.hour)
-    myMinute = str(myNow.minute).rjust(2, "0")
-    mySecond = str(myNow.second).rjust(2, "0")
-    myTime = myHour + " : " + myMinute + " : " + mySecond              
-    text(u"Start: " + myTime, 10, 380)
 
 def draw():
     if(second() == 0):
         background(0)
         getWeatherData()
-        myNow = datetime.datetime.now()
-        myHour = str(myNow.hour)
-        myMinute = str(myNow.minute).rjust(2, "0")
-        mySecond = str(myNow.second).rjust(2, "0")
-        myTime = myHour + " : " + myMinute + " : " + mySecond
-        text(u"Update: " + myTime, 10, 380)
+        getNow()
