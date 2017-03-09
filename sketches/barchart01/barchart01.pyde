@@ -1,21 +1,32 @@
-countries = [u"Afghanistan", u"Mali, Senegal", u"Kosovo",
-             u"Türkei (Syrien, Irak)", u"Nordirak", u"Libanon",
-             u"Lybische Küste", u"Dschibuti" u"Sudan, Südsudan"
-             u"Somalia", u"Westsahara"]
+countries = [u"Afghan", u"Mali", u"Kosovo",
+             u"Türkei", u"Irak", u"Liban",
+             u"Lybien", u"Dschib", u"Sudan",
+             u"Somal", u"Sahara"]
 numSoldiers = [971, 950, 532, 275, 147, 126, 104, 33, 23, 9, 4]
 # Zahlen von hier: https://de.statista.com/infografik/8394/einsatzgebiete-bundeswehr/
+palette = [color(0, 100, 0), color(189, 183, 107), color(85, 107, 47),
+           color(107, 142, 35), color(139, 69, 0), color(255, 140, 0),
+           color(139, 71, 38), color(139, 0, 0), color(178, 34, 34),
+           color(139, 26, 26), color(205, 0, 0)]
+title = u"Anzahl deutscher Soldaten im Ausland nach Ländern und Einsatzgebieten"
 
 def setup():
-    global X1, Y1, X2, Y2
     size(640, 480)
-    X1 = Y1 = 50
-    X2 = width - 50
-    Y2 = height - Y1
 
 def draw():
-    global X1, Y1, X2, Y2
-    background(51)
-    rectMode(CORNERS)
-    fill(255)
-    rect(X1, Y1, X2, Y2)
+    x = width*0.1
+    y = height*0.88
+    delta = width*0.8/len(numSoldiers)
+    w = delta*0.8
+    background(255)
+    fill(51)
+    text(title, 120, 20)
+    for i in range(len(numSoldiers)):
+        # Zuerst die Höhe der Säulen berechnen
+        h = map(numSoldiers[i], 0, 1200, 0, height)
+        fill(palette[i])
+        rect(x, y-h, w, h)
+        text(countries[i], x, height-35)
+        text(str(numSoldiers[i]), x, height-20)
+        x += delta
     
