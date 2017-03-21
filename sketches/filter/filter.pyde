@@ -8,6 +8,7 @@ def setup():
     size(640, 320)
     jojo = loadImage("jojo.jpg")
     jojo.filter(THRESHOLD, 0.55)
+    noLoop()
 
 def draw():
     global jojo
