@@ -3,11 +3,11 @@ selectFilter = 8
 def setup():
     global img
     # Thumbnails
-    size(160, 120)
-    img = loadImage("abendrot-s.jpg")
+    # size(160, 120)
+    # img = loadImage("abendrot-s.jpg")
     # Volle Größe
-    # size(640, 480)
-    # img = loadImage("abendrot.jpg")
+    size(640, 480)
+    img = loadImage("abendrot.jpg")
     noLoop()
 
 def draw():
@@ -31,4 +31,4 @@ def draw():
     elif (selectFilter == 8):
         filter(GRAY)
         filter(POSTERIZE, 4)
-    save("filter020" + str(selectFilter) + ".jpg")
+    # save("filter020" + str(selectFilter) + ".jpg")
