@@ -16,8 +16,5 @@ class Balloon():
         image(self.img, self.x, self.y, self.diameter, self.diameter)
         
     def top(self):
-        if (self.y <= -self.diameter):
-            self.y = height + self.diameter
-            self.x = random(0, width - self.diameter)
-            self.diameter = random(24, 72)
-            self.yspeed = random(0.5, 2)
+        if (self.y <= 0):
+            self.y = 0
