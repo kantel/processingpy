@@ -115,7 +115,7 @@ Neben dem schon bekannten Ballon (`1f388.png`) ist es noch ein Halloween-Kürbis
 
 ![Screenshot](images/ballon03.jpg)
 
-Die Klasse `Ballon` mußte dafür nicht weiter geändert werden, aber im Hauptprogramm habe ich einige Erweiterungen durchgeführt.
+Die Klasse `Balloon` mußte dafür nicht weiter geändert werden, aber im Hauptprogramm habe ich einige Erweiterungen durchgeführt.
 
 ~~~python
 from balloon import Balloon
