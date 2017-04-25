@@ -9,7 +9,7 @@ def setup():
     size(600, 600)
     background("#ffffff")
     colorMode(HSB, 255, 100, 100)
-    # frame.setTitle("Mandelbrot Set")
+    frame.setTitle(u"Mandelbrötchen")
     noLoop()
 
 def draw():
