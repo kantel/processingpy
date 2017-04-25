@@ -28,4 +28,4 @@ def draw():
                     set(x, y, color(0, 0, 0))
                 else:
                     set(x, y, color(i*12, 100, 100))
-            
+        
