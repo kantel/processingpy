@@ -1,15 +1,15 @@
-left   = -2.25
-right  = 0.75
-bottom = -1.5
-top    = 1.5
+left   = -0.75075 # -2.25
+right  = -0.73852 # 0.75
+bottom = 0.09898 # -1.5
+top    = 0.10816 # 1.5
 maxlimit = 4.0
-maxiter = 100
+maxiter = 1000
 
 def setup():
-    size(600, 600)
+    size(640, 480)
     background("#ffffff")
     colorMode(HSB, 255, 100, 100)
-    frame.setTitle(u"Mandelbrötchen")
+    # frame.setTitle(u"Mandelbrötchen")
     noLoop()
 
 def draw():
@@ -27,5 +27,5 @@ def draw():
                 if i == (maxiter - 1):
                     set(x, y, color(0, 0, 0))
                 else:
-                    set(x, y, color(i*12, 100, 100))
+                    set(x, y, color((i*48)%255, 100, 100))
         
