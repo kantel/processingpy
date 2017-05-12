@@ -19,7 +19,7 @@ def draw():
     differenz = rente - heute
     myDays = str(differenz.days)
     workingDays = float(myDays)/7.0 * 5
-    workingDays = str(int(workingDays - 80))
+    workingDays = str(int(workingDays - 52))
     myText = u"Lieber Jörg, es sind nur noch " + myDays + \
     u" Tage bis zu Deiner Rente!\nDas sind etwa " + \
     workingDays + " Arbeits- tage. Das schaffst Du!"
