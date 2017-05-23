@@ -5,6 +5,7 @@ pages:
 - Home: "index.md"
 - Sierpinksi-Dreieck: "sierpinski.md"
 - Turmiten: "turmite.md"
+- Mandelbrot-Set: "mandelbrot.md"
 - Feather Fractal: "feather.md"
 - Butterfly Curve: "butterfly.md"
 - Lorenz Attratkor: "lorenz.md"

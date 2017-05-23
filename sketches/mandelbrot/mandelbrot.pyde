@@ -1,12 +1,12 @@
-left   = -0.75075 # -2.25
-right  = -0.73852 # 0.75
-bottom = 0.09898 # -1.5
-top    = 0.10816 # 1.5
-maxlimit = 4.0
-maxiter = 100
+left   = -2.25
+right  = 0.75
+bottom = -1.5
+top    = 1.5
+maxlimit = 2.0
+maxiter = 20
 
 def setup():
-    size(320, 240)
+    size(400, 400)
     background("#ffffff")
     colorMode(HSB, 255, 100, 100)
     # frame.setTitle(u"Mandelbrötchen")
