@@ -12,6 +12,7 @@ def setup():
     noLoop()
 
 def draw():
+    loadPixels()
     for x in range(width):
         cr = left + x*(right - left)/width
         for y in range(height):
@@ -24,8 +25,9 @@ def draw():
                     break
                 z = (z**2) + c
                 if i == (maxiter - 1):
-                    set(x, y, color(0, 0, 0))
+                    pixels[x + y*width] = color(0, 0, 0)
                 else:
-                    set(x, y, color((i*48)%255, 100, 100))
+                    pixels[x + y*width] = color((i*48)%255, 100, 100)
+    updatePixels()
     println(millis())
         

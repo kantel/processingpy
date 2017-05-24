@@ -3,22 +3,22 @@ right  = 0.75
 bottom = -1.5
 top    = 1.5
 maxlimit = 4.0
-maxiter = 100
+maxiter = 50
 
 def setup():
-    size(600, 600)
+    size(400, 400)
     background("#ffffff")
     colorMode(HSB, 255, 100, 100)
     noLoop()
 
 def draw():
+    cr = 0.7269
+    ci = 0.1889
+    c = complex(cr, ci)
     for x in range(width):
-        cr = left + x*(right - left)/width
         for y in range(height):
-            ci = bottom + y*(top - bottom)/height
-            c = complex(cr, ci)
-            z = 0.0
             i = 0
+            z = 0.0
             for i in range(maxiter):
                 if abs(z) > maxlimit:
                     break
@@ -27,5 +27,4 @@ def draw():
                     set(x, y, color(0, 0, 0))
                 else:
                     set(x, y, color((i*48)%255, 100, 100))
-    println(millis())
         
