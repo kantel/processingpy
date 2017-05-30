@@ -18,7 +18,7 @@ def draw():
         for y in range(height):
             ci = bottom + y*(top - bottom)/height
             c = complex(cr, ci)
-            z = 0.0
+            z = complex(0.0, 0.0)
             i = 0
             for i in range(maxiter):
                 if abs(z) > maxlimit:

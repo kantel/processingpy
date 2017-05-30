@@ -6,6 +6,7 @@ pages:
 - Sierpinksi-Dreieck: "sierpinski.md"
 - Turmiten: "turmite.md"
 - Mandelbrot-Set: "mandelbrot.md"
+- Pixel-Array vs. set(): "mandelbrot2.md"
 - Feather Fractal: "feather.md"
 - Butterfly Curve: "butterfly.md"
 - Lorenz Attratkor: "lorenz.md"
