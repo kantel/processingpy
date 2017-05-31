@@ -4,15 +4,17 @@ bottom = 2.0
 top    = -2.0
 maxlimit = 3.0
 maxiter = 25
-c = complex(-0.70176, -0.3842)
 
 def setup():
     size(400, 400)
     background("#555ddd")
     colorMode(HSB, 1)
-    noLoop()
 
 def draw():
+    cr = map(mouseX, 0, width, left, right)
+    ci = 0
+    # ci = map(mouseY, 0, height, top, bottom)
+    c = complex(cr, ci)
     for x in range(width):
         zr = left + x*(right - left)/width
         for y in range(height):
@@ -27,5 +29,6 @@ def draw():
                     set(x, y, color(0))
                 else:
                     set(x, y, color(sqrt(float(i)/maxiter), 100, 100))
-    println(millis())
+    println("cr = " + str(cr))
+    println("ci = " + str(ci))
                 

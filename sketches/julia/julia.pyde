@@ -18,7 +18,7 @@ def draw():
     for x in range(width):
         for y in range(height):
             i = 0
-            z = 0.0
+            z = complex(0.0, 0.0)
             for i in range(maxiter):
                 if abs(z) > maxlimit:
                     break
