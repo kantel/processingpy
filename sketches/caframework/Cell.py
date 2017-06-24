@@ -8,3 +8,6 @@ class Cell():
         else:
             self.nextState = False
         self.state = self.nextState
+        
+    def addNeighbour(self, cell):
+        self.neighbours 
