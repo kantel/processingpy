@@ -2,7 +2,7 @@
 
 ![Horn Girl](images/horngirl.png)
 
-Hier möchte ich meine Tutorials zu [Processing.py][2], dem [Python][3]-Mode für [Processing][4], sammeln. Vielleicht wird ja einmal ein Buch daraus.
+Hier möchte ich meine Tutorials zu [Processing.py][2], dem [Python][3]-Mode für [Processing][4], sammeln. Vielleicht wird ja einmal ein Buch daraus. Ich bin schon ziemlich weit …
 
 ## Mögliche Gliederung
 
