@@ -27,13 +27,25 @@ class Skull(Sprite):
 class Smiley(Sprite):
     
     def loadPics(self):
+        self.im0 = loadImage("smiley0.png")
         self.im1 = loadImage("smiley1.png")
+        self.im2 = loadImage("smiley4.png")
         
     def move(self):
         self.y += self.dy
         if self.y >= height:
             self.y = -randint(50, 250)
             self.x = randint(0, width-tw)
+            self.dy = randint(2, 10)
         
     def display(self):
-        image(self.im1, self.x, self.y)
+        if (self.y > -30) and (self.y <= 200):
+            image(self.im0, self.x, self.y)
+        elif (self.y > 200) and (self.y <= 360):
+            image(self.im1, self.x, self.y)
+        elif (self.y > 360):
+            image(self.im2, self.x, self.y)
+            
+            
+            
+        
