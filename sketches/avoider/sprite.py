@@ -11,6 +11,14 @@ class Sprite():
         self.score = 0
         self.over = False
 
+    def checkCollision(self, otherSprite):
+        if (self.x < otherSprite.x + tw and otherSprite.x < self.x + tw
+            and self.y < otherSprite.y + th and otherSprite.y < self.y + th):
+            return True
+        else:
+            return False
+
+
 class Skull(Sprite):
     
     def loadPics(self):
