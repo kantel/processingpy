@@ -8,6 +8,8 @@ class Sprite():
         self.y = posY
         self.dx = 0
         self.dy = 0
+        self.score = 0
+        self.over = False
 
 class Skull(Sprite):
     
@@ -32,8 +34,10 @@ class Smiley(Sprite):
         self.im2 = loadImage("smiley4.png")
         
     def move(self):
+        self.over = False
         self.y += self.dy
         if self.y >= height:
+            self.over = True
             self.y = -randint(50, 250)
             self.x = randint(0, width-tw)
             self.dy = randint(2, 10)

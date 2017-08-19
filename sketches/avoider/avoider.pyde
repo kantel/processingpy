@@ -11,8 +11,7 @@ for i in range(noSmileys):
     smiley.append(Smiley(randint(0, w-tw), randint(50, 250)))
 
 def setup():
-    global score
-    score = 0
+    skull.score = 0
     size(640, 480)
     frameRate(30)
     skull.loadPics()
@@ -25,11 +24,12 @@ def setup():
     # cursor(HAND)
   
 def draw():
-    global score
     background(0, 0, 0)
-    text("Score: " + str(score), 10, 32)
+    text("Score: " + str(skull.score), 10, 32)
     skull.move()
     skull.display()
     for i in range(len(smiley)):
         smiley[i].move()
+        if smiley[i].over:
+            skull.score += 1
         smiley[i].display()
