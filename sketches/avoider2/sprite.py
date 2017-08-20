@@ -9,6 +9,7 @@ class Sprite():
         self.dx = 0
         self.dy = 0
         self.score = 0
+        self.health = 0
         self.over = False
 
     def checkCollision(self, otherSprite):

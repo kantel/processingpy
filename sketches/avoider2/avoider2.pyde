@@ -8,14 +8,15 @@ startgame = True
 playgame = False
 gameover = False
 
-
 skull = Skull(w/2, 320)
 smiley = []
 for i in range(noSmileys):
     smiley.append(Smiley(randint(0, w-tw), -randint(50, 250)))
 
 def setup():
+    global heart
     skull.score = 0
+    skull.health = 5
     size(640, 480)
     frameRate(30)
     skull.loadPics()
@@ -24,12 +25,16 @@ def setup():
         smiley[i].dy = randint(2, 10)
     font = loadFont("ComicSansMS-32.vlw")
     textFont(font, 32)
+    heart = loadImage("heart.png")
     # noCursor()
     # cursor(HAND)
   
 def draw():
+    global heart
     background(0, 0, 0)
     text("Score: " + str(skull.score), 10, 32)
+    for i in range(skull.health):
+        image(heart, width - i*tw - tw - 2, 2)
     if startgame:
         startGame()
     elif playgame:
@@ -49,8 +54,13 @@ def playGame():
     skull.move()
     for i in range(len(smiley)):
         if skull.checkCollision(smiley[i]):
-            playgame = False
-            gameover = True 
+            if skull.health > 0:
+                skull.health -= 1
+                print(skull.health)
+                smiley[i].reset(randint(0, w-tw), -randint(50, 250))
+            else:
+                playgame = False
+                gameover = True 
     skull.display()
     for i in range(len(smiley)):
         smiley[i].move()
@@ -67,5 +77,6 @@ def gameOver():
         for i in range(len(smiley)):
             smiley[i].reset(randint(0, w-tw), -randint(50, 250))
         playgame = True
+        skull.health = 5
         
     
