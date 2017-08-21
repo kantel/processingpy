@@ -56,7 +56,6 @@ def playGame():
         if skull.checkCollision(smiley[i]):
             if skull.health > 0:
                 skull.health -= 1
-                print(skull.health)
                 smiley[i].reset(randint(0, w-tw), -randint(50, 250))
             else:
                 playgame = False
@@ -64,7 +63,7 @@ def playGame():
     skull.display()
     for i in range(len(smiley)):
         smiley[i].move()
-        if smiley[i].over:
+        if smiley[i].outside:
             skull.score += 1
         smiley[i].display()
 

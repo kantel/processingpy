@@ -2,15 +2,10 @@ from random import randint
 
 tw = th = 36
 
-class Sprite():
+class Sprite(object):
     def __init__(self, posX, posY):
         self.x = posX
         self.y = posY
-        self.dx = 0
-        self.dy = 0
-        self.score = 0
-        self.health = 0
-        self.over = False
 
     def checkCollision(self, otherSprite):
         if (self.x < otherSprite.x + tw and otherSprite.x < self.x + tw
@@ -21,7 +16,12 @@ class Sprite():
 
 
 class Skull(Sprite):
-    
+
+    def __init__(self, posX, posY):
+        super(Skull, self).__init__(posX, posY)
+        self.score = 0
+        self.health = 0
+            
     def loadPics(self):
         self.im1 = loadImage("skull.png")
         
@@ -37,16 +37,20 @@ class Skull(Sprite):
 
 class Smiley(Sprite):
     
+    def __init__(self, posX, posY):
+        super(Smiley, self).__init__(posX, posY)
+        self.outside = False
+
     def loadPics(self):
         self.im0 = loadImage("smiley0.png")
         self.im1 = loadImage("smiley1.png")
         self.im2 = loadImage("smiley4.png")
         
     def move(self):
-        self.over = False
+        self.outside = False
         self.y += self.dy
         if self.y >= height:
-            self.over = True
+            self.outside = True
             self.y = -randint(50, 250)
             self.x = randint(0, width-tw)
             self.dy = randint(2, 10)
