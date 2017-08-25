@@ -74,6 +74,7 @@ class Star(object):
         self.y = posY
         self.r = dia
         self.dy = speed
+        self.a = 255 # Transparency
     
     def move(self):
         self.outside = False
@@ -84,6 +85,6 @@ class Star(object):
             self.x = randint(0, width - 2*self.r)
     
     def display(self):
-        fill(255, 255, 255)
+        fill(255, 255, 255, self.a)
         noStroke()
         ellipse(self.x, self.y, self.r, self.r)

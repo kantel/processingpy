@@ -6,6 +6,7 @@ h = 480
 tw = th = 36
 noSmileys = 10
 nobStars = 30
+nonStars = 15
 startgame = True
 playgame = False
 gameover = False
@@ -17,6 +18,9 @@ for i in range(noSmileys):
 bStar = []
 for i in range(nobStars):
     bStar.append(Star(randint(0, w-2), randint(2, h-2), 1, 0.1))
+nStar = []
+for i in range(nonStars):
+    nStar.append(Star(randint(0, w-4), randint(2, h-2), randint(2, 3), 0.2))
 
 def setup():
     global heart
@@ -37,6 +41,7 @@ def setup():
 def draw():
     global heart
     background(0, 0, 0)
+    fill(255, 255, 255, 255)
     text("Score: " + str(skull.score), 10, 32)
     for i in range(skull.health):
         image(heart, width - i*tw - tw - 2, 2)
@@ -59,6 +64,13 @@ def playGame():
     for i in range(len(bStar)):
         bStar[i].move()
         bStar[i].display()
+    for i in range(len(nStar)):
+        nStar[i].move()
+        if (frameCount % randint(15, 30)) < randint(1, 15):
+            nStar[i].a = 120
+        else:
+            nStar[i].a = 255
+        nStar[i].display()
     skull.move()
     for i in range(len(smiley)):
         if skull.checkCollision(smiley[i]):
