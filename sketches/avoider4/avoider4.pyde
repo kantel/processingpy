@@ -1,5 +1,5 @@
 from random import randint
-from sprite import Skull, Smiley, Ghost, Star
+from sprite import Skull, Smiley, Ghost, Cupcake, Star
 
 w = 640
 h = 480
@@ -7,7 +7,8 @@ tw = th = 36
 noSmileys = 10
 nobStars = 30
 nonStars = 15
-noGhost = 2
+noGhost = 3
+noCupcakes = 5
 startgame = True
 playgame = False
 gameover = False
@@ -17,21 +18,23 @@ smiley = []
 bStar = []
 nStar = []
 ghost = []
+cupcake = []
 
 def setup():
     global heart
-    skull.score = 0
-    skull.health = 5
     size(640, 480)
     frameRate(30)
     loadData()
+    skull.score = 0
+    skull.health = 5
     skull.loadPics()
     for i in range(len(smiley)):
         smiley[i].loadPics()
         smiley[i].dy = randint(4, 10)
     for i in range(len(ghost)):
         ghost[i].loadPics()
-        ghost[i].dy = randint(4, 10)
+    for i in range(len(cupcake)):
+        cupcake[i].loadPics()
     font = loadFont("ComicSansMS-32.vlw")
     textFont(font, 32)
     heart = loadImage("heart.png")
@@ -56,7 +59,9 @@ def loadData():
     for i in range(noSmileys):
         smiley.append(Smiley(randint(0, width-tw), -randint(50, 250)))
     for i in range(noGhost):
-        ghost.append(Ghost(randint(-150, width-tw), -randint(50, 250), randint(400, 500), randint(tw, width-tw), 300))
+        ghost.append(Ghost(randint(-150, width-tw), -randint(50, 250), randint(tw, width-tw), randint(tw, height-tw), 300))
+    for i in range(noCupcakes):
+        cupcake.append(Cupcake(randint(-150, width-tw), -randint(50, 250), randint(tw, width-tw), randint(tw, height-tw), 600))
     for i in range(nobStars):
         bStar.append(Star(randint(0, width-2), randint(2, height-2), 1, 0.1))
     for i in range(nonStars):
@@ -104,6 +109,13 @@ def playGame():
                 skull.health += 1
                 ghost[i].reset()
         ghost[i].display()
+    for i in range(len(cupcake)):
+        cupcake[i].easing()
+        cupcake[i].move()
+        if cupcake[i].checkCollision(skull):
+            skull.health -= 1
+            cupcake[i].reset()
+        cupcake[i].display()
 
 def gameOver():
     global playgame, gameover
@@ -113,6 +125,10 @@ def gameOver():
         gameover = False
         for i in range(len(smiley)):
             smiley[i].reset(randint(0, w-tw), -randint(50, 250))
+        for i in range(len(ghost)):
+            ghost[i].reset()
+        for i in range(len(cupcake)):
+            cupcake[i].reset()
         playgame = True
         skull.health = 5
         

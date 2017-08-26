@@ -78,6 +78,7 @@ class PowerItem(Sprite):
         self.expireTime = eT
         self.duration = self.expireTime/2.0
         self.counter = 0
+        self.pause = randint(10, 150)
         
     def curveX(self, x):
         return x
@@ -96,7 +97,9 @@ class PowerItem(Sprite):
     def move(self):
         self.expireTime -= 1
         if self.expireTime < 0:
-            self.reset()
+            self.pause -= 1
+            if self.pause < 0:
+                self.reset()
     
     def display(self):
         # print(self.x, self.y)
@@ -105,17 +108,29 @@ class PowerItem(Sprite):
     def reset(self):
         self.origX = randint(-150, width-tw)
         self.origY = -randint(50, 250)
-        self.targetX = randint(400, 500)
-        self.targetY = randint(tw, width-tw)
-        print(self.origX, self.origY)
+        self.targetX = randint(tw, width-tw)
+        self.targetY = randint(tw, height-tw)
         self.expireTime = self.duration*2.0
         self.counter = 0
+        self.pause = randint(10, 150)
         
 class Ghost(PowerItem):
     
     def loadPics(self):
         self.im1 = loadImage("ghost.png")
+    
+    
+    def curveY(self, y):
+        return y**5
 
+class Cupcake(PowerItem):
+    
+    def loadPics(self):
+        self.im1 = loadImage("cupcake.png")
+    
+    def curveY(self, y):
+        return 3*sin(3*y)
+    
             
 class Star(object):
     
