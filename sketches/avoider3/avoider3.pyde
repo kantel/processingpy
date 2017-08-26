@@ -13,14 +13,8 @@ gameover = False
 
 skull = Skull(w/2, 320)
 smiley = []
-for i in range(noSmileys):
-    smiley.append(Smiley(randint(0, w-tw), -randint(50, 250)))
 bStar = []
-for i in range(nobStars):
-    bStar.append(Star(randint(0, w-2), randint(2, h-2), 1, 0.1))
 nStar = []
-for i in range(nonStars):
-    nStar.append(Star(randint(0, w-4), randint(2, h-2), randint(2, 3), 0.2))
 
 def setup():
     global heart
@@ -28,6 +22,7 @@ def setup():
     skull.health = 5
     size(640, 480)
     frameRate(30)
+    loadData()
     skull.loadPics()
     for i in range(len(smiley)):
         smiley[i].loadPics()
@@ -51,6 +46,14 @@ def draw():
         playGame()
     elif gameover:
         gameOver()
+
+def loadData():
+    for i in range(noSmileys):
+        smiley.append(Smiley(randint(0, w-tw), -randint(50, 250)))
+    for i in range(nobStars):
+        bStar.append(Star(randint(0, w-2), randint(2, h-2), 1, 0.1))
+    for i in range(nonStars):
+        nStar.append(Star(randint(0, w-4), randint(2, h-2), randint(2, 3), 0.2))
 
 def startGame():
     global startgame, playgame
