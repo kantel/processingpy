@@ -129,4 +129,4 @@ def gameOver():
             cupcake[i].reset()
         playgame = True
         skull.health = 5
-        
+        skull.score = 0
