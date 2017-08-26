@@ -87,17 +87,15 @@ def playGame():
             nStar[i].a = 255
         nStar[i].display()
     skull.move()
-    for i in range(len(smiley)):
-        if skull.checkCollision(smiley[i]):
-            if skull.health > 0:
-                skull.health -= 1
-                smiley[i].reset(randint(0, w-tw), -randint(50, 250))
-            else:
-                playgame = False
-                gameover = True 
+    if skull.health < 0:
+        playgame = False
+        gameover = True 
     skull.display()
     for i in range(len(smiley)):
         smiley[i].move()
+        if smiley[i].checkCollision(skull):
+            skull.health -= 1
+            smiley[i].reset(randint(0, w-tw), -randint(50, 250))
         if smiley[i].outside:
             skull.score += 1
         smiley[i].display()
