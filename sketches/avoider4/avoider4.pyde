@@ -130,3 +130,8 @@ def gameOver():
         playgame = True
         skull.health = 5
         skull.score = 0
+        
+def mousePressed():
+    global playgame
+    if playgame:
+        saveFrame("frames/screenshot-####.png")
