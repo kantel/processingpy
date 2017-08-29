@@ -53,6 +53,7 @@ pages:
 - Avoider 1: "avoider1.md"
 - Avoider 2: "avoider2.md"
 - Avoider 3: "avoider3.md"
+- Avoider 4: "avoider4.md"
 - Impressum: "impressum.md"
 
 markdown_extensions:
