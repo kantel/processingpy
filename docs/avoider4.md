@@ -449,3 +449,35 @@ def mousePressed():
 schießt jedes Mal, wenn die linke Maustaste gedrückt wird, einen aktuellen Screenshot. Aus dem fertigen Spiel solltet Ihr diese Funktion natürlich wieder herausnehmen.
 
 Das war es mit dem *Avoider Game*. Natürlich sind noch jede Menge Erweiterungen möglich und auch die Gestaltung des Start- und des Game-Over-Bildschirms kann sicher noch verschönert werden. Mir kam es aber darauf an, zu zeigen, wie in Processing.py mit einfachen Mitteln doch schnell ein ansprechendes Spiel programmiert werden kann. Alles weitere ist Eurer Phantasie überlassen.
+
+## Nachtrag: Avoider Game Stage 4a
+
+Ich konnte es nicht lassen, nachdem ich zwei Nächte darüber geschlafen hatte, mußte ich doch noch einmal an das Avoider Game heran. Die *Power Ups* und *Power Downs* sollten jeweils zwei unterschiedliche Bildchen zugeordnet bekommen. Erreicht habe ich das mit der Python-eigenen Zufallsfunktion `choice()` aus der [Random-Bibliothek](https://docs.python.org/2/library/random.html). So habe ich im Reiter `sprite.py` in der ersten Zeile `choice` importiert:
+
+~~~python
+from random import randint, choice
+~~~
+
+Und dann in der Klasse `Ghost` die Methode `loadPics()` wie folgt geändert:
+
+~~~python
+    def loadPics(self):
+        self.im1 = loadImage(choice(["ghost.png", "octo.png"]))
+~~~
+
+In der Klasse `Cupcake` sieht die gleiche Methode nun so aus:
+
+~~~python
+    def loadPics(self):
+        self.im1 = loadImage(choice(["cupcake.png", "bier.png"]))
+~~~
+
+Hier sind die Bildchen für diejenigen unter Euch, die auch diese (letzte) Änderung nachprogrammieren wollen:
+
+![](images/octo.png) ![](images/bier.png)
+
+Auch diese Bilder entstammen den freien ([CC-BY](http://twitter.github.io/twemoji/)) [Twitter Emojis](https://github.com/twitter/twemoji) *(Twemojis)*.
+
+![](images/avoider4a.png)
+
+Ich habe leider keinen Screenshot hinbekommen, auf denen alle verwendeten Bildchen zu sehen sind. So müßt Ihr mit obigem vorliebnehmen und mir glauben: Auch die Krake existiert!
