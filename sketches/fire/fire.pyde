@@ -17,14 +17,15 @@ newgrid = []
 def setup():
     global trees, fire
     size(640, 640)
-    background(255)
+    background(210, 180, 140)
     trees = loadImage("tree.png")
     fire  = loadImage("fire.png")
     for x in range(nRows):
         grid.append([])
         newgrid.append([])
         for y in range(nCols):
-            if randint(0, 10000) <= 2000:
+            # Randbedingungen
+            if (x > 0) and (y > 0) and (x < nRows-1) and (y < nCols-1) and randint(0, 10000) <= 2000:
                 grid[x].append(tree)
             else:
                 grid[x].append(empty)
@@ -36,14 +37,12 @@ def draw():
     global grid, newgrid
     global trees, fire
     noStroke()
-    # background(0, 80, 125)
-    background(255)
+    background(210, 180, 140)
     
     for i in range(nRows):
         for j in range(nCols):
             if grid[i][j] == empty:
-                # fill(0, 80, 125)
-                fill(255)
+                fill(210, 180, 140)
                 rect(i*w, j*h, w, h)
             elif grid[i][j] == tree:
                 image(trees, i*w, j*h, w, h)
