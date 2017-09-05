@@ -1,3 +1,5 @@
+# Fire interaktiv
+
 from random import randint
 
 empty = 0
@@ -76,8 +78,7 @@ def calcNext():
             elif grid[i][j] == empty:
                 if randint(0, 10000) < a:
                     newgrid[i][j] = tree
-            if grid[i][j] == tree:
-            # Schlägt ein Blitz ein?
-                if (random(10000) < 1):
-                    newgrid[i][j] = burning
     grid[:] = newgrid[:]
+
+def mousePressed():
+    newgrid[mouseX/16][mouseY/16] = burning
