@@ -36,7 +36,6 @@ def draw():
     global trees, fire
     noStroke()
     background(210, 180, 140)
-    
     for i in range(nRows):
         for j in range(nCols):
             if grid[i][j] == empty:
@@ -48,6 +47,9 @@ def draw():
             elif grid[i][j] == burning:
                 fill(255, 69, 0)
                 rect(i*w, j*h, w, h)
+    if (frameCount % 50) == 0:
+        print(frameCount)
+        saveFrame("frames/fire-gen-####.png")
     calcNext()
  
 def calcNext():
