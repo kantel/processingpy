@@ -28,8 +28,32 @@ def draw():
     # Stunden
     stroke(150, 255, 100)
     arc(0, 0, 340, 340, radians(0), radians(hourAngle))
+    
+    pushMatrix()
+    strokeWeight(baseStroke/4)
+    stroke(150, 100, 255)
+    rotate(radians(secondAngle))
+    line(0, 0, 100, 0)
+    popMatrix()
+
+    pushMatrix()
+    strokeWeight(baseStroke/2)
+    stroke(255, 100, 150)
+    rotate(radians(minuteAngle))
+    line(0, 0, 80, 0)
+    popMatrix()
+
+    pushMatrix()
+    strokeWeight(baseStroke)
+    stroke(150, 255, 100)
+    rotate(radians(hourAngle))
+    line(0, 0, 60, 0)
+    popMatrix()
 
 
+    noStroke()
+    fill(255, 255, 255)
+    ellipse(0, 0, 10, 10)
     
     
     
