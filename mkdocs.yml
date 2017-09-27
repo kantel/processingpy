@@ -1,6 +1,6 @@
 site_name: Processing.py lernen
 theme: readthedocs
-dev_addr: 127.0.0.1:9000
+dev_addr: 127.0.0.1:9010
 
 pages:
 - Home: "index.md"
