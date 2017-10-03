@@ -308,4 +308,4 @@ def draw():
         bricks[i].display()
 ~~~
 
-Nun gewinnt man schon einen ungefähren Eindruck, wie das Spiel einmal aussehen soll. Man kann den Ball mit dem Paddle aufffangen -- mit ein wenig Geschick auch zu Beginn des Spieles, aber ansonsten bewegt der tennisgelbe Ball sich weiterhin wie ein *Bouncing Ball*. Als nächstes werden ich daher die Kollision mit den Klötzchen implementieren.
+Nun gewinnt man schon einen ungefähren Eindruck, wie das Spiel einmal aussehen soll. Man kann den Ball mit dem Paddle auffangen -- mit ein wenig Geschick auch zu Beginn des Spieles, aber ansonsten bewegt der tennisgelbe Ball sich weiterhin wie ein *Bouncing Ball*. Als nächstes werden ich daher die Kollision mit den Klötzchen implementieren.
