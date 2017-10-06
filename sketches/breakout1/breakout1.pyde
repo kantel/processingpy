@@ -28,6 +28,13 @@ def draw():
     if (ball.meets(paddle)):
         if (ball.dir.y > 0):
             ball.dir.y *= -1
+    for brick in bricks:
+        if ball.meets(brick):
+            ball.dir.y *= -1
+            brick.hits -= 1
+            if brick.hits == 0:
+                brick.pos.x = -10000
+                brick.pos.y = -10000
     ball.display()
     if playingGame:
         ball.checkEdges()

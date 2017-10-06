@@ -61,15 +61,14 @@ class Ball(object):
         if (self.pos.y > height - self.r and self.dir.y > 0):
             self.dir.y *= -1
         
-    def meets(self, paddle):
-        if (self.pos.y < paddle.pos.y and
-            self.pos.y > paddle.pos.y - self.r and
-            self.pos.x > paddle.pos.x - self.r and
-            self.pos.x < paddle.pos.x + paddle.w + self.r):
+    def meets(self, gameObject):
+        if (self.pos.y < gameObject.pos.y and
+            self.pos.y > gameObject.pos.y - self.r and
+            self.pos.x > gameObject.pos.x - self.r and
+            self.pos.x < gameObject.pos.x + gameObject.w + self.r):
             return True
         else:
             return False
-
 
 class Brick(object):
     
@@ -87,3 +86,6 @@ class Brick(object):
         stroke("#ffffff")
         strokeWeight(2)
         rect(self.pos.x, self.pos.y, self.w, self.h)
+        
+    def delete(self):
+        self.del
