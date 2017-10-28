@@ -17,7 +17,7 @@ Rotkäppchen hat nicht nur eine Großmutter, sondern -- was weniger bekannt ist 
 
 [![Screenshot](images/sierpinskidreieck.jpg)](https://www.flickr.com/photos/schockwellenreiter/32442344526/)
 
-*William P. Beuamont* [Beaum1996] nannte es das »Tantenspiel«. Ziel ist es nicht, herauszufinden, welche Tante gewinnt (es kann gar keine gewinnen), sondern welche Figur entsteht, wenn man Rotkäppchens Irrweg visualisiert. Ich habe das einmal mit [Processing.py][1] nachprogrammiert und herausgekommen ist obige Figur, in der Fachliteratur auch als [Sierpinski Dreieck][2] bekannt, benannt nach dem polnischen Mathematiker *Wacław Sierpiński*, der das Fraktal schon 1915 als erster beschrieb.
+*William P. Beuamont* [Beaum1996] nannte es das »Tantenspiel«. Ziel ist es nicht, herauszufinden, welche Tante gewinnt (es kann gar keine gewinnen), sondern welche Figur entsteht, wenn man Rotkäppchens Irrweg visualisiert. Ich habe das einmal mit [Processing.py][start1] nachprogrammiert und herausgekommen ist obige Figur, in der Fachliteratur auch als [Sierpinski Dreieck][start2] bekannt, benannt nach dem polnischen Mathematiker *Wacław Sierpiński*, der das Fraktal schon 1915 als erster beschrieb.
 
 ## Der Quellcode
 
@@ -59,18 +59,17 @@ Die Schleife wird 120.000 mal durchlaufen, bevor sie stoppt. Damit ich nicht ewi
 
 Aber man sieht sehr schön, wie sich das Dreieck zufällig, aber dennoch erkennbar, zusammensetzt. Je nach zufälligem Startwert liegen die ersten drei bis vier Punkte noch außerhalb des Fraktals, danach geht aber alles seinen geordneten Gang. Und an den Farben erkennt man, daß auch die Reihenfolge, in der die einzelnen Punkte des Fraktals von Rotkäppchen angelaufen werden, ebenfalls zufällig sind.
 
-[1]: cp^processingpy
-[2]: https://de.wikipedia.org/wiki/Sierpinski-Dreieck
+[start1]: cp^processingpy
+[start2]: https://de.wikipedia.org/wiki/Sierpinski-Dreieck
 
-<div style="float: right; margin-left: 12px; margin-top: 6px;"><iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=DE&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=derschockwell-21&marketplace=amazon&region=DE&placement=0312125992&asins=0312125992&linkId=403e62afba2d321b548185bf9f55a430&show_border=true&link_opens_in_new_window=true"></iframe>&nbsp;<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=DE&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=derschockwell-21&marketplace=amazon&region=DE&placement=3893196331&asins=3893196331&linkId=7485a2b7cbf2906f35145b9833622a5c&show_border=true&link_opens_in_new_window=true"></iframe></div>
 
 ## Literatur
 
-- *[Beaum1996]* William P. Beaumont: *Conquering the Math Bogeyman*, in Clifford A. Pickover (Ed.): *[Fractal Horizons -- The Future Use of Fractals][3]*, New York (St. Martin's Press) 1996, Seiten 3 - 15
-- *[Herrm1994]* Dietmar Herrmann: *[Algorithmen für Chaos und Fraktale][4]*, Bonn (Addison-Wesley) 1994, Seiten 132ff.
+- *[Beaum1996]* William P. Beaumont: *Conquering the Math Bogeyman*, in Clifford A. Pickover (Ed.): *[Fractal Horizons -- The Future Use of Fractals][start3]*, New York (St. Martin's Press) 1996, Seiten 3 - 15
+- *[Herrm1994]* Dietmar Herrmann: *[Algorithmen für Chaos und Fraktale][start4]*, Bonn (Addison-Wesley) 1994, Seiten 132ff.
 
-[3]: https://www.amazon.de/Fractal-Horizons-Future-Use-Fractals/dp/0312125992/ref=as_li_ss_tl?ie=UTF8&qid=1485189165&sr=8-2&keywords=Fractal+Horizons&linkCode=ll1&tag=derschockwell-21&linkId=20760d65b4a1abaf199a451570b77705
-[4]: https://www.amazon.de/Algorithmen-Chaos-Fraktale-Dietmar-Herrmann/dp/3893196331/ref=as_li_ss_tl?ie=UTF8&qid=1485189321&sr=8-1&keywords=Algorithmen+f%C3%BCr+Chaos+und+Fraktale&linkCode=ll1&tag=derschockwell-21&linkId=137c8e47b75fc858c2eef89d8299f78e
+[start3]: https://www.amazon.de/Fractal-Horizons-Future-Use-Fractals/dp/0312125992/ref=as_li_ss_tl?ie=UTF8&qid=1485189165&sr=8-2&keywords=Fractal+Horizons&linkCode=ll1&tag=derschockwell-21&linkId=20760d65b4a1abaf199a451570b77705
+[start4]: https://www.amazon.de/Algorithmen-Chaos-Fraktale-Dietmar-Herrmann/dp/3893196331/ref=as_li_ss_tl?ie=UTF8&qid=1485189321&sr=8-1&keywords=Algorithmen+f%C3%BCr+Chaos+und+Fraktale&linkCode=ll1&tag=derschockwell-21&linkId=137c8e47b75fc858c2eef89d8299f78e
 
 # Punkte und Pixel
 
@@ -546,7 +545,7 @@ Wenn ich später noch auf Bildmanipulationen in Processing zurückkomme, werden 
 
 ![Schmetterling](images/buttfly.jpg)
 
-Seit ich Ende der 1980er Jahre mit meinem damals hochmodernen [Atari Mega&nbsp;ST][1] erste Schritte mit einem graphikfähigen Personalcomputer unternommen hatte, habe ich die Schmetterlingskurve immer wieder als Test für die Graphikfähigkeit und Schnelligkeit von Programmiersprachen und Rechnern benutzt. Sie wird in [Polarkoordinaten][2] beschrieben und ihre Formel ist
+Seit ich Ende der 1980er Jahre mit meinem damals hochmodernen [Atari Mega&nbsp;ST][butterfly1] erste Schritte mit einem graphikfähigen Personalcomputer unternommen hatte, habe ich die Schmetterlingskurve immer wieder als Test für die Graphikfähigkeit und Schnelligkeit von Programmiersprachen und Rechnern benutzt. Sie wird in [Polarkoordinaten][butterfly2] beschrieben und ihre Formel ist
 
 $$
 \rho=e^{\cos(\theta)}-2\cdot \cos(4\cdot \theta)+\sin(\tfrac{\theta}{12})^5
@@ -645,18 +644,18 @@ r = exp(cos(2*theta)) - 1.5*cos(4*theta)
 
 eine ganz simple Form des Schmetterlings zeichnen lasst. Denn die heutigen Rechner sind schließlich hinreichend schnell, daß Ihr nicht mehr minuten- oder gar stundenlang auf ein Ergebnis warten müßt und zum anderen lädt die Möglichkeit des schnellen Skizzierens mit der Processing-IDE geradezu zu eigenen Experimenten ein.
 
-[1]: https://de.wikipedia.org/wiki/Atari_ST
-[2]: https://de.wikipedia.org/wiki/Polarkoordinaten
+[butterfly1]: https://de.wikipedia.org/wiki/Atari_ST
+[butterfly2]: https://de.wikipedia.org/wiki/Polarkoordinaten
 
 ## Der Lorenz-Attraktor, eine Ikone der Chaos-Theorie
 
-Nachdem ich im letzten Abschnitt die Schmetterlingskurve mit Processing.py gezeichnet hatte, wollte ich nun darauf aufbauen und eine Ikone der Chaos-Forschung, den [Lorenz-Attraktor][3] damit zeichnen. Ich hatte das ja auch schon einmal [mit R getan][4] -- dort findet Ihr auch weitere Hintergrundinformationen zu diesem Attraktor --, aber mit R wurde nur das fertige Ergebnis visualisiert. Hier kommt es mir aber wieder darauf an, die Entstehung der Kurve verfolgen zu können und dafür ist, wie schon bei der Schmetterlingskurve, Processing gut geeignet:
+Nachdem ich im letzten Abschnitt die Schmetterlingskurve mit Processing.py gezeichnet hatte, wollte ich nun darauf aufbauen und eine Ikone der Chaos-Forschung, den [Lorenz-Attraktor][lorenz3] damit zeichnen. Ich hatte das ja auch schon einmal [mit R getan][lorenz4] -- dort findet Ihr auch weitere Hintergrundinformationen zu diesem Attraktor --, aber mit R wurde nur das fertige Ergebnis visualisiert. Hier kommt es mir aber wieder darauf an, die Entstehung der Kurve verfolgen zu können und dafür ist, wie schon bei der Schmetterlingskurve, Processing gut geeignet:
 
 [![Screenshot](images/lorenzprocessingpy.jpg)](https://www.flickr.com/photos/schockwellenreiter/32063849580/)
 
-Als einer der ersten hatte  1961 [Edward N. Lorenz](http://de.wikipedia.org/wiki/Edward%20N.%20Lorenz), ein Meteorologe am [Massachusetts Institute of Technology](http://de.wikipedia.org/wiki/Massachusetts%20Institute%20of%20Technology) (MIT), erkannt, daß Iteration Chaos erzeugt. Er benutzte dort einen Computer, um ein einfaches nichtlineares Gleichungssystem zu lösen, das ein simples Modell der Luftströmungen in der Erdatmosphäre simulieren sollte. Dazu benutzte er ein System von sieben Differentialgleichungen, das [Barry Saltzman](http://www.yale.edu/opa/arc-ybc/v29.n18/story18.html) im gleichen Jahr aus den [Navier-Stokes-Gleichungen](http://de.wikipedia.org/wiki/Navier-Stokes-Gleichungen) [^1] hergeleitet hatte. Für dieses System existierte keine analytische Lösung, also mußte es numerisch (d.h. wie damals und auch heute noch vielfach üblich in FORTRAN) gelöst werden. Lorenz hatte entdeckt, daß bei nichtperiodischen Lösungen der Gleichungen vier der sieben Variablen gegen Null strebten. Daher konnte er das System auf drei Gleichungen reduzieren:
+Als einer der ersten hatte  1961 [Edward N. Lorenz](http://de.wikipedia.org/wiki/Edward%20N.%20Lorenz), ein Meteorologe am [Massachusetts Institute of Technology](http://de.wikipedia.org/wiki/Massachusetts%20Institute%20of%20Technology) (MIT), erkannt, daß Iteration Chaos erzeugt. Er benutzte dort einen Computer, um ein einfaches nichtlineares Gleichungssystem zu lösen, das ein simples Modell der Luftströmungen in der Erdatmosphäre simulieren sollte. Dazu benutzte er ein System von sieben Differentialgleichungen, das [Barry Saltzman](http://www.yale.edu/opa/arc-ybc/v29.n18/story18.html) im gleichen Jahr aus den [Navier-Stokes-Gleichungen](http://de.wikipedia.org/wiki/Navier-Stokes-Gleichungen) [^lorenzfn1] hergeleitet hatte. Für dieses System existierte keine analytische Lösung, also mußte es numerisch (d.h. wie damals und auch heute noch vielfach üblich in FORTRAN) gelöst werden. Lorenz hatte entdeckt, daß bei nichtperiodischen Lösungen der Gleichungen vier der sieben Variablen gegen Null strebten. Daher konnte er das System auf drei Gleichungen reduzieren:
 
-[^1]: Eine sehr schöne Einführung in [das ungelöste Problem der Navier-Stokes-Gleichungen][5] gibt es von *Florian Freistetter* in der 217. Folge seiner *Sternengeschichten*
+[^lorenzfn1]: Eine sehr schöne Einführung in [das ungelöste Problem der Navier-Stokes-Gleichungen][lorenz5] gibt es von *Florian Freistetter* in der 217. Folge seiner *Sternengeschichten*
 
 \begin{align}
 \frac{dx}{dt} & = -\sigma (y - z) \\\\
@@ -666,7 +665,7 @@ Als einer der ersten hatte  1961 [Edward N. Lorenz](http://de.wikipedia.org/wiki
 
 <!-- Dabei sind (sigma = -10), (\rho = 40) und (\gamma = - \frac{8}{3}). Die Parameter der Gleichung habe ich *[Herm1994]* entnommen, *[Stew1993]* gibt \\(\rho = 28\\) an, aber der Wert ändert nichts an dem Verhalten der Kurve und (\rho = 40) füllt das Fenster einfach besser aus. 😜 -->
 
-Processing.py besitzt im Gegensatz zu R oder [NumPy][7] kein Modul zur numerischen Lösung von Differentialgleichungen und so habe ich das einfache [Eulersche Poligonzugverfahren][6] zur numerischen Berechnung benutzt
+Processing.py besitzt im Gegensatz zu R oder [NumPy][lorenz7] kein Modul zur numerischen Lösung von Differentialgleichungen und so habe ich das einfache [Eulersche Poligonzugverfahren][lorenz6] zur numerischen Berechnung benutzt
 
 ~~~python
     dx = -sigma*(x - y)*dt
@@ -729,19 +728,17 @@ def draw():
 
   * Der *[Lorenz Attractor](http://mathworld.wolfram.com/LorenzAttractor.html)* auf Wolfram MathWorld
 
-<div style="float: right; margin-left: 12px; margin-top: 6px;"><iframe src="http://rcm-de.amazon.de/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=derschockwell-21&o=3&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=345833243X" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>&nbsp;<iframe src="http://rcm-de.amazon.de/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=derschockwell-21&o=3&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=3893196331" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe></div>
-
 ### Literatur
 
   * *[Herm1994]* Dieter Hermann: *<a href="http://www.amazon.de/gp/product/3893196331/ref=as_li_ss_tl?ie=UTF8&camp=1638&creative=19454&creativeASIN=3893196331&linkCode=as2&tag=derschockwell-21">Algorithmen für Chaos und Fraktale</a><img src="http://www.assoc-amazon.de/e/ir?t=derschockwell-21&l=as2&o=3&a=3893196331" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />*, Bonn (Addison-Wesley) 1994, S. 80ff.
   * *[Pief1991]* Frank Piefke: *<a href="http://www.amazon.de/gp/product/3778519158/ref=as_li_ss_tl?ie=UTF8&camp=1638&creative=19454&creativeASIN=3778519158&linkCode=as2&tag=derschockwell-21">Simulationen mit dem Personalcomputer</a><img src="http://www.assoc-amazon.de/e/ir?t=derschockwell-21&l=as2&o=3&a=3778519158" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />*, Heidelberg (Hüthig) 1991
   * *[Stew1993]* Ian Stewart: *<a href="http://www.amazon.de/gp/product/345833243X/ref=as_li_ss_tl?ie=UTF8&camp=1638&creative=19454&creativeASIN=345833243X&linkCode=as2&tag=derschockwell-21">Spielt Gott Roulette?</a><img src="http://www.assoc-amazon.de/e/ir?t=derschockwell-21&l=as2&o=3&a=345833243X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />*, Frankfurt (Insel TB) 1993
 
-[3]: https://de.wikipedia.org/wiki/Lorenz-Attraktor
-[4]: http://blog.schockwellenreiter.de/essays/lorenzr.html
-[5]:  http://scienceblogs.de/astrodicticum-simplex/2017/01/20/sternengeschichten-folge-217-das-ungeloeste-problem-der-navier-stokes-gleichungen/
-[6]: https://de.wikipedia.org/wiki/Explizites_Euler-Verfahren
-[7]: http://cognitiones.kantel-chaos-team.de/programmierung/python/numpy.html
+[lorenz3]: https://de.wikipedia.org/wiki/Lorenz-Attraktor
+[lorenz4]: http://blog.schockwellenreiter.de/essays/lorenzr.html
+[lorenz5]:  http://scienceblogs.de/astrodicticum-simplex/2017/01/20/sternengeschichten-folge-217-das-ungeloeste-problem-der-navier-stokes-gleichungen/
+[lorenz6]: https://de.wikipedia.org/wiki/Explizites_Euler-Verfahren
+[lorenz7]: http://cognitiones.kantel-chaos-team.de/programmierung/python/numpy.html
 
 # Shapes
 
@@ -808,16 +805,16 @@ Es wäre nicht wirklich notwendig gewesen, aber der Modularität willen habe ich
 
 ### Credits
 
-Die Idee zu den Augen habe ich einem [(Java-) Processing-Tutorial][3] von *Thomas Koberger* entnommen, das ich variiert und nach Processing.py übertragen habe. Auf [seinen Seiten][4] findet man übrigens noch viele weitere, interessante und lehrreiche Tutorials, so daß ich Euch einen Besuch dort empfehle.
+Die Idee zu den Augen habe ich einem [(Java-) Processing-Tutorial][shapes3] von *Thomas Koberger* entnommen, das ich variiert und nach Processing.py übertragen habe. Auf [seinen Seiten][shapes4] findet man übrigens noch viele weitere, interessante und lehrreiche Tutorials, so daß ich Euch einen Besuch dort empfehle.
 
-Für die Farben habe ich mal wieder wild nach einer [Seite mit Farbpaletten][5] gegoogelt und fand die gefundene dann zwar nicht unbedingt schön, aber ungemein praktisch.
-
-
+Für die Farben habe ich mal wieder wild nach einer [Seite mit Farbpaletten][shapes5] gegoogelt und fand die gefundene dann zwar nicht unbedingt schön, aber ungemein praktisch.
 
 
-[3]: https://lernprocessing.wordpress.com/2010/01/10/funktionen/
-[4]: https://lernprocessing.wordpress.com/2010/01/18/processing-links/
-[5]: http://www.farb-tabelle.de/de/farbtabelle.htm
+
+
+[shapes3]: https://lernprocessing.wordpress.com/2010/01/10/funktionen/
+[shapes4]: https://lernprocessing.wordpress.com/2010/01/18/processing-links/
+[shapes5]: http://www.farb-tabelle.de/de/farbtabelle.htm
 
 ## Spaß mit Kreisen: Konfetti
 
@@ -938,7 +935,7 @@ Links steht die Schreibweise mit dem `with()-Statement`, rechts die traditionell
 
 [![Kein Cantor-Käse](images/keincantorkaese-s.jpg)](https://www.flickr.com/photos/schockwellenreiter/32606723246/)
 
-Wie im letzten Beitrag gezeigt, ist es in Processing (und damit auch in Processing.py, dem Python-Mode für Processing) recht einfach, einfache Kreise oder Ellipsen zu zeichnen. Aber das ist auf die Dauer natürlich ein wenig langweilig, daher wende ich mich nun einer rekursiven Figur zu, die zwar ebenfalls nur aus Kreisen besteht, aber dennoch einige interessante Eigenschaften aufweist, dem **Cantor-Käse**, einer Figur, die der [Cantor-Menge][3] topologisch ähnlich ist. Sie wird konstruiert, in dem aus einem Kreis bis auf zwei kleinere Kreise alles entfernt wird. Aus diesen zwei kleineren Kreisen wird wiederum bis auf zwei kleinere Kreise alles entfernt. Nun hat man schon vier Kreise, aus denen man jeweils bis auf zwei kleinere Kreise alles entfernt. Und so weiter und so fort …
+Wie im letzten Beitrag gezeigt, ist es in Processing (und damit auch in Processing.py, dem Python-Mode für Processing) recht einfach, einfache Kreise oder Ellipsen zu zeichnen. Aber das ist auf die Dauer natürlich ein wenig langweilig, daher wende ich mich nun einer rekursiven Figur zu, die zwar ebenfalls nur aus Kreisen besteht, aber dennoch einige interessante Eigenschaften aufweist, dem **Cantor-Käse**, einer Figur, die der [Cantor-Menge][cantor3] topologisch ähnlich ist. Sie wird konstruiert, in dem aus einem Kreis bis auf zwei kleinere Kreise alles entfernt wird. Aus diesen zwei kleineren Kreisen wird wiederum bis auf zwei kleinere Kreise alles entfernt. Nun hat man schon vier Kreise, aus denen man jeweils bis auf zwei kleinere Kreise alles entfernt. Und so weiter und so fort …
 
 [![Cantor-Käse](images/cantorcheeseprocpy.jpg)](https://www.flickr.com/photos/schockwellenreiter/32268180540/)
 
@@ -962,7 +959,7 @@ def cheese(x, y, r, level):
 
 Das Ergebnis könnt Ihr in obenstehenden Screenshot bewundern. Im Screenshot sieht man noch, daß ich auch versucht habe, mit Farbe zu experimentieren, aber ein wirklich befriedigendes Ergebnis war dabei nicht herausgekommen
 
-Ich hatte diese Figur auch schon mal in [Shoes zeichnen lassen][4] und dabei Porbleme mit der Rekursiontiefe festgestellt (ab einer Rekursionstiefe von 15 stürzte Shoes gnadenlos ab). Hier scheint Processing robuster zu sein, eine Rekursionstiefe von 15 nahm die Software gelassen hin, ließ sich dann natürlich Zeit mit der Ausgabe. Das muß schließlich alles berechnet werden.
+Ich hatte diese Figur auch schon mal in [Shoes zeichnen lassen][cantor4] und dabei Porbleme mit der Rekursiontiefe festgestellt (ab einer Rekursionstiefe von 15 stürzte Shoes gnadenlos ab). Hier scheint Processing robuster zu sein, eine Rekursionstiefe von 15 nahm die Software gelassen hin, ließ sich dann natürlich Zeit mit der Ausgabe. Das muß schließlich alles berechnet werden.
 
 Weil der Durchmesser der Kreise in der Literatur oft mit `r` bezeichnet wird, neige ich dazu, Radius und Durchmesser zu verwechseln. Setzt man dann den Algorithmus 1:1 um, zum Beispiel wie in diesem Sketch
 
@@ -985,7 +982,7 @@ kommt die Figur heraus, die den Kopf dieses Beitrages ziert. Das ist zwar streng
 
 ### Cantors Doppelkäse
 
-Schon bei meinen Experimenten mit Shoes [hatte ich mich gefragt][5], wie es denn aussähe, wenn man diese Figur sich nicht nur in der Horizontalen, sondern auch in der Vertikalen ausbreiten läßt?
+Schon bei meinen Experimenten mit Shoes [hatte ich mich gefragt][cantor5], wie es denn aussähe, wenn man diese Figur sich nicht nur in der Horizontalen, sondern auch in der Vertikalen ausbreiten läßt?
 
 [![Doppelkäse](images/doppelkaeseprocpy.jpg)](https://www.flickr.com/photos/schockwellenreiter/32494534752/)
 
@@ -1032,9 +1029,9 @@ Interessant und neu für mich war, daß man -- um überhaupt ein Zeichenfenster 
 
 
 
-[3]: https://de.wikipedia.org/wiki/Cantor-Menge
-[4]: http://blog.schockwellenreiter.de/2016/05/2016050302.html
-[5]: http://blog.schockwellenreiter.de/2016/09/2016091601.html
+[cantor3]: https://de.wikipedia.org/wiki/Cantor-Menge
+[cantor4]: http://blog.schockwellenreiter.de/2016/05/2016050302.html
+[cantor5]: http://blog.schockwellenreiter.de/2016/09/2016091601.html
 
 ## Weitere geometrische Grundformen
 
@@ -1188,11 +1185,11 @@ Ich habe das Fenster mit einem 20 x 20 Pixel großen Raster wie auf kariertem Sc
 
 ### Credits
 
-Teilweise folgt dieser Sketch einer Idee von *Jan Vantomme* aus seinem Buch»[Processing 2: Creative Coding Programming Cookbook][amazon]« (Seiten 31 ff.). Ich habe sie abgewandelt, die Beispiele für die Kreisbögen hinzugefügt und vom Java-Mode in den Python-Mode übertragen.
+Teilweise folgt dieser Sketch einer Idee von *Jan Vantomme* aus seinem Buch»[Processing 2: Creative Coding Programming Cookbook][amazon1]« (Seiten 31 ff.). Ich habe sie abgewandelt, die Beispiele für die Kreisbögen hinzugefügt und vom Java-Mode in den Python-Mode übertragen.
 
 
 
-[amazon]: https://www.amazon.de/Processing-2-Creative-Programming-Cookbook/dp/1849517940/ref=as_li_ss_tl?ie=UTF8&qid=1487522332&sr=8-1&keywords=Processing+2:+Creative+Programming+Cookbook&linkCode=ll1&tag=derschockwell-21&linkId=883652024ea3cb5c1944e15a7f3b957f
+[amazon1]: https://www.amazon.de/Processing-2-Creative-Programming-Cookbook/dp/1849517940/ref=as_li_ss_tl?ie=UTF8&qid=1487522332&sr=8-1&keywords=Processing+2:+Creative+Programming+Cookbook&linkCode=ll1&tag=derschockwell-21&linkId=883652024ea3cb5c1944e15a7f3b957f
 
 ## Eine analoge Uhr aus Kreisbögen
 
@@ -1341,7 +1338,7 @@ Die Zahlen der *Forschungsgruppe Wahlen* habe ich auf der Seite [wahlrecht.de](h
 
 ## Der Baum des Pythagoras
 
-Eine weitere Ikone der fraktalen Geometrie ist der [Pythagoras-Baum][0]. Er geht zurück auf den niederländischen Ingenieur und späteren Mathematiklehrer *Albert E. Bosman* (1891–1961). Er entwarf während des 2. Weltkrieges in seiner Freizeit an einem Zeichenbrett, an dem er sonst U-Boot-Pläne zeichnete, geometrische Muster. Seine Graphiken wurden 1957 in dem Buch *»Het wondere onderzoekingsveld der vlakke meetkunde«* veröffentlicht.
+Eine weitere Ikone der fraktalen Geometrie ist der [Pythagoras-Baum][pyth0]. Er geht zurück auf den niederländischen Ingenieur und späteren Mathematiklehrer *Albert E. Bosman* (1891–1961). Er entwarf während des 2. Weltkrieges in seiner Freizeit an einem Zeichenbrett, an dem er sonst U-Boot-Pläne zeichnete, geometrische Muster. Seine Graphiken wurden 1957 in dem Buch *»Het wondere onderzoekingsveld der vlakke meetkunde«* veröffentlicht.
 
 [![Pythagoras-Baum](images/pythagorasbaum.jpg)](https://www.flickr.com/photos/schockwellenreiter/31863190274/)
 
@@ -1443,12 +1440,12 @@ Einen »symmetrischen« Pythagoras-Baum erhält man übrigens, wenn man die beid
 
 ### Credits
 
-Den rekursiven Algorithmus habe ich einem Pascal-Programm aus Jürgen Plate: *[Computergrafik: Einführung – Algorithmen – Programmentwicklung][1]*, München (Franzis) 2.&nbsp;Auflage 1988, Seiten 460-462 entnommen. Und die Geschichte des Baumes steht in dem schon mehrfach erwähnten Buch von Dieter Hermann, *[Algorithmen für Chaos und Fraktale][2]*, Bonn (Addison-Wesley) 1944 auf den Seiten 170f.
+Den rekursiven Algorithmus habe ich einem Pascal-Programm aus Jürgen Plate: *[Computergrafik: Einführung – Algorithmen – Programmentwicklung][pyth1]*, München (Franzis) 2.&nbsp;Auflage 1988, Seiten 460-462 entnommen. Und die Geschichte des Baumes steht in dem schon mehrfach erwähnten Buch von Dieter Hermann, *[Algorithmen für Chaos und Fraktale][pyth2]*, Bonn (Addison-Wesley) 1944 auf den Seiten 170f.
 
 
-[0]: https://de.wikipedia.org/wiki/Pythagoras-Baum
-[1]: https://www.amazon.de/Computergrafik-Algorithmen-Programmentwicklung-J%C3%BCrgen-Plate/dp/3772350062/ref=as_li_ss_tl?ie=UTF8&qid=1486231087&sr=8-1&keywords=Computergrafik:+Einf%C3%BChrung+%E2%80%93+Algorithmen+%E2%80%93+Programmentwicklung&linkCode=ll1&tag=derschockwell-21&linkId=1ecefc994bcb34a2eb125fe6b0a584de
-[2]: https://www.amazon.de/Algorithmen-Chaos-Fraktale-Dietmar-Herrmann/dp/3893196331/ref=as_li_ss_tl?ie=UTF8&qid=1486231163&sr=8-1&keywords=Algorithmen+f%C3%BCr+Chaos+und+Fraktale&linkCode=ll1&tag=derschockwell-21&linkId=1d9b1f52b6169d24394a3dfc6cc6cf0e
+[pyth0]: https://de.wikipedia.org/wiki/Pythagoras-Baum
+[pyth1]: https://www.amazon.de/Computergrafik-Algorithmen-Programmentwicklung-J%C3%BCrgen-Plate/dp/3772350062/ref=as_li_ss_tl?ie=UTF8&qid=1486231087&sr=8-1&keywords=Computergrafik:+Einf%C3%BChrung+%E2%80%93+Algorithmen+%E2%80%93+Programmentwicklung&linkCode=ll1&tag=derschockwell-21&linkId=1ecefc994bcb34a2eb125fe6b0a584de
+[pyth2]: https://www.amazon.de/Algorithmen-Chaos-Fraktale-Dietmar-Herrmann/dp/3893196331/ref=as_li_ss_tl?ie=UTF8&qid=1486231163&sr=8-1&keywords=Algorithmen+f%C3%BCr+Chaos+und+Fraktale&linkCode=ll1&tag=derschockwell-21&linkId=1d9b1f52b6169d24394a3dfc6cc6cf0e
 
 # Text(verarbeitung) in Processing.py
 
@@ -1477,7 +1474,7 @@ Das sieht eigentlich alles ganz einfach aus, aber wenn Ihr den Sketch ausführen
 
 ![Screenshot](images/text01.jpg)
 
-So verstümmelt habt Ihr Euch das sicher nicht vorgestellt. Die Ursache ist einfach und ärgerlich. Das Processing.py zugrundeliegende Python ist ein Jython (also die Java-Version von Python) und entspricht der Python-Version 2.7. Diese ist leider nicht *out of the box* UTF-8 fähig, ein Umstand, der in der (meist englischsprachigen) Literatur geflissentlich verschwiegen wird[^1]. Dabei ist er so leicht zu beheben. Ein vor einem String vorangestelltes `u` teilt Python 2.7 mit, daß dieser String ein UTF-8-String ist. Im Sketch ist also lediglich die Zeile
+So verstümmelt habt Ihr Euch das sicher nicht vorgestellt. Die Ursache ist einfach und ärgerlich. Das Processing.py zugrundeliegende Python ist ein Jython (also die Java-Version von Python) und entspricht der Python-Version 2.7. Diese ist leider nicht *out of the box* UTF-8 fähig, ein Umstand, der in der (meist englischsprachigen) Literatur geflissentlich verschwiegen wird[^textfn1]. Dabei ist er so leicht zu beheben. Ein vor einem String vorangestelltes `u` teilt Python 2.7 mit, daß dieser String ein UTF-8-String ist. Im Sketch ist also lediglich die Zeile
 
 ~~~python
 tt = "Zwölf Boxkämpfer jagen Eva quer über den großen Sylter Deich."
@@ -1501,7 +1498,7 @@ Es gibt eine weitere, kleine Ungereimtheit im Umgang mit UTF-8 in Processing.py 
 
 steht, meckert die IDE gnadenlos, selbst wenn Umlaute nur in den Kommentaren vorkommen.
 
-[^1]: Ich weiß nicht, ob je und wann Jython den Sprung auf Python 3 wagt. Dort ist jedenfalls von Hause aus (per Default) jeder String ein UTF-8-String, in meinen Augen ein wichtiger, aber auch der einzige Grund, auf Python 3 umzusteigen.
+[^textfn1]: Ich weiß nicht, ob je und wann Jython den Sprung auf Python 3 wagt. Dort ist jedenfalls von Hause aus (per Default) jeder String ein UTF-8-String, in meinen Augen ein wichtiger, aber auch der einzige Grund, auf Python 3 umzusteigen.
 
 !!! tip "Pangramm"
 	Der Text mit den zwölf Boxern ist übrigens ein [Pangramm](https://de.wikipedia.org/wiki/Pangramm), ein Satz, der alle Buchstaben des (in diesem Falle deutschen) Alphabets enthält. Früher wurden sie benutzt, um zum Beispiel Schreibmaschinen nach einer Reparatur zu testen. Heute nutze ich ihn, um festzustellen, ob ein Font auch alle Umlaute des deutschen Alphabets enthält. Das bekannteste englische Pangramm ist der Satz »The quick brown fox jumps over the lazy dog«.
@@ -1659,11 +1656,11 @@ Auch wenn ich es natürlich schön finde, daß das ungeliebte `u"utf-8-string"` 
 
 ## Spaß mit Processing.py: Rentenuhr
 
-Was für Gründe sprechen eigentlich dafür, Processing.py statt des »normalen« Processings zu nutzen? Nun, zum einen können es persönliche Gründe sein: Ich mag zum Beispiel keine Programmiersprachen, die Blöcke mit geschweiften Klammern (`{}`) trennen und vermeide sie, wo es nur geht. Zum anderen komme ich aus der [Pascal][3]-Ecke (Pascal und Algol 68 waren meine ersten Programmiersprachen überhaupt) und mag daher Programme, die so etwas sind wie »ausführbarer Pseudocode«. Aber der wichtigste Grund ist, Processing.py ist eben nicht nur Processing, sondern auch Python. Und Python kommt *»batteries included«*, es bringt eine große Anzahl von Standard-Bibliotheken mit, die man auch in Processing.py nutzen kann. Ich möchte das am Beispiel des Python-Moduls `datetime` einmal zeigen:
+Was für Gründe sprechen eigentlich dafür, Processing.py statt des »normalen« Processings zu nutzen? Nun, zum einen können es persönliche Gründe sein: Ich mag zum Beispiel keine Programmiersprachen, die Blöcke mit geschweiften Klammern (`{}`) trennen und vermeide sie, wo es nur geht. Zum anderen komme ich aus der [Pascal][rent3]-Ecke (Pascal und Algol 68 waren meine ersten Programmiersprachen überhaupt) und mag daher Programme, die so etwas sind wie »ausführbarer Pseudocode«. Aber der wichtigste Grund ist, Processing.py ist eben nicht nur Processing, sondern auch Python. Und Python kommt *»batteries included«*, es bringt eine große Anzahl von Standard-Bibliotheken mit, die man auch in Processing.py nutzen kann. Ich möchte das am Beispiel des Python-Moduls `datetime` einmal zeigen:
 
 [![Screenshot](images/rentenuhr.jpg)](https://www.flickr.com/photos/schockwellenreiter/31675983150/)
 
-Als erstes habe ich den freien ([Open Font Licence][6]) Font [Coda Heavy][5] von Googles Seiten heruntergeladen, entpackt und ihn dem Skript zugänglich gemacht, indem ich die `.ttf`-Datei einfach auf das IDE-Fenster geschoben habe. Processing legt dann automatisch im Skriptordner ein `data`-Vertzeichnis an und kopiert die Datei -- wie auch alle Bild- oder Audio-Datein dorthin. Die Skripte finden sie dann, zum Beispiel mit
+Als erstes habe ich den freien ([Open Font Licence][rent6]) Font [Coda Heavy][rent5] von Googles Seiten heruntergeladen, entpackt und ihn dem Skript zugänglich gemacht, indem ich die `.ttf`-Datei einfach auf das IDE-Fenster geschoben habe. Processing legt dann automatisch im Skriptordner ein `data`-Vertzeichnis an und kopiert die Datei -- wie auch alle Bild- oder Audio-Datein dorthin. Die Skripte finden sie dann, zum Beispiel mit
 
 ~~~python
 	font = createFont("Coda-Heavy.ttf", 96)
@@ -1737,9 +1734,9 @@ Wegen des Umlautes in meinem Vornamen, mußte ich mit `u"…"` die Umwandlung de
 
 Die Funktion `text()` kann man in Processing einmal mit drei und einmal mit fünf Parametern aufrufen. Im ersten Fall übergibt man den Text und die x- und y-Koordinaten der linken Grundlinie des Textes. Im zweiten Fall kommen noch die Weite und die Höhe der Textbox hinzu. Damit erreicht man, daß ein langer String an den Textbox-Grenzen umgebrochen wird und der Text nicht aus dem Fenster herausläuft. Die Parameter habe ich durch einfaches Ausprobieren bekommen.
 
-[3]: http://cognitiones.kantel-chaos-team.de/programmierung/pascal.html
-[5]: https://fonts.google.com/specimen/Coda
-[6]: http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL_web
+[rent3]: http://cognitiones.kantel-chaos-team.de/programmierung/pascal.html
+[rent5]: https://fonts.google.com/specimen/Coda
+[rent6]: http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL_web
 
 # Bildmanipulation mit Processing.py
 
@@ -1897,9 +1894,9 @@ def draw():
 
 ## Pointillismus
 
-[Pointillismus](https://de.wikipedia.org/wiki/Pointillismus) bezeichnet eine Stilrichtung der Malerei, die zwsichen 1889 und 1910 ihre Blütezeit hatte. Pointillistische Bilder bestehen aus kleinen regelmäßigen Farbtupfern in reinen Farben. Der Gesamt-Farbeindruck einer Fläche ergibt sich erst im Auge des Betrachters und aus einer gewissen Entfernung. So etwas in der Art kann man natürlich auch leicht in Processing.py nachbilden (wobei die möglichst reinen Farben in dem Beispielprogramm nur annähernd getroffen werden, weil es sich bei dem Ausgangsbild um eine handkolorierte Photographie vermutlich ebenfalls aus dem 19. Jahrhundert handelt[^1]).
+[Pointillismus](https://de.wikipedia.org/wiki/Pointillismus) bezeichnet eine Stilrichtung der Malerei, die zwsichen 1889 und 1910 ihre Blütezeit hatte. Pointillistische Bilder bestehen aus kleinen regelmäßigen Farbtupfern in reinen Farben. Der Gesamt-Farbeindruck einer Fläche ergibt sich erst im Auge des Betrachters und aus einer gewissen Entfernung. So etwas in der Art kann man natürlich auch leicht in Processing.py nachbilden (wobei die möglichst reinen Farben in dem Beispielprogramm nur annähernd getroffen werden, weil es sich bei dem Ausgangsbild um eine handkolorierte Photographie vermutlich ebenfalls aus dem 19. Jahrhundert handelt[^pointfn1]).
 
-[^1]: Fragt nicht, wo ich diese Photographie gefunden habe. Ich habe sie einfach aus den unendlichen Tiefen des WWW gefischt.
+[pointfn^1]: Fragt nicht, wo ich diese Photographie gefunden habe. Ich habe sie einfach aus den unendlichen Tiefen des WWW gefischt.
 
 ![Nachkolorierter Akt](images/screenshotfarbakt02.jpg)
 
@@ -1938,7 +1935,7 @@ Man muß natürlich nicht unbedingt Kreise zeichnen. Ein Quadrat oder ein Dreiec
 
 ## Noch mehr Pointillismus
 
-Wenn ich ehrlich bin, kann das Ergebnis des Programms aus dem letzten Abschnitt weder ästhetisch noch im Sinne des Pointillismus wirklich überzeugen. Das liegt daran, daß im Programm jedes einzelne Pixel befragt und dann als vergrößerter Punkt wiedergegeben wird. So entsteht im Endeffekt so etwas wie ein verwaschenes Original, aber kein Raster. Daher habe ich -- nach einer Idee aus dem wunderbaren Buch »[Generative Gestaltung][amazon1]« (derzeit leider nur auf englisch [verfügbar][amazon2]) -- tatsächlich eine Rasterversion des Aktbildes programmiert und das Ergebnis überzeugt mich mehr:
+Wenn ich ehrlich bin, kann das Ergebnis des Programms aus dem letzten Abschnitt weder ästhetisch noch im Sinne des Pointillismus wirklich überzeugen. Das liegt daran, daß im Programm jedes einzelne Pixel befragt und dann als vergrößerter Punkt wiedergegeben wird. So entsteht im Endeffekt so etwas wie ein verwaschenes Original, aber kein Raster. Daher habe ich -- nach einer Idee aus dem wunderbaren Buch »[Generative Gestaltung][pamazon1]« (derzeit leider nur auf englisch [verfügbar][pamazon2]) -- tatsächlich eine Rasterversion des Aktbildes programmiert und das Ergebnis überzeugt mich mehr:
 
 [![Screenshot](images/akt2.jpg)](https://www.flickr.com/photos/schockwellenreiter/34807667812/)
 
@@ -2011,8 +2008,8 @@ def draw():
             ellipse(posX, posY, w, w)
 ~~~
 
-[amazon1]: https://www.amazon.de/Generative-Gestaltung-Programmieren-internationalen-Best-Practise-Beispielen/dp/3874397599/ref=as_li_ss_tl?ie=UTF8&qid=1496078767&sr=8-1&keywords=Generative+Gestaltung&linkCode=ll1&tag=derschockwell-21&linkId=006bf37e45fc0b671a7ec6a217fb69da
-[amazon2]: https://www.amazon.de/Generative-Design-Visualize-Program-Processing/dp/1616890770/ref=as_li_ss_tl?ie=UTF8&linkCode=ll1&tag=derschockwell-21&linkId=60caedf2804bda621d07eea10332003d
+[pamazon1]: https://www.amazon.de/Generative-Gestaltung-Programmieren-internationalen-Best-Practise-Beispielen/dp/3874397599/ref=as_li_ss_tl?ie=UTF8&qid=1496078767&sr=8-1&keywords=Generative+Gestaltung&linkCode=ll1&tag=derschockwell-21&linkId=006bf37e45fc0b671a7ec6a217fb69da
+[pamazon2]: https://www.amazon.de/Generative-Design-Visualize-Program-Processing/dp/1616890770/ref=as_li_ss_tl?ie=UTF8&linkCode=ll1&tag=derschockwell-21&linkId=60caedf2804bda621d07eea10332003d
 
 
 # Animationen
@@ -2309,7 +2306,7 @@ Das Hintergrundbild des zweiten Sketches ist ein Gemälde des deutschen, romanti
 
 ## Hallo Hörnchen – Hallo Kitty revisited
 
-Nachdem ich am Wochenende mal wieder an [PyGame][1] verzweifelt bin (aus irgendwelchen Gründen funktionierte die Tastaturabfrage nicht), habe ich beschlossen, mich doch eher [Processing.py][2] zuzuwenden, dem Python-Mode für [Processing][3]. Ziel sollte es sein, mein vierteiliges PyGame-Tutorial vom Mai dieses Jahres in Processing.py zu implementieren. Erfreulich war, daß ich mir den [ersten Teil][4] gleich schenken konnte, denn
+Nachdem ich am Wochenende mal wieder an [PyGame][kitty1] verzweifelt bin (aus irgendwelchen Gründen funktionierte die Tastaturabfrage nicht), habe ich beschlossen, mich doch eher [Processing.py][kitty2] zuzuwenden, dem Python-Mode für [Processing][kitty3]. Ziel sollte es sein, mein vierteiliges PyGame-Tutorial vom Mai dieses Jahres in Processing.py zu implementieren. Erfreulich war, daß ich mir den [ersten Teil][kitty4] gleich schenken konnte, denn
 
 ~~~{python}
 def setup():
@@ -2319,7 +2316,7 @@ def draw():
     background(0, 80, 125)
 ~~~
 
-erzeugt bereits ein leeres, blaues Fenster. Also habe ich gleich den [zweiten Teil][5] in Angriff genommen und das *»Horn Girl«* aus dem von *Daniel Cook (Danc)* in seinem Blog *[Lost Garden][6]* unter einer [freien Lizenz][7] ([CC BY 3.0 US][8]) zu Verfügung gestellten Tileset [Planet Cute][9] in das Fenster gezaubert:
+erzeugt bereits ein leeres, blaues Fenster. Also habe ich gleich den [zweiten Teil][kitty5] in Angriff genommen und das *»Horn Girl«* aus dem von *Daniel Cook (Danc)* in seinem Blog *[Lost Garden][kitty6]* unter einer [freien Lizenz][kitty7] ([CC BY 3.0 US][kitty8]) zu Verfügung gestellten Tileset [Planet Cute][kitty9] in das Fenster gezaubert:
 
 ![Hallo Hörnchen!](images/hellokitty-b.jpg)
 
@@ -2342,11 +2339,11 @@ def draw():
     text(greetings, 25, 350)
 ~~~
 
-Mehr ist nicht nötig, um obigen Screenshot zu bekommen. Vergleiche ich diese 14 Zeilen mit den 34 Zeilen der PyGame-Version, dann frage ich mich schon, warum ich nicht früher zu Processing.py gewechselt bin[^1].
+Mehr ist nicht nötig, um obigen Screenshot zu bekommen. Vergleiche ich diese 14 Zeilen mit den 34 Zeilen der PyGame-Version, dann frage ich mich schon, warum ich nicht früher zu Processing.py gewechselt bin[^kittyfn1].
 
-[^1]: Ich will ehrlich sein: Die »Geschwätzigkeit« von PyGame ist nicht nur dem hohen Alter der Bibliothek geschuldet, sie erlaubt eine große Vielseitigkeit und erspart dem Programmierer dann wieder bei komplizierten Dingen viel Schreibarbeit. So ist zum Beispiel die eingebaute `Sprite`-Klasse und die Kollisionsprüfung etwas, was ich in Processing.py von Hand programmieren muß.
+[^kittyfn1]: Ich will ehrlich sein: Die »Geschwätzigkeit« von PyGame ist nicht nur dem hohen Alter der Bibliothek geschuldet, sie erlaubt eine große Vielseitigkeit und erspart dem Programmierer dann wieder bei komplizierten Dingen viel Schreibarbeit. So ist zum Beispiel die eingebaute `Sprite`-Klasse und die Kollisionsprüfung etwas, was ich in Processing.py von Hand programmieren muß.
 
-An der zweiten Zeile kann man es erkennen: Processing.py basiert auf [Jython][10] und ist damit kompatibel zu Python 2.7.5, aber nicht zu Python 3. Daher muß man Unicode-Strings (zum Beispiel mit deutschen Umlauten) explizit mit dem vorangestellten `u` markieren, sonst bekommt man seltsame Zeichen im Programmfenster angezeigt.
+An der zweiten Zeile kann man es erkennen: Processing.py basiert auf [Jython][kitty10] und ist damit kompatibel zu Python 2.7.5, aber nicht zu Python 3. Daher muß man Unicode-Strings (zum Beispiel mit deutschen Umlauten) explizit mit dem vorangestellten `u` markieren, sonst bekommt man seltsame Zeichen im Programmfenster angezeigt.
 
 Processing(.py) kann mit Fonts im TrueType- (`.ttf`), OpenType- (`.otf`) und in einem eigenen Bitmap-Format, genannt VLW, umgehen. Natürlich findet es alle auf dem eigenen Rechner installierte Fonts, mit
 
@@ -2355,9 +2352,9 @@ fontList = PFont.list()
 print(fontList)
 ~~~
 
-kann man sich diese in der Konsole anzeigen lassen. Wenn man den Sketch allerdings weitergeben will, ist es sinnvoll, einen Font mitzugeben[^2], da man nicht sicher sein kann, ob der gewählte Systemfont auf dem anderen Rechner vorhanden ist. Dafür schiebt man eine entsprechende Font-Datei einfach ebenfalls auf das Editorfenster der IDE, damit sie dem `data`-Ordner hinzugefügt wird. Ich habe testweise mal die Datei `OpenSans-Semibold-webfont.ttf` installiert, die entsprechende Zeile im Programm hieße dann:
+kann man sich diese in der Konsole anzeigen lassen. Wenn man den Sketch allerdings weitergeben will, ist es sinnvoll, einen Font mitzugeben[kittyfn^2], da man nicht sicher sein kann, ob der gewählte Systemfont auf dem anderen Rechner vorhanden ist. Dafür schiebt man eine entsprechende Font-Datei einfach ebenfalls auf das Editorfenster der IDE, damit sie dem `data`-Ordner hinzugefügt wird. Ich habe testweise mal die Datei `OpenSans-Semibold-webfont.ttf` installiert, die entsprechende Zeile im Programm hieße dann:
 
-[^2]: Natürlich sollte man sicherstellen, daß man diese Fonts auch verwerten darf, aber im Netz findet man viele Fonts zur freien Verwendung. Gute Anlaufstellen dafür sind zum Beispiel [Google Fonts][11], die [(Open) Font Library][12] oder [The League of Moveable Type][13].
+[^kittyfn2]: Natürlich sollte man sicherstellen, daß man diese Fonts auch verwerten darf, aber im Netz findet man viele Fonts zur freien Verwendung. Gute Anlaufstellen dafür sind zum Beispiel [Google Fonts][kitty11], die [(Open) Font Library][kitty12] oder [The League of Moveable Type][kitty13].
 
 ~~~{python}
 font = createFont("OpenSans-Semibold-webfont.ttf", 64)
@@ -2365,23 +2362,23 @@ font = createFont("OpenSans-Semibold-webfont.ttf", 64)
 
 Der zweite Parameter der Funktion `createFont()` benennt die gewünschte Größe des Fonts. Mehr ist zu diesem ersten Sketch in Processing.py eigentlich nciht zu sagen. Im nächsten Schritt wird es darum gehen, die junge Dame über das Fenster zu bewegen. Nach meinen Erfahrungen mit PyGame werde ich sie nicht nur mit der Maus, sondern auch mit der Tastatur steuern. *Still digging!*
 
-[1]: http://cognitiones.kantel-chaos-team.de/multimedia/spieleprogrammierung/pygame.html
-[2]: http://cognitiones.kantel-chaos-team.de/programmierung/creativecoding/processing/processingpy.html
-[3]: http://cognitiones.kantel-chaos-team.de/programmierung/creativecoding/processing/processing.html
-[4]: http://blog.schockwellenreiter.de/2016/05/2016052001.html
-[5]: http://blog.schockwellenreiter.de/2016/05/2016052003.html
-[6]: http://www.lostgarden.com/search/label/free%20game%20graphics
-[7]: http://www.lostgarden.com/2007/03/lost-garden-license.html
-[8]: http://creativecommons.org/licenses/by/3.0/us/
-[9]: http://www.lostgarden.com/2007/05/dancs-miraculously-flexible-game.html
-[10]: http://cognitiones.kantel-chaos-team.de/programmierung/python/jython.html
-[11]: https://fonts.google.com/
-[12]: https://fontlibrary.org/de/homepage
-[13]: https://www.theleagueofmoveabletype.com/
+[kitty1]: http://cognitiones.kantel-chaos-team.de/multimedia/spieleprogrammierung/pygame.html
+[kitty2]: http://cognitiones.kantel-chaos-team.de/programmierung/creativecoding/processing/processingpy.html
+[kitty3]: http://cognitiones.kantel-chaos-team.de/programmierung/creativecoding/processing/processing.html
+[kitty4]: http://blog.schockwellenreiter.de/2016/05/2016052001.html
+[kitty5]: http://blog.schockwellenreiter.de/2016/05/2016052003.html
+[kitty6]: http://www.lostgarden.com/search/label/free%20game%20graphics
+[kitty7]: http://www.lostgarden.com/2007/03/lost-garden-license.html
+[kitty8]: http://creativecommons.org/licenses/by/3.0/us/
+[kitty9]: http://www.lostgarden.com/2007/05/dancs-miraculously-flexible-game.html
+[kitty10]: http://cognitiones.kantel-chaos-team.de/programmierung/python/jython.html
+[kitty11]: https://fonts.google.com/
+[kitty12]: https://fontlibrary.org/de/homepage
+[kitty13]: https://www.theleagueofmoveabletype.com/
 
 ## Moving Kitty
 
-Im zweiten Teil meiner kleinen Erkundung von [Processing.py][1], dem [Python][2]-Mode von [Processing][3], möchte ich die im [ersten Teil][4] auf den Monitor gezauberte *Kitty* mithilfe der Pfeiltasten der Tastatur sich über den Monitor bewegen lassen.
+Im zweiten Teil meiner kleinen Erkundung von [Processing.py][mkitty1], dem [Python][mkitty2]-Mode von [Processing][mkitty3], möchte ich die im [ersten Teil][mkitty4] auf den Monitor gezauberte *Kitty* mithilfe der Pfeiltasten der Tastatur sich über den Monitor bewegen lassen.
 
 ![Moving Kitty](images/movingkitty-b.jpg)
 
@@ -2436,20 +2433,20 @@ def draw():
             pos_y = -radius_y
 ~~~
 
-*Kitty* alias *»Horn Girl«* stammt wieder aus dem von *Daniel Cook (Danc)* in seinem Blog *[Lost Garden][6]* unter einer [freien Lizenz][7] ([CC BY 3.0 US][8]) zu Verfügung gestellten Tileset [Planet Cute][9]. Aber Ihr könnt natürlich auch jedes andere Bild nehmen, das gerade auf Eurer Festplatte herumliegt.
+*Kitty* alias *»Horn Girl«* stammt wieder aus dem von *Daniel Cook (Danc)* in seinem Blog *[Lost Garden][mkitty6]* unter einer [freien Lizenz][mkitty7] ([CC BY 3.0 US][mkitty8]) zu Verfügung gestellten Tileset [Planet Cute][mkitty9]. Aber Ihr könnt natürlich auch jedes andere Bild nehmen, das gerade auf Eurer Festplatte herumliegt.
 
-[1]: http://cognitiones.kantel-chaos-team.de/programmierung/creativecoding/processing/processingpy.html
-[2]: http://cognitiones.kantel-chaos-team.de/programmierung/python/python.html
-[3]: http://cognitiones.kantel-chaos-team.de/programmierung/creativecoding/processing/processing.html
-[4]: hallohoernchen.md
-[6]: http://www.lostgarden.com/search/label/free%20game%20graphics
-[7]: http://www.lostgarden.com/2007/03/lost-garden-license.html
-[8]: http://creativecommons.org/licenses/by/3.0/us/
-[9]: http://www.lostgarden.com/2007/05/dancs-miraculously-flexible-game.html
+[mkitty1]: http://cognitiones.kantel-chaos-team.de/programmierung/creativecoding/processing/processingpy.html
+[mkitty2]: http://cognitiones.kantel-chaos-team.de/programmierung/python/python.html
+[mkitty3]: http://cognitiones.kantel-chaos-team.de/programmierung/creativecoding/processing/processing.html
+[mkitty4]: hallohoernchen.md
+[mkitty6]: http://www.lostgarden.com/search/label/free%20game%20graphics
+[mkitty7]: http://www.lostgarden.com/2007/03/lost-garden-license.html
+[mkitty8]: http://creativecommons.org/licenses/by/3.0/us/
+[mkitty9]: http://www.lostgarden.com/2007/05/dancs-miraculously-flexible-game.html
 
 ## Klasse Kitty!
 
-Nach den [ersten][1] [beiden][2] Teilen meiner kleinen Erkundung von [Processing.py][3], dem [Python][4]-Mode von [Processing][5] und vermutlich die einzige, derzeit aktiv gepflegte Alternative zu [PyGame][6], möchte ich erst einmal ein wenig aufräumen und daran erinnern, daß Akteure eines Computerspiels programmiertechnisch am besten in Klassen aufgehoben sind. Daher habe ich auch *Kitty* eine eigene Klasse spendiert:
+Nach den [ersten][kkitty1] [beiden][kkitty2] Teilen meiner kleinen Erkundung von [Processing.py][kkitty3], dem [Python][kkitty4]-Mode von [Processing][kkitty5] und vermutlich die einzige, derzeit aktiv gepflegte Alternative zu [PyGame][kkitty6], möchte ich erst einmal ein wenig aufräumen und daran erinnern, daß Akteure eines Computerspiels programmiertechnisch am besten in Klassen aufgehoben sind. Daher habe ich auch *Kitty* eine eigene Klasse spendiert:
 
 ~~~{python}
 # coding=utf-8
@@ -2482,11 +2479,11 @@ Hierbei ist jedoch zu beachten, daß im Gegensatz zu Processing und [P5.js][7] (
 from kitty import Kitty
 ~~~
 
-importiert werden. Und da sie ein reines Python2- (oder genauer [Jython][8]-) Modul ist, sollte man auch nicht vergessen `# coding=utf-8` in die erste Zeile der Datei schreiben, denn sonst bekommt man Probleme mit dem *ö* im Kommentar (*Bildhöhe*). 😜
+importiert werden. Und da sie ein reines Python2- (oder genauer Jython-) Modul ist, sollte man auch nicht vergessen `# coding=utf-8` in die erste Zeile der Datei schreiben, denn sonst bekommt man Probleme mit dem *ö* im Kommentar (*Bildhöhe*). 😜
 
-Den Konventionen folgend, habe ich dem Objekt *Kitty* neben der eigentlichen Initialisierung drei Funktionen spendiert, nämlich `loadPic()`, `move()` und `display()`. Die beiden letzeren hätte man auch in einer Funktion zusammenfassen können (beispielsweise `update()` wie bei PyGame üblich), aber da die Philosophie sein sollte, jeder Aktivität eine eigene Funktion zu spendieren, bin ich der Konvention gefolgt[^1].
+Den Konventionen folgend, habe ich dem Objekt *Kitty* neben der eigentlichen Initialisierung drei Funktionen spendiert, nämlich `loadPic()`, `move()` und `display()`. Die beiden letzeren hätte man auch in einer Funktion zusammenfassen können (beispielsweise `update()` wie bei PyGame üblich), aber da die Philosophie sein sollte, jeder Aktivität eine eigene Funktion zu spendieren, bin ich der Konvention gefolgt[^kkittyfn1].
 
-[^1]: Ein bei Processing.py durchgehend zu beobachtender Konventionsbruch macht mich allerdings wuschig. Während die [PEP8][8] für Variablennamen die Trennung durch Unterstriche empfiehlt (z.B. `mouse_x`) folgen die Programmierer der Beispielprogramme durchgehend der Java-Konvention des *camelCase* (`mouseX`). Ich habe mich erst einmal entschlossen, ebenfalls den *camelCase* zu nutzen, ob ich dabei aber bleiben werde, weiß ich noch nicht.
+[^kkittyfn1]: Ein bei Processing.py durchgehend zu beobachtender Konventionsbruch macht mich allerdings wuschig. Während die [PEP8][kkitty8] für Variablennamen die Trennung durch Unterstriche empfiehlt (z.B. `mouse_x`) folgen die Programmierer der Beispielprogramme durchgehend der Java-Konvention des *camelCase* (`mouseX`). Ich habe mich erst einmal entschlossen, ebenfalls den *camelCase* zu nutzen, ob ich dabei aber bleiben werde, weiß ich noch nicht.
 
 Ansonsten ist zu dem Programm nichts weiter zu sagen. Es zeigt einfach eine *Kitty* die der Maus hinterherrennt. Und dadruch, daß fast die gesamte Logik in die Klasse `Kitty` ausgelagert wurde, ist das Hauptprogramm von erfrischender Kürze:
 
@@ -2509,24 +2506,24 @@ So muß es ja auch sein.
 
 ![Horm Girl](images/horngirl.png)
 
-*Kitty* alias *»Horn Girl«* stammt wieder aus dem von *Daniel Cook (Danc)* in seinem Blog *[Lost Garden][9]* unter einer [freien Lizenz][10] ([CC BY 3.0 US][11]) zu Verfügung gestellten Tileset [Planet Cute][12].
+*Kitty* alias *»Horn Girl«* stammt wieder aus dem von *Daniel Cook (Danc)* in seinem Blog *[Lost Garden][kkitty9]* unter einer [freien Lizenz][kkitty10] ([CC BY 3.0 US][kkitty11]) zu Verfügung gestellten Tileset [Planet Cute][kkitty12].
 
-[1]: hallohoernchen.md
-[2]: movingkitty.md
-[3]: http://cognitiones.kantel-chaos-team.de/programmierung/creativecoding/processing/processingpy.html
-[4]: http://cognitiones.kantel-chaos-team.de/programmierung/python/python.html
-[5]: http://cognitiones.kantel-chaos-team.de/programmierung/creativecoding/processing/processing.html
-[6]: http://cognitiones.kantel-chaos-team.de/multimedia/spieleprogrammierung/pygame.html
-[7]: http://cognitiones.kantel-chaos-team.de/programmierung/creativecoding/processing/p5js.html
-[8]: https://www.python.org/dev/peps/pep-0008/#descriptive-naming-styles
-[9]: http://www.lostgarden.com/search/label/free%20game%20graphics
-[10]: http://www.lostgarden.com/2007/03/lost-garden-license.html
-[11]: http://creativecommons.org/licenses/by/3.0/us/
-[12]: http://www.lostgarden.com/2007/05/dancs-miraculously-flexible-game.html
+[kkitty1]: hallohoernchen.md
+[kkitty2]: movingkitty.md
+[kkitty3]: http://cognitiones.kantel-chaos-team.de/programmierung/creativecoding/processing/processingpy.html
+[kkitty4]: http://cognitiones.kantel-chaos-team.de/programmierung/python/python.html
+[kkitty5]: http://cognitiones.kantel-chaos-team.de/programmierung/creativecoding/processing/processing.html
+[kkitty6]: http://cognitiones.kantel-chaos-team.de/multimedia/spieleprogrammierung/pygame.html
+[kkitty7]: http://cognitiones.kantel-chaos-team.de/programmierung/creativecoding/processing/p5js.html
+[kkitty8]: https://www.python.org/dev/peps/pep-0008/#descriptive-naming-styles
+[kkitty9]: http://www.lostgarden.com/search/label/free%20game%20graphics
+[kkitty10]: http://www.lostgarden.com/2007/03/lost-garden-license.html
+[kkitty11]: http://creativecommons.org/licenses/by/3.0/us/
+[kkitty12]: http://www.lostgarden.com/2007/05/dancs-miraculously-flexible-game.html
 
 ## »Cute Planet« mit Processing.py
 
-Im [letzten Teil][1] meiner kleinen Tutorial-Reihe zu [Processing.py][2], dem [Python][3]-Mode für [Processing][4], hatte ich ja eine Klasse erstellt. Auf den ersten Blick erschien sie nicht besonders nützlich, da ich im eigentlichen Sketch ja nur eine Instanz der Klasse erzeugt hatte. So sah das schon ein wenig nach mehr Schreibaufwand ohne großen Nutzen aus. Um die Skeptiker zu überzeugen, werde ich in diesem Tutorial wieder eine Klasse erstellen, von der es im Sketch dann aber vier Instanzen geben wird. Vier Raumschiffe werden im Anschluß über den Bildschirm wuseln.
+Im [letzten Teil][cutep1] meiner kleinen Tutorial-Reihe zu [Processing.py][cutep2], dem [Python][cutep3]-Mode für [Processing][cutep4], hatte ich ja eine Klasse erstellt. Auf den ersten Blick erschien sie nicht besonders nützlich, da ich im eigentlichen Sketch ja nur eine Instanz der Klasse erzeugt hatte. So sah das schon ein wenig nach mehr Schreibaufwand ohne großen Nutzen aus. Um die Skeptiker zu überzeugen, werde ich in diesem Tutorial wieder eine Klasse erstellen, von der es im Sketch dann aber vier Instanzen geben wird. Vier Raumschiffe werden im Anschluß über den Bildschirm wuseln.
 
 ![Cute Planet](images/cuteplanet.jpg)
 
@@ -2559,7 +2556,7 @@ class Spaceship():
 
 Der Konstruktor der Klasse verlangt die URL eines Bildes, das das Raumschiff (oder den Planeten) auf dem Monitor darstellt und eine initiale Position, auf der es im Fenster erscheinen soll.
 
-Dann gibt es die Funktion `loadPic()`, die dieses Bild dann lädt. Die Bilder stammen wieder aus dem von *Daniel Cook (Danc)* in seinem Blog *[Lost Garden][9]* unter einer [freien Lizenz][10] ([CC BY 3.0 US][11]) zu Verfügung gestellten Tileset *[Planet Cute][12]*. Ich habe sie mit dem [Bildverarbeitungsprogramm meiner Wahl][5] zurechtgeschnitten und auf eine Größe von 120x120 Pixeln heruntergerechnet und sie dann durch einfaches Schieben auf das Editor-Fenster der Processing IDE in den `data`-Ordner des Sketches transportiert. So findet Processing (und damit auch Processing.py) sie ohne zusätzliche Pfadangabe.
+Dann gibt es die Funktion `loadPic()`, die dieses Bild dann lädt. Die Bilder stammen wieder aus dem von *Daniel Cook (Danc)* in seinem Blog *[Lost Garden][cutep9]* unter einer [freien Lizenz][cutep10] ([CC BY 3.0 US][cutep11]) zu Verfügung gestellten Tileset *[Planet Cute][cutep12]*. Ich habe sie mit dem [Bildverarbeitungsprogramm meiner Wahl][cutep5] zurechtgeschnitten und auf eine Größe von 120x120 Pixeln heruntergerechnet und sie dann durch einfaches Schieben auf das Editor-Fenster der Processing IDE in den `data`-Ordner des Sketches transportiert. So findet Processing (und damit auch Processing.py) sie ohne zusätzliche Pfadangabe.
 
 ![Planet](images/planet.png) ![Rocketship](images/rocketship.png) ![Octopussy](images/octopussy.png) ![Beetleship](images/beetleship.png)
 
@@ -2599,23 +2596,23 @@ Als erstes wird die Klasse `Spaceship` importiert und der Variablen `spaceship` 
 
 Das war es dann scho fast: In `draw()` wird dann nur noch eine Schleife durchlaufen, die für jedes der »Raumschiffe« die Funktionen `move()` und `display()` aufruft. Wenn Ihr nun den Sketch laufen laßt, werdet Ihr sehen, daß im Weltall rund um den Planeten »Space Cute« ein Verkehr wie auf dem Kudamm herrscht. Stellt Euch mal vor, ich hätte noch mehr Instanzen der Klasse `Spaceship` erzeugt. 😇
 
-[1]: klassekitty,md
-[2]: http://cognitiones.kantel-chaos-team.de/programmierung/creativecoding/processing/processingpy.html
-[3]: http://cognitiones.kantel-chaos-team.de/programmierung/python/python.html
-[4]: http://cognitiones.kantel-chaos-team.de/programmierung/creativecoding/processing/processing.html
-[5]: http://cognitiones.kantel-chaos-team.de/multimedia/computergraphik/gimp.html
-[9]: http://www.lostgarden.com/search/label/free%20game%20graphics
-[10]: http://www.lostgarden.com/2007/03/lost-garden-license.html
-[11]: http://creativecommons.org/licenses/by/3.0/us/
-[12]: http://www.lostgarden.com/2007/05/dancs-miraculously-flexible-game.html
+[cutep1]: klassekitty,md
+[cutep2]: http://cognitiones.kantel-chaos-team.de/programmierung/creativecoding/processing/processingpy.html
+[cutep3]: http://cognitiones.kantel-chaos-team.de/programmierung/python/python.html
+[cutep4]: http://cognitiones.kantel-chaos-team.de/programmierung/creativecoding/processing/processing.html
+[cutep5]: http://cognitiones.kantel-chaos-team.de/multimedia/computergraphik/gimp.html
+[cutep9]: http://www.lostgarden.com/search/label/free%20game%20graphics
+[cutep10]: http://www.lostgarden.com/2007/03/lost-garden-license.html
+[cutep11]: http://creativecommons.org/licenses/by/3.0/us/
+[cutep12]: http://www.lostgarden.com/2007/05/dancs-miraculously-flexible-game.html
 
 ## Fluffy Planet
 
-Nachdem ich nun ein paar Tage mit Orks und Fraktalen herumgespielt habe, fühle ich mich gestärkt genug, um mit meinen Processing.py-Experimenten mit den niedlichen Figürchen aus dem von *Daniel Cook (Danc)* in seinem Blog *[Lost Garden][2]* unter einer [freien Lizenz][3] ([CC BY 3.0 US][4]) zu Verfügung gestellten Tileset [Planet Cute][5] fortzufahren. 
+Nachdem ich nun ein paar Tage mit Orks und Fraktalen herumgespielt habe, fühle ich mich gestärkt genug, um mit meinen Processing.py-Experimenten mit den niedlichen Figürchen aus dem von *Daniel Cook (Danc)* in seinem Blog *[Lost Garden][fluffyp2]* unter einer [freien Lizenz][fluffyp3] ([CC BY 3.0 US][fluffyp4]) zu Verfügung gestellten Tileset [Planet Cute][fluffyp5] fortzufahren. 
 
 ![Screenshot](images/fluffyplanet.jpg)
 
-Ich möchte aus dem [bisher erlernten][6] ein kleines Spielchen entwickeln: Die süße *Octopussy* ist mit ihrem Raumschiff auf den Weg nach Hause. Dabei wird sie allerdings von den Brüdern *Rocketboy* und dem *Käferjungen* attackiert, die versuchen, sie zu rammen. Zwar hat Octopussys Raumschiff Schutzschilde, die die Karambolage abfangen, aber es sind nur fünf. Die Gegner haben keine Schutzschilde und werden nach jeder Kollision in das Weltall zurückgeworfen, aus dem sie nach einer gewissen Zeit aber wieder auftauchen. Es ist also so eine Art [Autoscooter][8] im Weltenraum
+Ich möchte aus dem [bisher erlernten][fluffyp6] ein kleines Spielchen entwickeln: Die süße *Octopussy* ist mit ihrem Raumschiff auf den Weg nach Hause. Dabei wird sie allerdings von den Brüdern *Rocketboy* und dem *Käferjungen* attackiert, die versuchen, sie zu rammen. Zwar hat Octopussys Raumschiff Schutzschilde, die die Karambolage abfangen, aber es sind nur fünf. Die Gegner haben keine Schutzschilde und werden nach jeder Kollision in das Weltall zurückgeworfen, aus dem sie nach einer gewissen Zeit aber wieder auftauchen. Es ist also so eine Art [Autoscooter][fluffyp8] im Weltenraum
 
 Um ihre Schutzschilde zu erneuern, muß Octopussy möglichst oft die kleinen Planeten überfliegen, denn diese laden ihre Schutzschilde bis zur maximalen Anzahl von fünf wieder auf.
 
@@ -2668,7 +2665,7 @@ class Octopussy(Spaceship):
             self.dy = 0
 ~~~
 
-Das dürfte für Euch, die Ihr diese Serie schon verfolgt, nichts Neues mehr sein. Die benötigten Sprites findet Ihr auch [hier][9].
+Das dürfte für Euch, die Ihr diese Serie schon verfolgt, nichts Neues mehr sein. Die benötigten Sprites findet Ihr auch [hier][fluffyp9].
 
 Auch das Hauptprogramm birgt wenig Überraschungen:
 
@@ -2719,14 +2716,14 @@ def keyPressed():
 
 Im zweiten Teil dieses Tutorials möchte ich dann eine Kollisionserkennung implementieren und zeigen, wie man die Schutzschilde ab- und wieder aufbaut und die gegnerischen Raumschiffe ins All schleudert. *Still digging!*
 
-[2]: http://www.lostgarden.com/search/label/free%20game%20graphics
-[3]: http://www.lostgarden.com/2007/03/lost-garden-license.html
-[4]: http://creativecommons.org/licenses/by/3.0/us/
-[5]: http://www.lostgarden.com/2007/05/dancs-miraculously-flexible-game.html
-[6]: http://py.kantel-chaos-team.de/cuteplanet/
-[7]: http://py.kantel-chaos-team.de/
-[8]: https://de.wikipedia.org/wiki/Autoscooter
-[9]: http://py.kantel-chaos-team.de/cuteplanet/
+[fluffyp2]: http://www.lostgarden.com/search/label/free%20game%20graphics
+[fluffyp3]: http://www.lostgarden.com/2007/03/lost-garden-license.html
+[fluffyp4]: http://creativecommons.org/licenses/by/3.0/us/
+[fluffyp5]: http://www.lostgarden.com/2007/05/dancs-miraculously-flexible-game.html
+[fluffyp6]: http://py.kantel-chaos-team.de/cuteplanet/
+[fluffyp7]: http://py.kantel-chaos-team.de/
+[fluffyp8]: https://de.wikipedia.org/wiki/Autoscooter
+[fluffyp9]: http://py.kantel-chaos-team.de/cuteplanet/
 
 # Zelluläre Automaten
 
@@ -2852,13 +2849,13 @@ Das ist das erste aus einer Reihe von (geplanten) Processing.py-Programmen, die 
 
 ### Literatur
 
-- A.K. Dewdney: *Wie man π erschießt. Fünf leichte Stücke für WHILE-Schleifen und Zufallsgenerator, oder: lebensechte Simulationen von Zombies, Wählern und Warteschlangen*, in: Immo Diener (Hg.): *[Computer-Kurzweil][amazon1]*, Heidelberg (Spektrum der Wissenschaft, Reihe: Verständliche Forschung) 1988
+- A.K. Dewdney: *Wie man π erschießt. Fünf leichte Stücke für WHILE-Schleifen und Zufallsgenerator, oder: lebensechte Simulationen von Zombies, Wählern und Warteschlangen*, in: Immo Diener (Hg.): *[Computer-Kurzweil][dsamazon1]*, Heidelberg (Spektrum der Wissenschaft, Reihe: Verständliche Forschung) 1988
 
-- Manfred Eigen, Ruthild Winkler: *[Das Spiel. Naturgesetze steuern den Zufall][amazon2]*, München (Piper), 1975 (unveränderte Taschenbuchausgabe 1985)
+- Manfred Eigen, Ruthild Winkler: *[Das Spiel. Naturgesetze steuern den Zufall][dsamazon2]*, München (Piper), 1975 (unveränderte Taschenbuchausgabe 1985)
 
 
-[amazon1]: https://www.amazon.de/gp/product/3922508502/ref=as_li_ss_tl?ie=UTF8&linkCode=ll1&tag=derschockwell-21&linkId=70d2a1ad2291abd09c8579f1b3652042
-[amazon2]: https://www.amazon.de/gp/product/3492204104/ref=as_li_ss_tl?ie=UTF8&linkCode=ll1&tag=derschockwell-21&linkId=d8a0345a29710b35b7e75ebe8565574d
+[dsamazon1]: https://www.amazon.de/gp/product/3922508502/ref=as_li_ss_tl?ie=UTF8&linkCode=ll1&tag=derschockwell-21&linkId=70d2a1ad2291abd09c8579f1b3652042
+[dsamazon2]: https://www.amazon.de/gp/product/3492204104/ref=as_li_ss_tl?ie=UTF8&linkCode=ll1&tag=derschockwell-21&linkId=d8a0345a29710b35b7e75ebe8565574d
 
 ## Frösche und Schildkröten oder: Wie entsteht Segregation?
 
@@ -2990,11 +2987,11 @@ Bei dem [Demokratie-Spiel](waehler.md) und bei den [Experimenten mit den Frösch
 
 [![Screenshot](images/fire01.jpg)](https://www.flickr.com/photos/schockwellenreiter/36833659066)
 
-Die Regeln dieser Simulation folgen der Beschreibung, die *Daniel Scholz* in seinem Buch »Pixelspiele«[^1] gegeben hat:
+Die Regeln dieser Simulation folgen der Beschreibung, die *Daniel Scholz* in seinem Buch »Pixelspiele«[^ps1] gegeben hat:
 
-[^1]: Daniel Scholz: *[Pixelspiele][a1], Modellieren und Simulieren mit zellulären Automaten*, Berlin - Heidelberg (Springer Spektrum) 2014, S. 19-25
+[^ps1]: Daniel Scholz: *[Pixelspiele][psa1], Modellieren und Simulieren mit zellulären Automaten*, Berlin - Heidelberg (Springer Spektrum) 2014, S. 19-25
 
-[a1]: https://www.amazon.de/Pixelspiele-Modellieren-Simulieren-zellul%C3%A4ren-Springer-Lehrbuch/dp/3642451306/ref=as_li_ss_tl?_encoding=UTF8&qid=1504972682&sr=8-1&linkCode=ll1&tag=derschockwell-21&linkId=2f0f795b9536747199607226b165a5da
+[psa1]: https://www.amazon.de/Pixelspiele-Modellieren-Simulieren-zellul%C3%A4ren-Springer-Lehrbuch/dp/3642451306/ref=as_li_ss_tl?_encoding=UTF8&qid=1504972682&sr=8-1&linkCode=ll1&tag=derschockwell-21&linkId=2f0f795b9536747199607226b165a5da
 
 ### Kein Spiel ohne Regeln
 
@@ -3663,13 +3660,13 @@ def keyPressed():
 
 ### Credits
 
-Dieses Beispielprogramm folgt einer Idee aus dem Bucn »[Processing 2: Creative Programming Cookbook][amazon]« von *Jan Vantomme*. Ich habe sie geringfügig überarbeitet und vom Processing 2 Java-Mode in den Python-Mode von Processing 3 umgeschrieben.
+Dieses Beispielprogramm folgt einer Idee aus dem Bucn »[Processing 2: Creative Programming Cookbook][3damazon]« von *Jan Vantomme*. Ich habe sie geringfügig überarbeitet und vom Processing 2 Java-Mode in den Python-Mode von Processing 3 umgeschrieben.
 
 ### Literatur
 
-- Jan Vantomme: *[Processing 2: Creative Programming Cookbook][amazon]*, Birmingham *(Packt Publishing)*, 2012
+- Jan Vantomme: *[Processing 2: Creative Programming Cookbook][3damazon]*, Birmingham *(Packt Publishing)*, 2012
 
-[amazon]: https://www.amazon.de/Processing-2-Creative-Programming-Cookbook/dp/1849517940/ref=as_li_ss_tl?ie=UTF8&qid=1487506788&sr=8-1&keywords=processing+2:+creative+programming+cookbook&linkCode=ll1&tag=derschockwell-21&linkId=e9ce248db424f20cd29c824841add824
+[3damazon]: https://www.amazon.de/Processing-2-Creative-Programming-Cookbook/dp/1849517940/ref=as_li_ss_tl?ie=UTF8&qid=1487506788&sr=8-1&keywords=processing+2:+creative+programming+cookbook&linkCode=ll1&tag=derschockwell-21&linkId=e9ce248db424f20cd29c824841add824
 
 ## Einen Globus basteln
 
@@ -3845,7 +3842,7 @@ def makeSphere(r, step, tex):
     return s
 ~~~
 
-![Weltkarte 1910](images/world-map-1910.jpg)
+![Eine Weltkarte aus dem Jahre 1910](images/world-map-1910.jpg)
 
 Zum Schluß bin ich dann übermütig geworden und habe eine Weltkarte aus dem Jahre 1910 genommen und sie als Texture auf den Globus gelegt. Wie Ihr leicht erkennen könnt, eignet sich die in dieser Karte verwendete, sehr eurozentrische Projektion nicht besonders, um sie gerecht auf eine Kugel zu projizieren (Grönland besitzt in etwa die Fläche von Afrika). Um wenigstens den Schein zu wahren, habe ich die Kugel mit `rotateX(radians(5))` so geneigt, daß der Effekt in den Hintergrund tritt. Nordeuropa, Grönland und Kanada verschwinden dadurch ein bißchen hinter dem Horizont und durch den Bauch der Kugel erscheint dann auch Afrika wieder größer.
 
@@ -3901,15 +3898,13 @@ def makeSphere(r, step, tex):
 
 ### Credits
 
-<div style="float:right;"><iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=DE&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=derschockwell-21&marketplace=amazon&region=DE&placement=1782166726&asins=1782166726&linkId=02fc59486df63a42ce28c733c072db28&show_border=true&link_opens_in_new_window=true"></iframe></div>
-
-Noch mehr mit Globen stellt *Nikolaus Gradwohl* in seinem lesenswerten, von kreativen Ideen geradezu überlaufenden Buch »[Processing 2: Creative Coding Hotshot][amazon]« auf den Seiten 163 bis 215 an. Er läßt sie in Neonfarben leuchten und projiziert die Daten von Logfiles darauf. Ich habe in Teilen von seinem Code und seinen Ideen profitiert, ihn verändert und ihn von Processings Java-Mode in den Python-Mode überführt.
+Noch mehr mit Globen stellt *Nikolaus Gradwohl* in seinem lesenswerten, von kreativen Ideen geradezu überlaufenden Buch »[Processing 2: Creative Coding Hotshot][wkamazon]« auf den Seiten 163 bis 215 an. Er läßt sie in Neonfarben leuchten und projiziert die Daten von Logfiles darauf. Ich habe in Teilen von seinem Code und seinen Ideen profitiert, ihn verändert und ihn von Processings Java-Mode in den Python-Mode überführt.
 
 ### Literatur
 
-- Nikolaus Gradwohl: *[Processing 2: Creative Coding Hotshot][amazon]*, Birmingham *(Packt Publishing)* 2013
+- Nikolaus Gradwohl: *[Processing 2: Creative Coding Hotshot][wkamazon]*, Birmingham *(Packt Publishing)* 2013
 
-[amazon]: https://www.amazon.de/Processing-2-Creative-Coding-Hotshot/dp/1782166726/ref=as_li_ss_tl?ie=UTF8&qid=1487608123&sr=8-1&keywords=processing+2+creative+coding+hotshot&linkCode=ll1&tag=derschockwell-21&linkId=d122ec0e5725e0177a740b9d07e524b4
+[wkamazon]: https://www.amazon.de/Processing-2-Creative-Coding-Hotshot/dp/1782166726/ref=as_li_ss_tl?ie=UTF8&qid=1487608123&sr=8-1&keywords=processing+2+creative+coding+hotshot&linkCode=ll1&tag=derschockwell-21&linkId=d122ec0e5725e0177a740b9d07e524b4
 
 # Einen eigenen Wetterbericht mit OpenWeatherMap
 
@@ -4231,7 +4226,7 @@ class Orc():
             image(self.orc2, self.x, self.y)
 ~~~
 
-Die Figur des *Orcs* hatte ich ja schon häufiger verwendet, die Zeichnungen stammen aus dem freien ([CC-BY-SA][8]) [OpenPixels][9]-Projekt von [Silveira Neto][10]. Der Einfachheit halber und damit Ihr das nachprogrammieren könnt, habe ich die drei animierten Bildchen hier noch einmal eingebunden:
+Die Figur des *Orcs* hatte ich ja schon häufiger verwendet, die Zeichnungen stammen aus dem freien ([CC-BY-SA][rorc8]) [OpenPixels][rorc9]-Projekt von [Silveira Neto][rorc10]. Der Einfachheit halber und damit Ihr das nachprogrammieren könnt, habe ich die drei animierten Bildchen hier noch einmal eingebunden:
 
 ![Ork 1](images/orc1.png) ![Ork 2](images/orc2.png) ![Ork 3](images/orc3.png)
 
@@ -4260,9 +4255,9 @@ In `setup()` habe ich zuerst das Hintergrundbild eingebunden (es ist ebenfalls a
 
 Wie es damit weitergeht, weiß ich noch nicht so genau. Zum einen habe ich die Idee, ganz viele Instanzen der Orks über das Spielfeld zu bewegem, eine andere Idee ist es, den Ork mittels der Pfeiltasten in alle vier Himmelsrichtungen laufen und auf Hindernisse reagieren zu lassen. Schauen wir mal …
 
-[8]: https://github.com/silveira/openpixels/blob/master/LICENSE
-[9]: https://github.com/silveira/openpixels
-[10]: http://silveiraneto.net/tag/pixelart/
+[rorc8]: https://github.com/silveira/openpixels/blob/master/LICENSE
+[rorc9]: https://github.com/silveira/openpixels
+[rorc10]: http://silveiraneto.net/tag/pixelart/
 
 ## Running Orc in vier Richtungen
 
@@ -4270,7 +4265,7 @@ Heute möchte ich meine kleine Einführung in Processing.py, dem Python-Mode fü
 
 ![Ork](images/orcbk1.gif) ![Ork](images/orcbk2.gif) ![Ork](images/orcfr1.gif) ![Ork](images/orcfr2.gif) ![Ork](images/orclf1.gif) ![Ork](images/orclf2.gif) ![Ork](images/orcrt1.gif) ![Ork](images/orcrt2.gif)
 
-Im Gegensatz zu dem Ork aus dem letzten Tutorial stammen diese Bildchen (bis auf die Hintergrund-Wiese) nicht aus dem [OpenPixels][6]-Fundus von [Silveira Neto][7], sondern aus der ebenfalls freien ([CC BY 3.0][8]) [Sprite-Sammlung][9] von *Philipp Lenssen* (über 700 animierte Avatare in der klassischen Größe von 32x32 Pixeln). Und die Animationen setzen sich auch nur aus je zwei verschiedenen Bildchen zusammen, was zum einen Code und Speicher spart und zum anderen den Charakteren einen besonders wuseligen Eindruck verschafft, der an die Frühzeit der Computerspiele erinnert (aus der die Bilder auch stammen). 😇 Man benötigt so für jede der vier Himmelsrichtungen nur zwei Bilder, was dann zusammen obige acht Bildchen ergibt.
+Im Gegensatz zu dem Ork aus dem letzten Tutorial stammen diese Bildchen (bis auf die Hintergrund-Wiese) nicht aus dem [OpenPixels][rorc26]-Fundus von [Silveira Neto][rorc27], sondern aus der ebenfalls freien ([CC BY 3.0][rorc28]) [Sprite-Sammlung][rorc29] von *Philipp Lenssen* (über 700 animierte Avatare in der klassischen Größe von 32x32 Pixeln). Und die Animationen setzen sich auch nur aus je zwei verschiedenen Bildchen zusammen, was zum einen Code und Speicher spart und zum anderen den Charakteren einen besonders wuseligen Eindruck verschafft, der an die Frühzeit der Computerspiele erinnert (aus der die Bilder auch stammen). 😇 Man benötigt so für jede der vier Himmelsrichtungen nur zwei Bilder, was dann zusammen obige acht Bildchen ergibt.
 
 Als erstes habe ich dem Ork natürlich wieder eine eigene Klasse spendiert (in dem Tab/der Datei `orc2.py`), deren Quellcode nun schon bedeutend umfangreicher geworden ist:
 
@@ -4390,19 +4385,19 @@ Beachtet bitte, daß die Abfrage der Tastatur erst greift, wenn das Programmfens
 Das ist alles. Erfreut Euch auch an dem kleinen Gag, den *Philipp Lenssen* seinem Ork verpaßt hat: Das Haarschwänzchen wedelt fröhlich hin und her.
 
 
-[4]: movingkitty.md
-[6]: https://github.com/silveira/openpixels
-[7]: http://silveiraneto.net/tag/pixelart/
-[8]: https://creativecommons.org/licenses/by/3.0/
-[9]: http://blogoscoped.com/archive/2006-08-08-n51.html
+[rorc24]: movingkitty.md
+[rorc26]: https://github.com/silveira/openpixels
+[rorc27]: http://silveiraneto.net/tag/pixelart/
+[rorc28]: https://creativecommons.org/licenses/by/3.0/
+[rorc29]: http://blogoscoped.com/archive/2006-08-08-n51.html
 
 ## Ork mit Kollisionserkennung
 
-Nachdem ich im letzten Abschnitt gezeigt hatte, wie man einen kleinen Ork mit Hilfe der Pfeiltasten in allen vier Himmelsrichtungen über das Bildschirmfenster jagen kann, bis er am Fensterrand stehenbleibt, möchte ich Euch nun zeigen, wie man eine generelle Kollisionserkennung implementiert. Dafür habe ich erst einmal eine Oberklasse namens `Sprite` eingeführt, die das Verhalten, das allen *Sprites* gemein ist, festlegt und von der alle Sprites erben sollen (zur Bedeutung und Herkunft des Begriffs [Sprite][2] informiert die Wikipedia).
+Nachdem ich im letzten Abschnitt gezeigt hatte, wie man einen kleinen Ork mit Hilfe der Pfeiltasten in allen vier Himmelsrichtungen über das Bildschirmfenster jagen kann, bis er am Fensterrand stehenbleibt, möchte ich Euch nun zeigen, wie man eine generelle Kollisionserkennung implementiert. Dafür habe ich erst einmal eine Oberklasse namens `Sprite` eingeführt, die das Verhalten, das allen *Sprites* gemein ist, festlegt und von der alle Sprites erben sollen (zur Bedeutung und Herkunft des Begriffs [Sprite][rorc32] informiert die Wikipedia).
 
 ![Screenshot](images/orkmitkollisionserkennung.png)
 
-Die Klasse `Sprite` sieht in [Processing.py][3] erst einmal so aus:
+Die Klasse `Sprite` sieht in [Processing.py][rorc33] erst einmal so aus:
 
 ~~~python
 class Sprite(object):
@@ -4561,7 +4556,7 @@ class Tree(Sprite):
         image(self.pic, self.x, self.y)
 ~~~
 
-Bis auf das andere Bildchen unterscheidet sie sich nicht von der Klasse `Wall`. Baum und Mauer (sowie die neue Hintergrundkachel) habe ich dem freien ([CC BY 3.0][4]) Angband-Tilesets von [dieser Site][5] entnommen und mit dem Editor [Tiled][6] zurechtgeschnitten. Hier die Bildchen auch für Euch, damit Ihr das Beispiel nachprogrammieren könnt:
+Bis auf das andere Bildchen unterscheidet sie sich nicht von der Klasse `Wall`. Baum und Mauer (sowie die neue Hintergrundkachel) habe ich dem freien ([CC BY 3.0][rorc34]) Angband-Tilesets von [dieser Site][rorc35] entnommen und mit dem Editor [Tiled][rorc36] zurechtgeschnitten. Hier die Bildchen auch für Euch, damit Ihr das Beispiel nachprogrammieren könnt:
 
 ![Gras](images/grass.png) ![Baum](images/tree.png) ![Mauer](images/wall.png)
 
@@ -4736,11 +4731,11 @@ class Tree(Sprite):
 
 Wenn Ihr nun ein wenig damit herumspielt, werdet Ihr eine kleine Ungenauigkeit bemerken. Nähert sich der Ork von rechts oder von links der Tanne, dann sieht es so aus, als ob er ziemlich weit davor stehenbleiben würde. Das liegt daran, daß sowohl die Seitenansichten des Ork wie auch die der Tanne die 32-Pixel Breite nicht besonders gut ausfüllen. Abhilfe könnte man schaffen, indem man die umgebenden Rechtecke schmaler macht. Das ist noch relativ einfach zu implementieren, macht den Quellcode aber dennoch komplizierter und unübersichtlicher. Da ich aber erst einmal nur das Prinzip der Kollisionserkennung mit überlappenden Rechtecken deutlich machen wollte, dachte ich, daß man im Sinne der Klarheit mit diesem kleinen Handicap leben kann.
 
-[2]: https://de.wikipedia.org/wiki/Sprite_(Computergrafik)
-[3]: cp^processingpy
-[4]: https://creativecommons.org/licenses/by/3.0/
-[5]: http://pousse.rapiere.free.fr/tome/
-[6]: cp^Tiled
+[rorc32]: https://de.wikipedia.org/wiki/Sprite_(Computergrafik)
+[rorc33]: cp^processingpy
+[rorc34]: https://creativecommons.org/licenses/by/3.0/
+[rorc35]: http://pousse.rapiere.free.fr/tome/
+[rorc36]: cp^Tiled
 
 ## Ein Ork im Labyrinth
 
@@ -4752,9 +4747,9 @@ Die einzelnen Klassen im zweiten Reiter (`sprites2.py`) blieben gegenüber dem l
 
 ![Wall 2](images/wall2.png) ![Lava](images/lava.png) ![Gras](images/grass.png)
 
-Das Labyrinth habe ich in [Tiled][2] entworfen und die Bilder dafür wieder dem freien ([CC BY 3.0][3]) Angband-Tilesets von [dieser Site][4] entnommen.
+Das Labyrinth habe ich in [Tiled][rorc42] entworfen und die Bilder dafür wieder dem freien ([CC BY 3.0][rorc43]) Angband-Tilesets von [dieser Site][rorc44] entnommen.
 
-Die größten Änderungen gab es im Hauptprogramm. Zu den üblichen Vorbelegungen kam ein zweidimensionales Array `obstacles` hinzu. Dies habe ich mir zurechtgebastelt, in dem ich in *Tiled* das Tileset als CSV exportiert habe und dann in dem [Text-Editor meines Vertrauens][5] mit *Suchen und Ersetzen* die Zahlen ein wenig vereinfacht hatte:
+Die größten Änderungen gab es im Hauptprogramm. Zu den üblichen Vorbelegungen kam ein zweidimensionales Array `obstacles` hinzu. Dies habe ich mir zurechtgebastelt, in dem ich in *Tiled* das Tileset als CSV exportiert habe und dann in dem [Text-Editor meines Vertrauens][rorc45] mit *Suchen und Ersetzen* die Zahlen ein wenig vereinfacht hatte:
 
 ~~~python
 obstacles = [[9,9,9,9,9,9,9,9,0,9],
@@ -5037,19 +5032,19 @@ def loadObstaclesData():
 
 Wenn Ihr das Programm laufen laßt, werdet Ihr feststellen, daß ich kurz vor dem Ausgang unten eine kleine Gemeinheit eingebaut habe und es gar nicht so einfach ist, den Ork dorthin zu lotsen. Er will partout 32 Pixel breit sein und macht sich nicht schmaler, daher muß man die Drehung nach unten genau abpassen. Aber es ist nicht unmöglich, ich habe es probiert und geschafft. 😛
 
-Die Bilder des Orks stammen aus der ebenfalls freien ([CC BY 3.0][6]) [Sprite-Sammlung von Philipp Lenssen][7] (über 700 animierte Avatare in der klassischen Größe von 32x32 Pixeln) und Ihr könnt sie in [diesem Tutorial][15] finden.
+Die Bilder des Orks stammen aus der ebenfalls freien ([CC BY 3.0][rorc46]) [Sprite-Sammlung von Philipp Lenssen][rorc47] (über 700 animierte Avatare in der klassischen Größe von 32x32 Pixeln) und Ihr könnt sie in [diesem Tutorial][rorc415] finden.
 
-Alle Quelltexte und Bilder gibt es übrigens auch immer aktuell im [GitHub-Repo][8] zu dieser kleinen Tutorial-Reihe.
+Alle Quelltexte und Bilder gibt es übrigens auch immer aktuell im [GitHub-Repo][rorc48] zu dieser kleinen Tutorial-Reihe.
 
 
 
-[2]: http://cognitiones.kantel-chaos-team.de/multimedia/spieleprogrammierung/tiled.html
-[3]: https://creativecommons.org/licenses/by/3.0/
-[4]: http://pousse.rapiere.free.fr/tome/
-[5]: http://cognitiones.kantel-chaos-team.de/produktivitaet/textmate.html
-[6]: https://creativecommons.org/licenses/by/3.0/
-[7]: http://blogoscoped.com/archive/2006-08-08-n51.html
-[8]: https://github.com/kantel/processingpy
+[rorc42]: http://cognitiones.kantel-chaos-team.de/multimedia/spieleprogrammierung/tiled.html
+[rorc43]: https://creativecommons.org/licenses/by/3.0/
+[rorc44]: http://pousse.rapiere.free.fr/tome/
+[rorc45]: http://cognitiones.kantel-chaos-team.de/produktivitaet/textmate.html
+[rorc46]: https://creativecommons.org/licenses/by/3.0/
+[rorc47]: http://blogoscoped.com/archive/2006-08-08-n51.html
+[rorc48]: https://github.com/kantel/processingpy
 
 ## Der autonome Ork
 
@@ -5117,11 +5112,11 @@ class Hero(Sprite):
             image(self.image2, self.x, self.y)
 ~~~
 
-Sie unterscheidet sich -- bis auf die Bildchen -- kaum von der bisherigen `Orc`-Klasse. Auch diese Bildchen stammen aus der ebenfalls freien ([CC BY 3.0][2]) [Sprite-Sammlung von Philipp Lenssen][3] (über 700 animierte Avatare in der klassischen Größe von 32x32 Pixeln) und hier sind sie, damit Ihr sie herunterladen und verwenden könnt:
+Sie unterscheidet sich -- bis auf die Bildchen -- kaum von der bisherigen `Orc`-Klasse. Auch diese Bildchen stammen aus der ebenfalls freien ([CC BY 3.0][rorc52]) [Sprite-Sammlung von Philipp Lenssen][rorc53] (über 700 animierte Avatare in der klassischen Größe von 32x32 Pixeln) und hier sind sie, damit Ihr sie herunterladen und verwenden könnt:
 
 ![](images/mnv1bk1.gif) ![](images/mnv1bk2.gif) ![](images/mnv1fr1.gif) ![](images/mnv1fr2.gif) ![](images/mnv1lf1.gif) ![](images/mnv1lf2.gif) ![](images/mnv1rt1.gif) ![](images/mnv1rt2.gif)
 
-Den Hintergrund habe ich wieder mit Tiled erstellt und die Bilder dafür wieder dem ebenfalls freien ([CC BY 3.0][2]) Angband-Tilesets von [dieser Site][5] entnommen. Nach einem Export als CSV-Datei und ein wenig *Suchen und Ersetzen* kamm dann dieses Terrain zustande:
+Den Hintergrund habe ich wieder mit Tiled erstellt und die Bilder dafür wieder dem ebenfalls freien ([CC BY 3.0][rorc52]) Angband-Tilesets von [dieser Site][rorc55] entnommen. Nach einem Export als CSV-Datei und ein wenig *Suchen und Ersetzen* kamm dann dieses Terrain zustande:
 
 ~~~python
 terrain = [[0,0,0,0,0,0,8,0,0,0,0,0,0,0,0,0,0,0,0,7],
@@ -5406,17 +5401,17 @@ Wenn Ihr das Programm laufen laßt, werdet Ihr feststellen, daß der Ork manchma
 
 Für das zweite Problem bräuchte der Ork einfach mehr »Intelligenz«. Bisher wechselt er die Richtung nur, wenn er auf einer Hindernis trifft. Anders sähe es aus, wenn man zufallsgeseteuert nach etwa jedem 20. Schritt eine Richtungsänderung vornimmt. Die Laufrichtungen des Ork würden dann noch unvorhersehbarer.
 
-[2]: https://creativecommons.org/licenses/by/3.0/
-[3]: http://blogoscoped.com/archive/2006-08-08-n51.html
-[5]: http://pousse.rapiere.free.fr/tome/
+[rorc52]: https://creativecommons.org/licenses/by/3.0/
+[rorc53]: http://blogoscoped.com/archive/2006-08-08-n51.html
+[rorc55]: http://pousse.rapiere.free.fr/tome/
 
 ## Drei Orks und ein Held
 
 ![Drei Orks](images/dreiorksundeinheld.jpg)
 
-In diesem Tutorial, in dem erstmalig auch mehrere Orks auftreten, habe ich die Unstimmigkeiten aus dem [letzten Teil dieser Reihe][1] beseitigt. Die Ränder-Behandlung habe ich dadurch vereinfacht, daß nun die ganze Spielwelt eingezäunt ist[^1] und die Tänzchen vor Hindernissen habe ich dadurch eliminiert, daß ich Listen der zulässigen Richtungsänderungen angelegt habe und nur diese per Zufall auswählen lasse:
+In diesem Tutorial, in dem erstmalig auch mehrere Orks auftreten, habe ich die Unstimmigkeiten aus dem [letzten Teil dieser Reihe][rorc61] beseitigt. Die Ränder-Behandlung habe ich dadurch vereinfacht, daß nun die ganze Spielwelt eingezäunt ist[^rorc6fn1] und die Tänzchen vor Hindernissen habe ich dadurch eliminiert, daß ich Listen der zulässigen Richtungsänderungen angelegt habe und nur diese per Zufall auswählen lasse:
 
-[^1]: Das ist keine Einschränkung, denn der Fensterrand ist ja im Grunde auch nichts anderes als eine undurchdringliche Mauer und im Zweifelsfall macht man das Spielfeld einfach um die Mauerdicke größer.
+[^rorc6fn1]: Das ist keine Einschränkung, denn der Fensterrand ist ja im Grunde auch nichts anderes als eine undurchdringliche Mauer und im Zweifelsfall macht man das Spielfeld einfach um die Mauerdicke größer.
 
 ~~~{python}
 for i in range(len(orc)):
@@ -5686,7 +5681,7 @@ def keyPressed():
             hero.dir = 3
 ~~~
 
-Den Raum habe ich wieder in [Tiled][2] erstellt und einmal als Bild und einmal als CSV-Datei exportiert. Aus dieser CSV-Datei habe ich dann obiges Array gebastelt, aus dem man die Struktur des *Dungeon* ziemlich gut ablesen kann. Damit das mit dem Ablesen aber auch wirklich funktioniert, mußte ich gegenüber dem gewohnten Brauch `x` und `y` vertauschen (weil man sonst den Kopf immer schräg legen müßte). 😇
+Den Raum habe ich wieder in [Tiled][rorc62] erstellt und einmal als Bild und einmal als CSV-Datei exportiert. Aus dieser CSV-Datei habe ich dann obiges Array gebastelt, aus dem man die Struktur des *Dungeon* ziemlich gut ablesen kann. Damit das mit dem Ablesen aber auch wirklich funktioniert, mußte ich gegenüber dem gewohnten Brauch `x` und `y` vertauschen (weil man sonst den Kopf immer schräg legen müßte). 😇
 
 ### Meditieren mit den Orks
 
@@ -5696,26 +5691,26 @@ Wenn man den Sketch dann lange genug laufen läßt, verirrt sich hin und wieder 
 
 ### Credits
 
-Die Bilder des Helden und der Orks entstammen wieder der freien ([CC BY 3.0][3]) [Sprite-Sammlung von Philipp Lenssen][4] (über 700 animierte Avatare in der klassischen Größe von 32x32 Pixeln). Den Hintergrund habe ich wie bei den anderen Beispielen auch mit [Tiled][2] erstellt und die Tiles dem ebenfalls freien ([CC0][5]) [Dungeon Crawl Tileset][6] entnommen.
+Die Bilder des Helden und der Orks entstammen wieder der freien ([CC BY 3.0][rorc63]) [Sprite-Sammlung von Philipp Lenssen][rorc64] (über 700 animierte Avatare in der klassischen Größe von 32x32 Pixeln). Den Hintergrund habe ich wie bei den anderen Beispielen auch mit [Tiled][rorc62] erstellt und die Tiles dem ebenfalls freien ([CC0][rorc65]) [Dungeon Crawl Tileset][6] entnommen.
 
 Alle Skripte und Assets zu dieser kleinen [Processing.py-Serie][7] könnt Ihr natürlich [auf GitHub][8] finden. Also habt Spaß damit.
 
-[1]: runningorc5.md
-[2]: http://cognitiones.kantel-chaos-team.de/multimedia/spieleprogrammierung/tiled.html
-[3]: https://creativecommons.org/licenses/by/3.0/
-[4]: http://blogoscoped.com/archive/2006-08-08-n51.html
-[5]: http://creativecommons.org/publicdomain/zero/1.0/
-[6]: http://opengameart.org/content/dungeon-crawl-32x32-tiles
-[7]: http://py.kantel-chaos-team.de/
-[8]: https://github.com/kantel/processingpy
+[rorc61]: runningorc5.md
+[rorc62]: http://cognitiones.kantel-chaos-team.de/multimedia/spieleprogrammierung/tiled.html
+[rorc63]: https://creativecommons.org/licenses/by/3.0/
+[rorc64]: http://blogoscoped.com/archive/2006-08-08-n51.html
+[rorc65]: http://creativecommons.org/publicdomain/zero/1.0/
+[rorc66]: http://opengameart.org/content/dungeon-crawl-32x32-tiles
+[rorc67]: http://py.kantel-chaos-team.de/
+[rorc68]: https://github.com/kantel/processingpy
 
 # Exkurs Rauhnächte: Spaß mit Processing.py
 
-Jeden Winter in den [Rauhnächten][1] treffen sich die Geister mit den Engeln, um gemeinsam zu tanzen und ihrer Freude Ausdruck zu verleihen, daß die Tage nun wieder länger werden. Ich habe das mal in einem kleinen Processing.py-Sketch nachempfunden.
+Jeden Winter in den [Rauhnächten][rau1] treffen sich die Geister mit den Engeln, um gemeinsam zu tanzen und ihrer Freude Ausdruck zu verleihen, daß die Tage nun wieder länger werden. Ich habe das mal in einem kleinen Processing.py-Sketch nachempfunden.
 
 ![Screenshot](images/rauhnacht.jpg)
 
-Hier treffen sich Geist und Engelchen vor dem Tor einer Waldkirche oder -kapelle um anmutig Euren Mauszeiger zu umtanzen. Dabei habe ich eine Technik verwendet, die *[Easing][3]* genannt wird. Dabei folgt zwar der *Sprite* dem Mauszeiger, doch bei jedem Durchlauf wird die Distanz zwischen dem Mauszeiger und dem Sprite berechnet und mit einer kleinen Konstante (zum Beispiel 0.05) multipliziert.
+Hier treffen sich Geist und Engelchen vor dem Tor einer Waldkirche oder -kapelle um anmutig Euren Mauszeiger zu umtanzen. Dabei habe ich eine Technik verwendet, die *[Easing][rau3]* genannt wird. Dabei folgt zwar der *Sprite* dem Mauszeiger, doch bei jedem Durchlauf wird die Distanz zwischen dem Mauszeiger und dem Sprite berechnet und mit einer kleinen Konstante (zum Beispiel 0.05) multipliziert.
 
 ~~~python
 easing1 = 0.01
@@ -5796,7 +5791,7 @@ Die Abfrage der Mausposition funktioniert bei Processing(.py) im Gegensatz zur T
 
 ## Caveat
 
-Meine ursprüngliche Idee war, statt der Bilder Emojis für Geist und Engel einzusetzen, und zwar diese: 👻 und 👼 , wie ich eine ähnliche Idee schon einmal in einem [P5.js-Sketch][4] umgesetzt hatte. Dann fiel mir jedoch ein, daß Processing.py ja auf [Jython][5] aufsetzt und es daher mit der UTF-8-Unterstützung im Allgemeinen und der Nutzung von Emojis im Besonderen schwierig werden kann (ein aktuelles Jython ist zwar nahezu kompatibel zu Python 2.7, aber eben nicht zu Python 3). Daher habe ich auf die freien ([CC-BY 4.0][6]) [Twemoji-Graphiken von Twitter][7] zurückgegriffen. Hier sind sie, falls Ihr das Beispiel nachprogrammieren wollt.
+Meine ursprüngliche Idee war, statt der Bilder Emojis für Geist und Engel einzusetzen, und zwar diese: 👻 und 👼 , wie ich eine ähnliche Idee schon einmal in einem [P5.js-Sketch][rau4] umgesetzt hatte. Dann fiel mir jedoch ein, daß Processing.py ja auf [Jython][rau5] aufsetzt und es daher mit der UTF-8-Unterstützung im Allgemeinen und der Nutzung von Emojis im Besonderen schwierig werden kann (ein aktuelles Jython ist zwar nahezu kompatibel zu Python 2.7, aber eben nicht zu Python 3). Daher habe ich auf die freien ([CC-BY 4.0][rau6]) [Twemoji-Graphiken von Twitter][rau7] zurückgegriffen. Hier sind sie, falls Ihr das Beispiel nachprogrammieren wollt.
 
 ![Engel](images/engel.png) ![Geist](images/ghost.png)
 
@@ -5804,21 +5799,21 @@ Der Geist sieht zwar nicht ganz so fröhlich aus, wie das Emoji von Apple und an
 
 ## Weitere Credits
 
-[![Background](images/koken.jpg)][8]
+[![Background](images/koken.jpg)][rau8]
 
 Das Tor zur Waldkirche ist ein Ausschnitt aus einem [Gemälde von Edmund Koken][8], das -- da der Maler 1872 verstorben ist -- hinreichend gemeinfrei sein dürfte, so daß Ihr das Bild gefahrlos verwenden könnt.
 
-[1]: https://de.wikipedia.org/wiki/Rauhnacht
-[3]: https://processing.org/examples/easing.html
-[4]: http://blog.schockwellenreiter.de/2016/07/2016071001.html
-[5]: http://cognitiones.kantel-chaos-team.de/programmierung/python/jython.html
-[6]: https://creativecommons.org/licenses/by/4.0/
-[7]: https://github.com/twitter/twemoji
-[8]: http://blog.schockwellenreiter.de/g2016/b201612/201612bild15.html
+[rau1]: https://de.wikipedia.org/wiki/Rauhnacht
+[rau3]: https://processing.org/examples/easing.html
+[rau4]: http://blog.schockwellenreiter.de/2016/07/2016071001.html
+[rau5]: http://cognitiones.kantel-chaos-team.de/programmierung/python/jython.html
+[rau6]: https://creativecommons.org/licenses/by/4.0/
+[rau7]: https://github.com/twitter/twemoji
+[rau8]: http://blog.schockwellenreiter.de/g2016/b201612/201612bild15.html
 
 # Exkurs: Walking Pingus
 
-Die älteren unter Euch können sich sicher noch an das Computerspiel [Lemminge][1] von 1991 erinnern, in dem man eine Horde kleiner, aber dummer Geschöpfe mit grünen Haaren und blauem Anzug, die immer stur geradeaus liefen, davon abhalten mußte, ins Verderben zu rennen und sie zum rettenden Ausgang führen. *Ingo Runke* hatte einen freien (GPL) Klon gebastelt, den er in Anspielung auf das Linus-Maskottchen *Tux* [Pingus][2] nannte und in dem man -- statt der Lemming -- kleine Pinguine retten mußte. Die Pinguine bewegten sich in jede Richtung mit 8 Bildern und da ich mal etwas anderes als zappelige Orks mit [Processing.py][7] auf den Bildschirm bringen wollte, habe ich mich mal an den Pinguinen versucht.
+Die älteren unter Euch können sich sicher noch an das Computerspiel [Lemminge][wp1] von 1991 erinnern, in dem man eine Horde kleiner, aber dummer Geschöpfe mit grünen Haaren und blauem Anzug, die immer stur geradeaus liefen, davon abhalten mußte, ins Verderben zu rennen und sie zum rettenden Ausgang führen. *Ingo Runke* hatte einen freien (GPL) Klon gebastelt, den er in Anspielung auf das Linus-Maskottchen *Tux* [Pingus][wp2] nannte und in dem man -- statt der Lemming -- kleine Pinguine retten mußte. Die Pinguine bewegten sich in jede Richtung mit 8 Bildern und da ich mal etwas anderes als zappelige Orks mit [Processing.py][wp7] auf den Bildschirm bringen wollte, habe ich mich mal an den Pinguinen versucht.
 
 [![Screenshot](images/walkingpingus-b.jpg)](https://www.flickr.com/photos/schockwellenreiter/31892319221/)
 
@@ -5844,7 +5839,7 @@ Nach den bisherigen Helden- und Orks-Tutorials ist es nur eine Fingerübung. Auf
             image(self.image8, self.x, self.y)
 ~~~
 
-Die einzelnen Bilder habe ich wieder mit [Tiled][3] aus dem Spritesheet ausgeschnitten. Dabei ist zu beachten, daß die einzelnen Pinguine eine Tilegröße von 32x44 Pixeln besitzen.
+Die einzelnen Bilder habe ich wieder mit [Tiled][wp3] aus dem Spritesheet ausgeschnitten. Dabei ist zu beachten, daß die einzelnen Pinguine eine Tilegröße von 32x44 Pixeln besitzen.
 
 ![Spritesheet](images/xmas-walker.png)
 
@@ -5952,21 +5947,21 @@ Wenn Ihr das nachprogrammiert und laufen laßt, werdet Ihr sehen, daß das schon
 
 ## Pingus Links
 
-Wenn Ihr Pingus spielen wollt, das Spiel gibt es trotz seines Alters immer noch [hier für Windows, Mac und Linux zum freien Download][4]. Auf meinen Macs läuft es auch noch, macht Spaß und die [Quellen könnt Ihr auf GitHub][5] finden.
+Wenn Ihr Pingus spielen wollt, das Spiel gibt es trotz seines Alters immer noch [hier für Windows, Mac und Linux zum freien Download][wp4]. Auf meinen Macs läuft es auch noch, macht Spaß und die [Quellen könnt Ihr auf GitHub][wp5] finden.
 
 
-[1]: https://de.wikipedia.org/wiki/Lemmings
-[2]: https://de.wikipedia.org/wiki/Pingus
-[3]: http://cognitiones.kantel-chaos-team.de/multimedia/spieleprogrammierung/tiled.html
-[4]: https://pingus.seul.org/download.html
-[5]: https://github.com/Pingus/pingus
-[6]: http://py.kantel-chaos-team.de/
+[wp1]: https://de.wikipedia.org/wiki/Lemmings
+[wp2]: https://de.wikipedia.org/wiki/Pingus
+[wp3]: http://cognitiones.kantel-chaos-team.de/multimedia/spieleprogrammierung/tiled.html
+[wp4]: https://pingus.seul.org/download.html
+[wp5]: https://github.com/Pingus/pingus
+[wp6]: http://py.kantel-chaos-team.de/
 
 # Das Avoider Game
 
 ## Game Stage 1
 
-Zum Abschluß meiner kleinen, geplanten Tutorial-Reihe zu Processing.py, dem Python-Mode von Processing, möchte ich mit und für Euch ein kleines, vollständiges Spieleprojekt programmieren. Es basiert zum einen auf dem »[AS3 Avoider Game Tutorial](http://gamedev.michaeljameswilliams.com/as3-avoider-game-tutorial-base/)«, das *Michael James Williams* für ActionScript 3 und Flash geschrieben hat und das *Michael Haungs* dann in seinem Buch »[Creative Greenfoot][a1]« nach Java und Greenfoot portierte. Zum anderen habe ich es noch mit Ideen aus einem Programm aus dem wundervollen Buch »[Game Programming][a2]«, einem PyGame-Tutorial von *Andy Harris* aufgepeppt, in dem ein Postflieger Inseln anfliegen, aber Wolken vermeiden muß.
+Zum Abschluß meiner kleinen, geplanten Tutorial-Reihe zu Processing.py, dem Python-Mode von Processing, möchte ich mit und für Euch ein kleines, vollständiges Spieleprojekt programmieren. Es basiert zum einen auf dem »[AS3 Avoider Game Tutorial](http://gamedev.michaeljameswilliams.com/as3-avoider-game-tutorial-base/)«, das *Michael James Williams* für ActionScript 3 und Flash geschrieben hat und das *Michael Haungs* dann in seinem Buch »[Creative Greenfoot][av1]« nach Java und Greenfoot portierte. Zum anderen habe ich es noch mit Ideen aus einem Programm aus dem wundervollen Buch »[Game Programming][av2]«, einem PyGame-Tutorial von *Andy Harris* aufgepeppt, in dem ein Postflieger Inseln anfliegen, aber Wolken vermeiden muß.
 
 ### Die Spiel-Idee
 
@@ -6163,8 +6158,8 @@ der Zustand abgefragt und der Score entsprechend hochgesetzt.
 Das Programm ist tatsächlich spielbar. Passt der Spieler nicht auf und kollidiert mit einem der Smileys, dann ist es unbarmherzig zu Ende und es heißt »Game Over!«
 
 
-[a1]: https://www.amazon.de/Creative-Greenfoot-Michael-Haungs/dp/1783980389/ref=as_li_ss_tl?ie=UTF8&qid=1503160042&sr=8-1&keywords=Creative+Greenfoot&linkCode=ll1&tag=derschockwell-21&linkId=e9b13f6f5e11c34b606d9e8d6bffcb10
-[a2]: https://www.amazon.de/Game-Programming-Express-Line-Learning/dp/0470068221/ref=as_li_ss_tl?&linkCode=ll1&tag=derschockwell-21&linkId=e73cc33dbae2dbe0f72dbbe560f3b008
+[av1]: https://www.amazon.de/Creative-Greenfoot-Michael-Haungs/dp/1783980389/ref=as_li_ss_tl?ie=UTF8&qid=1503160042&sr=8-1&keywords=Creative+Greenfoot&linkCode=ll1&tag=derschockwell-21&linkId=e9b13f6f5e11c34b606d9e8d6bffcb10
+[av2]: https://www.amazon.de/Game-Programming-Express-Line-Learning/dp/0470068221/ref=as_li_ss_tl?&linkCode=ll1&tag=derschockwell-21&linkId=e73cc33dbae2dbe0f72dbbe560f3b008
 
 ## Stage 2
 
