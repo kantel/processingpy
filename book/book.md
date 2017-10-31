@@ -1,10 +1,10 @@
-Jörg Kantel
+<!-- ---
+title: Processing.py in Beispielen
+subtitle: Visualisierungen und interaktive Anwendungen mit Python und Processing programmieren
+author: Jörg Kantel
+date: \today
+--- -->
 
-# Processing.py in Beispielen
-
-## Visualisierungen und interaktive Anwendungen mit Python und Processing programmieren
-
----
 
 # Einleitung
 
@@ -14,13 +14,11 @@ Jörg Kantel
 
 # Start: Rotkäppchen und die drei Tanten
 
-Rotkäppchen[^fn1] hatte nicht nur eine Großmutter, sondern -- was weniger bekannt ist -- auch drei Tanten, Agathe, Beatrice und Cynthia. Diese wohnen in drei Häusern, die zusammen ein Dreieck bilden. Wenn Rotkäppchen nicht ihre Großmutter besucht, dann besucht sie eine der drei Tanten. Letzten Sonntag jedoch war sie sehr unschlüssig, welche sie besuchen sollte. Sie startete, um Agathe einen Besuch abzustatten. Jedoch genau auf dem halben Weg zu Agathe wurde sie unsicher und überlegte es sich noch einmal. Sie beschloß, eine ihrer drei Tanten aufzusuchen, es könnte auch wieder Agathe gewesen sein. Doch es war wie verhext: Jedesmal, wenn sie genau den halben Weg zurückgelegt hatte, wurde sie wieder unsicher und entschloß sich neu, einer ihrer drei Tanten aufzusuchen, möglicherweise die gleiche, möglicherweise eine andere. Und das wieder, und wieder, und wieder …
-
-[^fn1]: Vgl. Brüder Grimm
+Rotkäppchen hatte nicht nur eine Großmutter, sondern -- was weniger bekannt ist -- auch drei Tanten, Agathe, Beatrice und Cynthia. Diese wohnen in drei Häusern, die zusammen ein Dreieck bilden. Wenn Rotkäppchen nicht ihre Großmutter besuchte, dann besuchte sie eine der drei Tanten. Letzten Sonntag jedoch war sie sehr unschlüssig, welche sie besuchen sollte. Sie startete, um Agathe einen Besuch abzustatten. Jedoch genau auf dem halben Weg zu Agathe wurde sie unsicher und überlegte es sich noch einmal. Sie beschloß, eine ihrer drei Tanten aufzusuchen, es könnte auch wieder Agathe gewesen sein. Doch es war wie verhext: Jedesmal, wenn sie genau den halben Weg zurückgelegt hatte, wurde sie wieder unsicher und entschloß sich neu, einer ihrer drei Tanten aufzusuchen, möglicherweise die gleiche, möglicherweise eine andere. Und das wieder, und wieder, und wieder …
 
 [![Screenshot](images/sierpinskidreieck.jpg)](https://www.flickr.com/photos/schockwellenreiter/32442344526/)
 
-*William P. Beuamont* [Beaum1996] nannte es das »Tantenspiel«. Ziel ist es nicht, herauszufinden, welche Tante gewinnt (es kann gar keine gewinnen), sondern welche Figur entsteht, wenn man Rotkäppchens Irrweg visualisiert. Ich habe das einmal mit [Processing.py][start1] nachprogrammiert und herausgekommen ist obige Figur, in der Fachliteratur auch als [Sierpinski Dreieck][start2] bekannt, benannt nach dem polnischen Mathematiker *Wacław Sierpiński*, der das Fraktal schon 1915 als erster beschrieb.
+*William P. Beuamont* [Beaum1996] nannte es das »Tantenspiel«. Ziel ist es nicht, herauszufinden, welche Tante gewinnt (es kann gar keine gewinnen), sondern welche Figur entsteht, wenn man Rotkäppchens Irrweg visualisiert. Ich habe das einmal nachprogrammiert und herausgekommen ist obige Figur, in der Fachliteratur auch als [Sierpinski Dreieck][start2] bekannt, benannt nach dem polnischen Mathematiker *Wacław Sierpiński*, der das Fraktal schon 1915 als erster beschrieb.
 
 ## Der Quellcode
 
@@ -62,7 +60,6 @@ Die Schleife wird 120.000 mal durchlaufen, bevor sie stoppt. Damit ich nicht ewi
 
 Aber man sieht sehr schön, wie sich das Dreieck zufällig, aber dennoch erkennbar, zusammensetzt. Je nach zufälligem Startwert liegen die ersten drei bis vier Punkte noch außerhalb des Fraktals, danach geht aber alles seinen geordneten Gang. Und an den Farben erkennt man, daß auch die Reihenfolge, in der die einzelnen Punkte des Fraktals von Rotkäppchen angelaufen werden, ebenfalls zufällig sind.
 
-[start1]: cp^processingpy
 [start2]: https://de.wikipedia.org/wiki/Sierpinski-Dreieck
 
 
@@ -156,9 +153,9 @@ def draw():
 
 ### Weitere mögliche Experimente
 
-Die Turmiten gehen auf *Greg Turk* zurück, der damals Doktorand an der Universität von North Carolina in Chapel Hill war. Er zeigte, daß sie eine zweidimensionale [Turingmaschine](https://de.wikipedia.org/wiki/Turingmaschine) sind. Später hat sie *Christopher Langton* weiterentwickelt und beschrieben -- daher ist sie auch unter dem Namen »Langtons Ameise« *(Lanton's Ant)* bekannt. Die hier vorgestellte ist die einfachste Form solch einer Ameise. Ein nächster Schritt wäre beispielsweise, die Welt mit zwei Turmiten zu bevölkern, die eine färbt die Ebene rot, wenn sie auf ein schwarzes Feld trifft, die andere färbt sie blau. Natürlich müßten dann beide Ameisen auch Regeln implementiert bekommen, wie sie zu verfahren haben, wenn sie auf ein blaues respektive ein rotes Feld treffen.
+Die Turmiten gehen auf *Greg Turk* zurück, der damals Doktorand an der Universität von North Carolina in Chapel Hill war. Er zeigte, daß sie eine zweidimensionale [Turingmaschine](https://de.wikipedia.org/wiki/Turingmaschine) sind. Später hat sie *Christopher Langton* weiterentwickelt und beschrieben -- daher ist sie auch unter dem Namen »Langtons Ameise« *(Langton's Ant)* bekannt. Die hier vorgestellte ist die einfachste Form solch einer Ameise. Ein nächster Schritt wäre beispielsweise, die Welt mit zwei Turmiten zu bevölkern, die eine färbt die Ebene rot, wenn sie auf ein schwarzes Feld trifft, die andere färbt sie blau. Natürlich müßten dann beide Ameisen auch Regeln implementiert bekommen, wie sie zu verfahren haben, wenn sie auf ein blaues respektive ein rotes Feld treffen.
 
-Von Turk selber gibt es zum Beispiel eine Turmite mit zwei Zuständen, nennen wir diese `A` und `B` und mit folgendem Regelsatz:
+Von *Turk* selber gibt es zum Beispiel eine Turmite mit zwei Zuständen, nennen wir diese `A` und `B` und mit folgendem Regelsatz:
 
 Zustand  | A                   | B
 :--------|:--------------------|:--------------
@@ -189,12 +186,12 @@ Es gibt also noch viel zu entdecken in der Welt der Turmiten und Ameisen.
 
 Die [Mandelbrot-Menge](https://de.wikipedia.org/wiki/Mandelbrot-Menge) ist die zentrale Ikone der Chaos-Theorie und das Urbild aller Fraktale. Sie ist die Menge aller komplexen Zahlen *c*, für welche die durch
 
-$
+$$
 \begin{align}
 z_{0} & = 0\\
 z_{n+1} & = z_{n}^{2}+c\\
 \end{align}
-$
+$$
 
 
 rekursiv definierte Folge beschränkt ist. Bilder der Mandelbrot-Menge können erzeugt werden, indem für jeden Wert des Parameters *c*, der gemäß obiger Rekursion endlich bleibt, ein Farbwert in der komplexen Ebene zugeordnet wird.
@@ -370,20 +367,20 @@ Die Erkenntnis daraus: Es kann sich durchaus lohnen, auch mal das Handbuch zu hi
 
 Die [Julia-Menge](https://de.wikipedia.org/wiki/Julia-Menge) wurde 1918 von den beiden französischen Mathematikern *Gaston Maurice Julia* (nachdem sie benannt wurde) und *Pierre Fatou* (dessen Zugang heute die meisten Lehrbücher folgen) unabhängig voneinander beschrieben. Sie steht im engen Zusammenhang zur im letzten Abschnitt beschriebenen [Mandelbrot-Menge](mandelbrot.md). Während die Mandelbrot-Menge, die Menge aller komplexen Zahlen *c* ist, die der iterierten Gleichung
 
-$
+$$
 \begin{align}
 z_{0} & = 0\\
 z_{n+1} & = z_{n}^{2}+c\\
 \end{align}
-$
+$$
 
 folgen, ist bei der Julia-Menge *c* konstant:
 
-$
+$$
 \begin{align}
 z_{n}^{2}+c\\
 \end{align}
-$
+$$
 
 Die Mandelbrot-Menge ist also eine Beschreibungsmenge aller Julia-Mengen. Jedem Punkt *c* der komplexen Zahlenebene entspricht eine Julia-Menge. Eigenschaften der Julia-Menge lassen sich an der Lage von *c* relativ zur Mandelbrot-Menge beurteilen: Wenn der Punkt *c* Element der Mandelbrot-Menge ist, dann ist die Julia-Menge zusammenhängend. Andernfalls ist sie eine Cantormenge unzusammenhängender Punkte. Ist der Imaginärteil *c<sub>i</sub> = 0*, dann ist die Julia-Menge symmetrisch (vlg. Abbildung links oben), ansonsten kann sie alle möglichen Formen annehmen.
 
@@ -556,11 +553,11 @@ Wenn ich später noch auf Bildmanipulationen in Processing zurückkomme, werden 
 
 Seit ich Ende der 1980er Jahre mit meinem damals hochmodernen [Atari Mega&nbsp;ST][butterfly1] erste Schritte mit einem graphikfähigen Personalcomputer unternommen hatte, habe ich die Schmetterlingskurve immer wieder als Test für die Graphikfähigkeit und Schnelligkeit von Programmiersprachen und Rechnern benutzt. Sie wird in [Polarkoordinaten][butterfly2] beschrieben und ihre Formel ist
 
-$
+$$
 \begin{align}
 \rho=e^{\cos(\theta)}-2\cdot \cos(4\cdot \theta)+\sin(\tfrac{\theta}{12})^5
 \end{align}
-$
+$$
 
 oder in Python-Code:
 
@@ -668,15 +665,15 @@ Als einer der ersten hatte  1961 [Edward N. Lorenz](http://de.wikipedia.org/wiki
 
 [^lorenzfn1]: Eine sehr schöne Einführung in [das ungelöste Problem der Navier-Stokes-Gleichungen][lorenz5] gibt es von *Florian Freistetter* in der 217. Folge seiner *Sternengeschichten*
 
-$
+$$
 \begin{align}
 \frac{dx}{dt} & = -\sigma (y - z) \\
 \frac{dy}{dt} & = (\rho - z)x - y \\
 \frac{dz}{dt} & = xy - \gamma z
 \end{align}
-$
+$$
 
-<!-- Dabei sind (sigma = -10), (\rho = 40) und (\gamma = - \frac{8}{3}). Die Parameter der Gleichung habe ich *[Herm1994]* entnommen, *[Stew1993]* gibt \\(\rho = 28\\) an, aber der Wert ändert nichts an dem Verhalten der Kurve und (\rho = 40) füllt das Fenster einfach besser aus. 😜 -->
+Dabei sind $sigma = -10$, $\rho = 40$ und $\gamma = - \frac{8}{3}$. Die Parameter der Gleichung habe ich *[Herm1994]* entnommen, *[Stew1993]* gibt $\rho = 28$ an, aber der Wert ändert nichts an dem Verhalten der Kurve und $\rho = 40$ füllt das Fenster einfach besser aus. 😜
 
 Processing.py besitzt im Gegensatz zu R oder [NumPy][lorenz7] kein Modul zur numerischen Lösung von Differentialgleichungen und so habe ich das einfache [Eulersche Poligonzugverfahren][lorenz6] zur numerischen Berechnung benutzt
 
@@ -739,13 +736,13 @@ def draw():
 
 ### Links
 
-  * Der *[Lorenz Attractor](http://mathworld.wolfram.com/LorenzAttractor.html)* auf Wolfram MathWorld
+- Der *[Lorenz Attractor](http://mathworld.wolfram.com/LorenzAttractor.html)* auf Wolfram MathWorld
 
 ### Literatur
 
-  * *[Herm1994]* Dieter Hermann: *<a href="http://www.amazon.de/gp/product/3893196331/ref=as_li_ss_tl?ie=UTF8&camp=1638&creative=19454&creativeASIN=3893196331&linkCode=as2&tag=derschockwell-21">Algorithmen für Chaos und Fraktale</a><img src="http://www.assoc-amazon.de/e/ir?t=derschockwell-21&l=as2&o=3&a=3893196331" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />*, Bonn (Addison-Wesley) 1994, S. 80ff.
-  * *[Pief1991]* Frank Piefke: *<a href="http://www.amazon.de/gp/product/3778519158/ref=as_li_ss_tl?ie=UTF8&camp=1638&creative=19454&creativeASIN=3778519158&linkCode=as2&tag=derschockwell-21">Simulationen mit dem Personalcomputer</a><img src="http://www.assoc-amazon.de/e/ir?t=derschockwell-21&l=as2&o=3&a=3778519158" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />*, Heidelberg (Hüthig) 1991
-  * *[Stew1993]* Ian Stewart: *<a href="http://www.amazon.de/gp/product/345833243X/ref=as_li_ss_tl?ie=UTF8&camp=1638&creative=19454&creativeASIN=345833243X&linkCode=as2&tag=derschockwell-21">Spielt Gott Roulette?</a><img src="http://www.assoc-amazon.de/e/ir?t=derschockwell-21&l=as2&o=3&a=345833243X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />*, Frankfurt (Insel TB) 1993
+- *[Herm1994]* Dieter Hermann: *<a href="http://www.amazon.de/gp/product/3893196331/ref=as_li_ss_tl?ie=UTF8&camp=1638&creative=19454&creativeASIN=3893196331&linkCode=as2&tag=derschockwell-21">Algorithmen für Chaos und Fraktale</a><img src="http://www.assoc-amazon.de/e/ir?t=derschockwell-21&l=as2&o=3&a=3893196331" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />*, Bonn (Addison-Wesley) 1994, S. 80ff.
+- *[Pief1991]* Frank Piefke: *<a href="http://www.amazon.de/gp/product/3778519158/ref=as_li_ss_tl?ie=UTF8&camp=1638&creative=19454&creativeASIN=3778519158&linkCode=as2&tag=derschockwell-21">Simulationen mit dem Personalcomputer</a><img src="http://www.assoc-amazon.de/e/ir?t=derschockwell-21&l=as2&o=3&a=3778519158" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />*, Heidelberg (Hüthig) 1991
+- *[Stew1993]* Ian Stewart: *<a href="http://www.amazon.de/gp/product/345833243X/ref=as_li_ss_tl?ie=UTF8&camp=1638&creative=19454&creativeASIN=345833243X&linkCode=as2&tag=derschockwell-21">Spielt Gott Roulette?</a><img src="http://www.assoc-amazon.de/e/ir?t=derschockwell-21&l=as2&o=3&a=345833243X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />*, Frankfurt (Insel TB) 1993
 
 [lorenz3]: https://de.wikipedia.org/wiki/Lorenz-Attraktor
 [lorenz4]: http://blog.schockwellenreiter.de/essays/lorenzr.html
