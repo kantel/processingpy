@@ -188,7 +188,7 @@ Die [Mandelbrot-Menge](https://de.wikipedia.org/wiki/Mandelbrot-Menge) ist die z
 
 $$
 \begin{align}
-z_{0} & = 0\\
+z_{0} & = 0\\\\
 z_{n+1} & = z_{n}^{2}+c\\
 \end{align}
 $$
@@ -369,7 +369,7 @@ Die [Julia-Menge](https://de.wikipedia.org/wiki/Julia-Menge) wurde 1918 von den 
 
 $$
 \begin{align}
-z_{0} & = 0\\
+z_{0} & = 0\\\\
 z_{n+1} & = z_{n}^{2}+c\\
 \end{align}
 $$
@@ -1089,8 +1089,11 @@ Ist der `ellipseMode(CORNER)`, dann benennen die x- und y-Koordinaten die linke,
 
 Heißt es jedoch `ellipseMode(CORNERS)`, dann bennenen die x- und y-Koordinaten die linke, obere Ecke des die Ellipse oder den Kreis umschließenden Rechtecks, der dritte und vierte Parameter die rechte untere Ecke dieses Rechtecks.
 
-!!! tip "Achtung"
-    Die Modes `CORNER`, `CORNERS`, `CENTER` und `RADIUS` müssen immer in Großbuchstaben eingegeben werden, da Processing und Python streng zwischen Groß- und Kleinschreibung unterscheiden.
+---
+
+Die Modes `CORNER`, `CORNERS`, `CENTER` und `RADIUS` müssen immer in Großbuchstaben eingegeben werden, da Processing und Python streng zwischen Groß- und Kleinschreibung unterscheiden.
+
+---
 
 ### Dreieck
 
