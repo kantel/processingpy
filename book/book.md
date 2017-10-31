@@ -1,10 +1,11 @@
+Jörg Kantel
+
+# Processing.py in Beispielen
+
+## Visualisierungen und interaktive Anwendungen mit Python und Processing programmieren
+
 ---
-title: Processing.py in Beispielen
-subtitle: Visualisierungen und interaktive Anwendungen mit Python und Processing programmieren
-author: Jörg Kantel
-date: \today
----
-	
+
 # Einleitung
 
 # Download und Installation
@@ -13,7 +14,9 @@ date: \today
 
 # Start: Rotkäppchen und die drei Tanten
 
-Rotkäppchen hat nicht nur eine Großmutter, sondern -- was weniger bekannt ist -- auch drei Tanten, Agathe, Beatrice und Cynthia. Diese wohnen in drei Häusern, die zusammen ein Dreieck bilden. Wenn Rotkäppchen nicht ihre Großmutter besucht, dann besucht sie eine der drei Tanten. Letzten Sonntag jedoch war sie sehr unschlüssig, welche sie besuchen sollte. Sie startete, um Agathe einen Besuch abzustatten. Jedoch genau auf dem halben Weg zu Agathe wurde sie unsicher und überlegte es sich noch einmal. Sie beschloß, eine ihrer drei Tanten aufzusuchen, es könnte auch wieder Agathe gewesen sein. Doch es war wie verhext: Jedesmal, wenn sie genau den halben Weg zurückgelegt hatte, wurde sie wieder unsicher und entschloß sich neu, einer ihrer drei Tanten aufzusuchen, möglicherweise die gleiche, möglicherweise eine andere. Und das wieder, und wieder, und wieder …
+Rotkäppchen[^fn1] hatte nicht nur eine Großmutter, sondern -- was weniger bekannt ist -- auch drei Tanten, Agathe, Beatrice und Cynthia. Diese wohnen in drei Häusern, die zusammen ein Dreieck bilden. Wenn Rotkäppchen nicht ihre Großmutter besucht, dann besucht sie eine der drei Tanten. Letzten Sonntag jedoch war sie sehr unschlüssig, welche sie besuchen sollte. Sie startete, um Agathe einen Besuch abzustatten. Jedoch genau auf dem halben Weg zu Agathe wurde sie unsicher und überlegte es sich noch einmal. Sie beschloß, eine ihrer drei Tanten aufzusuchen, es könnte auch wieder Agathe gewesen sein. Doch es war wie verhext: Jedesmal, wenn sie genau den halben Weg zurückgelegt hatte, wurde sie wieder unsicher und entschloß sich neu, einer ihrer drei Tanten aufzusuchen, möglicherweise die gleiche, möglicherweise eine andere. Und das wieder, und wieder, und wieder …
+
+[^fn1]: Vgl. Brüder Grimm
 
 [![Screenshot](images/sierpinskidreieck.jpg)](https://www.flickr.com/photos/schockwellenreiter/32442344526/)
 
@@ -186,10 +189,12 @@ Es gibt also noch viel zu entdecken in der Welt der Turmiten und Ameisen.
 
 Die [Mandelbrot-Menge](https://de.wikipedia.org/wiki/Mandelbrot-Menge) ist die zentrale Ikone der Chaos-Theorie und das Urbild aller Fraktale. Sie ist die Menge aller komplexen Zahlen *c*, für welche die durch
 
+$
 \begin{align}
-z_{0} & = 0\\\\
-z_{n+1} & = z_{n}^{2}+c\\\\
+z_{0} & = 0\\
+z_{n+1} & = z_{n}^{2}+c\\
 \end{align}
+$
 
 
 rekursiv definierte Folge beschränkt ist. Bilder der Mandelbrot-Menge können erzeugt werden, indem für jeden Wert des Parameters *c*, der gemäß obiger Rekursion endlich bleibt, ein Farbwert in der komplexen Ebene zugeordnet wird.
@@ -357,7 +362,7 @@ def draw():
 
 Und -- Überraschung! -- das Programm mit `set()` war fast immer geringfügig schneller als das Programm mit den Pixel-Arrays. Auf meinem betagten MacBook Pro benötigte das erste Programm rund 15.000 bis 16.000 Millisekunden, während das zweite Programm um die 18.000 Millisekunden benötigte. Der Unterschied ist nicht groß, aber dennoch bemerkenswert. Es liegt zum einen sicher daran, daß die benötigte Zeit für die Berechnung des Apfelmännchens im Vergleich zu der benötigten Zeit, dieses zu zeichnen, riesig ist. Zum anderen wird die `draw()`-Schleife ja auch nur einmal durchlaufen und so kann das Pixel-Array seine Fähigkeit der schnellen Pixelmanipulation nicht richtig ausspielen.
 
-Die Erkenntnis daraus: Es kann sich durchaus lohnen, auch mal das Handbuch zu hinterfragen. 😈
+Die Erkenntnis daraus: Es kann sich durchaus lohnen, auch mal das Handbuch zu hinterfragen.
 
 ## Julia-Menge
 
@@ -365,16 +370,20 @@ Die Erkenntnis daraus: Es kann sich durchaus lohnen, auch mal das Handbuch zu hi
 
 Die [Julia-Menge](https://de.wikipedia.org/wiki/Julia-Menge) wurde 1918 von den beiden französischen Mathematikern *Gaston Maurice Julia* (nachdem sie benannt wurde) und *Pierre Fatou* (dessen Zugang heute die meisten Lehrbücher folgen) unabhängig voneinander beschrieben. Sie steht im engen Zusammenhang zur im letzten Abschnitt beschriebenen [Mandelbrot-Menge](mandelbrot.md). Während die Mandelbrot-Menge, die Menge aller komplexen Zahlen *c* ist, die der iterierten Gleichung
 
+$
 \begin{align}
-z_{0} & = 0\\\\
-z_{n+1} & = z_{n}^{2}+c\\\\
+z_{0} & = 0\\
+z_{n+1} & = z_{n}^{2}+c\\
 \end{align}
+$
 
 folgen, ist bei der Julia-Menge *c* konstant:
 
+$
 \begin{align}
-z_{n}^{2}+c\\\\
+z_{n}^{2}+c\\
 \end{align}
+$
 
 Die Mandelbrot-Menge ist also eine Beschreibungsmenge aller Julia-Mengen. Jedem Punkt *c* der komplexen Zahlenebene entspricht eine Julia-Menge. Eigenschaften der Julia-Menge lassen sich an der Lage von *c* relativ zur Mandelbrot-Menge beurteilen: Wenn der Punkt *c* Element der Mandelbrot-Menge ist, dann ist die Julia-Menge zusammenhängend. Andernfalls ist sie eine Cantormenge unzusammenhängender Punkte. Ist der Imaginärteil *c<sub>i</sub> = 0*, dann ist die Julia-Menge symmetrisch (vlg. Abbildung links oben), ansonsten kann sie alle möglichen Formen annehmen.
 
@@ -494,15 +503,15 @@ Natürlich kann man auch jeden anderen Farbraum (Graustufen, HSV), den Processin
 
 ### Fantastic Feather Fractal
 
-Um zu zeigen, wie schnell die Manipulationen eines Pixel-Arrays sind, möchte ich wieder eine Iteration über 120.000 Schritte durchführen. Als Demonstrationsobjekt habe ich das *Fantastic Feather Fractal* gewählt, das *Clifford A. Pickover* in seinem Buch »Mazes for the Mind« vorgestellt hat. Wenn Ihr untenstehenden Quellcode laufen laßt, werdet Ihr feststellen, daß das fertige Fraktal fast unmittelbar nach dem Aufruf im Graphikfenster erscheint.[^1]
+Um zu zeigen, wie schnell die Manipulationen eines Pixel-Arrays sind, möchte ich wieder eine Iteration über 120.000 Schritte durchführen. Als Demonstrationsobjekt habe ich das *Fantastic Feather Fractal* gewählt, das *Clifford A. Pickover* in seinem Buch »Mazes for the Mind« vorgestellt hat. Wenn Ihr untenstehenden Quellcode laufen laßt, werdet Ihr feststellen, daß das fertige Fraktal fast unmittelbar nach dem Aufruf im Graphikfenster erscheint.[^fffn1]
 
-[^1]: Ich habe das Bild testweise auch mal erst nach 240.000 Schritten herausschreiben lassen. Die Verzögerung war kaum merkbar. Allerdings gab es auch nur noch einen geringen Unterschied zu dem Bild im Screenshot. Hier setzt die Auflösung des Ausgabefensters weiterem Erkenntnisgewinn Grenzen.
+[^fffn1]: Ich habe das Bild testweise auch mal erst nach 240.000 Schritten herausschreiben lassen. Die Verzögerung war kaum merkbar. Allerdings gab es auch nur noch einen geringen Unterschied zu dem Bild im Screenshot. Hier setzt die Auflösung des Ausgabefensters weiterem Erkenntnisgewinn Grenzen.
 
 [![Feather Fractal](images/featherfractal.jpg)](https://www.flickr.com/photos/schockwellenreiter/32766476595/)
 
-Das *Feather Fractal* ist ein »[seltsamer Attraktor](https://de.wikipedia.org/wiki/Seltsamer_Attraktor)«, ein [Attraktor](http://www.spektrum.de/lexikon/physik/attraktor/926) eines dynamischen Systems, das sich zwar chaotisch verhält, aber dennoch eine *kompakte Menge* ist, die es nie verläßt. Die Parameter des Sketches entstammen der oben genannten Quelle von *Pickover*, die Faktoren um das Ergebnis dem Bildfenster anzupassen habe ich durch wildes Herumexperimentieren gefunden[^2].
+Das *Feather Fractal* ist ein »[seltsamer Attraktor](https://de.wikipedia.org/wiki/Seltsamer_Attraktor)«, ein [Attraktor](http://www.spektrum.de/lexikon/physik/attraktor/926) eines dynamischen Systems, das sich zwar chaotisch verhält, aber dennoch eine *kompakte Menge* ist, die es nie verläßt. Die Parameter des Sketches entstammen der oben genannten Quelle von *Pickover*, die Faktoren um das Ergebnis dem Bildfenster anzupassen habe ich durch wildes Herumexperimentieren gefunden[^fffn2].
 
-[^2]: Und das schon vor langer Zeit, als der Monitor meines Rechners noch eine Auflösung von 640 x 480 Pixeln hatte. 😜
+[^fffn2]: Und das schon vor langer Zeit, als der Monitor meines Rechners noch eine Auflösung von 640 x 480 Pixeln hatte. 😜
 
 ### Der Quellcode
 
@@ -547,9 +556,11 @@ Wenn ich später noch auf Bildmanipulationen in Processing zurückkomme, werden 
 
 Seit ich Ende der 1980er Jahre mit meinem damals hochmodernen [Atari Mega&nbsp;ST][butterfly1] erste Schritte mit einem graphikfähigen Personalcomputer unternommen hatte, habe ich die Schmetterlingskurve immer wieder als Test für die Graphikfähigkeit und Schnelligkeit von Programmiersprachen und Rechnern benutzt. Sie wird in [Polarkoordinaten][butterfly2] beschrieben und ihre Formel ist
 
-$$
+$
+\begin{align}
 \rho=e^{\cos(\theta)}-2\cdot \cos(4\cdot \theta)+\sin(\tfrac{\theta}{12})^5
-$$
+\end{align}
+$
 
 oder in Python-Code:
 
@@ -657,11 +668,13 @@ Als einer der ersten hatte  1961 [Edward N. Lorenz](http://de.wikipedia.org/wiki
 
 [^lorenzfn1]: Eine sehr schöne Einführung in [das ungelöste Problem der Navier-Stokes-Gleichungen][lorenz5] gibt es von *Florian Freistetter* in der 217. Folge seiner *Sternengeschichten*
 
+$
 \begin{align}
-\frac{dx}{dt} & = -\sigma (y - z) \\\\
-\frac{dy}{dt} & = (\rho - z)x - y \\\\
+\frac{dx}{dt} & = -\sigma (y - z) \\
+\frac{dy}{dt} & = (\rho - z)x - y \\
 \frac{dz}{dt} & = xy - \gamma z
 \end{align}
+$
 
 <!-- Dabei sind (sigma = -10), (\rho = 40) und (\gamma = - \frac{8}{3}). Die Parameter der Gleichung habe ich *[Herm1994]* entnommen, *[Stew1993]* gibt \\(\rho = 28\\) an, aber der Wert ändert nichts an dem Verhalten der Kurve und (\rho = 40) füllt das Fenster einfach besser aus. 😜 -->
 
@@ -2308,7 +2321,7 @@ Das Hintergrundbild des zweiten Sketches ist ein Gemälde des deutschen, romanti
 
 Nachdem ich am Wochenende mal wieder an [PyGame][kitty1] verzweifelt bin (aus irgendwelchen Gründen funktionierte die Tastaturabfrage nicht), habe ich beschlossen, mich doch eher [Processing.py][kitty2] zuzuwenden, dem Python-Mode für [Processing][kitty3]. Ziel sollte es sein, mein vierteiliges PyGame-Tutorial vom Mai dieses Jahres in Processing.py zu implementieren. Erfreulich war, daß ich mir den [ersten Teil][kitty4] gleich schenken konnte, denn
 
-~~~{python}
+~~~python
 def setup():
     size(640, 480)
 
@@ -2322,7 +2335,7 @@ erzeugt bereits ein leeres, blaues Fenster. Also habe ich gleich den [zweiten Te
 
 Zur Vorbereitung habe ich erst einmal das Bild der jungen Dame auf das Editorfenster der Processing-IDE geschoben. Falls noch nicht vorhanden, erzeugt Processing dann automatisch ein `data`-Verzeichnis und legt das Bild (aber auch Schriften oder andere Dateien) darin ab. Processing und damit auch Processing.py finden alles in diesem Verzeichnis ohne daß eine genauere Pfadangabe nötig ist. Und so ist auch das fertige Programm von erfrischender Kürze:
 
-~~~{python}
+~~~python
 font = None
 greetings = u'Hallo Hörnchen!'
 
@@ -2347,16 +2360,16 @@ An der zweiten Zeile kann man es erkennen: Processing.py basiert auf [Jython][ki
 
 Processing(.py) kann mit Fonts im TrueType- (`.ttf`), OpenType- (`.otf`) und in einem eigenen Bitmap-Format, genannt VLW, umgehen. Natürlich findet es alle auf dem eigenen Rechner installierte Fonts, mit
 
-~~~{python}
+~~~python
 fontList = PFont.list()
 print(fontList)
 ~~~
 
-kann man sich diese in der Konsole anzeigen lassen. Wenn man den Sketch allerdings weitergeben will, ist es sinnvoll, einen Font mitzugeben[kittyfn^2], da man nicht sicher sein kann, ob der gewählte Systemfont auf dem anderen Rechner vorhanden ist. Dafür schiebt man eine entsprechende Font-Datei einfach ebenfalls auf das Editorfenster der IDE, damit sie dem `data`-Ordner hinzugefügt wird. Ich habe testweise mal die Datei `OpenSans-Semibold-webfont.ttf` installiert, die entsprechende Zeile im Programm hieße dann:
+kann man sich diese in der Konsole anzeigen lassen. Wenn man den Sketch allerdings weitergeben will, ist es sinnvoll, einen Font mitzugeben[^kittyfn2], da man nicht sicher sein kann, ob der gewählte Systemfont auf dem anderen Rechner vorhanden ist. Dafür schiebt man eine entsprechende Font-Datei einfach ebenfalls auf das Editorfenster der IDE, damit sie dem `data`-Ordner hinzugefügt wird. Ich habe testweise mal die Datei `OpenSans-Semibold-webfont.ttf` installiert, die entsprechende Zeile im Programm hieße dann:
 
 [^kittyfn2]: Natürlich sollte man sicherstellen, daß man diese Fonts auch verwerten darf, aber im Netz findet man viele Fonts zur freien Verwendung. Gute Anlaufstellen dafür sind zum Beispiel [Google Fonts][kitty11], die [(Open) Font Library][kitty12] oder [The League of Moveable Type][kitty13].
 
-~~~{python}
+~~~python
 font = createFont("OpenSans-Semibold-webfont.ttf", 64)
 ~~~
 
@@ -2384,21 +2397,21 @@ Im zweiten Teil meiner kleinen Erkundung von [Processing.py][mkitty1], dem [Pyth
 
 In Processing gehören die Pfeiltasten wie einige andere auch zu den `coded keys`, weil sie sich nicht einem Buchstaben zuordnen lassen und haben daher einen speziellen Namen. Die Pfeiltastten heißen `LEFT`, `RIGHT`, `UP` und `DOWN`, andere `coded keys` sind zum Beispiel `ALT`, `CONTROL` oder `SHIFT`. Diese müssen in Processing wie in Processing.py gesondert abgefragt werden, und zwar so:
 
-~~~{python}
+~~~python
     if keyPressed and key == CODED:
         if keyCode == LEFT:
 ~~~
 
 während die »normalen« Tasten so abgefragt werden können:
 
-~~~{python}
+~~~python
     if keyPressed:
         if key == 'b' or key == 'B':
 ~~~
 
 Das ist eigentlich alles, was man wissen muß, um das Progrämmchen zu verstehen. Wenn Kitty den linken Rand des Fensters erreicht hat, taucht sie am rechten Rand wieder auf und umgekehrt. Genauso habe ich mit oben unten verfahren. Die Variabeln `radius_x` und `radius_y` sorgen dafür, daß *Kitty* vollständig vom Bildschirm verschwunden ist, bevor sie am anderen Ende wieder auftaucht (ich mag keine halben Kittys 😜 ) und mit `STEP` bestimmt Ihr die Geschwindigkeit, mit der Kitty über den Bildschirm wuselt. Hier der vollständige Quellcode zum nachprogrammieren:
 
-~~~{python}
+~~~python
 pos_x = 275
 pos_y = 100
 radius_x = 50  # Bildbreite/2
@@ -2448,7 +2461,7 @@ def draw():
 
 Nach den [ersten][kkitty1] [beiden][kkitty2] Teilen meiner kleinen Erkundung von [Processing.py][kkitty3], dem [Python][kkitty4]-Mode von [Processing][kkitty5] und vermutlich die einzige, derzeit aktiv gepflegte Alternative zu [PyGame][kkitty6], möchte ich erst einmal ein wenig aufräumen und daran erinnern, daß Akteure eines Computerspiels programmiertechnisch am besten in Klassen aufgehoben sind. Daher habe ich auch *Kitty* eine eigene Klasse spendiert:
 
-~~~{python}
+~~~python
 # coding=utf-8
 
 class Kitty(object):
@@ -2475,7 +2488,7 @@ Klassen kann man in Processing der Übersicht halber in separaten Dateien unterb
 
 Hierbei ist jedoch zu beachten, daß im Gegensatz zu Processing und [P5.js][7] (jeweils aus anderen Gründen) die Klasse nicht automatisch dem Quelltext der Applikation bei der Ausführung hinzugefügt wird. Sie ist wenn sie nicht im Quelltext der Applikation steht -- wie in Python üblich -- ein Modul und muß gesondert mit
 
-~~~{python}
+~~~python
 from kitty import Kitty
 ~~~
 
@@ -2487,7 +2500,7 @@ Den Konventionen folgend, habe ich dem Objekt *Kitty* neben der eigentlichen Ini
 
 Ansonsten ist zu dem Programm nichts weiter zu sagen. Es zeigt einfach eine *Kitty* die der Maus hinterherrennt. Und dadruch, daß fast die gesamte Logik in die Klasse `Kitty` ausgelagert wurde, ist das Hauptprogramm von erfrischender Kürze:
 
-~~~{python}
+~~~python
 from kitty import Kitty
 
 kitty = Kitty(275, 100)
@@ -2529,7 +2542,7 @@ Im [letzten Teil][cutep1] meiner kleinen Tutorial-Reihe zu [Processing.py][cutep
 
 Also erst einmal die Klasse selber, ich habe sie aus naheliegenden Gründen `Spaceship` genannt (auch wenn ein Planet ja im eigentlichen Sinne des Wortes kein Raumschiff ist, aber wie Ihr später sehen werdet, in »Space Cute« schon 😜 ):
 
-~~~{python}
+~~~python
 class Spaceship():
     
     def __init__(self, pic, posX, posY):
@@ -2564,7 +2577,7 @@ Dann folgt die Funktion `move()`, die das Herzstück der Klasse darstellt. Hier 
 
 Nun das Hauptprogramm: Dank der Klasse `Spaceship` ist es kurz und übersichtlich geblieben.
 
-~~~{python}
+~~~python
 from spaceship import Spaceship
 
 planet = Spaceship("planet.png", 500, 350)
@@ -3928,7 +3941,7 @@ zur Verfügung. Benötigt man mehr, muß man eine der kommerziellen Lizenzen nut
 
 Per Default kommen die Antwort in Englisch und die Temperaturangaben in Kelvin. Will man sie in Deutsch und °Celsius haben, muß man der URL noch die Parameter `&lang=de` und `&units=metric` mitgeben. Ein Aufruf für Berlin-Tempelhof sähe dann so aus:
 
-~~~
+~~~bash
 http://api.openweathermap.org/data/2.5/weather?q=Berlin%20Tempelhof,DE&units=metric&lang=de&APPID=0815
 ~~~
 
@@ -3969,7 +3982,7 @@ weatherData = json.load(urllib2.urlopen(weatherUrl))
 
 Noch einmal: Den API-Key (`APPID`) habe ich mir ausgedacht, um den Code-Schnipsel oben zum Laufen zu bekommen, müßt Ihr Euch auf den Seiten von OpenWeatherMap schon einen eigenen API-Key besorgen.
 
-~~~pyton
+~~~python
 {
     u'visibility': 10000,
     u'main': {
@@ -4198,7 +4211,7 @@ Nach den vier Tutorials mit den Figuren aus *Cute Planet* zu Processing.py, dem 
 
 Dafür habe ich erst einmal die Klasse `orc()` definiert und nach der Initialisierung -- wie in den anderen Tutorials auch schon -- die Methoden `loadPics()`, `move()` und `display()` implementiert:
 
-~~~{python}
+~~~python
 class Orc():
 
     def __init__(self, posX, posY):
@@ -4232,7 +4245,7 @@ Die Figur des *Orcs* hatte ich ja schon häufiger verwendet, die Zeichnungen sta
 
 Das Hauptskript war dank des Klasse `Orc()` dann wieder von erfrischender Kürze:
 
-~~~{python}
+~~~python
 from orcs import Orc
 
 orc = Orc(160, -48)
@@ -4269,7 +4282,7 @@ Im Gegensatz zu dem Ork aus dem letzten Tutorial stammen diese Bildchen (bis auf
 
 Als erstes habe ich dem Ork natürlich wieder eine eigene Klasse spendiert (in dem Tab/der Datei `orc2.py`), deren Quellcode nun schon bedeutend umfangreicher geworden ist:
 
-~~~{python}
+~~~python
 class Orc():
 
     def __init__(self, posX, posY):
@@ -4342,7 +4355,7 @@ Die Funktion `display()` ist dann für die Darstellung zuständig: Ist der `fram
 
 Das Hauptprogramm ist immer noch vergleichsweise kurz und übersichtlich geraten:
 
-~~~{python}
+~~~python
 from orc2 import Orc
 
 orc = Orc(160, -32)
@@ -5413,7 +5426,7 @@ In diesem Tutorial, in dem erstmalig auch mehrere Orks auftreten, habe ich die U
 
 [^rorc6fn1]: Das ist keine Einschränkung, denn der Fensterrand ist ja im Grunde auch nichts anderes als eine undurchdringliche Mauer und im Zweifelsfall macht man das Spielfeld einfach um die Mauerdicke größer.
 
-~~~{python}
+~~~python
 for i in range(len(orc)):
         orc[i].move()
         for j in range(len(wall)):
@@ -5439,7 +5452,7 @@ for i in range(len(orc)):
 
 Außerdem habe ich in der Klasse `Orc` (im Modul `sprite2.py`) den Orks einen zufälligen Richtungswechsel verpaßt, damit sie nicht nur bei einer Kollision mit Hindernissen ihre Richtung ändern und so ihre Bewegungen unvorhersehbarer werden.
 
-~~~{python}
+~~~python
     def move(self):
         if frameCount % int(random(30, 120)) == 0:
             if self.dir == 0:
@@ -5464,7 +5477,7 @@ Das einzige sonstige neue ist, daß ich die drei Orks in einer Liste zusammengef
 
 Daher erst einmal der vollständige Quellcode, damit Ihr das Beispiel auch nachvollziehen und -programmieren könnt. Erst einmal das Modul `sprite2.py`, das ich wieder in einem separaten Tab in der Processing-IDE untergebracht habe:
 
-~~~{python}
+~~~python
 tw = 32
 th = 32
 tileSize = 32
@@ -5581,7 +5594,7 @@ class Wall(Sprite):
 
 Es ist gegenüber dem letzten Mal ein wenig einfacher geworden, weil die Ränderbehandlung entfallen ist. Das Hauptprogramm hat allerdings an Komplexität deutlich zugenommen:
 
-~~~{python}
+~~~python
 from sprite2 import Hero, Orc, Wall
 tilesize = 32
 

@@ -4,8 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <meta name="author" content="Jörg Kantel">
-  <title>Processing.py in Beispielen</title>
+  <title></title>
   <style type="text/css">code{white-space: pre;}</style>
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -29,20 +28,17 @@ code > span.al { color: #ff0000; font-weight: bold; }
 code > span.fu { color: #06287e; }
 code > span.er { color: #ff0000; font-weight: bold; }
   </style>
-  <link rel="stylesheet" href="css/tufte.css">
-  <link rel="stylesheet" href="css/user.css">
 </head>
 <body>
-<header>
-<h1 class="title">Processing.py in Beispielen</h1>
-<h1 class="subtitle">Visualisierungen und interaktive Anwendungen mit Python und Processing programmieren</h1>
-<h2 class="author">Jörg Kantel</h2>
-</header>
+<p>Jörg Kantel</p>
+<h1 id="processing.py-in-beispielen">Processing.py in Beispielen</h1>
+<h2 id="visualisierungen-und-interaktive-anwendungen-mit-python-und-processing-programmieren">Visualisierungen und interaktive Anwendungen mit Python und Processing programmieren</h2>
+<hr />
 <h1 id="einleitung">Einleitung</h1>
 <h1 id="download-und-installation">Download und Installation</h1>
 <h1 id="jep-just-enough-python-gerade-genug-python">JEP: Just Enough Python (Gerade genug Python)</h1>
 <h1 id="start-rotkäppchen-und-die-drei-tanten">Start: Rotkäppchen und die drei Tanten</h1>
-<p>Rotkäppchen hat nicht nur eine Großmutter, sondern -- was weniger bekannt ist -- auch drei Tanten, Agathe, Beatrice und Cynthia. Diese wohnen in drei Häusern, die zusammen ein Dreieck bilden. Wenn Rotkäppchen nicht ihre Großmutter besucht, dann besucht sie eine der drei Tanten. Letzten Sonntag jedoch war sie sehr unschlüssig, welche sie besuchen sollte. Sie startete, um Agathe einen Besuch abzustatten. Jedoch genau auf dem halben Weg zu Agathe wurde sie unsicher und überlegte es sich noch einmal. Sie beschloß, eine ihrer drei Tanten aufzusuchen, es könnte auch wieder Agathe gewesen sein. Doch es war wie verhext: Jedesmal, wenn sie genau den halben Weg zurückgelegt hatte, wurde sie wieder unsicher und entschloß sich neu, einer ihrer drei Tanten aufzusuchen, möglicherweise die gleiche, möglicherweise eine andere. Und das wieder, und wieder, und wieder …</p>
+<p>Rotkäppchen<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> hatte nicht nur eine Großmutter, sondern -- was weniger bekannt ist -- auch drei Tanten, Agathe, Beatrice und Cynthia. Diese wohnen in drei Häusern, die zusammen ein Dreieck bilden. Wenn Rotkäppchen nicht ihre Großmutter besucht, dann besucht sie eine der drei Tanten. Letzten Sonntag jedoch war sie sehr unschlüssig, welche sie besuchen sollte. Sie startete, um Agathe einen Besuch abzustatten. Jedoch genau auf dem halben Weg zu Agathe wurde sie unsicher und überlegte es sich noch einmal. Sie beschloß, eine ihrer drei Tanten aufzusuchen, es könnte auch wieder Agathe gewesen sein. Doch es war wie verhext: Jedesmal, wenn sie genau den halben Weg zurückgelegt hatte, wurde sie wieder unsicher und entschloß sich neu, einer ihrer drei Tanten aufzusuchen, möglicherweise die gleiche, möglicherweise eine andere. Und das wieder, und wieder, und wieder …</p>
 <p><a href="https://www.flickr.com/photos/schockwellenreiter/32442344526/"><img src="images/sierpinskidreieck.jpg" alt="Screenshot" /></a></p>
 <p><em>William P. Beuamont</em> [Beaum1996] nannte es das »Tantenspiel«. Ziel ist es nicht, herauszufinden, welche Tante gewinnt (es kann gar keine gewinnen), sondern welche Figur entsteht, wenn man Rotkäppchens Irrweg visualisiert. Ich habe das einmal mit <a href="cp^processingpy">Processing.py</a> nachprogrammiert und herausgekommen ist obige Figur, in der Fachliteratur auch als <a href="https://de.wikipedia.org/wiki/Sierpinski-Dreieck">Sierpinski Dreieck</a> bekannt, benannt nach dem polnischen Mathematiker <em>Wacław Sierpiński</em>, der das Fraktal schon 1915 als erster beschrieb.</p>
 <h2 id="der-quellcode">Der Quellcode</h2>
@@ -210,7 +206,9 @@ off = color(<span class="dv">0</span>)           <span class="co"># schwarz</spa
 <img src="images/mandelbrotmenge.jpg" alt="Screenshot" /><figcaption>Screenshot</figcaption>
 </figure>
 <p>Die <a href="https://de.wikipedia.org/wiki/Mandelbrot-Menge">Mandelbrot-Menge</a> ist die zentrale Ikone der Chaos-Theorie und das Urbild aller Fraktale. Sie ist die Menge aller komplexen Zahlen <em>c</em>, für welche die durch</p>
+$
 
+<p>$</p>
 <p>rekursiv definierte Folge beschränkt ist. Bilder der Mandelbrot-Menge können erzeugt werden, indem für jeden Wert des Parameters <em>c</em>, der gemäß obiger Rekursion endlich bleibt, ein Farbwert in der komplexen Ebene zugeordnet wird.</p>
 <p>Die komplexe Ebene wird in der Regel so dargestellt, daß in der Horizontalen (in der kartesisschen Ebene die <em>x-Achse</em>) der Realteil der komplexen Zahl und in der Vertikalen (in der kartesischen Ebene die <em>y-Achse</em>) der imaginäre Teil aufgetragen wird. Jede komplexe Zahl entspricht also einen Punkt in der komplexen Ebene. Die zur Mandelbrotmenge gehörenden Zahlen werden im Allgemeinen schwarz dargestellt, die übrigen Farbwerte werden der Anzahl von Iterationen (<code>maxiter</code>) zugeordnet, nach der der gewählte Punkt der Ebene einen Grenzwert (<code>maxlimit</code>) verläßt. Der theoretische Grenzwert ist <em>2.0</em>, doch können besonders bei Ausschnitten aus der Menge, um andere Farbkombinationen zu erreichen, auch höhere Grenzwerte verwendet werden. Bei Ausschnitten muß auch die Anzahl der Iterationen massiv erhöht werden, um eine hinreichende Genauigkeit der Darstellung zu erreichen.</p>
 <h3 id="das-programm">Das Programm</h3>
@@ -331,15 +329,19 @@ maxiter = <span class="dv">100</span>
     updatePixels()
     println(millis())</code></pre>
 <p>Und -- Überraschung! -- das Programm mit <code>set()</code> war fast immer geringfügig schneller als das Programm mit den Pixel-Arrays. Auf meinem betagten MacBook Pro benötigte das erste Programm rund 15.000 bis 16.000 Millisekunden, während das zweite Programm um die 18.000 Millisekunden benötigte. Der Unterschied ist nicht groß, aber dennoch bemerkenswert. Es liegt zum einen sicher daran, daß die benötigte Zeit für die Berechnung des Apfelmännchens im Vergleich zu der benötigten Zeit, dieses zu zeichnen, riesig ist. Zum anderen wird die <code>draw()</code>-Schleife ja auch nur einmal durchlaufen und so kann das Pixel-Array seine Fähigkeit der schnellen Pixelmanipulation nicht richtig ausspielen.</p>
-<p>Die Erkenntnis daraus: Es kann sich durchaus lohnen, auch mal das Handbuch zu hinterfragen. 😈</p>
+<p>Die Erkenntnis daraus: Es kann sich durchaus lohnen, auch mal das Handbuch zu hinterfragen.</p>
 <h2 id="julia-menge">Julia-Menge</h2>
 <figure>
 <img src="images/julia.jpg" alt="Screenshot" /><figcaption>Screenshot</figcaption>
 </figure>
 <p>Die <a href="https://de.wikipedia.org/wiki/Julia-Menge">Julia-Menge</a> wurde 1918 von den beiden französischen Mathematikern <em>Gaston Maurice Julia</em> (nachdem sie benannt wurde) und <em>Pierre Fatou</em> (dessen Zugang heute die meisten Lehrbücher folgen) unabhängig voneinander beschrieben. Sie steht im engen Zusammenhang zur im letzten Abschnitt beschriebenen <a href="mandelbrot.md">Mandelbrot-Menge</a>. Während die Mandelbrot-Menge, die Menge aller komplexen Zahlen <em>c</em> ist, die der iterierten Gleichung</p>
+$
 
+<p>$</p>
 <p>folgen, ist bei der Julia-Menge <em>c</em> konstant:</p>
+$
 
+<p>$</p>
 <p>Die Mandelbrot-Menge ist also eine Beschreibungsmenge aller Julia-Mengen. Jedem Punkt <em>c</em> der komplexen Zahlenebene entspricht eine Julia-Menge. Eigenschaften der Julia-Menge lassen sich an der Lage von <em>c</em> relativ zur Mandelbrot-Menge beurteilen: Wenn der Punkt <em>c</em> Element der Mandelbrot-Menge ist, dann ist die Julia-Menge zusammenhängend. Andernfalls ist sie eine Cantormenge unzusammenhängender Punkte. Ist der Imaginärteil <em>c<sub>i</sub> = 0</em>, dann ist die Julia-Menge symmetrisch (vlg. Abbildung links oben), ansonsten kann sie alle möglichen Formen annehmen.</p>
 <h3 id="julia-menge-interaktiv">Julia-Menge interaktiv</h3>
 <p>Ich habe die obigen Bilder mit diesem Programm erzeugt, daß den Parameter <em>c</em> in Abhängigkeit von der Mausposition setzt:</p>
@@ -428,9 +430,9 @@ b = blue(c)</code></pre>
 <pre class="sourceCode python"><code class="sourceCode python">pixel[i] = color(r, g, b)</code></pre>
 <p>Natürlich kann man auch jeden anderen Farbraum (Graustufen, HSV), den Processing kennt, nutzen.</p>
 <h3 id="fantastic-feather-fractal">Fantastic Feather Fractal</h3>
-<p>Um zu zeigen, wie schnell die Manipulationen eines Pixel-Arrays sind, möchte ich wieder eine Iteration über 120.000 Schritte durchführen. Als Demonstrationsobjekt habe ich das <em>Fantastic Feather Fractal</em> gewählt, das <em>Clifford A. Pickover</em> in seinem Buch »Mazes for the Mind« vorgestellt hat. Wenn Ihr untenstehenden Quellcode laufen laßt, werdet Ihr feststellen, daß das fertige Fraktal fast unmittelbar nach dem Aufruf im Graphikfenster erscheint.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
+<p>Um zu zeigen, wie schnell die Manipulationen eines Pixel-Arrays sind, möchte ich wieder eine Iteration über 120.000 Schritte durchführen. Als Demonstrationsobjekt habe ich das <em>Fantastic Feather Fractal</em> gewählt, das <em>Clifford A. Pickover</em> in seinem Buch »Mazes for the Mind« vorgestellt hat. Wenn Ihr untenstehenden Quellcode laufen laßt, werdet Ihr feststellen, daß das fertige Fraktal fast unmittelbar nach dem Aufruf im Graphikfenster erscheint.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p>
 <p><a href="https://www.flickr.com/photos/schockwellenreiter/32766476595/"><img src="images/featherfractal.jpg" alt="Feather Fractal" /></a></p>
-<p>Das <em>Feather Fractal</em> ist ein »<a href="https://de.wikipedia.org/wiki/Seltsamer_Attraktor">seltsamer Attraktor</a>«, ein <a href="http://www.spektrum.de/lexikon/physik/attraktor/926">Attraktor</a> eines dynamischen Systems, das sich zwar chaotisch verhält, aber dennoch eine <em>kompakte Menge</em> ist, die es nie verläßt. Die Parameter des Sketches entstammen der oben genannten Quelle von <em>Pickover</em>, die Faktoren um das Ergebnis dem Bildfenster anzupassen habe ich durch wildes Herumexperimentieren gefunden<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>.</p>
+<p>Das <em>Feather Fractal</em> ist ein »<a href="https://de.wikipedia.org/wiki/Seltsamer_Attraktor">seltsamer Attraktor</a>«, ein <a href="http://www.spektrum.de/lexikon/physik/attraktor/926">Attraktor</a> eines dynamischen Systems, das sich zwar chaotisch verhält, aber dennoch eine <em>kompakte Menge</em> ist, die es nie verläßt. Die Parameter des Sketches entstammen der oben genannten Quelle von <em>Pickover</em>, die Faktoren um das Ergebnis dem Bildfenster anzupassen habe ich durch wildes Herumexperimentieren gefunden<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>.</p>
 <h3 id="der-quellcode-1">Der Quellcode</h3>
 <pre class="sourceCode python"><code class="sourceCode python">a = -.<span class="dv">48</span>
 b = .<span class="dv">93</span>
@@ -467,9 +469,9 @@ b = .<span class="dv">93</span>
 <img src="images/buttfly.jpg" alt="Schmetterling" /><figcaption>Schmetterling</figcaption>
 </figure>
 <p>Seit ich Ende der 1980er Jahre mit meinem damals hochmodernen <a href="https://de.wikipedia.org/wiki/Atari_ST">Atari Mega ST</a> erste Schritte mit einem graphikfähigen Personalcomputer unternommen hatte, habe ich die Schmetterlingskurve immer wieder als Test für die Graphikfähigkeit und Schnelligkeit von Programmiersprachen und Rechnern benutzt. Sie wird in <a href="https://de.wikipedia.org/wiki/Polarkoordinaten">Polarkoordinaten</a> beschrieben und ihre Formel ist</p>
-<p><br /><span class="math">$$
-\rho=e^{\cos(\theta)}-2\cdot \cos(4\cdot \theta)+\sin(\tfrac{\theta}{12})^5
-$$</span><br /></p>
+$
+
+<p>$</p>
 <p>oder in Python-Code:</p>
 <pre class="sourceCode python"><code class="sourceCode python">r = exp(cos(theta)) - <span class="dv">2</span>*cos(<span class="dv">4</span>*theta) + (sin(theta/<span class="dv">12</span>))**<span class="dv">5</span></code></pre>
 <p>Die Gleichung ist hinreichend kompliziert um selbst in C geschriebene Routinen auf meinen damals unglaubliche 8 MegaBit schnellen Atari alt aussehen zu lassen. Rechenzeiten von 10 - 20 Minuten waren keine Seltenheit. Heute dagegen muß man den Rechner schon künstlich verlangsamen, damit man sieht, wie sich die Kurve aufbaut. Denn sonst erscheint sofort die fertige Kurve, um die sinnliche Erfahrung, wie diese entsteht, wird man betrogen. Daher habe ich sie in <em>Processing.py</em> innerhalb der <code>draw()</code>-Schleife zeichnen lassen, wobei die Schleifenvariable <code>theta</code> bei jedem Durchlauf um <code>0.02</code> erhöht wurde.</p>
@@ -506,7 +508,7 @@ $$</span><br /></p>
 <p>Damit erreicht man, daß zu Beginn, wo die Sättigung noch ziemlich voll ist, die Zeichnung mit einem satten rot beginnt, während im Laufe der Iteration die weiteren Farben immer blasser werden. Ich fand dies das ästhetisch anspruchvollste Ergebnis, aber um das selber nachvollziehen zu können, solltet Ihr ruhig damit experimentieren, zum Beispiel mit <code>stroke(theta, 100, 100)</code> oder <code>stroke(100-theta, theta, 100)</code> oder was immer Ihr wollt.</p>
 <p>Ihr bekommt so diesen wunderschönen Schmetterling auf den Monitor gezeichnet:</p>
 <p><a href="https://www.flickr.com/photos/schockwellenreiter/31543605354/"><img src="images/butterflycurve.jpg" alt="Screenshot" /></a></p>
-<p>Um die Entstehung der Kurve zu verstehen, empfiehlt <em>Stan Wagon</em><a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>, nacheinander folgende Formlen plotten zu lassen:</p>
+<p>Um die Entstehung der Kurve zu verstehen, empfiehlt <em>Stan Wagon</em><a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>, nacheinander folgende Formlen plotten zu lassen:</p>
 <p>In Polarkoordinaten:</p>
 <pre class="sourceCode python"><code class="sourceCode python">r = exp(cos(theta))  <span class="co"># ergibt eine Art Kreis</span>
 r = -<span class="dv">2</span>*cos(<span class="dv">4</span>*theta)  <span class="co"># ergibt eine Art Blume</span>
@@ -517,7 +519,7 @@ y = -sin(theta/<span class="dv">12</span>)**<span class="dv">5</span></code></pr
 <p>Und dann ruhig auch noch einmal (wieder in Polarkoordinaten):</p>
 <pre class="sourceCode python"><code class="sourceCode python">r = exp(cos(theta)) - <span class="dv">2</span>*cos(<span class="dv">4</span>*theta) - (sin(theta/<span class="dv">12</span>))**<span class="dv">5</span></code></pre>
 <p>Ihr seht dann, daß es eigentlich unerheblich ist, ob Ihr den Störungsgteil der Formel addiert oder subtrahiert: Der Schmetterling ist nahezu identisch, lediglich an der anderen Farbgebung erkennt Ihr, daß es zwei verschiedene Formeln sind.</p>
-<p>Die Schmetterlingskurve und ähnliche Kurven wurden von <em>Temple Fay</em><a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> an der Universität von Southern Mississpi entwickelt. Sie eignen sich vorzüglich zum Experimentieren. So weist Pickover<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> darauf hin, daß die Kurve</p>
+<p>Die Schmetterlingskurve und ähnliche Kurven wurden von <em>Temple Fay</em><a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> an der Universität von Southern Mississpi entwickelt. Sie eignen sich vorzüglich zum Experimentieren. So weist Pickover<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> darauf hin, daß die Kurve</p>
 <pre class="sourceCode python"><code class="sourceCode python">r = exp(cos(theta)) - <span class="fl">2.1</span>*cos(<span class="dv">6</span>*theta) + sin(theta/<span class="dv">30</span>)**<span class="dv">7</span></code></pre>
 <p>eine bedeutend größere Wiederholungsperiode besitzt. Ihr solltet Euch auch das ruhig einmal ansehen. Interessante Vergleiche mit der Originalschmetterlingskurve können Ihr auch ziehen, wenn Ihr mit</p>
 <pre class="sourceCode python"><code class="sourceCode python">r = exp(cos(<span class="dv">2</span>*theta)) - <span class="fl">1.5</span>*cos(<span class="dv">4</span>*theta)</code></pre>
@@ -525,8 +527,10 @@ y = -sin(theta/<span class="dv">12</span>)**<span class="dv">5</span></code></pr
 <h2 id="der-lorenz-attraktor-eine-ikone-der-chaos-theorie">Der Lorenz-Attraktor, eine Ikone der Chaos-Theorie</h2>
 <p>Nachdem ich im letzten Abschnitt die Schmetterlingskurve mit Processing.py gezeichnet hatte, wollte ich nun darauf aufbauen und eine Ikone der Chaos-Forschung, den <a href="https://de.wikipedia.org/wiki/Lorenz-Attraktor">Lorenz-Attraktor</a> damit zeichnen. Ich hatte das ja auch schon einmal <a href="http://blog.schockwellenreiter.de/essays/lorenzr.html">mit R getan</a> -- dort findet Ihr auch weitere Hintergrundinformationen zu diesem Attraktor --, aber mit R wurde nur das fertige Ergebnis visualisiert. Hier kommt es mir aber wieder darauf an, die Entstehung der Kurve verfolgen zu können und dafür ist, wie schon bei der Schmetterlingskurve, Processing gut geeignet:</p>
 <p><a href="https://www.flickr.com/photos/schockwellenreiter/32063849580/"><img src="images/lorenzprocessingpy.jpg" alt="Screenshot" /></a></p>
-<p>Als einer der ersten hatte 1961 <a href="http://de.wikipedia.org/wiki/Edward%20N.%20Lorenz">Edward N. Lorenz</a>, ein Meteorologe am <a href="http://de.wikipedia.org/wiki/Massachusetts%20Institute%20of%20Technology">Massachusetts Institute of Technology</a> (MIT), erkannt, daß Iteration Chaos erzeugt. Er benutzte dort einen Computer, um ein einfaches nichtlineares Gleichungssystem zu lösen, das ein simples Modell der Luftströmungen in der Erdatmosphäre simulieren sollte. Dazu benutzte er ein System von sieben Differentialgleichungen, das <a href="http://www.yale.edu/opa/arc-ybc/v29.n18/story18.html">Barry Saltzman</a> im gleichen Jahr aus den <a href="http://de.wikipedia.org/wiki/Navier-Stokes-Gleichungen">Navier-Stokes-Gleichungen</a> <a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> hergeleitet hatte. Für dieses System existierte keine analytische Lösung, also mußte es numerisch (d.h. wie damals und auch heute noch vielfach üblich in FORTRAN) gelöst werden. Lorenz hatte entdeckt, daß bei nichtperiodischen Lösungen der Gleichungen vier der sieben Variablen gegen Null strebten. Daher konnte er das System auf drei Gleichungen reduzieren:</p>
+<p>Als einer der ersten hatte 1961 <a href="http://de.wikipedia.org/wiki/Edward%20N.%20Lorenz">Edward N. Lorenz</a>, ein Meteorologe am <a href="http://de.wikipedia.org/wiki/Massachusetts%20Institute%20of%20Technology">Massachusetts Institute of Technology</a> (MIT), erkannt, daß Iteration Chaos erzeugt. Er benutzte dort einen Computer, um ein einfaches nichtlineares Gleichungssystem zu lösen, das ein simples Modell der Luftströmungen in der Erdatmosphäre simulieren sollte. Dazu benutzte er ein System von sieben Differentialgleichungen, das <a href="http://www.yale.edu/opa/arc-ybc/v29.n18/story18.html">Barry Saltzman</a> im gleichen Jahr aus den <a href="http://de.wikipedia.org/wiki/Navier-Stokes-Gleichungen">Navier-Stokes-Gleichungen</a> <a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> hergeleitet hatte. Für dieses System existierte keine analytische Lösung, also mußte es numerisch (d.h. wie damals und auch heute noch vielfach üblich in FORTRAN) gelöst werden. Lorenz hatte entdeckt, daß bei nichtperiodischen Lösungen der Gleichungen vier der sieben Variablen gegen Null strebten. Daher konnte er das System auf drei Gleichungen reduzieren:</p>
+$
 
+<p>$</p>
 <!-- Dabei sind (sigma = -10), (\rho = 40) und (\gamma = - \frac{8}{3}). Die Parameter der Gleichung habe ich *[Herm1994]* entnommen, *[Stew1993]* gibt \\(\rho = 28\\) an, aber der Wert ändert nichts an dem Verhalten der Kurve und (\rho = 40) füllt das Fenster einfach besser aus. 😜 -->
 <p>Processing.py besitzt im Gegensatz zu R oder <a href="http://cognitiones.kantel-chaos-team.de/programmierung/python/numpy.html">NumPy</a> kein Modul zur numerischen Lösung von Differentialgleichungen und so habe ich das einfache <a href="https://de.wikipedia.org/wiki/Explizites_Euler-Verfahren">Eulersche Poligonzugverfahren</a> zur numerischen Berechnung benutzt</p>
 <pre class="sourceCode python"><code class="sourceCode python">    dx = -sigma*(x - y)*dt
@@ -1116,7 +1120,7 @@ tt = <span class="st">&quot;Zwölf Boxkämpfer jagen Eva quer über den großen 
 <figure>
 <img src="images/text01.jpg" alt="Screenshot" /><figcaption>Screenshot</figcaption>
 </figure>
-<p>So verstümmelt habt Ihr Euch das sicher nicht vorgestellt. Die Ursache ist einfach und ärgerlich. Das Processing.py zugrundeliegende Python ist ein Jython (also die Java-Version von Python) und entspricht der Python-Version 2.7. Diese ist leider nicht <em>out of the box</em> UTF-8 fähig, ein Umstand, der in der (meist englischsprachigen) Literatur geflissentlich verschwiegen wird<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a>. Dabei ist er so leicht zu beheben. Ein vor einem String vorangestelltes <code>u</code> teilt Python 2.7 mit, daß dieser String ein UTF-8-String ist. Im Sketch ist also lediglich die Zeile</p>
+<p>So verstümmelt habt Ihr Euch das sicher nicht vorgestellt. Die Ursache ist einfach und ärgerlich. Das Processing.py zugrundeliegende Python ist ein Jython (also die Java-Version von Python) und entspricht der Python-Version 2.7. Diese ist leider nicht <em>out of the box</em> UTF-8 fähig, ein Umstand, der in der (meist englischsprachigen) Literatur geflissentlich verschwiegen wird<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a>. Dabei ist er so leicht zu beheben. Ein vor einem String vorangestelltes <code>u</code> teilt Python 2.7 mit, daß dieser String ein UTF-8-String ist. Im Sketch ist also lediglich die Zeile</p>
 <pre class="sourceCode python"><code class="sourceCode python">tt = <span class="st">&quot;Zwölf Boxkämpfer jagen Eva quer über den großen Sylter Deich.&quot;</span></code></pre>
 <p>in</p>
 <pre class="sourceCode python"><code class="sourceCode python">tt = <span class="st">u&quot;Zwölf Boxkämpfer jagen Eva quer über den großen Sylter Deich.&quot;</span></code></pre>
@@ -1753,37 +1757,37 @@ offset = <span class="dv">0</span>
 <h1 id="objkete-und-klassen-mit-kitty">Objkete und Klassen mit Kitty</h1>
 <h2 id="hallo-hörnchen-hallo-kitty-revisited">Hallo Hörnchen – Hallo Kitty revisited</h2>
 <p>Nachdem ich am Wochenende mal wieder an <a href="http://cognitiones.kantel-chaos-team.de/multimedia/spieleprogrammierung/pygame.html">PyGame</a> verzweifelt bin (aus irgendwelchen Gründen funktionierte die Tastaturabfrage nicht), habe ich beschlossen, mich doch eher <a href="http://cognitiones.kantel-chaos-team.de/programmierung/creativecoding/processing/processingpy.html">Processing.py</a> zuzuwenden, dem Python-Mode für <a href="http://cognitiones.kantel-chaos-team.de/programmierung/creativecoding/processing/processing.html">Processing</a>. Ziel sollte es sein, mein vierteiliges PyGame-Tutorial vom Mai dieses Jahres in Processing.py zu implementieren. Erfreulich war, daß ich mir den <a href="http://blog.schockwellenreiter.de/2016/05/2016052001.html">ersten Teil</a> gleich schenken konnte, denn</p>
-<pre class="{python}"><code>def setup():
-    size(640, 480)
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> setup():
+    size(<span class="dv">640</span>, <span class="dv">480</span>)
 
-def draw():
-    background(0, 80, 125)</code></pre>
+<span class="kw">def</span> draw():
+    background(<span class="dv">0</span>, <span class="dv">80</span>, <span class="dv">125</span>)</code></pre>
 <p>erzeugt bereits ein leeres, blaues Fenster. Also habe ich gleich den <a href="http://blog.schockwellenreiter.de/2016/05/2016052003.html">zweiten Teil</a> in Angriff genommen und das <em>»Horn Girl«</em> aus dem von <em>Daniel Cook (Danc)</em> in seinem Blog <em><a href="http://www.lostgarden.com/search/label/free%20game%20graphics">Lost Garden</a></em> unter einer <a href="http://www.lostgarden.com/2007/03/lost-garden-license.html">freien Lizenz</a> (<a href="http://creativecommons.org/licenses/by/3.0/us/">CC BY 3.0 US</a>) zu Verfügung gestellten Tileset <a href="http://www.lostgarden.com/2007/05/dancs-miraculously-flexible-game.html">Planet Cute</a> in das Fenster gezaubert:</p>
 <figure>
 <img src="images/hellokitty-b.jpg" alt="Hallo Hörnchen!" /><figcaption>Hallo Hörnchen!</figcaption>
 </figure>
 <p>Zur Vorbereitung habe ich erst einmal das Bild der jungen Dame auf das Editorfenster der Processing-IDE geschoben. Falls noch nicht vorhanden, erzeugt Processing dann automatisch ein <code>data</code>-Verzeichnis und legt das Bild (aber auch Schriften oder andere Dateien) darin ab. Processing und damit auch Processing.py finden alles in diesem Verzeichnis ohne daß eine genauere Pfadangabe nötig ist. Und so ist auch das fertige Programm von erfrischender Kürze:</p>
-<pre class="{python}"><code>font = None
-greetings = u&#39;Hallo Hörnchen!&#39;
+<pre class="sourceCode python"><code class="sourceCode python">font = <span class="ot">None</span>
+greetings = <span class="st">u&#39;Hallo Hörnchen!&#39;</span>
 
-def setup():
-    global img
-    size(640, 480)
-    img = loadImage(&quot;horngirl.png&quot;)
-    font = createFont(&quot;Verdana-Bold&quot;, 64)
+<span class="kw">def</span> setup():
+    <span class="kw">global</span> img
+    size(<span class="dv">640</span>, <span class="dv">480</span>)
+    img = loadImage(<span class="st">&quot;horngirl.png&quot;</span>)
+    font = createFont(<span class="st">&quot;Verdana-Bold&quot;</span>, <span class="dv">64</span>)
     textFont(font)
 
-def draw():
-    background(0, 80, 125)
-    image(img, 275, 100)
-    text(greetings, 25, 350)</code></pre>
-<p>Mehr ist nicht nötig, um obigen Screenshot zu bekommen. Vergleiche ich diese 14 Zeilen mit den 34 Zeilen der PyGame-Version, dann frage ich mich schon, warum ich nicht früher zu Processing.py gewechselt bin<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a>.</p>
+<span class="kw">def</span> draw():
+    background(<span class="dv">0</span>, <span class="dv">80</span>, <span class="dv">125</span>)
+    image(img, <span class="dv">275</span>, <span class="dv">100</span>)
+    text(greetings, <span class="dv">25</span>, <span class="dv">350</span>)</code></pre>
+<p>Mehr ist nicht nötig, um obigen Screenshot zu bekommen. Vergleiche ich diese 14 Zeilen mit den 34 Zeilen der PyGame-Version, dann frage ich mich schon, warum ich nicht früher zu Processing.py gewechselt bin<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>.</p>
 <p>An der zweiten Zeile kann man es erkennen: Processing.py basiert auf <a href="http://cognitiones.kantel-chaos-team.de/programmierung/python/jython.html">Jython</a> und ist damit kompatibel zu Python 2.7.5, aber nicht zu Python 3. Daher muß man Unicode-Strings (zum Beispiel mit deutschen Umlauten) explizit mit dem vorangestellten <code>u</code> markieren, sonst bekommt man seltsame Zeichen im Programmfenster angezeigt.</p>
 <p>Processing(.py) kann mit Fonts im TrueType- (<code>.ttf</code>), OpenType- (<code>.otf</code>) und in einem eigenen Bitmap-Format, genannt VLW, umgehen. Natürlich findet es alle auf dem eigenen Rechner installierte Fonts, mit</p>
-<pre class="{python}"><code>fontList = PFont.list()
-print(fontList)</code></pre>
-<p>kann man sich diese in der Konsole anzeigen lassen. Wenn man den Sketch allerdings weitergeben will, ist es sinnvoll, einen Font mitzugeben[kittyfn^2], da man nicht sicher sein kann, ob der gewählte Systemfont auf dem anderen Rechner vorhanden ist. Dafür schiebt man eine entsprechende Font-Datei einfach ebenfalls auf das Editorfenster der IDE, damit sie dem <code>data</code>-Ordner hinzugefügt wird. Ich habe testweise mal die Datei <code>OpenSans-Semibold-webfont.ttf</code> installiert, die entsprechende Zeile im Programm hieße dann:</p>
-<pre class="{python}"><code>font = createFont(&quot;OpenSans-Semibold-webfont.ttf&quot;, 64)</code></pre>
+<pre class="sourceCode python"><code class="sourceCode python">fontList = PFont.<span class="dt">list</span>()
+<span class="dt">print</span>(fontList)</code></pre>
+<p>kann man sich diese in der Konsole anzeigen lassen. Wenn man den Sketch allerdings weitergeben will, ist es sinnvoll, einen Font mitzugeben<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a>, da man nicht sicher sein kann, ob der gewählte Systemfont auf dem anderen Rechner vorhanden ist. Dafür schiebt man eine entsprechende Font-Datei einfach ebenfalls auf das Editorfenster der IDE, damit sie dem <code>data</code>-Ordner hinzugefügt wird. Ich habe testweise mal die Datei <code>OpenSans-Semibold-webfont.ttf</code> installiert, die entsprechende Zeile im Programm hieße dann:</p>
+<pre class="sourceCode python"><code class="sourceCode python">font = createFont(<span class="st">&quot;OpenSans-Semibold-webfont.ttf&quot;</span>, <span class="dv">64</span>)</code></pre>
 <p>Der zweite Parameter der Funktion <code>createFont()</code> benennt die gewünschte Größe des Fonts. Mehr ist zu diesem ersten Sketch in Processing.py eigentlich nciht zu sagen. Im nächsten Schritt wird es darum gehen, die junge Dame über das Fenster zu bewegen. Nach meinen Erfahrungen mit PyGame werde ich sie nicht nur mit der Maus, sondern auch mit der Tastatur steuern. <em>Still digging!</em></p>
 <h2 id="moving-kitty">Moving Kitty</h2>
 <p>Im zweiten Teil meiner kleinen Erkundung von <a href="http://cognitiones.kantel-chaos-team.de/programmierung/creativecoding/processing/processingpy.html">Processing.py</a>, dem <a href="http://cognitiones.kantel-chaos-team.de/programmierung/python/python.html">Python</a>-Mode von <a href="http://cognitiones.kantel-chaos-team.de/programmierung/creativecoding/processing/processing.html">Processing</a>, möchte ich die im <a href="hallohoernchen.md">ersten Teil</a> auf den Monitor gezauberte <em>Kitty</em> mithilfe der Pfeiltasten der Tastatur sich über den Monitor bewegen lassen.</p>
@@ -1791,84 +1795,84 @@ print(fontList)</code></pre>
 <img src="images/movingkitty-b.jpg" alt="Moving Kitty" /><figcaption>Moving Kitty</figcaption>
 </figure>
 <p>In Processing gehören die Pfeiltasten wie einige andere auch zu den <code>coded keys</code>, weil sie sich nicht einem Buchstaben zuordnen lassen und haben daher einen speziellen Namen. Die Pfeiltastten heißen <code>LEFT</code>, <code>RIGHT</code>, <code>UP</code> und <code>DOWN</code>, andere <code>coded keys</code> sind zum Beispiel <code>ALT</code>, <code>CONTROL</code> oder <code>SHIFT</code>. Diese müssen in Processing wie in Processing.py gesondert abgefragt werden, und zwar so:</p>
-<pre class="{python}"><code>    if keyPressed and key == CODED:
-        if keyCode == LEFT:</code></pre>
+<pre class="sourceCode python"><code class="sourceCode python">    <span class="kw">if</span> keyPressed and key == CODED:
+        <span class="kw">if</span> keyCode == LEFT:</code></pre>
 <p>während die »normalen« Tasten so abgefragt werden können:</p>
-<pre class="{python}"><code>    if keyPressed:
-        if key == &#39;b&#39; or key == &#39;B&#39;:</code></pre>
+<pre class="sourceCode python"><code class="sourceCode python">    <span class="kw">if</span> keyPressed:
+        <span class="kw">if</span> key == <span class="st">&#39;b&#39;</span> or key == <span class="st">&#39;B&#39;</span>:</code></pre>
 <p>Das ist eigentlich alles, was man wissen muß, um das Progrämmchen zu verstehen. Wenn Kitty den linken Rand des Fensters erreicht hat, taucht sie am rechten Rand wieder auf und umgekehrt. Genauso habe ich mit oben unten verfahren. Die Variabeln <code>radius_x</code> und <code>radius_y</code> sorgen dafür, daß <em>Kitty</em> vollständig vom Bildschirm verschwunden ist, bevor sie am anderen Ende wieder auftaucht (ich mag keine halben Kittys 😜 ) und mit <code>STEP</code> bestimmt Ihr die Geschwindigkeit, mit der Kitty über den Bildschirm wuselt. Hier der vollständige Quellcode zum nachprogrammieren:</p>
-<pre class="{python}"><code>pos_x = 275
-pos_y = 100
-radius_x = 50  # Bildbreite/2
-radius_y = 85  # Bildhöhe/2
-STEP = 5       # Geschwindigkeit
+<pre class="sourceCode python"><code class="sourceCode python">pos_x = <span class="dv">275</span>
+pos_y = <span class="dv">100</span>
+radius_x = <span class="dv">50</span>  <span class="co"># Bildbreite/2</span>
+radius_y = <span class="dv">85</span>  <span class="co"># Bildhöhe/2</span>
+STEP = <span class="dv">5</span>       <span class="co"># Geschwindigkeit</span>
 
-def setup():
-    global horngirl
-    size(640, 480)
-    horngirl = loadImage(&quot;horngirl.png&quot;)
+<span class="kw">def</span> setup():
+    <span class="kw">global</span> horngirl
+    size(<span class="dv">640</span>, <span class="dv">480</span>)
+    horngirl = loadImage(<span class="st">&quot;horngirl.png&quot;</span>)
 
-def draw():
-    global pos_x, pos_y
-    background(0, 80, 125)
+<span class="kw">def</span> draw():
+    <span class="kw">global</span> pos_x, pos_y
+    background(<span class="dv">0</span>, <span class="dv">80</span>, <span class="dv">125</span>)
     image(horngirl, pos_x, pos_y)
-    if keyPressed and key == CODED:
-        if keyCode == LEFT:
+    <span class="kw">if</span> keyPressed and key == CODED:
+        <span class="kw">if</span> keyCode == LEFT:
             pos_x -= STEP
-        elif keyCode == RIGHT:
+        <span class="kw">elif</span> keyCode == RIGHT:
             pos_x += STEP
-        elif keyCode == UP:
+        <span class="kw">elif</span> keyCode == UP:
             pos_y -= STEP
-        elif keyCode == DOWN:
+        <span class="kw">elif</span> keyCode == DOWN:
             pos_y += STEP
-        if pos_x &gt; width + radius_x:
+        <span class="kw">if</span> pos_x &gt; width + radius_x:
             pos_x = -radius_x
-        elif pos_x &lt; -2*radius_x:
+        <span class="kw">elif</span> pos_x &lt; -<span class="dv">2</span>*radius_x:
             pos_x = width + radius_x
-        if pos_y &lt; -2*radius_y:
+        <span class="kw">if</span> pos_y &lt; -<span class="dv">2</span>*radius_y:
             pos_y = height
-        elif pos_y &gt; height:
+        <span class="kw">elif</span> pos_y &gt; height:
             pos_y = -radius_y</code></pre>
 <p><em>Kitty</em> alias <em>»Horn Girl«</em> stammt wieder aus dem von <em>Daniel Cook (Danc)</em> in seinem Blog <em><a href="http://www.lostgarden.com/search/label/free%20game%20graphics">Lost Garden</a></em> unter einer <a href="http://www.lostgarden.com/2007/03/lost-garden-license.html">freien Lizenz</a> (<a href="http://creativecommons.org/licenses/by/3.0/us/">CC BY 3.0 US</a>) zu Verfügung gestellten Tileset <a href="http://www.lostgarden.com/2007/05/dancs-miraculously-flexible-game.html">Planet Cute</a>. Aber Ihr könnt natürlich auch jedes andere Bild nehmen, das gerade auf Eurer Festplatte herumliegt.</p>
 <h2 id="klasse-kitty">Klasse Kitty!</h2>
 <p>Nach den <a href="hallohoernchen.md">ersten</a> <a href="movingkitty.md">beiden</a> Teilen meiner kleinen Erkundung von <a href="http://cognitiones.kantel-chaos-team.de/programmierung/creativecoding/processing/processingpy.html">Processing.py</a>, dem <a href="http://cognitiones.kantel-chaos-team.de/programmierung/python/python.html">Python</a>-Mode von <a href="http://cognitiones.kantel-chaos-team.de/programmierung/creativecoding/processing/processing.html">Processing</a> und vermutlich die einzige, derzeit aktiv gepflegte Alternative zu <a href="http://cognitiones.kantel-chaos-team.de/multimedia/spieleprogrammierung/pygame.html">PyGame</a>, möchte ich erst einmal ein wenig aufräumen und daran erinnern, daß Akteure eines Computerspiels programmiertechnisch am besten in Klassen aufgehoben sind. Daher habe ich auch <em>Kitty</em> eine eigene Klasse spendiert:</p>
-<pre class="{python}"><code># coding=utf-8
+<pre class="sourceCode python"><code class="sourceCode python"><span class="co"># coding=utf-8</span>
 
-class Kitty(object):
-    def __init__(self, tempX, tempY):
-        self.x = tempX
-        self.y = tempY
-        self.radiusX = 50  # Bildbreite/2
-        self.radiusY = 85  # Bildhöhe/2
+<span class="kw">class</span> Kitty(<span class="dt">object</span>):
+    <span class="kw">def</span> <span class="ot">__init__</span>(<span class="ot">self</span>, tempX, tempY):
+        <span class="ot">self</span>.x = tempX
+        <span class="ot">self</span>.y = tempY
+        <span class="ot">self</span>.radiusX = <span class="dv">50</span>  <span class="co"># Bildbreite/2</span>
+        <span class="ot">self</span>.radiusY = <span class="dv">85</span>  <span class="co"># Bildhöhe/2</span>
         
-    def loadPic(self):
-        self.img = loadImage(&quot;horngirl.png&quot;)
+    <span class="kw">def</span> loadPic(<span class="ot">self</span>):
+        <span class="ot">self</span>.img = loadImage(<span class="st">&quot;horngirl.png&quot;</span>)
     
-    def move(self):
-        self.x = mouseX - self.radiusX
-        self.y = mouseY - self.radiusY
+    <span class="kw">def</span> move(<span class="ot">self</span>):
+        <span class="ot">self</span>.x = mouseX - <span class="ot">self</span>.radiusX
+        <span class="ot">self</span>.y = mouseY - <span class="ot">self</span>.radiusY
         
-    def display(self):
-        image(self.img, self.x, self.y)</code></pre>
+    <span class="kw">def</span> display(<span class="ot">self</span>):
+        image(<span class="ot">self</span>.img, <span class="ot">self</span>.x, <span class="ot">self</span>.y)</code></pre>
 <p>Klassen kann man in Processing der Übersicht halber in separaten Dateien unterbringen, die in der IDE jeweils einen eigenen Reiter bekommen (siehe Screenshot).</p>
 <figure>
 <img src="images/klassekitty.png" alt="Klasse Kitty" /><figcaption>Klasse Kitty</figcaption>
 </figure>
 <p>Hierbei ist jedoch zu beachten, daß im Gegensatz zu Processing und [P5.js][7] (jeweils aus anderen Gründen) die Klasse nicht automatisch dem Quelltext der Applikation bei der Ausführung hinzugefügt wird. Sie ist wenn sie nicht im Quelltext der Applikation steht -- wie in Python üblich -- ein Modul und muß gesondert mit</p>
-<pre class="{python}"><code>from kitty import Kitty</code></pre>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> kitty <span class="ch">import</span> Kitty</code></pre>
 <p>importiert werden. Und da sie ein reines Python2- (oder genauer Jython-) Modul ist, sollte man auch nicht vergessen <code># coding=utf-8</code> in die erste Zeile der Datei schreiben, denn sonst bekommt man Probleme mit dem <em>ö</em> im Kommentar (<em>Bildhöhe</em>). 😜</p>
-<p>Den Konventionen folgend, habe ich dem Objekt <em>Kitty</em> neben der eigentlichen Initialisierung drei Funktionen spendiert, nämlich <code>loadPic()</code>, <code>move()</code> und <code>display()</code>. Die beiden letzeren hätte man auch in einer Funktion zusammenfassen können (beispielsweise <code>update()</code> wie bei PyGame üblich), aber da die Philosophie sein sollte, jeder Aktivität eine eigene Funktion zu spendieren, bin ich der Konvention gefolgt<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>.</p>
+<p>Den Konventionen folgend, habe ich dem Objekt <em>Kitty</em> neben der eigentlichen Initialisierung drei Funktionen spendiert, nämlich <code>loadPic()</code>, <code>move()</code> und <code>display()</code>. Die beiden letzeren hätte man auch in einer Funktion zusammenfassen können (beispielsweise <code>update()</code> wie bei PyGame üblich), aber da die Philosophie sein sollte, jeder Aktivität eine eigene Funktion zu spendieren, bin ich der Konvention gefolgt<a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a>.</p>
 <p>Ansonsten ist zu dem Programm nichts weiter zu sagen. Es zeigt einfach eine <em>Kitty</em> die der Maus hinterherrennt. Und dadruch, daß fast die gesamte Logik in die Klasse <code>Kitty</code> ausgelagert wurde, ist das Hauptprogramm von erfrischender Kürze:</p>
-<pre class="{python}"><code>from kitty import Kitty
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> kitty <span class="ch">import</span> Kitty
 
-kitty = Kitty(275, 100)
+kitty = Kitty(<span class="dv">275</span>, <span class="dv">100</span>)
 
-def setup():
-    size(640, 480)
+<span class="kw">def</span> setup():
+    size(<span class="dv">640</span>, <span class="dv">480</span>)
     kitty.loadPic()
 
-def draw():
-    background(0, 80, 125)
+<span class="kw">def</span> draw():
+    background(<span class="dv">0</span>, <span class="dv">80</span>, <span class="dv">125</span>)
     kitty.move()
     kitty.display()</code></pre>
 <p>So muß es ja auch sein.</p>
@@ -1882,56 +1886,56 @@ def draw():
 <img src="images/cuteplanet.jpg" alt="Cute Planet" /><figcaption>Cute Planet</figcaption>
 </figure>
 <p>Also erst einmal die Klasse selber, ich habe sie aus naheliegenden Gründen <code>Spaceship</code> genannt (auch wenn ein Planet ja im eigentlichen Sinne des Wortes kein Raumschiff ist, aber wie Ihr später sehen werdet, in »Space Cute« schon 😜 ):</p>
-<pre class="{python}"><code>class Spaceship():
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">class</span> Spaceship():
     
-    def __init__(self, pic, posX, posY):
-        self.pic = pic
-        self.x = posX
-        self.y = posY
-        self.dx = 0
+    <span class="kw">def</span> <span class="ot">__init__</span>(<span class="ot">self</span>, pic, posX, posY):
+        <span class="ot">self</span>.pic = pic
+        <span class="ot">self</span>.x = posX
+        <span class="ot">self</span>.y = posY
+        <span class="ot">self</span>.dx = <span class="dv">0</span>
         
-    def loadPic(self):
-        self.img = loadImage(self.pic)
+    <span class="kw">def</span> loadPic(<span class="ot">self</span>):
+        <span class="ot">self</span>.img = loadImage(<span class="ot">self</span>.pic)
     
-    def move(self):
-        self.x += self.dx
-        if self.x &gt;= width + 120:
-            self.x = -120
-            self.y = random(height-120)
-        elif self.x &lt; -120:
-            self.x = width + 120
-            self.y = random(height-120)
+    <span class="kw">def</span> move(<span class="ot">self</span>):
+        <span class="ot">self</span>.x += <span class="ot">self</span>.dx
+        <span class="kw">if</span> <span class="ot">self</span>.x &gt;= width + <span class="dv">120</span>:
+            <span class="ot">self</span>.x = -<span class="dv">120</span>
+            <span class="ot">self</span>.y = random(height<span class="dv">-120</span>)
+        <span class="kw">elif</span> <span class="ot">self</span>.x &lt; -<span class="dv">120</span>:
+            <span class="ot">self</span>.x = width + <span class="dv">120</span>
+            <span class="ot">self</span>.y = random(height<span class="dv">-120</span>)
     
-    def display(self):
-        image(self.img, self.x, self.y)</code></pre>
+    <span class="kw">def</span> display(<span class="ot">self</span>):
+        image(<span class="ot">self</span>.img, <span class="ot">self</span>.x, <span class="ot">self</span>.y)</code></pre>
 <p>Der Konstruktor der Klasse verlangt die URL eines Bildes, das das Raumschiff (oder den Planeten) auf dem Monitor darstellt und eine initiale Position, auf der es im Fenster erscheinen soll.</p>
 <p>Dann gibt es die Funktion <code>loadPic()</code>, die dieses Bild dann lädt. Die Bilder stammen wieder aus dem von <em>Daniel Cook (Danc)</em> in seinem Blog <em><a href="http://www.lostgarden.com/search/label/free%20game%20graphics">Lost Garden</a></em> unter einer <a href="http://www.lostgarden.com/2007/03/lost-garden-license.html">freien Lizenz</a> (<a href="http://creativecommons.org/licenses/by/3.0/us/">CC BY 3.0 US</a>) zu Verfügung gestellten Tileset <em><a href="http://www.lostgarden.com/2007/05/dancs-miraculously-flexible-game.html">Planet Cute</a></em>. Ich habe sie mit dem <a href="http://cognitiones.kantel-chaos-team.de/multimedia/computergraphik/gimp.html">Bildverarbeitungsprogramm meiner Wahl</a> zurechtgeschnitten und auf eine Größe von 120x120 Pixeln heruntergerechnet und sie dann durch einfaches Schieben auf das Editor-Fenster der Processing IDE in den <code>data</code>-Ordner des Sketches transportiert. So findet Processing (und damit auch Processing.py) sie ohne zusätzliche Pfadangabe.</p>
 <p><img src="images/planet.png" alt="Planet" /> <img src="images/rocketship.png" alt="Rocketship" /> <img src="images/octopussy.png" alt="Octopussy" /> <img src="images/beetleship.png" alt="Beetleship" /></p>
 <p>Dann folgt die Funktion <code>move()</code>, die das Herzstück der Klasse darstellt. Hier werden die einzelnen Raumschiffe bewegt und wenn sie die Grenzen des Fenster verlassen haben, von der gegenüberliegenden Seite von einer zufällig gewählten Position wieder zurück ins Fenster geschickt. Die Funktion <code>display()</code> kümmert sich dann um die Darstellung des Raumschiffs.</p>
 <p>Nun das Hauptprogramm: Dank der Klasse <code>Spaceship</code> ist es kurz und übersichtlich geblieben.</p>
-<pre class="{python}"><code>from spaceship import Spaceship
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> spaceship <span class="ch">import</span> Spaceship
 
-planet = Spaceship(&quot;planet.png&quot;, 500, 350)
-rocket = Spaceship(&quot;rocketship.png&quot;, 300, 300)
-octopussy = Spaceship(&quot;octopussy.png&quot;, 400, 150)
-beetle = Spaceship(&quot;beetleship.png&quot;, 200, 100)
+planet = Spaceship(<span class="st">&quot;planet.png&quot;</span>, <span class="dv">500</span>, <span class="dv">350</span>)
+rocket = Spaceship(<span class="st">&quot;rocketship.png&quot;</span>, <span class="dv">300</span>, <span class="dv">300</span>)
+octopussy = Spaceship(<span class="st">&quot;octopussy.png&quot;</span>, <span class="dv">400</span>, <span class="dv">150</span>)
+beetle = Spaceship(<span class="st">&quot;beetleship.png&quot;</span>, <span class="dv">200</span>, <span class="dv">100</span>)
 
 ships = [planet, rocket, octopussy, beetle]
 
-def setup():
-    size(640, 480)
+<span class="kw">def</span> setup():
+    size(<span class="dv">640</span>, <span class="dv">480</span>)
     planet.loadPic()
-    planet.dx = 1
+    planet.dx = <span class="dv">1</span>
     rocket.loadPic()
-    rocket.dx = 10
+    rocket.dx = <span class="dv">10</span>
     octopussy.loadPic()
-    octopussy.dx = -5
+    octopussy.dx = -<span class="dv">5</span>
     beetle.loadPic()
-    beetle.dx = 5
+    beetle.dx = <span class="dv">5</span>
 
-def draw():
-    background(0, 80, 125)
-    for i in range(len(ships)):
+<span class="kw">def</span> draw():
+    background(<span class="dv">0</span>, <span class="dv">80</span>, <span class="dv">125</span>)
+    <span class="kw">for</span> i in <span class="dt">range</span>(<span class="dt">len</span>(ships)):
         ships[i].move()
         ships[i].display()</code></pre>
 <p>Als erstes wird die Klasse <code>Spaceship</code> importiert und der Variablen <code>spaceship</code> zugewiesen. Dann werden vier <em>Spaceships«</em> erzeugt und einer Variablen zugewiesen, die den Konstruktor der Klasse aufruft. Dann wird noch eine Liste erstellt, die alle vier »Raumschiffe« enthält. Im <code>setup()</code> laden dann alle vier ihre Bilder und bekommen (mit <code>dx</code>) eine Geschwindigkeit verpaßt.</p>
@@ -2245,7 +2249,7 @@ jumpsize = <span class="dv">2</span>
 <h2 id="der-waldbrand-simulator">Der Waldbrand-Simulator</h2>
 <p>Bei dem <a href="waehler.md">Demokratie-Spiel</a> und bei den <a href="segregation.md">Experimenten mit den Fröschen und Schildkröten</a> änderte sich pro Durchlauf jeweils nur das Verhalten einer Zelle in Abänggkeit von ihren direkten Nachbarn und war für den weiteren Verlauf der Simulation verantwortlich. Bei den meisten Simulationen mit zellulären Automaten jedoch wird der neue Wert <em>aller</em> Zellen in Abhängigkeit von den Nachbarn betrachtet und neu berechnet. Dafür muß man dann zwei Arrays anlegen, eines, das die aktuellen und eines das die zukünftigen Werte beinhaltet. Ich möchte das mal am Beispiel einer beliebten Simulation zeigen, der Simulation eines Waldbrandes mit einem zellulären Automaten.</p>
 <p><a href="https://www.flickr.com/photos/schockwellenreiter/36833659066"><img src="images/fire01.jpg" alt="Screenshot" /></a></p>
-<p>Die Regeln dieser Simulation folgen der Beschreibung, die <em>Daniel Scholz</em> in seinem Buch »Pixelspiele«<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a> gegeben hat:</p>
+<p>Die Regeln dieser Simulation folgen der Beschreibung, die <em>Daniel Scholz</em> in seinem Buch »Pixelspiele«<a href="#fn12" class="footnoteRef" id="fnref12"><sup>12</sup></a> gegeben hat:</p>
 <h3 id="kein-spiel-ohne-regeln">Kein Spiel ohne Regeln</h3>
 <p>Für alle Zellen <em>x<sub>ij</sub></em> gelten folgende Regeln:</p>
 <ol type="1">
@@ -3008,7 +3012,7 @@ lightDirection = <span class="dv">0</span>
 <li>Berlin,DE -- Geo-Koordinaten [52.5244, 13.4105] (Berlin Mitte)</li>
 </ul>
 <p>Per Default kommen die Antwort in Englisch und die Temperaturangaben in Kelvin. Will man sie in Deutsch und °Celsius haben, muß man der URL noch die Parameter <code>&amp;lang=de</code> und <code>&amp;units=metric</code> mitgeben. Ein Aufruf für Berlin-Tempelhof sähe dann so aus:</p>
-<pre><code>http://api.openweathermap.org/data/2.5/weather?q=Berlin%20Tempelhof,DE&amp;units=metric&amp;lang=de&amp;APPID=0815</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">http</span>://api.openweathermap.org/data/2.5/weather?q=Berlin%20Tempelhof,DE<span class="kw">&amp;</span><span class="ot">units=</span>metric<span class="kw">&amp;</span><span class="ot">lang=</span>de<span class="kw">&amp;</span><span class="ot">APPID=</span>0815</code></pre>
 <p>Die APPID habe ich mir ausgedacht, Ihr müßt Euch schon selber eine besorgen (die dann auch viel komplizierter und länger ist). Wird die Anfrage mit einer gültigen APPID abgeschickt, bekommt Ihr eine Antwort der Art:</p>
 <pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span><span class="dt">&quot;coord&quot;</span><span class="fu">:</span>
     <span class="fu">{</span><span class="dt">&quot;lon&quot;</span><span class="fu">:</span><span class="fl">13.41</span><span class="fu">,</span><span class="dt">&quot;lat&quot;</span><span class="fu">:</span><span class="fl">52.48</span><span class="fu">},</span>
@@ -3036,35 +3040,35 @@ lightDirection = <span class="dv">0</span>
 weatherUrl = <span class="st">&quot;http://api.openweathermap.org/data/2.5/weather?q=Berlin%20Tempelhof,DE&amp;units=metric&amp;lang=de&amp;APPID=4711&quot;</span>
 weatherData = json.load(urllib2.urlopen(weatherUrl))</code></pre>
 <p>Noch einmal: Den API-Key (<code>APPID</code>) habe ich mir ausgedacht, um den Code-Schnipsel oben zum Laufen zu bekommen, müßt Ihr Euch auf den Seiten von OpenWeatherMap schon einen eigenen API-Key besorgen.</p>
-<pre class="pyton"><code>{
-    u&#39;visibility&#39;: 10000,
-    u&#39;main&#39;: {
-        u&#39;temp&#39;: 3,
-        u&#39;pressure&#39;: 1007,
-        u&#39;temp_max&#39;: 3,
-        u&#39;temp_min&#39;: 3,
-        u&#39;humidity&#39;: 74
+<pre class="sourceCode python"><code class="sourceCode python">{
+    <span class="st">u&#39;visibility&#39;</span>: <span class="dv">10000</span>,
+    <span class="co">u&#39;main&#39;</span>: {
+        <span class="st">u&#39;temp&#39;</span>: <span class="dv">3</span>,
+        <span class="co">u&#39;pressure&#39;</span>: <span class="dv">1007</span>,
+        <span class="co">u&#39;temp_max&#39;</span>: <span class="dv">3</span>,
+        <span class="co">u&#39;temp_min&#39;</span>: <span class="dv">3</span>,
+        <span class="co">u&#39;humidity&#39;</span>: <span class="dv">74</span>
     },
-    u&#39;clouds&#39;: {u&#39;all&#39;: 40},
-    u&#39;sys&#39;: {
-        u&#39;country&#39;:
-        u&#39;DE&#39;,
-        u&#39;sunrise&#39;: 1487916142,
-        u&#39;type&#39;: 1,
-        u&#39;message&#39;: 0.0025,
-        u&#39;sunset&#39;: 1487954244,
-        u&#39;id&#39;: 4892
+    <span class="co">u&#39;clouds&#39;</span>: {<span class="st">u&#39;all&#39;</span>: <span class="dv">40</span>},
+    <span class="co">u&#39;sys&#39;</span>: {
+        <span class="st">u&#39;country&#39;</span>:
+        <span class="co">u&#39;DE&#39;</span>,
+        <span class="co">u&#39;sunrise&#39;</span>: <span class="dv">1487916142</span>,
+        <span class="co">u&#39;type&#39;</span>: <span class="dv">1</span>,
+        <span class="co">u&#39;message&#39;</span>: <span class="fl">0.0025</span>,
+        <span class="co">u&#39;sunset&#39;</span>: <span class="dv">1487954244</span>,
+        <span class="co">u&#39;id&#39;</span>: <span class="dv">4892</span>
     },
-    u&#39;dt&#39;: 1487940600,
-    u&#39;coord&#39;: {u&#39;lon&#39;: 13.41, u&#39;lat&#39;: 52.48},
-    u&#39;weather&#39;: [{
-        u&#39;icon&#39;: u&#39;13d&#39;, u&#39;description&#39;: u&#39;m\xe4\xdfiger Schnee&#39;, u&#39;main&#39;: u&#39;Snow&#39;, u&#39;id&#39;: 600
+    <span class="co">u&#39;dt&#39;</span>: <span class="dv">1487940600</span>,
+    <span class="co">u&#39;coord&#39;</span>: {<span class="st">u&#39;lon&#39;</span>: <span class="fl">13.41</span>, <span class="st">u&#39;lat&#39;</span>: <span class="fl">52.48</span>},
+    <span class="co">u&#39;weather&#39;</span>: [{
+        <span class="st">u&#39;icon&#39;</span>: <span class="st">u&#39;13d&#39;</span>, <span class="st">u&#39;description&#39;</span>: <span class="st">u&#39;m</span><span class="ch">\xe4\xdf</span><span class="st">iger Schnee&#39;</span>, <span class="st">u&#39;main&#39;</span>: <span class="st">u&#39;Snow&#39;</span>, <span class="st">u&#39;id&#39;</span>: <span class="dv">600</span>
     }],
-    u&#39;name&#39;: u&#39;Berlin Tempelhof&#39;,
-    u&#39;cod&#39;: 200,
-    u&#39;id&#39;: 7290253,
-    u&#39;base&#39;: u&#39;stations&#39;,
-    u&#39;wind&#39;: {u&#39;deg&#39;: 310, u&#39;speed&#39;: 4.6}
+    <span class="co">u&#39;name&#39;</span>: <span class="st">u&#39;Berlin Tempelhof&#39;</span>,
+    <span class="co">u&#39;cod&#39;</span>: <span class="dv">200</span>,
+    <span class="co">u&#39;id&#39;</span>: <span class="dv">7290253</span>,
+    <span class="co">u&#39;base&#39;</span>: <span class="st">u&#39;stations&#39;</span>,
+    <span class="co">u&#39;wind&#39;</span>: {<span class="st">u&#39;deg&#39;</span>: <span class="dv">310</span>, <span class="st">u&#39;speed&#39;</span>: <span class="fl">4.6</span>}
 }</code></pre>
 <p>Laßt Ihr Euch die <code>weatherData</code> aus obigem Codeschnipsel mal anzeigen (ich habe sie wieder der besseren Lesbarkeit wegen umgebrochen), dann seht Ihr, daß die JSON-Bibliothek die Antwort als <em>Dictionary</em> behandelt und Ihr damit nicht mehr auf die Reihenfolge bauen könnt. Es ist zwar alles vorhanden, was Ihr auch ganz oben in der ersten Anwort seht, aber in einer völlig anderen Reihenfolge. Außerdem hat die Bibliothek alle Strings als UTF-8-Strings gekennzeichnet.</p>
 <p>Nun lassen sich aber die Werte in <em>Dictionaries</em> in Python mit Ihrem Key abfragen und die Keys können miteinander verkettet werden. Wollt Ihr zum Beispiel den Wert des Dictionaries <code>&quot;temp&quot;</code>, das Teil des Dictionaries <code>&quot;main&quot;</code> ist, abfragen, so ist dies mit</p>
@@ -3210,47 +3214,47 @@ image(weatherIcon, <span class="dv">10</span>, <span class="dv">260</span>)</cod
 <img src="images/runningorcpy-s.jpg" alt="Schon wieder ein rennender Ork" /><figcaption>Schon wieder ein rennender Ork</figcaption>
 </figure>
 <p>Dafür habe ich erst einmal die Klasse <code>orc()</code> definiert und nach der Initialisierung -- wie in den anderen Tutorials auch schon -- die Methoden <code>loadPics()</code>, <code>move()</code> und <code>display()</code> implementiert:</p>
-<pre class="{python}"><code>class Orc():
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">class</span> Orc():
 
-    def __init__(self, posX, posY):
-        self.x = posX
-        self.y = posY
-        self.dy = 0
+    <span class="kw">def</span> <span class="ot">__init__</span>(<span class="ot">self</span>, posX, posY):
+        <span class="ot">self</span>.x = posX
+        <span class="ot">self</span>.y = posY
+        <span class="ot">self</span>.dy = <span class="dv">0</span>
 
-    def loadPics(self):
-        self.orc1 = loadImage(&quot;orc1.png&quot;)
-        self.orc2 = loadImage(&quot;orc2.png&quot;)
-        self.orc3 = loadImage(&quot;orc3.png&quot;)
+    <span class="kw">def</span> loadPics(<span class="ot">self</span>):
+        <span class="ot">self</span>.orc1 = loadImage(<span class="st">&quot;orc1.png&quot;</span>)
+        <span class="ot">self</span>.orc2 = loadImage(<span class="st">&quot;orc2.png&quot;</span>)
+        <span class="ot">self</span>.orc3 = loadImage(<span class="st">&quot;orc3.png&quot;</span>)
     
-    def move(self):
-        self.y += self.dy
-        if self.y &gt;= height + 48:
-            self.y = -48
-            self.x = random(width-48)
+    <span class="kw">def</span> move(<span class="ot">self</span>):
+        <span class="ot">self</span>.y += <span class="ot">self</span>.dy
+        <span class="kw">if</span> <span class="ot">self</span>.y &gt;= height + <span class="dv">48</span>:
+            <span class="ot">self</span>.y = -<span class="dv">48</span>
+            <span class="ot">self</span>.x = random(width<span class="dv">-48</span>)
     
-    def display(self):
-        if frameCount % 4 == 1:
-            image(self.orc1, self.x, self.y)
-        elif frameCount % 4 == 3:
-            image(self.orc3, self.x, self.y)
-        else:
-            image(self.orc2, self.x, self.y)</code></pre>
+    <span class="kw">def</span> display(<span class="ot">self</span>):
+        <span class="kw">if</span> frameCount % <span class="dv">4</span> == <span class="dv">1</span>:
+            image(<span class="ot">self</span>.orc1, <span class="ot">self</span>.x, <span class="ot">self</span>.y)
+        <span class="kw">elif</span> frameCount % <span class="dv">4</span> == <span class="dv">3</span>:
+            image(<span class="ot">self</span>.orc3, <span class="ot">self</span>.x, <span class="ot">self</span>.y)
+        <span class="kw">else</span>:
+            image(<span class="ot">self</span>.orc2, <span class="ot">self</span>.x, <span class="ot">self</span>.y)</code></pre>
 <p>Die Figur des <em>Orcs</em> hatte ich ja schon häufiger verwendet, die Zeichnungen stammen aus dem freien (<a href="https://github.com/silveira/openpixels/blob/master/LICENSE">CC-BY-SA</a>) <a href="https://github.com/silveira/openpixels">OpenPixels</a>-Projekt von <a href="http://silveiraneto.net/tag/pixelart/">Silveira Neto</a>. Der Einfachheit halber und damit Ihr das nachprogrammieren könnt, habe ich die drei animierten Bildchen hier noch einmal eingebunden:</p>
 <p><img src="images/orc1.png" alt="Ork 1" /> <img src="images/orc2.png" alt="Ork 2" /> <img src="images/orc3.png" alt="Ork 3" /></p>
 <p>Das Hauptskript war dank des Klasse <code>Orc()</code> dann wieder von erfrischender Kürze:</p>
-<pre class="{python}"><code>from orcs import Orc
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> orcs <span class="ch">import</span> Orc
 
-orc = Orc(160, -48)
+orc = Orc(<span class="dv">160</span>, -<span class="dv">48</span>)
 
-def setup():
-    global bg
-    bg = loadImage(&quot;field.png&quot;)
-    frameRate(15)
-    size(320, 320)
+<span class="kw">def</span> setup():
+    <span class="kw">global</span> bg
+    bg = loadImage(<span class="st">&quot;field.png&quot;</span>)
+    frameRate(<span class="dv">15</span>)
+    size(<span class="dv">320</span>, <span class="dv">320</span>)
     orc.loadPics()
-    orc.dy = 5
+    orc.dy = <span class="dv">5</span>
     
-def draw():
+<span class="kw">def</span> draw():
     background(bg)
     orc.move()
     orc.display()</code></pre>
@@ -3261,103 +3265,103 @@ def draw():
 <p><img src="images/orcbk1.gif" alt="Ork" /> <img src="images/orcbk2.gif" alt="Ork" /> <img src="images/orcfr1.gif" alt="Ork" /> <img src="images/orcfr2.gif" alt="Ork" /> <img src="images/orclf1.gif" alt="Ork" /> <img src="images/orclf2.gif" alt="Ork" /> <img src="images/orcrt1.gif" alt="Ork" /> <img src="images/orcrt2.gif" alt="Ork" /></p>
 <p>Im Gegensatz zu dem Ork aus dem letzten Tutorial stammen diese Bildchen (bis auf die Hintergrund-Wiese) nicht aus dem <a href="https://github.com/silveira/openpixels">OpenPixels</a>-Fundus von <a href="http://silveiraneto.net/tag/pixelart/">Silveira Neto</a>, sondern aus der ebenfalls freien (<a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>) <a href="http://blogoscoped.com/archive/2006-08-08-n51.html">Sprite-Sammlung</a> von <em>Philipp Lenssen</em> (über 700 animierte Avatare in der klassischen Größe von 32x32 Pixeln). Und die Animationen setzen sich auch nur aus je zwei verschiedenen Bildchen zusammen, was zum einen Code und Speicher spart und zum anderen den Charakteren einen besonders wuseligen Eindruck verschafft, der an die Frühzeit der Computerspiele erinnert (aus der die Bilder auch stammen). 😇 Man benötigt so für jede der vier Himmelsrichtungen nur zwei Bilder, was dann zusammen obige acht Bildchen ergibt.</p>
 <p>Als erstes habe ich dem Ork natürlich wieder eine eigene Klasse spendiert (in dem Tab/der Datei <code>orc2.py</code>), deren Quellcode nun schon bedeutend umfangreicher geworden ist:</p>
-<pre class="{python}"><code>class Orc():
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">class</span> Orc():
 
-    def __init__(self, posX, posY):
-        self.x = posX
-        self.y = posY
-        self.dir = 1
-        self.dx = 0
-        self.dy = 0
+    <span class="kw">def</span> <span class="ot">__init__</span>(<span class="ot">self</span>, posX, posY):
+        <span class="ot">self</span>.x = posX
+        <span class="ot">self</span>.y = posY
+        <span class="ot">self</span>.<span class="dt">dir</span> = <span class="dv">1</span>
+        <span class="ot">self</span>.dx = <span class="dv">0</span>
+        <span class="ot">self</span>.dy = <span class="dv">0</span>
 
-    def loadPics(self):
-        self.orcrt1 = loadImage(&quot;orcrt1.gif&quot;)
-        self.orcrt2 = loadImage(&quot;orcrt2.gif&quot;)
-        self.orcfr1 = loadImage(&quot;orcfr1.gif&quot;)
-        self.orcfr2 = loadImage(&quot;orcfr2.gif&quot;)
-        self.orclf1 = loadImage(&quot;orclf1.gif&quot;)
-        self.orclf2 = loadImage(&quot;orclf2.gif&quot;)
-        self.orcbk1 = loadImage(&quot;orcbk1.gif&quot;)
-        self.orcbk2 = loadImage(&quot;orcbk2.gif&quot;)
+    <span class="kw">def</span> loadPics(<span class="ot">self</span>):
+        <span class="ot">self</span>.orcrt1 = loadImage(<span class="st">&quot;orcrt1.gif&quot;</span>)
+        <span class="ot">self</span>.orcrt2 = loadImage(<span class="st">&quot;orcrt2.gif&quot;</span>)
+        <span class="ot">self</span>.orcfr1 = loadImage(<span class="st">&quot;orcfr1.gif&quot;</span>)
+        <span class="ot">self</span>.orcfr2 = loadImage(<span class="st">&quot;orcfr2.gif&quot;</span>)
+        <span class="ot">self</span>.orclf1 = loadImage(<span class="st">&quot;orclf1.gif&quot;</span>)
+        <span class="ot">self</span>.orclf2 = loadImage(<span class="st">&quot;orclf2.gif&quot;</span>)
+        <span class="ot">self</span>.orcbk1 = loadImage(<span class="st">&quot;orcbk1.gif&quot;</span>)
+        <span class="ot">self</span>.orcbk2 = loadImage(<span class="st">&quot;orcbk2.gif&quot;</span>)
     
-    def move(self):
-        if self.dir == 0:
-            if self.x &gt;= width - 32:
-                self.x = width - 32
-                self.image1 = self.orcrt2
-                self.image2 = self.orcrt2
-            else:
-                self.x += self.dx
-                self.image1 = self.orcrt1
-                self.image2 = self.orcrt2
-        elif self.dir == 1:
-            if self.y &gt;= height - 32:
-                self.y = height - 32
-                self.image1 = self.orcfr2
-                self.image2 = self.orcfr2
-            else:
-                self.y += self.dy
-                self.image1 = self.orcfr1
-                self.image2 = self.orcfr2
-        elif self.dir == 2:
-            if self.x &lt;= 0:
-                self.x = 0
-                self.image1 = self.orclf2
-                self.image2 = self.orclf2
-            else:
-                self.x -= self.dx
-                self.image1 = self.orclf1
-                self.image2 = self.orclf2
-        elif self.dir == 3:
-            if self.y &lt;= 0:
-                self.y = 0
-                self.image1 = self.orcbk2
-                self.image2 = self.orcbk2
-            else:
-                self.y -= self.dy
-                self.image1 = self.orcbk1
-                self.image2 = self.orcbk2
+    <span class="kw">def</span> move(<span class="ot">self</span>):
+        <span class="kw">if</span> <span class="ot">self</span>.<span class="dt">dir</span> == <span class="dv">0</span>:
+            <span class="kw">if</span> <span class="ot">self</span>.x &gt;= width - <span class="dv">32</span>:
+                <span class="ot">self</span>.x = width - <span class="dv">32</span>
+                <span class="ot">self</span>.image1 = <span class="ot">self</span>.orcrt2
+                <span class="ot">self</span>.image2 = <span class="ot">self</span>.orcrt2
+            <span class="kw">else</span>:
+                <span class="ot">self</span>.x += <span class="ot">self</span>.dx
+                <span class="ot">self</span>.image1 = <span class="ot">self</span>.orcrt1
+                <span class="ot">self</span>.image2 = <span class="ot">self</span>.orcrt2
+        <span class="kw">elif</span> <span class="ot">self</span>.<span class="dt">dir</span> == <span class="dv">1</span>:
+            <span class="kw">if</span> <span class="ot">self</span>.y &gt;= height - <span class="dv">32</span>:
+                <span class="ot">self</span>.y = height - <span class="dv">32</span>
+                <span class="ot">self</span>.image1 = <span class="ot">self</span>.orcfr2
+                <span class="ot">self</span>.image2 = <span class="ot">self</span>.orcfr2
+            <span class="kw">else</span>:
+                <span class="ot">self</span>.y += <span class="ot">self</span>.dy
+                <span class="ot">self</span>.image1 = <span class="ot">self</span>.orcfr1
+                <span class="ot">self</span>.image2 = <span class="ot">self</span>.orcfr2
+        <span class="kw">elif</span> <span class="ot">self</span>.<span class="dt">dir</span> == <span class="dv">2</span>:
+            <span class="kw">if</span> <span class="ot">self</span>.x &lt;= <span class="dv">0</span>:
+                <span class="ot">self</span>.x = <span class="dv">0</span>
+                <span class="ot">self</span>.image1 = <span class="ot">self</span>.orclf2
+                <span class="ot">self</span>.image2 = <span class="ot">self</span>.orclf2
+            <span class="kw">else</span>:
+                <span class="ot">self</span>.x -= <span class="ot">self</span>.dx
+                <span class="ot">self</span>.image1 = <span class="ot">self</span>.orclf1
+                <span class="ot">self</span>.image2 = <span class="ot">self</span>.orclf2
+        <span class="kw">elif</span> <span class="ot">self</span>.<span class="dt">dir</span> == <span class="dv">3</span>:
+            <span class="kw">if</span> <span class="ot">self</span>.y &lt;= <span class="dv">0</span>:
+                <span class="ot">self</span>.y = <span class="dv">0</span>
+                <span class="ot">self</span>.image1 = <span class="ot">self</span>.orcbk2
+                <span class="ot">self</span>.image2 = <span class="ot">self</span>.orcbk2
+            <span class="kw">else</span>:
+                <span class="ot">self</span>.y -= <span class="ot">self</span>.dy
+                <span class="ot">self</span>.image1 = <span class="ot">self</span>.orcbk1
+                <span class="ot">self</span>.image2 = <span class="ot">self</span>.orcbk2
     
-    def display(self):
-        if frameCount % 8 &gt;= 4:
-            image(self.image1, self.x, self.y)
-        else:
-            image(self.image2, self.x, self.y)</code></pre>
+    <span class="kw">def</span> display(<span class="ot">self</span>):
+        <span class="kw">if</span> frameCount % <span class="dv">8</span> &gt;= <span class="dv">4</span>:
+            image(<span class="ot">self</span>.image1, <span class="ot">self</span>.x, <span class="ot">self</span>.y)
+        <span class="kw">else</span>:
+            image(<span class="ot">self</span>.image2, <span class="ot">self</span>.x, <span class="ot">self</span>.y)</code></pre>
 <p>Im Konstruktor werden nur die Startposition festgelegt und ein paar Variblen initialisiert und mit Default-Werten versehen. Danach werden die acht Bildchen geladen. Die eigentliche Logik liegt in der Funktion <code>move()</code>: Erreicht der Orc einer der Fensterränder, bleibt er einfach stehen. Der visuelle Eindruck wird dadurch erreicht, daß die beiden zu swappenden Bilder identisch sind. Ansonsten bewegt er sich in der angesagten Richtung weiter, indem <code>dx</code> oder <code>dy</code> zu der akutellen Position addiert oder abgezogen werden.</p>
 <p>Die Funktion <code>display()</code> ist dann für die Darstellung zuständig: Ist der <code>frameCount % 8 &gt;= 4</code>, dann wird das erste Bild gezeichnet, ansonsten das zweite Bild. Durch diesen Modulo-Trick bin ich noch einmal daran vorbeigekommen, einen Timer implementieren zu müssen, aber irgendwann wird kein Weg mehr daran vorbeiführen.</p>
 <figure>
 <img src="images/runningorcs6.jpg" alt="Running Orc 4" /><figcaption>Running Orc 4</figcaption>
 </figure>
 <p>Das Hauptprogramm ist immer noch vergleichsweise kurz und übersichtlich geraten:</p>
-<pre class="{python}"><code>from orc2 import Orc
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> orc2 <span class="ch">import</span> Orc
 
-orc = Orc(160, -32)
+orc = Orc(<span class="dv">160</span>, -<span class="dv">32</span>)
 
 
-def setup():
-    global bg
-    bg = loadImage(&quot;field.png&quot;)
-    frameRate(30)
-    size(320, 320)
+<span class="kw">def</span> setup():
+    <span class="kw">global</span> bg
+    bg = loadImage(<span class="st">&quot;field.png&quot;</span>)
+    frameRate(<span class="dv">30</span>)
+    size(<span class="dv">320</span>, <span class="dv">320</span>)
     orc.loadPics()
-    orc.dx = 2
-    orc.dy = 2
+    orc.dx = <span class="dv">2</span>
+    orc.dy = <span class="dv">2</span>
     
-def draw():
+<span class="kw">def</span> draw():
     background(bg)
     orc.move()
     orc.display()
     
-def keyPressed():
-    if keyPressed and key == CODED:
-        if keyCode == RIGHT:
-            orc.dir = 0
-        elif keyCode == DOWN:
-            orc.dir = 1
-        elif keyCode == LEFT:
-            orc.dir = 2
-        elif keyCode == UP:
-            orc.dir = 3</code></pre>
+<span class="kw">def</span> keyPressed():
+    <span class="kw">if</span> keyPressed and key == CODED:
+        <span class="kw">if</span> keyCode == RIGHT:
+            orc.<span class="dt">dir</span> = <span class="dv">0</span>
+        <span class="kw">elif</span> keyCode == DOWN:
+            orc.<span class="dt">dir</span> = <span class="dv">1</span>
+        <span class="kw">elif</span> keyCode == LEFT:
+            orc.<span class="dt">dir</span> = <span class="dv">2</span>
+        <span class="kw">elif</span> keyCode == UP:
+            orc.<span class="dt">dir</span> = <span class="dv">3</span></code></pre>
 <p>Die Klasse <code>Orc</code> wird importiert und initialisiert. Danach wird das Hintergrundbild geladen (Ihr könnt auch hier wieder alternativ einfach einen grünen Hintergrund zeichnen) und die Fenstergröße festgelegt. Dann wird die Funktion <code>orc.loadPics()</code> aufgerufen und die horizontale und vertikale Geschwindigkeit auf je zwei Pixel pro Frame-Durchlauf bestimmt.</p>
 <p>Die <code>draw()</code>-Routine ist immer noch einfach: Erst wird der Hintergrund gezeichnet, dann der Ork bewegt und danach ebenfalls in das Fenster gezeichnet.</p>
 <p>Neu ist die Funktion <code>keyPressed()</code>, die während des gesamten Programmablaufs die Tastatur überwacht. Sie überprüft, welche der Pfeiltasten gedrückt wurden und weist ihnen dementsrpechend eine Himmelsrichtung zu. Per Konvention fängt man normalerweise im Osten an (<code>orc.dir = 0</code>), um dann über den Süden (<code>orc.dir = 1</code>) und den Westen (<code>orc.dir = 2</code>) zum Norden (<code>orc.dir = 3</code>) zu gelangen.</p>
@@ -4238,257 +4242,257 @@ obstacles = []
 <figure>
 <img src="images/dreiorksundeinheld.jpg" alt="Drei Orks" /><figcaption>Drei Orks</figcaption>
 </figure>
-<p>In diesem Tutorial, in dem erstmalig auch mehrere Orks auftreten, habe ich die Unstimmigkeiten aus dem <a href="runningorc5.md">letzten Teil dieser Reihe</a> beseitigt. Die Ränder-Behandlung habe ich dadurch vereinfacht, daß nun die ganze Spielwelt eingezäunt ist<a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a> und die Tänzchen vor Hindernissen habe ich dadurch eliminiert, daß ich Listen der zulässigen Richtungsänderungen angelegt habe und nur diese per Zufall auswählen lasse:</p>
-<pre class="{python}"><code>for i in range(len(orc)):
+<p>In diesem Tutorial, in dem erstmalig auch mehrere Orks auftreten, habe ich die Unstimmigkeiten aus dem <a href="runningorc5.md">letzten Teil dieser Reihe</a> beseitigt. Die Ränder-Behandlung habe ich dadurch vereinfacht, daß nun die ganze Spielwelt eingezäunt ist<a href="#fn13" class="footnoteRef" id="fnref13"><sup>13</sup></a> und die Tänzchen vor Hindernissen habe ich dadurch eliminiert, daß ich Listen der zulässigen Richtungsänderungen angelegt habe und nur diese per Zufall auswählen lasse:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">for</span> i in <span class="dt">range</span>(<span class="dt">len</span>(orc)):
         orc[i].move()
-        for j in range(len(wall)):
-            if orc[i].checkCollision(wall[j]):
-                if orc[i].dir == 0:
+        <span class="kw">for</span> j in <span class="dt">range</span>(<span class="dt">len</span>(wall)):
+            <span class="kw">if</span> orc[i].checkCollision(wall[j]):
+                <span class="kw">if</span> orc[i].<span class="dt">dir</span> == <span class="dv">0</span>:
                     orc[i].x -= orc[i].dx
-                    legalMove = [1, 2, 3]
-                    orc[i].dir = legalMove[int(random(3))]
-                elif orc[i].dir == 1:
+                    legalMove = [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]
+                    orc[i].<span class="dt">dir</span> = legalMove[<span class="dt">int</span>(random(<span class="dv">3</span>))]
+                <span class="kw">elif</span> orc[i].<span class="dt">dir</span> == <span class="dv">1</span>:
                     orc[i].y -= orc[i].dy
-                    legalMove = [0, 2, 3]
-                    orc[i].dir = legalMove[int(random(3))]
-                elif orc[i].dir == 2:
+                    legalMove = [<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">3</span>]
+                    orc[i].<span class="dt">dir</span> = legalMove[<span class="dt">int</span>(random(<span class="dv">3</span>))]
+                <span class="kw">elif</span> orc[i].<span class="dt">dir</span> == <span class="dv">2</span>:
                     orc[i].x += orc[i].dx
-                    legalMove = [0, 1, 3]
-                    orc[i].dir = legalMove[int(random(3))]
-                elif orc[i].dir == 3:
+                    legalMove = [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">3</span>]
+                    orc[i].<span class="dt">dir</span> = legalMove[<span class="dt">int</span>(random(<span class="dv">3</span>))]
+                <span class="kw">elif</span> orc[i].<span class="dt">dir</span> == <span class="dv">3</span>:
                     orc[i].y += orc[i].dy
-                    legalMove = [0, 1, 2]
-                    orc[i].dir = legalMove[int(random(3))
+                    legalMove = [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>]
+                    orc[i].<span class="dt">dir</span> = legalMove[<span class="dt">int</span>(random(<span class="dv">3</span>))
         orc[i].display()</code></pre>
 <p>Außerdem habe ich in der Klasse <code>Orc</code> (im Modul <code>sprite2.py</code>) den Orks einen zufälligen Richtungswechsel verpaßt, damit sie nicht nur bei einer Kollision mit Hindernissen ihre Richtung ändern und so ihre Bewegungen unvorhersehbarer werden.</p>
-<pre class="{python}"><code>    def move(self):
-        if frameCount % int(random(30, 120)) == 0:
-            if self.dir == 0:
-                legalMove = [1, 2, 3]
-                self.dir = legalMove[int(random(3))]
-            elif self.dir == 1:
-                legalMove = [0, 2, 3]
-                self.dir = legalMove[int(random(3))]
-            elif self.dir == 2:
-                legalMove = [0, 1, 3]
-                self.dir = legalMove[int(random(3))]
-            elif self.dir == 3:
-                legalMove = [0, 1, 2]
-                self.dir = legalMove[int(random(3))]</code></pre>
+<pre class="sourceCode python"><code class="sourceCode python">    <span class="kw">def</span> move(<span class="ot">self</span>):
+        <span class="kw">if</span> frameCount % <span class="dt">int</span>(random(<span class="dv">30</span>, <span class="dv">120</span>)) == <span class="dv">0</span>:
+            <span class="kw">if</span> <span class="ot">self</span>.<span class="dt">dir</span> == <span class="dv">0</span>:
+                legalMove = [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]
+                <span class="ot">self</span>.<span class="dt">dir</span> = legalMove[<span class="dt">int</span>(random(<span class="dv">3</span>))]
+            <span class="kw">elif</span> <span class="ot">self</span>.<span class="dt">dir</span> == <span class="dv">1</span>:
+                legalMove = [<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">3</span>]
+                <span class="ot">self</span>.<span class="dt">dir</span> = legalMove[<span class="dt">int</span>(random(<span class="dv">3</span>))]
+            <span class="kw">elif</span> <span class="ot">self</span>.<span class="dt">dir</span> == <span class="dv">2</span>:
+                legalMove = [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">3</span>]
+                <span class="ot">self</span>.<span class="dt">dir</span> = legalMove[<span class="dt">int</span>(random(<span class="dv">3</span>))]
+            <span class="kw">elif</span> <span class="ot">self</span>.<span class="dt">dir</span> == <span class="dv">3</span>:
+                legalMove = [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>]
+                <span class="ot">self</span>.<span class="dt">dir</span> = legalMove[<span class="dt">int</span>(random(<span class="dv">3</span>))]</code></pre>
 <p>Fragt mich nicht, wie ich auf die Werte <code>30, 120</code> gekommen bin. Ich habe einfach ein wenig experimentiert und diese brachten in meinen Augen das ansprechendste Ergebnis.</p>
 <p>Das einzige sonstige neue ist, daß ich die drei Orks in einer Liste zusammengefaßt habe, so daß sie -- wie das Code-Fragment ganz oben zeigt -- in einer Schleife abgehandelt werden können.</p>
 <h3 id="der-quellcode-11">Der Quellcode</h3>
 <p>Daher erst einmal der vollständige Quellcode, damit Ihr das Beispiel auch nachvollziehen und -programmieren könnt. Erst einmal das Modul <code>sprite2.py</code>, das ich wieder in einem separaten Tab in der Processing-IDE untergebracht habe:</p>
-<pre class="{python}"><code>tw = 32
-th = 32
-tileSize = 32
+<pre class="sourceCode python"><code class="sourceCode python">tw = <span class="dv">32</span>
+th = <span class="dv">32</span>
+tileSize = <span class="dv">32</span>
 
-class Sprite(object):
+<span class="kw">class</span> Sprite(<span class="dt">object</span>):
 
-    def __init__(self, posX, posY):
-        self.x = posX
-        self.y = posY
-        self.dir = 1
-        self.dx = 0
-        self.dy = 0
+    <span class="kw">def</span> <span class="ot">__init__</span>(<span class="ot">self</span>, posX, posY):
+        <span class="ot">self</span>.x = posX
+        <span class="ot">self</span>.y = posY
+        <span class="ot">self</span>.<span class="dt">dir</span> = <span class="dv">1</span>
+        <span class="ot">self</span>.dx = <span class="dv">0</span>
+        <span class="ot">self</span>.dy = <span class="dv">0</span>
     
-    def checkCollision(self, otherSprite):
-        if (self.x &lt; otherSprite.x + tw and otherSprite.x &lt; self.x + tw
-            and self.y &lt; otherSprite.y + th and otherSprite.y &lt; self.y + th):
-            return True
-        else:
-            return False
+    <span class="kw">def</span> checkCollision(<span class="ot">self</span>, otherSprite):
+        <span class="kw">if</span> (<span class="ot">self</span>.x &lt; otherSprite.x + tw and otherSprite.x &lt; <span class="ot">self</span>.x + tw
+            and <span class="ot">self</span>.y &lt; otherSprite.y + th and otherSprite.y &lt; <span class="ot">self</span>.y + th):
+            <span class="kw">return</span> <span class="ot">True</span>
+        <span class="kw">else</span>:
+            <span class="kw">return</span> <span class="ot">False</span>
 
-class Hero(Sprite):
+<span class="kw">class</span> Hero(Sprite):
 
-    def loadPics(self):
-        self.mnv1rt1 = loadImage(&quot;mnv1rt1.gif&quot;)
-        self.mnv1rt2 = loadImage(&quot;mnv1rt2.gif&quot;)
-        self.mnv1fr1 = loadImage(&quot;mnv1fr1.gif&quot;)
-        self.mnv1fr2 = loadImage(&quot;mnv1fr2.gif&quot;)
-        self.mnv1lf1 = loadImage(&quot;mnv1lf1.gif&quot;)
-        self.mnv1lf2 = loadImage(&quot;mnv1lf2.gif&quot;)
-        self.mnv1bk1 = loadImage(&quot;mnv1bk1.gif&quot;)
-        self.mnv1bk2 = loadImage(&quot;mnv1bk2.gif&quot;)
+    <span class="kw">def</span> loadPics(<span class="ot">self</span>):
+        <span class="ot">self</span>.mnv1rt1 = loadImage(<span class="st">&quot;mnv1rt1.gif&quot;</span>)
+        <span class="ot">self</span>.mnv1rt2 = loadImage(<span class="st">&quot;mnv1rt2.gif&quot;</span>)
+        <span class="ot">self</span>.mnv1fr1 = loadImage(<span class="st">&quot;mnv1fr1.gif&quot;</span>)
+        <span class="ot">self</span>.mnv1fr2 = loadImage(<span class="st">&quot;mnv1fr2.gif&quot;</span>)
+        <span class="ot">self</span>.mnv1lf1 = loadImage(<span class="st">&quot;mnv1lf1.gif&quot;</span>)
+        <span class="ot">self</span>.mnv1lf2 = loadImage(<span class="st">&quot;mnv1lf2.gif&quot;</span>)
+        <span class="ot">self</span>.mnv1bk1 = loadImage(<span class="st">&quot;mnv1bk1.gif&quot;</span>)
+        <span class="ot">self</span>.mnv1bk2 = loadImage(<span class="st">&quot;mnv1bk2.gif&quot;</span>)
     
-    def move(self):
-        if self.dir == 0:
-            self.x += self.dx
-            self.image1 = self.mnv1rt1
-            self.image2 = self.mnv1rt2
-        elif self.dir == 1:
-            self.y += self.dy
-            self.image1 = self.mnv1fr1
-            self.image2 = self.mnv1fr2
-        elif self.dir == 2:
-            self.x -= self.dx
-            self.image1 = self.mnv1lf1
-            self.image2 = self.mnv1lf2
-        elif self.dir == 3:
-            self.y -= self.dy
-            self.image1 = self.mnv1bk1
-            self.image2 = self.mnv1bk2
+    <span class="kw">def</span> move(<span class="ot">self</span>):
+        <span class="kw">if</span> <span class="ot">self</span>.<span class="dt">dir</span> == <span class="dv">0</span>:
+            <span class="ot">self</span>.x += <span class="ot">self</span>.dx
+            <span class="ot">self</span>.image1 = <span class="ot">self</span>.mnv1rt1
+            <span class="ot">self</span>.image2 = <span class="ot">self</span>.mnv1rt2
+        <span class="kw">elif</span> <span class="ot">self</span>.<span class="dt">dir</span> == <span class="dv">1</span>:
+            <span class="ot">self</span>.y += <span class="ot">self</span>.dy
+            <span class="ot">self</span>.image1 = <span class="ot">self</span>.mnv1fr1
+            <span class="ot">self</span>.image2 = <span class="ot">self</span>.mnv1fr2
+        <span class="kw">elif</span> <span class="ot">self</span>.<span class="dt">dir</span> == <span class="dv">2</span>:
+            <span class="ot">self</span>.x -= <span class="ot">self</span>.dx
+            <span class="ot">self</span>.image1 = <span class="ot">self</span>.mnv1lf1
+            <span class="ot">self</span>.image2 = <span class="ot">self</span>.mnv1lf2
+        <span class="kw">elif</span> <span class="ot">self</span>.<span class="dt">dir</span> == <span class="dv">3</span>:
+            <span class="ot">self</span>.y -= <span class="ot">self</span>.dy
+            <span class="ot">self</span>.image1 = <span class="ot">self</span>.mnv1bk1
+            <span class="ot">self</span>.image2 = <span class="ot">self</span>.mnv1bk2
                 
-    def display(self):
-        if frameCount % 8 &gt;= 4:
-            image(self.image1, self.x, self.y)
-        else:
-            image(self.image2, self.x, self.y)
+    <span class="kw">def</span> display(<span class="ot">self</span>):
+        <span class="kw">if</span> frameCount % <span class="dv">8</span> &gt;= <span class="dv">4</span>:
+            image(<span class="ot">self</span>.image1, <span class="ot">self</span>.x, <span class="ot">self</span>.y)
+        <span class="kw">else</span>:
+            image(<span class="ot">self</span>.image2, <span class="ot">self</span>.x, <span class="ot">self</span>.y)
 
-class Orc(Sprite):
+<span class="kw">class</span> Orc(Sprite):
 
-    def loadPics(self):
-        self.orcrt1 = loadImage(&quot;orcrt1.gif&quot;)
-        self.orcrt2 = loadImage(&quot;orcrt2.gif&quot;)
-        self.orcfr1 = loadImage(&quot;orcfr1.gif&quot;)
-        self.orcfr2 = loadImage(&quot;orcfr2.gif&quot;)
-        self.orclf1 = loadImage(&quot;orclf1.gif&quot;)
-        self.orclf2 = loadImage(&quot;orclf2.gif&quot;)
-        self.orcbk1 = loadImage(&quot;orcbk1.gif&quot;)
-        self.orcbk2 = loadImage(&quot;orcbk2.gif&quot;)
+    <span class="kw">def</span> loadPics(<span class="ot">self</span>):
+        <span class="ot">self</span>.orcrt1 = loadImage(<span class="st">&quot;orcrt1.gif&quot;</span>)
+        <span class="ot">self</span>.orcrt2 = loadImage(<span class="st">&quot;orcrt2.gif&quot;</span>)
+        <span class="ot">self</span>.orcfr1 = loadImage(<span class="st">&quot;orcfr1.gif&quot;</span>)
+        <span class="ot">self</span>.orcfr2 = loadImage(<span class="st">&quot;orcfr2.gif&quot;</span>)
+        <span class="ot">self</span>.orclf1 = loadImage(<span class="st">&quot;orclf1.gif&quot;</span>)
+        <span class="ot">self</span>.orclf2 = loadImage(<span class="st">&quot;orclf2.gif&quot;</span>)
+        <span class="ot">self</span>.orcbk1 = loadImage(<span class="st">&quot;orcbk1.gif&quot;</span>)
+        <span class="ot">self</span>.orcbk2 = loadImage(<span class="st">&quot;orcbk2.gif&quot;</span>)
         
-    def move(self):
-        if frameCount % int(random(30, 120)) == 0:
-            if self.dir == 0:
-                legalMove = [1, 2, 3]
-                self.dir = legalMove[int(random(3))]
-            elif self.dir == 1:
-                legalMove = [0, 2, 3]
-                self.dir = legalMove[int(random(3))]
-            elif self.dir == 2:
-                legalMove = [0, 1, 3]
-                self.dir = legalMove[int(random(3))]
-            elif self.dir == 3:
-                legalMove = [0, 1, 2]
-                self.dir = legalMove[int(random(3))]
-        if self.dir == 0:
-            self.x += self.dx
-            self.image1 = self.orcrt1
-            self.image2 = self.orcrt2
-        elif self.dir == 1:
-            self.y += self.dy
-            self.image1 = self.orcfr1
-            self.image2 = self.orcfr2
-        elif self.dir == 2:
-            self.x -= self.dx
-            self.image1 = self.orclf1
-            self.image2 = self.orclf2
-        elif self.dir == 3:
-            self.y -= self.dy
-            self.image1 = self.orcbk1
-            self.image2 = self.orcbk2
+    <span class="kw">def</span> move(<span class="ot">self</span>):
+        <span class="kw">if</span> frameCount % <span class="dt">int</span>(random(<span class="dv">30</span>, <span class="dv">120</span>)) == <span class="dv">0</span>:
+            <span class="kw">if</span> <span class="ot">self</span>.<span class="dt">dir</span> == <span class="dv">0</span>:
+                legalMove = [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]
+                <span class="ot">self</span>.<span class="dt">dir</span> = legalMove[<span class="dt">int</span>(random(<span class="dv">3</span>))]
+            <span class="kw">elif</span> <span class="ot">self</span>.<span class="dt">dir</span> == <span class="dv">1</span>:
+                legalMove = [<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">3</span>]
+                <span class="ot">self</span>.<span class="dt">dir</span> = legalMove[<span class="dt">int</span>(random(<span class="dv">3</span>))]
+            <span class="kw">elif</span> <span class="ot">self</span>.<span class="dt">dir</span> == <span class="dv">2</span>:
+                legalMove = [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">3</span>]
+                <span class="ot">self</span>.<span class="dt">dir</span> = legalMove[<span class="dt">int</span>(random(<span class="dv">3</span>))]
+            <span class="kw">elif</span> <span class="ot">self</span>.<span class="dt">dir</span> == <span class="dv">3</span>:
+                legalMove = [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>]
+                <span class="ot">self</span>.<span class="dt">dir</span> = legalMove[<span class="dt">int</span>(random(<span class="dv">3</span>))]
+        <span class="kw">if</span> <span class="ot">self</span>.<span class="dt">dir</span> == <span class="dv">0</span>:
+            <span class="ot">self</span>.x += <span class="ot">self</span>.dx
+            <span class="ot">self</span>.image1 = <span class="ot">self</span>.orcrt1
+            <span class="ot">self</span>.image2 = <span class="ot">self</span>.orcrt2
+        <span class="kw">elif</span> <span class="ot">self</span>.<span class="dt">dir</span> == <span class="dv">1</span>:
+            <span class="ot">self</span>.y += <span class="ot">self</span>.dy
+            <span class="ot">self</span>.image1 = <span class="ot">self</span>.orcfr1
+            <span class="ot">self</span>.image2 = <span class="ot">self</span>.orcfr2
+        <span class="kw">elif</span> <span class="ot">self</span>.<span class="dt">dir</span> == <span class="dv">2</span>:
+            <span class="ot">self</span>.x -= <span class="ot">self</span>.dx
+            <span class="ot">self</span>.image1 = <span class="ot">self</span>.orclf1
+            <span class="ot">self</span>.image2 = <span class="ot">self</span>.orclf2
+        <span class="kw">elif</span> <span class="ot">self</span>.<span class="dt">dir</span> == <span class="dv">3</span>:
+            <span class="ot">self</span>.y -= <span class="ot">self</span>.dy
+            <span class="ot">self</span>.image1 = <span class="ot">self</span>.orcbk1
+            <span class="ot">self</span>.image2 = <span class="ot">self</span>.orcbk2
                 
-    def display(self):
-        if frameCount % 8 &gt;= 4:
-            image(self.image1, self.x, self.y)
-        else:
-            image(self.image2, self.x, self.y)
+    <span class="kw">def</span> display(<span class="ot">self</span>):
+        <span class="kw">if</span> frameCount % <span class="dv">8</span> &gt;= <span class="dv">4</span>:
+            image(<span class="ot">self</span>.image1, <span class="ot">self</span>.x, <span class="ot">self</span>.y)
+        <span class="kw">else</span>:
+            image(<span class="ot">self</span>.image2, <span class="ot">self</span>.x, <span class="ot">self</span>.y)
             
-class Wall(Sprite):
+<span class="kw">class</span> Wall(Sprite):
     
-    def loadPics(self):
-        self.pic = loadImage(&quot;wall.png&quot;)
+    <span class="kw">def</span> loadPics(<span class="ot">self</span>):
+        <span class="ot">self</span>.pic = loadImage(<span class="st">&quot;wall.png&quot;</span>)
         
-    def display(self):
-        image(self.pic, self.x, self.y)</code></pre>
+    <span class="kw">def</span> display(<span class="ot">self</span>):
+        image(<span class="ot">self</span>.pic, <span class="ot">self</span>.x, <span class="ot">self</span>.y)</code></pre>
 <p>Es ist gegenüber dem letzten Mal ein wenig einfacher geworden, weil die Ränderbehandlung entfallen ist. Das Hauptprogramm hat allerdings an Komplexität deutlich zugenommen:</p>
-<pre class="{python}"><code>from sprite2 import Hero, Orc, Wall
-tilesize = 32
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> sprite2 <span class="ch">import</span> Hero, Orc, Wall
+tilesize = <span class="dv">32</span>
 
-dungeon = [[9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,7,7,9],
-           [8,9,0,0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,9],
-           [8,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9],
-           [9,9,9,9,9,9,0,0,0,0,0,0,0,0,0,9,9,9,9,9],
-           [9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0,0,0,9],
-           [9,0,0,0,0,0,0,0,9,9,0,0,0,0,0,9,0,0,0,9],
-           [9,0,0,0,0,0,0,0,9,0,0,0,0,0,0,9,0,0,0,9],
-           [9,9,9,9,9,9,9,9,9,0,0,0,0,0,0,9,0,0,0,9],
-           [8,9,0,0,0,0,0,0,9,0,0,0,0,0,0,0,0,0,0,9],
-           [8,9,0,0,0,0,0,0,9,0,0,0,0,0,0,9,0,0,0,9],
-           [8,9,0,0,0,0,0,0,9,0,0,9,9,9,9,9,9,9,9,9],
-           [9,9,0,0,0,0,0,0,9,0,0,9,0,0,0,0,0,0,0,9],
-           [9,0,0,0,0,0,0,0,0,0,0,9,0,0,0,0,0,0,0,9],
-           [9,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5],
-           [8,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9]]
+dungeon = [[<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">9</span>],
+           [<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">9</span>],
+           [<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">9</span>],
+           [<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>],
+           [<span class="dv">9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">9</span>],
+           [<span class="dv">9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">9</span>],
+           [<span class="dv">9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">9</span>],
+           [<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">9</span>],
+           [<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">9</span>],
+           [<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">9</span>],
+           [<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>],
+           [<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">9</span>],
+           [<span class="dv">9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">9</span>],
+           [<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">5</span>],
+           [<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">9</span>]]
 
 wall = []
-hero = Hero(18*tilesize, 13*tilesize)
+hero = Hero(<span class="dv">18</span>*tilesize, <span class="dv">13</span>*tilesize)
 orc  = []
-orc.append(Orc(2*tilesize, 12*tilesize))
-orc.append(Orc(3*tilesize, 2*tilesize))
-orc.append(Orc(16*tilesize, 4*tilesize))
+orc.append(Orc(<span class="dv">2</span>*tilesize, <span class="dv">12</span>*tilesize))
+orc.append(Orc(<span class="dv">3</span>*tilesize, <span class="dv">2</span>*tilesize))
+orc.append(Orc(<span class="dv">16</span>*tilesize, <span class="dv">4</span>*tilesize))
 
-def setup():
-    global bg
-    bg = loadImage(&quot;dungeon.png&quot;)
+<span class="kw">def</span> setup():
+    <span class="kw">global</span> bg
+    bg = loadImage(<span class="st">&quot;dungeon.png&quot;</span>)
     loadDungeonData()
-    frameRate(30)
-    size(640, 480)
+    frameRate(<span class="dv">30</span>)
+    size(<span class="dv">640</span>, <span class="dv">480</span>)
     hero.loadPics()
-    hero.dx = 2
-    hero.dy = 2
-    hero.dir = 2
-    for i in range(len(orc)):
+    hero.dx = <span class="dv">2</span>
+    hero.dy = <span class="dv">2</span>
+    hero.<span class="dt">dir</span> = <span class="dv">2</span>
+    <span class="kw">for</span> i in <span class="dt">range</span>(<span class="dt">len</span>(orc)):
         orc[i].loadPics()
-        orc[i].dx = 2
-        orc[i].dy = 2
-        orc[i].dir = 0
+        orc[i].dx = <span class="dv">2</span>
+        orc[i].dy = <span class="dv">2</span>
+        orc[i].<span class="dt">dir</span> = <span class="dv">0</span>
     
 
-def draw():
+<span class="kw">def</span> draw():
     background(bg)
     hero.move()
-    for j in range(len(wall)):
-        if hero.checkCollision(wall[j]):
-            if hero.dir == 0:
+    <span class="kw">for</span> j in <span class="dt">range</span>(<span class="dt">len</span>(wall)):
+        <span class="kw">if</span> hero.checkCollision(wall[j]):
+            <span class="kw">if</span> hero.<span class="dt">dir</span> == <span class="dv">0</span>:
                 hero.x -= hero.dx
-            elif hero.dir == 1:
+            <span class="kw">elif</span> hero.<span class="dt">dir</span> == <span class="dv">1</span>:
                 hero.y -= hero.dy
-            elif hero.dir == 2:
+            <span class="kw">elif</span> hero.<span class="dt">dir</span> == <span class="dv">2</span>:
                 hero.x += hero.dx
-            elif hero.dir == 3:
+            <span class="kw">elif</span> hero.<span class="dt">dir</span> == <span class="dv">3</span>:
                 hero.y += hero.dy
             hero.image1 = hero.image2
     hero.display()
 
-    for i in range(len(orc)):
+    <span class="kw">for</span> i in <span class="dt">range</span>(<span class="dt">len</span>(orc)):
         orc[i].move()
-        for j in range(len(wall)):
-            if orc[i].checkCollision(wall[j]):
-                if orc[i].dir == 0:
+        <span class="kw">for</span> j in <span class="dt">range</span>(<span class="dt">len</span>(wall)):
+            <span class="kw">if</span> orc[i].checkCollision(wall[j]):
+                <span class="kw">if</span> orc[i].<span class="dt">dir</span> == <span class="dv">0</span>:
                     orc[i].x -= orc[i].dx
-                    legalMove = [1, 2, 3]
-                    orc[i].dir = legalMove[int(random(3))]
-                elif orc[i].dir == 1:
+                    legalMove = [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]
+                    orc[i].<span class="dt">dir</span> = legalMove[<span class="dt">int</span>(random(<span class="dv">3</span>))]
+                <span class="kw">elif</span> orc[i].<span class="dt">dir</span> == <span class="dv">1</span>:
                     orc[i].y -= orc[i].dy
-                    legalMove = [0, 2, 3]
-                    orc[i].dir = legalMove[int(random(3))]
-                elif orc[i].dir == 2:
+                    legalMove = [<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">3</span>]
+                    orc[i].<span class="dt">dir</span> = legalMove[<span class="dt">int</span>(random(<span class="dv">3</span>))]
+                <span class="kw">elif</span> orc[i].<span class="dt">dir</span> == <span class="dv">2</span>:
                     orc[i].x += orc[i].dx
-                    legalMove = [0, 1, 3]
-                    orc[i].dir = legalMove[int(random(3))]
-                elif orc[i].dir == 3:
+                    legalMove = [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">3</span>]
+                    orc[i].<span class="dt">dir</span> = legalMove[<span class="dt">int</span>(random(<span class="dv">3</span>))]
+                <span class="kw">elif</span> orc[i].<span class="dt">dir</span> == <span class="dv">3</span>:
                     orc[i].y += orc[i].dy
-                    legalMove = [0, 1, 2]
-                    orc[i].dir = legalMove[int(random(3))]
+                    legalMove = [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>]
+                    orc[i].<span class="dt">dir</span> = legalMove[<span class="dt">int</span>(random(<span class="dv">3</span>))]
         orc[i].display()
 
-def loadDungeonData():
-    for y in range(15):
-        for x in range(20):
-            if dungeon[y][x] &gt;= 5:
+<span class="kw">def</span> loadDungeonData():
+    <span class="kw">for</span> y in <span class="dt">range</span>(<span class="dv">15</span>):
+        <span class="kw">for</span> x in <span class="dt">range</span>(<span class="dv">20</span>):
+            <span class="kw">if</span> dungeon[y][x] &gt;= <span class="dv">5</span>:
                 wall.append(Wall(x*tilesize, y*tilesize))
 
-def keyPressed():
-    if keyPressed and key == CODED:
-        if keyCode == RIGHT:
-            hero.dir = 0
-        elif keyCode == DOWN:
-            hero.dir = 1
-        elif keyCode == LEFT:
-            hero.dir = 2
-        elif keyCode == UP:
-            hero.dir = 3</code></pre>
+<span class="kw">def</span> keyPressed():
+    <span class="kw">if</span> keyPressed and key == CODED:
+        <span class="kw">if</span> keyCode == RIGHT:
+            hero.<span class="dt">dir</span> = <span class="dv">0</span>
+        <span class="kw">elif</span> keyCode == DOWN:
+            hero.<span class="dt">dir</span> = <span class="dv">1</span>
+        <span class="kw">elif</span> keyCode == LEFT:
+            hero.<span class="dt">dir</span> = <span class="dv">2</span>
+        <span class="kw">elif</span> keyCode == UP:
+            hero.<span class="dt">dir</span> = <span class="dv">3</span></code></pre>
 <p>Den Raum habe ich wieder in <a href="http://cognitiones.kantel-chaos-team.de/multimedia/spieleprogrammierung/tiled.html">Tiled</a> erstellt und einmal als Bild und einmal als CSV-Datei exportiert. Aus dieser CSV-Datei habe ich dann obiges Array gebastelt, aus dem man die Struktur des <em>Dungeon</em> ziemlich gut ablesen kann. Damit das mit dem Ablesen aber auch wirklich funktioniert, mußte ich gegenüber dem gewohnten Brauch <code>x</code> und <code>y</code> vertauschen (weil man sonst den Kopf immer schräg legen müßte). 😇</p>
 <h3 id="meditieren-mit-den-orks">Meditieren mit den Orks</h3>
 <p>Ich habe mir bei der Platzierung der Orks beim Programmstart etwas gedacht. Läßt man das Progrämmchen nämlich eine Weile laufen, dann werdet Ihr feststellen, daß die beiden Orks unten kaum Probleme haben, ihrem ursprünglichen Raum zu entkommen, während der Ork in dem kleinen Zimmerchen rechts wie ein im Zoo eingesperrter Tiger meist ziemlich lange dort auf und ab tigert, bis er endlich entkommen kann (irgendwann entkommt aber jeder). Um mir das anzuschauen, manövriere ich den Helden gerne in das kleine Räumchen oben links und lasse ihn dort einfach stehen (noch passiert ja nichts, wenn er von einem Ork entdeckt wird).</p>
@@ -5766,17 +5770,19 @@ cupcake = []
 <section class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>Ich habe das Bild testweise auch mal erst nach 240.000 Schritten herausschreiben lassen. Die Verzögerung war kaum merkbar. Allerdings gab es auch nur noch einen geringen Unterschied zu dem Bild im Screenshot. Hier setzt die Auflösung des Ausgabefensters weiterem Erkenntnisgewinn Grenzen.<a href="#fnref1">↩</a></p></li>
-<li id="fn2"><p>Und das schon vor langer Zeit, als der Monitor meines Rechners noch eine Auflösung von 640 x 480 Pixeln hatte. 😜<a href="#fnref2">↩</a></p></li>
-<li id="fn3"><p>Stan Wagon: <em>Mathematica® in Aktion</em>, Heidelberg (Spektrum Akademischer Verlag) 1993<a href="#fnref3">↩</a></p></li>
-<li id="fn4"><p>Temple Fay: <em>The Butterfly Curve</em>, American Math. Monthly, 96(5); 442-443<a href="#fnref4">↩</a></p></li>
-<li id="fn5"><p>Clifford A. Pickover: <em>Mit den Augen des Computers. Phantastische Welten aus dem Geist der Maschine</em>, München (Markt&amp;Technik) 1992, S. 41ff.<a href="#fnref5">↩</a></p></li>
-<li id="fn6"><p>Eine sehr schöne Einführung in <a href="http://scienceblogs.de/astrodicticum-simplex/2017/01/20/sternengeschichten-folge-217-das-ungeloeste-problem-der-navier-stokes-gleichungen/">das ungelöste Problem der Navier-Stokes-Gleichungen</a> gibt es von <em>Florian Freistetter</em> in der 217. Folge seiner <em>Sternengeschichten</em><a href="#fnref6">↩</a></p></li>
-<li id="fn7"><p>Ich weiß nicht, ob je und wann Jython den Sprung auf Python 3 wagt. Dort ist jedenfalls von Hause aus (per Default) jeder String ein UTF-8-String, in meinen Augen ein wichtiger, aber auch der einzige Grund, auf Python 3 umzusteigen.<a href="#fnref7">↩</a></p></li>
-<li id="fn8"><p>Ich will ehrlich sein: Die »Geschwätzigkeit« von PyGame ist nicht nur dem hohen Alter der Bibliothek geschuldet, sie erlaubt eine große Vielseitigkeit und erspart dem Programmierer dann wieder bei komplizierten Dingen viel Schreibarbeit. So ist zum Beispiel die eingebaute <code>Sprite</code>-Klasse und die Kollisionsprüfung etwas, was ich in Processing.py von Hand programmieren muß.<a href="#fnref8">↩</a></p></li>
-<li id="fn9"><p>Ein bei Processing.py durchgehend zu beobachtender Konventionsbruch macht mich allerdings wuschig. Während die <a href="https://www.python.org/dev/peps/pep-0008/#descriptive-naming-styles">PEP8</a> für Variablennamen die Trennung durch Unterstriche empfiehlt (z.B. <code>mouse_x</code>) folgen die Programmierer der Beispielprogramme durchgehend der Java-Konvention des <em>camelCase</em> (<code>mouseX</code>). Ich habe mich erst einmal entschlossen, ebenfalls den <em>camelCase</em> zu nutzen, ob ich dabei aber bleiben werde, weiß ich noch nicht.<a href="#fnref9">↩</a></p></li>
-<li id="fn10"><p>Daniel Scholz: <em><a href="https://www.amazon.de/Pixelspiele-Modellieren-Simulieren-zellul%C3%A4ren-Springer-Lehrbuch/dp/3642451306/ref=as_li_ss_tl?_encoding=UTF8&amp;qid=1504972682&amp;sr=8-1&amp;linkCode=ll1&amp;tag=derschockwell-21&amp;linkId=2f0f795b9536747199607226b165a5da">Pixelspiele</a>, Modellieren und Simulieren mit zellulären Automaten</em>, Berlin - Heidelberg (Springer Spektrum) 2014, S. 19-25<a href="#fnref10">↩</a></p></li>
-<li id="fn11"><p>Das ist keine Einschränkung, denn der Fensterrand ist ja im Grunde auch nichts anderes als eine undurchdringliche Mauer und im Zweifelsfall macht man das Spielfeld einfach um die Mauerdicke größer.<a href="#fnref11">↩</a></p></li>
+<li id="fn1"><p>Vgl. Brüder Grimm<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>Ich habe das Bild testweise auch mal erst nach 240.000 Schritten herausschreiben lassen. Die Verzögerung war kaum merkbar. Allerdings gab es auch nur noch einen geringen Unterschied zu dem Bild im Screenshot. Hier setzt die Auflösung des Ausgabefensters weiterem Erkenntnisgewinn Grenzen.<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>Und das schon vor langer Zeit, als der Monitor meines Rechners noch eine Auflösung von 640 x 480 Pixeln hatte. 😜<a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p>Stan Wagon: <em>Mathematica® in Aktion</em>, Heidelberg (Spektrum Akademischer Verlag) 1993<a href="#fnref4">↩</a></p></li>
+<li id="fn5"><p>Temple Fay: <em>The Butterfly Curve</em>, American Math. Monthly, 96(5); 442-443<a href="#fnref5">↩</a></p></li>
+<li id="fn6"><p>Clifford A. Pickover: <em>Mit den Augen des Computers. Phantastische Welten aus dem Geist der Maschine</em>, München (Markt&amp;Technik) 1992, S. 41ff.<a href="#fnref6">↩</a></p></li>
+<li id="fn7"><p>Eine sehr schöne Einführung in <a href="http://scienceblogs.de/astrodicticum-simplex/2017/01/20/sternengeschichten-folge-217-das-ungeloeste-problem-der-navier-stokes-gleichungen/">das ungelöste Problem der Navier-Stokes-Gleichungen</a> gibt es von <em>Florian Freistetter</em> in der 217. Folge seiner <em>Sternengeschichten</em><a href="#fnref7">↩</a></p></li>
+<li id="fn8"><p>Ich weiß nicht, ob je und wann Jython den Sprung auf Python 3 wagt. Dort ist jedenfalls von Hause aus (per Default) jeder String ein UTF-8-String, in meinen Augen ein wichtiger, aber auch der einzige Grund, auf Python 3 umzusteigen.<a href="#fnref8">↩</a></p></li>
+<li id="fn9"><p>Ich will ehrlich sein: Die »Geschwätzigkeit« von PyGame ist nicht nur dem hohen Alter der Bibliothek geschuldet, sie erlaubt eine große Vielseitigkeit und erspart dem Programmierer dann wieder bei komplizierten Dingen viel Schreibarbeit. So ist zum Beispiel die eingebaute <code>Sprite</code>-Klasse und die Kollisionsprüfung etwas, was ich in Processing.py von Hand programmieren muß.<a href="#fnref9">↩</a></p></li>
+<li id="fn10"><p>Natürlich sollte man sicherstellen, daß man diese Fonts auch verwerten darf, aber im Netz findet man viele Fonts zur freien Verwendung. Gute Anlaufstellen dafür sind zum Beispiel <a href="https://fonts.google.com/">Google Fonts</a>, die <a href="https://fontlibrary.org/de/homepage">(Open) Font Library</a> oder <a href="https://www.theleagueofmoveabletype.com/">The League of Moveable Type</a>.<a href="#fnref10">↩</a></p></li>
+<li id="fn11"><p>Ein bei Processing.py durchgehend zu beobachtender Konventionsbruch macht mich allerdings wuschig. Während die <a href="https://www.python.org/dev/peps/pep-0008/#descriptive-naming-styles">PEP8</a> für Variablennamen die Trennung durch Unterstriche empfiehlt (z.B. <code>mouse_x</code>) folgen die Programmierer der Beispielprogramme durchgehend der Java-Konvention des <em>camelCase</em> (<code>mouseX</code>). Ich habe mich erst einmal entschlossen, ebenfalls den <em>camelCase</em> zu nutzen, ob ich dabei aber bleiben werde, weiß ich noch nicht.<a href="#fnref11">↩</a></p></li>
+<li id="fn12"><p>Daniel Scholz: <em><a href="https://www.amazon.de/Pixelspiele-Modellieren-Simulieren-zellul%C3%A4ren-Springer-Lehrbuch/dp/3642451306/ref=as_li_ss_tl?_encoding=UTF8&amp;qid=1504972682&amp;sr=8-1&amp;linkCode=ll1&amp;tag=derschockwell-21&amp;linkId=2f0f795b9536747199607226b165a5da">Pixelspiele</a>, Modellieren und Simulieren mit zellulären Automaten</em>, Berlin - Heidelberg (Springer Spektrum) 2014, S. 19-25<a href="#fnref12">↩</a></p></li>
+<li id="fn13"><p>Das ist keine Einschränkung, denn der Fensterrand ist ja im Grunde auch nichts anderes als eine undurchdringliche Mauer und im Zweifelsfall macht man das Spielfeld einfach um die Mauerdicke größer.<a href="#fnref13">↩</a></p></li>
 </ol>
 </section>
 </body>
