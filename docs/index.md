@@ -4,35 +4,14 @@
 
 Hier möchte ich meine Tutorials zu [Processing.py][2], dem [Python][3]-Mode für [Processing][4], sammeln. Vielleicht wird ja einmal ein Buch daraus. Ich bin schon ziemlich weit …
 
-## Mögliche Gliederung
+## Video-Tutorials zu Processing.py
 
-- Einleitung: Was ist Processing.py?
-- Installtion und erste Schritte
-    - Hallo Hörnchen
-    - Moving Kitty
-- Punkt, Punkt, Komma, Strich …
-    - Sierpinsky
-    - Butterfly
-    - Lorenz
-- Störe meine Kreise nicht
-    - Kreise und Ellipsen
-    - Cantorkäse und mehr
-- Vertizes
-- Text
-    - Rentenuhr
-- Interlude: Rauhnächte
-- Bilder und Bildbearbeitung
-- Projekt 1: Fluffy Planet
-    - Klasse Kitty
-    - Cute Planet
-    - Fluffy Planet
-- Interlude: Walking Pingus
-- Projekt 2: Running Orks
-    - Running Ork
-- 3D
-    - Kugeln und Kisten
-	- Globus
-    - Menger-Schwamm
+- [Game Board with 2D Array / Processing + Python](https://www.youtube.com/watch?v=nsLTQj-l_18)
+- [Minesweeper: Part 1 - Creating Grid and Placing Bombs](https://www.youtube.com/watch?v=5d1CfnYT-KM)
+- [Minesweeper: Part 2 - Counting Adjacent Bombs](https://www.youtube.com/watch?v=5xnZW7lZTDY)
+- [Minesweeper: Part 3 - Using Recursion](https://www.youtube.com/watch?v=uDB723bqoPA)
+- [Minesweeper: 4 - Flagging Bombs / Game Won](https://www.youtube.com/watch?v=o-kx4Vf0DvQ)
+
 
 ## Links
 
