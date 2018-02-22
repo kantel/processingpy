@@ -1,12 +1,7 @@
 """
-tempsColor ist eine Palette zur Visualisierung von
-Temperaturen (kalt bis heiß)
-precsColor ist eine Palette zur Visualisierung von
-Niederschlagsmengen (trocken bis naß) und
-superColors sind einfach Farben aus Thomas Parks
-Superhero-Theme für Bootstrap.
-Quelle: Duncan M. Mc Greggor: Mastering matplotlib,
-Birmingham (Packt Publishing) 2015
+Paletten aus vapeplot, dem Waporwave-Projekt für die
+Matplotlib von Danny Antaki
+https://github.com/dantaki/vapeplot
 """
 
 vaporwave    = ["#94d0ff", "#8795e8", "#966bff", "#ad8cff",
