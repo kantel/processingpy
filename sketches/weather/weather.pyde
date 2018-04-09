@@ -3,7 +3,7 @@ from getWeatherData import getWeatherData, getNow
 def setup():
     size(600, 400)
     background(0)
-    frame.setTitle (u"Jörgs Wetterstation")
+    # frame.setTitle (u"Jörgs Wetterstation")
     font = createFont("American Typewriter", 18)
     textFont(font)
     getWeatherData()
