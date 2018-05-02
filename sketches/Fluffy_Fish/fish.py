@@ -6,11 +6,11 @@ class Fish():
         self.r = 32
         
         self.gravity = 0.6
-        self.lift = -15
+        self.lift = -12
         self.velocity = 0
         
     def loadPic(self):
-        self.pic = loadImage("fisch1.png")
+        self.pic = loadImage("fisch2.png")
         
     def up(self):
         self.velocity += self.lift

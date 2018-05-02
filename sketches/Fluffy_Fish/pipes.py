@@ -30,8 +30,8 @@ class Pipe():
             return False
     
     def collidesWith(self, otherObject):
-        if (otherObject.y - otherObject.r/2 < self.top) or (otherObject.y + otherObject.r/2 > height - self.bottom):
-            if (otherObject.x + otherObject.r/2 > self.x) and (otherObject.x - otherObject.r/2 < self.x + self.w):
+        if (otherObject.y < self.top) or (otherObject.y + otherObject.r > height - self.bottom):
+            if (otherObject.x + otherObject.r > self.x) and (otherObject.x < self.x + self.w):
                 return True
         else:
             return False

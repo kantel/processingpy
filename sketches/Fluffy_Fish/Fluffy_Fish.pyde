@@ -1,4 +1,3 @@
-
 from fish import Fish
 from pipes import Pipe
 
@@ -12,7 +11,7 @@ def setup():
     pipes.append(pipe)
     
 def draw():
-    background(0)
+    background(0, 153, 204)
     
     for i in range(len(pipes) - 1, -1, -1):
         if pipes[i].offscreen():

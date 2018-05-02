@@ -1,4 +1,4 @@
 #!bash
 
 cd ~/git/processingpy
-~/anaconda/bin/mkdocs serve
+~/anaconda3/bin/mkdocs serve
