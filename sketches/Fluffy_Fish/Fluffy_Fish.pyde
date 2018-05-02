@@ -24,15 +24,12 @@ def draw():
         pipes[i].update()
         pipes[i].display()
 
-
     fluffyFish.update()
     fluffyFish.display()
-    
     
     if (frameCount % 100 == 0):
         pipe = Pipe()
         pipes.append(pipe)
-    
 
 def keyPressed():
     if (key == " "):
