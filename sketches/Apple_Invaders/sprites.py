@@ -6,8 +6,8 @@ right = 0
 up    = 1
 left  = 2
 down  = 3
-standingright = 4
-standingleft = 5
+standing = 4
+walking = 5
 
 class Sprite(object):
     
@@ -28,6 +28,7 @@ class Actor(Sprite):
         super(Actor, self).__init__(xPos, yPos)
         self.dx = 3
         self.dir = right
+        self.state = standing
     
     def loadPics(self):
         self.standR = loadImage("gripe_stand_right.png")
@@ -51,11 +52,19 @@ class Actor(Sprite):
     
     def move(self):
         if self.dir == right:
-            self.im = self.walkR0
-            self.dx = 1
+            if self.state == walking:
+                self.im = self.walkR0
+                self.dx = 1
+            else:
+                self.im = self.standR
+                self.dx = 0
         elif self.dir == left:
-            self.im = self.walkL0
-            self.dx = -1
+            if self.state == walking:
+                self.im = self.walkL0
+                self.dx = -1
+            else:
+                self.im = self.standL
+                self.dx = 0
         else:
             self.dx = 0
         self.x += self.dx

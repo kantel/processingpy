@@ -22,9 +22,11 @@ def draw():
 def keyPressed():
     if keyPressed and key == CODED:
         if keyCode == RIGHT:
+            gripe.state = 5
             gripe.dir = 0
         if keyCode == LEFT:
+            gripe.state = 5
             gripe.dir = 2
 
 def keyReleased():
-    gripe.dir = 4
+    gripe.state = 4
