@@ -1,12 +1,21 @@
 from sprites import Actor
-gripe = Actor(304, 400)
-              
+gripe = Actor(304, 384)
+
 def setup():
+    global block, bkg
     size(640, 480)
+    block = loadImage("block.png")
+    bkg = loadImage("bkg0.png")
     gripe.loadPics()
 
 def draw():
-    background(158, 214, 112)
+    global block, bkg
+    # background(158, 214, 112)
+    background(bkg)
+    i = 0
+    while i < 640:
+        image(block, i, 416)
+        i += 32
     gripe.move()
     gripe.display()
 
@@ -18,4 +27,4 @@ def keyPressed():
             gripe.dir = 2
 
 def keyReleased():
-    gripe.dir = 5
+    gripe.dir = 4
