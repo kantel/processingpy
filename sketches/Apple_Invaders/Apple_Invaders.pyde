@@ -1,32 +1,44 @@
-from sprites import Actor
+from sprites import Actor, Block
 gripe = Actor(304, 384)
+blocks = []
 
 def setup():
-    global block, bkg
+    global bkg
     size(640, 480)
-    block = loadImage("block.png")
+    frameRate(30)    
     bkg = loadImage("bkg0.png")
+    for i in range(20):
+        block = Block(i*32, 416)
+        blocks.append(block)
+        blocks[i].loadPics()
     gripe.loadPics()
 
 def draw():
-    global block, bkg
-    # background(158, 214, 112)
+    global bkg
     background(bkg)
-    i = 0
-    while i < 640:
-        image(block, i, 416)
-        i += 32
+    # blocks[5].state = "hidden"
+    # blocks[18].state = "hidden"
+    for block in blocks:
+        block.display()
+        if gripe.checkWall(block) == False:
+            # print("Falling!")
+            gripe.dx = 0
+            gripe.dy = 5
+            gripe.state = "standing"
+            
     gripe.move()
     gripe.display()
+
+
 
 def keyPressed():
     if keyPressed and key == CODED:
         if keyCode == RIGHT:
-            gripe.state = 5
-            gripe.dir = 0
+            gripe.state = "walking"
+            gripe.dir = "right"
         if keyCode == LEFT:
-            gripe.state = 5
-            gripe.dir = 2
+            gripe.state = "walking"
+            gripe.dir = "left"
 
 def keyReleased():
-    gripe.state = 4
+    gripe.state = "standing"
