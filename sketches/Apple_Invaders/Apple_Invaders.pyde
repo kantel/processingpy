@@ -16,20 +16,15 @@ def setup():
 def draw():
     global bkg
     background(bkg)
-    # blocks[5].state = "hidden"
+    blocks[5].state = "hidden"
     # blocks[18].state = "hidden"
     for block in blocks:
         block.display()
         if gripe.checkWall(block) == False:
-            # print("Falling!")
-            gripe.dx = 0
-            gripe.dy = 5
-            gripe.state = "standing"
+            gripe.state = "falling"
             
     gripe.move()
     gripe.display()
-
-
 
 def keyPressed():
     if keyPressed and key == CODED:

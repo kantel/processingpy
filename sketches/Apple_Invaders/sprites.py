@@ -30,6 +30,7 @@ class Actor(Sprite):
     def loadPics(self):
         self.standR = loadImage("gripe_stand_right.png")
         self.standL = loadImage("gripe_stand_left.png")
+        self.falling = loadImage("grfalling.png")
         for i in range(8):
             imageName = "gr" + str(i) + ".png"
             self.walkR.append(loadImage(imageName))
@@ -48,16 +49,24 @@ class Actor(Sprite):
             if self.state == "walking":
                 self.im = self.walkR[frameCount % 8]
                 self.dx = 3
-            else:
+            elif self.state == "standing":
                 self.im = self.standR
                 self.dx = 0
+            elif self.state == "falling":
+                self.im = self.falling
+                self.dx = 0
+                self.dy = 5
         elif self.dir == "left":
             if self.state == "walking":
                 self.im = self.walkL[frameCount % 8]
                 self.dx = -3
-            else:
+            elif self.state == "standing":
                 self.im = self.standL
                 self.dx = 0
+            elif self.state == "falling":
+                self.im = self.falling
+                self.dx = 0
+                self.dy = 5
         else:
             self.dx = 0
         self.x += self.dx

@@ -2,9 +2,10 @@
 <map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="32" tileheight="32" nextobjectid="1">
  <tileset firstgid="1" source="runleft.tsx"/>
  <tileset firstgid="9" source="runright.tsx"/>
+ <tileset firstgid="17" source="jump.tsx"/>
  <layer name="Kachelebene 1" width="1" height="1">
   <data encoding="csv">
-16
+17
 </data>
  </layer>
 </map>
