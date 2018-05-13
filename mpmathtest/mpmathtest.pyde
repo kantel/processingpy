@@ -1,5 +1,4 @@
-import mpmath as mp1
-import math
-mp1.mp.dps = 50
-print(mp1.mpf(2)**mp1.mpf("0.5"))
-print(2*mp1.fp.pi)
+import mpmath as mpm
+mpm.mp.dps = 50
+print(mpm.mpf(2)**mpm.mpf("0.5"))
+print(2*mpm.pi)
