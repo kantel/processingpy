@@ -1,0 +1,239 @@
+\documentclass[10pt,german,]{book}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[a5paper,left=3cm,right=2cm,bottom=2cm,top=2cm]{geometry}
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={},
+            pdftitle={},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{0}
+\ifxetex
+  \usepackage{polyglossia}
+  \setmainlanguage{german}
+\else
+  \usepackage[german]{babel}
+\fi
+
+\date{}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+
+\fancyhead[EL]{\thepage}
+\fancyhead[OR]{\thepage}
+
+\fancyhead[ER]{\nouppercase{\rightmark}}
+\fancyhead[OL]{\nouppercase{\leftmark}}
+
+\begin{document}
+
+{
+\hypersetup{linkcolor=black}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\chapter{Einleitung}\label{einleitung}
+
+\chapter{Download und Installation}\label{download-und-installation}
+
+\chapter{Start: Rotkäppchen und die drei
+Tanten}\label{start-rotkuxe4ppchen-und-die-drei-tanten}
+
+\chapter{Punkte und Pixel}\label{punkte-und-pixel}
+
+\section{Turmite}\label{turmite}
+
+\section{Wir backen uns ein
+Mandelbrötchen}\label{wir-backen-uns-ein-mandelbruxf6tchen}
+
+\section{Pixel-Array versus set()}\label{pixel-array-versus-set}
+
+\section{Julia-Menge}\label{julia-menge}
+
+\section{Schnelle Bildmanipulation: Das
+Pixel-Array}\label{schnelle-bildmanipulation-das-pixel-array}
+
+\subsection{Fantastic Feather Fractal}\label{fantastic-feather-fractal}
+
+\chapter{Linien}\label{linien}
+
+\section{Anschauliche Mathematik: Die
+Schmetterlingskurve}\label{anschauliche-mathematik-die-schmetterlingskurve}
+
+\section{Der Lorenz-Attraktor, eine Ikone der
+Chaos-Theorie}\label{der-lorenz-attraktor-eine-ikone-der-chaos-theorie}
+
+\chapter{Shapes}\label{shapes}
+
+\section{For Your Eyes Only -- Processing.py zieht
+Kreise}\label{for-your-eyes-only-processing.py-zieht-kreise}
+
+\section{Spaß mit Kreisen: Konfetti}\label{spauxdf-mit-kreisen-konfetti}
+
+\section{Syntaktischer Zucker: »with« in
+Processing.py}\label{syntaktischer-zucker-with-in-processing.py}
+
+\section{Spaß mit Kreisen (2) in Processing.py: Cantor-Käse und
+mehr}\label{spauxdf-mit-kreisen-2-in-processing.py-cantor-kuxe4se-und-mehr}
+
+\section{Weitere geometrische
+Grundformen}\label{weitere-geometrische-grundformen}
+
+\section{Eine analoge Uhr aus
+Kreisbögen}\label{eine-analoge-uhr-aus-kreisbuxf6gen}
+
+\section{Visualisierung: Die
+Sonntagsfrage}\label{visualisierung-die-sonntagsfrage}
+
+\section{Der Baum des Pythagoras}\label{der-baum-des-pythagoras}
+
+\chapter{Text(verarbeitung) in
+Processing.py}\label{textverarbeitung-in-processing.py}
+
+\section{Spaß mit Processing.py:
+Rentenuhr}\label{spauxdf-mit-processing.py-rentenuhr}
+
+\chapter{Bildverarbeitung mit
+Processing.py}\label{bildverarbeitung-mit-processing.py}
+
+\section{Jeder sein kleiner Warhol}\label{jeder-sein-kleiner-warhol}
+
+\section{Filter für die
+Bildverarbeitung}\label{filter-fuxfcr-die-bildverarbeitung}
+
+\section{Pointillismus}\label{pointillismus}
+
+\section{Noch mehr Pointillismus}\label{noch-mehr-pointillismus}
+
+\chapter{Animationen}\label{animationen}
+
+\section{Ein kleiner roter
+Luftballon}\label{ein-kleiner-roter-luftballon}
+
+\chapter{Spaß mit (SVG-) Shapes: Pinguine im
+Eismeer}\label{spauxdf-mit-svg--shapes-pinguine-im-eismeer}
+
+\chapter{Objkete und Klassen mit
+Kitty}\label{objkete-und-klassen-mit-kitty}
+
+\section{Hallo Hörnchen -- Hallo Kitty
+revisited}\label{hallo-huxf6rnchen-hallo-kitty-revisited}
+
+\section{Moving Kitty}\label{moving-kitty}
+
+\section{Klasse Kitty!}\label{klasse-kitty}
+
+\section{»Cute Planet« mit
+Processing.py}\label{cute-planet-mit-processing.py}
+
+\section{Fluffy Planet}\label{fluffy-planet}
+
+\chapter{Zelluläre Automaten}\label{zelluluxe4re-automaten}
+
+\section{Das Demokratie-Spiel}\label{das-demokratie-spiel}
+
+\section{Frösche und Schildkröten oder: Wie entsteht
+Segregation?}\label{fruxf6sche-und-schildkruxf6ten-oder-wie-entsteht-segregation}
+
+\section{Der Waldbrand-Simulator}\label{der-waldbrand-simulator}
+
+\chapter{3D mit Processing.py}\label{d-mit-processing.py}
+
+\section{Kugeln und Kisten}\label{kugeln-und-kisten}
+
+\section{Und es geht doch: Kugeln und
+Texturen}\label{und-es-geht-doch-kugeln-und-texturen}
+
+\section{Die Erde ist eine Kiste}\label{die-erde-ist-eine-kiste}
+
+\section{Licht und Schatten}\label{licht-und-schatten}
+
+\section{Einen Globus basteln}\label{einen-globus-basteln}
+
+\chapter{Einen eigenen Wetterbericht mit
+OpenWeatherMap}\label{einen-eigenen-wetterbericht-mit-openweathermap}
+
+\chapter{WordCram: Processing.py und eine Processing (Java)
+Bibliothek}\label{wordcram-processing.py-und-eine-processing-java-bibliothek}
+
+\chapter{Running Orc mit
+Processing.py}\label{running-orc-mit-processing.py}
+
+\section{Running Orc in vier
+Richtungen}\label{running-orc-in-vier-richtungen}
+
+\section{Ork mit Kollisionserkennung}\label{ork-mit-kollisionserkennung}
+
+\section{Ein Ork im Labyrinth}\label{ein-ork-im-labyrinth}
+
+\section{Der autonome Ork}\label{der-autonome-ork}
+
+\section{Drei Orks und ein Held}\label{drei-orks-und-ein-held}
+
+\chapter{Exkurs Rauhnächte: Spaß mit
+Processing.py}\label{exkurs-rauhnuxe4chte-spauxdf-mit-processing.py}
+
+\chapter{Exkurs: Walking Pingus}\label{exkurs-walking-pingus}
+
+\chapter{Das Avoider Game}\label{das-avoider-game}
+
+\section{Game Stage 1}\label{game-stage-1}
+
+\section{Stage 2}\label{stage-2}
+
+\section{Stage 3: Sternenhimmel}\label{stage-3-sternenhimmel}
+
+\section{Stage 4: PowerUp und
+PowerDown}\label{stage-4-powerup-und-powerdown}
+
+\section{Nachtrag: Avoider Game Stage
+4a}\label{nachtrag-avoider-game-stage-4a}
+
+\chapter{Epilog}\label{epilog}
+
+\chapter{Anhang}\label{anhang}
+
+\section{Literaturverzeichnis}\label{literaturverzeichnis}
+
+\section{Index}\label{index}
+
+\end{document}
