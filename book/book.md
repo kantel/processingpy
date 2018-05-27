@@ -8,6 +8,14 @@ date: \today
 
 # Einleitung
 
+Erinnert Ihr Euch noch an die frühen Tage des *personal computing*? Ein Basic-Interpreter war immer dabei, wenn er nicht sogar das Betriebssystem bildete. Und spätestens mit Turbo Pascals `uses graph` hatte man auch in besseren Prgrammiersprachen die Möglichkeit, einfach ein paar Bilder und graphische Simulationen auf den Monitor zu zaubern. Und die Zeitschriften (von ST Computer bis c’t) waren voll mit Programmierbeispielen, die Spaß machten. Das änderte sich mit dem Aufkommen der Fenstersysteme, die das einfache Erstellen von Programmen furchtbar erschwerten. Sicher, es gab HyperCard auf dem Mac, aber das war kein richtiger Ersatz. Unter Windows konnte man sich mit dem DOS-Fenster behelfen, aber richtig Freude hatte man daran auch nicht.
+
+Und meine Begeisterung für Modula-2 beruhte nicht nur auf der Tatsache, daß ich Software-Engineering studierte, sondern auch darauf, daß Niklaus Wirth dieser Sprache ein Graphik-Fenster spendiert hatte, mit dem man einfach in einer prozeduralen Umgebung (ohne dieses ganze Event-Gedöns) ein paar Bilder ausgeben konnte. Metroworks Modula-2 für den Mac (68000er Architektur) war dafür wunderbar geeignet und ich habe es geliebt.
+
+Okay, spätestens mit dem Aufkommen von Java glaubte man, alle an die Notwendigkeit von Fenstersystemen und event driven programming überzeugt zu haben, Oberon änderte daran leider nichts mehr. Im Gegenteil, obwohl die fensterlose Nutzerführung von Oberon Teil des Wirthschen Konzepts war, wurde dies schnell verwässert und Oberon V3 hatte wieder Fenster.
+
+Nur die Chance, eher computerferne Personen (zum Beispiel Wissenschaftler und Künstler) an die Programmierung heranzuführen oder auch eine einfache Programmierumgebung für Schüler und Hobby-Programmierer zu haben, war damit vertan. Doch dafür gibt es jetzt Processing.
+
 # Download und Installation
 
 # Start: Rotkäppchen und die drei Tanten
@@ -175,6 +183,65 @@ Es gibt also noch viel zu entdecken in der Welt der Turmiten und Ameisen.
 
 - A.K. Dewdney: *Turmiten*, in: Immo Diener (Hg.): *Computer-Kurzweil 2, Spektrum Akademischer Verlag: Verständliche Forschung*, Heidelberg 1992, Seiten 156-160
 - [Ameise (Turingmaschine)](https://de.wikipedia.org/wiki/Ameise_(Turingmaschine)) in der Wikipedia.
+
+## Barnsleys Farn mit Processing.py
+
+*Michael Barnsley* hatte 1985 auf der SIGGRAPH ein von *John Hutchinson* schon 1981 erfundenes Verfahren vorgestellt, mit dem er ein Bild eines Farnkrauts mit nur vier affinen Abbildungen erzeugen konnte. Dieses Verfahren nannte er »[Iteriertes Funktionssystem](https://de.wikipedia.org/wiki/Iteriertes_Funktionensystem)« (IFS). Es erregte recht goßes Aufsehen, weil man mit diesem Verfahren nicht nur andere Blätter und Bäume, sondern auch viele der klassischen Fraktale nachbilden konnte (wobei die stochastische IFS-Version streng genommen nur eine Abwandlung des Chaos-Spiels zu Anfang dieses Kapitels ist).
+
+![Ein Farn nach Barnsley](images/barnsleysfarn.jpg)
+
+Ich habe aus nostalgischen Gründen diesen stochastischen Algorithmus auch einmal in Processing.py nachimplementiert:
+
+~~~python
+# Parameter
+a = [0.0, 0.197, -0.155, 0.849]
+b = [0.0, -0.226, 0.283, 0.037]
+c = [0.0, 0.226, 0.26, -0.037]
+d = [0.16, 0.197, 0.237, 0.849]
+e = [0.0, 0.0, 0.0, 0.0]
+f = [0.0, 1.6, 0.14, 1.6]
+
+# Zufallsverteilung
+p = [0.03, 0.14, 0.27, 1.0]
+# p = [0.074, 0.08, 0.09, 1.0]
+def setup():
+    global x, y
+    x, y = 0.0, 0.0
+    size(640, 480)
+    background(40, 40, 40)
+
+def draw():
+    global x, y
+    
+    for i in range(500):
+        pk = random(1.0)
+        if pk <= p[1]:
+            k = 1
+        elif pk <= p[2]:
+            k = 2
+        elif pk <= p[3]:
+            k = 3
+        else:
+            k = 4
+    
+        x1 = a[k]*x + b[k]*y + e[k]
+        y = c[k]*x + d[k]*y + f[k]
+        x = x1
+    
+        xp = round(x*50) + 280
+        yp = 450 - round(y*40)
+    
+        set(xp, yp, color(20, 255, 20))
+        
+    if frameCount >= 500:
+        print("I did it, Babe!")
+        noLoop()
+~~~
+
+Eine Besonderheit in diesem Sketch ist dabei die Schleife `for in range(500)` in der `draw()`-Funktion. Denn läßt man bei jedem Durchlauf nur einen Punkt zeichnen, dauert es ganz schön lange, bis so etwas wie ein Farnblatt sichtbar wird. Denn man braucht mindestens 75.000 Punkte, um auch nur schwach etwas erkennen zu können. Mithilfe dieser Schleife aber lasse ich bei jedem Durchlauf 500 Punkte berechnen und zeichnen. Das beschleunigt das Verfahren doch enorm, so daß man in endlicher Zeit zu einem vorzeigbanren Ergebnis kommt.
+
+Die Parameter für diesen Farn habe ich dem hier schon mehrfach erwähnten Buch »[Algorithmen für Chaos und Fraktale][a1]« von *Dietmar Herrmann* (S. 177ff.) entnommen, das 1994 bei Addison-Wesley erschienen ist. Dort findet Ihr auch noch weitere Beispiele.
+
 
 ## Wir backen uns ein Mandelbrötchen
 
@@ -6895,7 +6962,7 @@ Auch diese Bilder entstammen den freien ([CC-BY](http://twitter.github.io/twemoj
 
 Ich habe leider keinen Screenshot hinbekommen, auf denen alle verwendeten Bildchen zu sehen sind. So müßt Ihr mit obigem vorliebnehmen und mir glauben: Auch die Krake existiert!
 
-# Beinhae ein Epilog: Walking Pingus
+# Beinahe ein Epilog: Walking Pingus
 
 Die älteren unter Euch können sich sicher noch an das Computerspiel [Lemminge](https://de.wikipedia.org/wiki/Lemmings) von 1991 erinnern, in dem man eine Horde kleiner, aber dummer Geschöpfe mit grünen Haaren und blauem Anzug, die immer stur geradeaus liefen, davon abhalten mußte, ins Verderben zu rennen und sie zum rettenden Ausgang führen. *Ingo Runke* hatte einen freien (GPL) Klon gebastelt, den er in Anspielung auf das Linus-Maskottchen *Tux* [Pingus](https://de.wikipedia.org/wiki/Pingus) nannte und in dem man -- statt der Lemming -- kleine Pinguine retten mußte. Die Pinguine bewegten sich in jede Richtung mit 8 Bildern und da ich mal etwas anderes als zappelige Orks mit Processing.py auf den Bildschirm bringen wollte, habe ich mich mal an den Pinguinen versucht.
 
