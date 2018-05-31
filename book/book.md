@@ -2062,7 +2062,7 @@ Das Programmfenster zeigt links das Ausgangsbild. Rechts entsteht so langsam das
 
 Bei jedem Durchlauf der `draw()`-Schleife wird der Farbwert eines zufälligen Punktes im Ursprungsbild ermittelt und dann als Kreis (Punkt) im Zielbild eingezeichnet. Das Ergebnis gleicht dem Ursprungsbild, nur das es den Anschein erweckt, als würde man es durch eine Scheibe Strukturglas, wie sie manchmal Duschen- oder Badezimmertüren zieren, betrachten.
 
-## Der Quellcode
+### Der Quellcode
 
 ~~~python
 import random as r
@@ -2165,6 +2165,102 @@ def draw():
             w = map(greyscale, 0, 255, 12, 0)
             ellipse(posX, posY, w, w)
 ~~~
+
+## Videos sind auch Bilder
+
+Bisher habe ich wenig bis gar nichts zu den Video-Fähigkeiten von Processing geschrieben. Vermutlich lag es daran, daß bei den aktuellen Versionen von Processing die Video-Bibliothek nicht mehr Bestandteil der Standard-Distribution ist, sondern daß man diese gesondert herunterladen muß. Und hier lag auch schon der erste Hase im Pfeffer.
+
+![Timeout!!](images/timeout-b.jpg)
+
+Denn meine Versuche, die Bibliothek über das `Tools`-Menü zu installieren, endeten jedesmal mit einem Timeout: Gefühlt einhundert Mal hatte ich es probiert und jedesmal endete der Versuch mit der Fehlermeldung: »Verbindungs-Wartezeit beim Download von Video überschritten«, also einem Timeout. Nachdem ich es beinahe aufgegeben hatte, klappte es beim Versuch 101 dann doch -- die Bibliothek war endlich installiert.
+
+Der Rest war einfach (dabei half mir auch eine schöne [Video-Tutorial-Reihe](https://www.youtube.com/playlist?list=PLRqwX-V7Uu6bw0bVn4M63p8TMJf3OhGy8) von *Daniel Shiffman*):
+
+![Ein Videoplayer im Python-Mode von Processing](images/videoplayerprocessingpy-b.jpg)
+
+Wie [hier schon einmal beschrieben](ProcessingPy und eine Java-Bibliothek – 20170408), bindet man die Bibliothek in seinen Sketch ein und kann dann einfach loslegen:
+
+~~~python
+add_library('video')
+
+def setup():
+    global movie
+    size(560, 315)
+    movie = Movie(this, "confettisystem.mp4")
+    movie.loop()
+
+def movieEvent(movie):
+    movie.read()
+
+def draw():
+    global movie
+    image(movie, 0, 0)
+~~~
+
+Diese paar Zeilen reichen wirklich aus, um einen Video-Player in Processing.py zu schreiben. Natürlich hat die [Video-Bibliothek noch ein paar weitere Methoden](https://processing.org/reference/libraries/video/index.html), die am häufigsten benötigten sind (in meinen Augen):
+
+- `play()` -- spielt das Video nur einmal ab (statt `loop()`)
+- `pause()` -- stoppt das Video an der aktuellen Stelle
+- `jump()` -- springt zu einer bestimmten Stelle im Video (Angaben in Sekunden (als Fließkommazahl -- also auch 3,57 Sekunden geht))
+- `duration()` -- gibt die Länge des Films zurück (ebenfalls in Sekunden).
+
+Wichtig ist auch noch die Funktion `movieEvent()` im obigen Sketch. Sie setzt erst die Event-Schleife in Gang, mit der das Video jedesmal, wenn ein neuer Frame bereit ist, diesenim Processing-Fenster anzeigt. Ohne diese seht Ihr nichts. 
+
+Aber am Interessantesten ist: Ist der Frame einmal geladen, ist er ein Bild (`image`). Alle [Filter und Bildverarbeitungsfuntkionen](Filter für die Bildverarbeitung – 20170322), die es in Processing gibt, könnt Ihr daher auch auf Videos anwenden. Ich werde -- sobald ich auf Archive.org ein nettes Video gefunden habe -- in den nächsten Tagen damit ein wenig experimentieren und dann hier berichten. *Still digging!*
+
+Die Video-Bibliothek besitzt zusätzlich noch Klassen und Methoden, um auch Live-Videos von einer Kamera direkt zu verarbeiten (`Capture()`). Aber da die integrierte Kamera meines betagten MacBook Pro nicht funktioniert (sie hatte nie wirklich funktioniert, aber ich hatte sie auch nie benötigt (ich skype aus Datenschutzgründen nie)), konnte ich diese nicht testen. Aber sie funktionieren im Prinzip genauso wie die Video-Funktionen mit gespeicherten Videos. Was die Unterschiede sind, kann man auch in der oben verlinkten Video-Playlist von *Daniel Shiffman* sehen, der intensiv damit experimentierte.
+
+## OpenCV und Processing.py
+
+[OpenCV](https://de.wikipedia.org/wiki/OpenCV) ist eine freie Programmbibliothek mit Algorithmen für die Bildverarbeitung und maschinelles Sehen. Sie ist für die Programmiersprachen C, C++, Python und Java geschrieben und steht als freie Software unter den Bedingungen der BSD-Lizenz. Das »CV« im Namen steht für englisch »Computer Vision«. Und nachdem ich mir kürzlich einige [Videos angesehen hatte](https://www.youtube.com/watch?v=WH31daSj4nc&list=PLRqwX-V7Uu6bw0bVn4M63p8TMJf3OhGy8), in denen *Daniel Shiffman* Computer-Vision-Algorithmen in Processing (Java) per Fuß implementiert hatte, dachte ich mir, dies müßte doch auch einfacher gehen. Denn immerhin steht OpenCV als [Bibliothek für Processing](https://github.com/atduskgreg/opencv-processing) zur Verfügung und diese basiert auf der »offiziellen« OpenCV-Java-API.
+
+![OpenCV-Test](images/opencvtest-b.jpg)
+
+Und wirklich, das Schwierigste an dem ganzen Unterfangen war die Installation der Bibliothek. [Wie schon hier](Videos abspielen mit ProcessingPy – 20180528) war das Repositorium für die Processing-Libraries wohl zu stark beansprucht und so bekam ich die Bibliothek erst nach mehrmaligen Versuchen, die jeweils mit einem *Timeout* abbrachen, heruntergeladen.
+
+Der Rest war dann einfach: Ich habe mich an [dieses Beispielprogramm](https://github.com/atduskgreg/opencv-processing/blob/master/examples/FindContours/FindContours.pde) in Processing (Java) von der GitHub-Seite des Projekts gehalten und es nach Python portiert. Das sah dann so aus:
+
+~~~python
+add_library('opencv_processing')
+
+contours = []
+
+def setup():
+    global jojosrc, jojodst, contours
+    size(840, 420)
+    jojosrc = loadImage("jojo2.jpg")
+    opencv = OpenCV(this, jojosrc)
+    
+    opencv.gray()
+    opencv.threshold(120)
+    jojodst = opencv.getOutput()
+    
+    contours = opencv.findContours()
+    print(contours.size())
+
+def draw():
+    global jojosrc, jojodst, contours
+    image(jojosrc, 0, 0)
+    image(jojodst, jojosrc.width, 0)
+    
+    noFill()
+    strokeWeight(1)
+    
+    for contour in contours:
+        stroke(0, 255, 0)
+        contour.draw()
+    
+        stroke(255, 0, 0)
+        point = PVector()
+        beginShape()
+        for point in contour.getPolygonApproximation().getPoints():
+            vertex(point.x, point.y)
+        endShape()
+~~~
+
+Das Programm konvertiert ein Farbphoto zu einem Schwarz-Weiß-Bild und zeigt, wo die Konturlinien liegen, nach denen OpenCV entscheidet, was schwarz und was weiß dargestellt wird. Ihr könnt (und sollt -- vor allem, wenn Ihr ein anderes Photo verwendet) mit dem `threshold`-Wert herumspielen, damit Ihr seht, was da genau passiert.
+
+Das von [mir verwendete Photo](https://www.flickr.com/photos/schockwellenreiter/7780799276/) (&copy; 2012 by *Stefanie Radon*) hatte ich auf 420 x 420 Pixel zurechtgeschnitten. Wenn ihr ein anderes Photo mit einer anderen Größe verwendet, müßt Ihr natürlich die Größe des Ausgabefensters an dieses Photo anpassen.
 
 # Animationen
 
@@ -5230,7 +5326,6 @@ Es ist noch umfangreicher geworden, aber eigentlich ist alles aus den vorherigen
 Auch das Hauptprogramm wird langsam umfangreicher, ist aber immer noch übersichtlich. Es sieht nun so aus:
 
 ~~~python
-# Hero 01
 from sprites3 import Hero, Orc, Obstacle
 tilesize = 32
 
