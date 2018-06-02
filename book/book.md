@@ -8,15 +8,91 @@ date: \today
 
 # Einleitung
 
-Erinnert Ihr Euch noch an die frühen Tage des *personal computing*? Ein Basic-Interpreter war immer dabei, wenn er nicht sogar das Betriebssystem bildete. Und spätestens mit Turbo Pascals `uses graph` hatte man auch in besseren Prgrammiersprachen die Möglichkeit, einfach ein paar Bilder und graphische Simulationen auf den Monitor zu zaubern. Und die Zeitschriften (von ST Computer bis c’t) waren voll mit Programmierbeispielen, die Spaß machten. Das änderte sich mit dem Aufkommen der Fenstersysteme, die das einfache Erstellen von Programmen furchtbar erschwerten. Sicher, es gab HyperCard auf dem Mac, aber das war kein richtiger Ersatz. Unter Windows konnte man sich mit dem DOS-Fenster behelfen, aber richtig Freude hatte man daran auch nicht.
+Erinnert Sie sich noch an die frühen Tage des *personal computing*? Ein BASIC-Interpreter war immer dabei, wenn er nicht sogar das Betriebssystem bildete. Und spätestens mit Turbo Pascals `uses graph` hatte man auch in besseren Prgrammiersprachen die Möglichkeit, einfach ein paar Bilder und graphische Simulationen auf den Monitor zu zaubern. Und die Zeitschriften (von ST Computer bis c’t) waren voll mit Programmierbeispielen, die Spaß machten. Das änderte sich mit dem Aufkommen der Fenstersysteme, die das einfache Erstellen von Programmen furchtbar erschwerten. Sicher, es gab HyperCard auf dem Mac, aber das war kein richtiger Ersatz. Unter Windows konnte man sich mit dem DOS-Fenster behelfen, aber richtig Freude hatte man daran auch nicht.
 
 Und meine Begeisterung für Modula-2 beruhte nicht nur auf der Tatsache, daß ich Software-Engineering studierte, sondern auch darauf, daß Niklaus Wirth dieser Sprache ein Graphik-Fenster spendiert hatte, mit dem man einfach in einer prozeduralen Umgebung (ohne dieses ganze Event-Gedöns) ein paar Bilder ausgeben konnte. Metroworks Modula-2 für den Mac (68000er Architektur) war dafür wunderbar geeignet und ich habe es geliebt.
 
-Okay, spätestens mit dem Aufkommen von Java glaubte man, alle an die Notwendigkeit von Fenstersystemen und event driven programming überzeugt zu haben, Oberon änderte daran leider nichts mehr. Im Gegenteil, obwohl die fensterlose Nutzerführung von Oberon Teil des Wirthschen Konzepts war, wurde dies schnell verwässert und Oberon V3 hatte wieder Fenster.
+Okay, spätestens mit dem Aufkommen von Java glaubte man, alle an die Notwendigkeit von Fenstersystemen und *event driven programming* überzeugt zu haben, Oberon änderte daran leider nichts mehr. Im Gegenteil, obwohl die fensterlose Nutzerführung von Oberon Teil des Wirthschen Konzepts war, wurde dies schnell verwässert und Oberon V3 hatte schon wieder Fenster.
 
 Nur die Chance, eher computerferne Personen (zum Beispiel Wissenschaftler und Künstler) an die Programmierung heranzuführen oder auch eine einfache Programmierumgebung für Schüler und Hobby-Programmierer zu haben, war damit vertan. Doch dafür gibt es jetzt Processing.
 
+## Was ist Processing?
+
+![Die Processing-IDE (mit einem Java-Sketch)](images/processingide.png)
+
+In erster Näherung ist Processing ein stark vereinfachter Dialekt der Programmiersprache Java. Das bedeutet, daß Processing die Java-Syntax nutzt. Processing ist aber auch eine Entwicklungsumgebung mit einer eigenen Philosophie: Programmieren in Prozessing soll ähnlich sein, wie das Skizzieren in einem Skizzenbuch. Die Programmiererin oder der Programmierer soll so schnell wie möglich (am Besten ab der ersten Zeile Code) die Möglichkeit haben, ein visuelles Feedback zu bekommen. Die ursprüngliche Zielgruppe von Processing waren nämlich Designer und Künstler.
+
+Processing wurde ursprüunglich am *Massachusetts Institute of Technology* (MIT) in Boston von Ben Fry (Broad Institute) und Casey Reas (UCLA Design|Media Arts) initiiert und basierte auf dem Experiment *Design by Numbers* von John Maeda, das ebenfalls am MIT entwickelt wurde und Anfängern den Einsteig in die Programmierung erleichtern sollte.
+
+Processing ist für die Einsatzbereiche Graphik, Simulation und Animation spezialisiert, es gibt aber mittlerweile auch Bibliotheken und Erweiterungen für viele andere Bereiche, zum Beispiel für die Ansteuerung externer Hardware. Folgt man den [Links dieser Bibliotheken](https://processing.org/reference/libraries/) entdeckt man schnell viele neue Möglichkeiten, die die Phantasie beflügeln.
+
+Folgerichtig besteht die Processing-IDE daher nur aus wenigen Komponenten. Auf den ersten Blick fällt das Hauptfenster auf, in dem der Programmiercode eingegeben wird und darunter das Ausgabefenster (eine Konsole) für Textausgaben und Fehlermeldungen. Wichtig ist aber, daß Processing bei jeder Ausführung ein graphisches Fenster öffnet, in dem die Graphikausgabe erfolgt.
+
+Die Abbildung zeigt die IDE mit einem kleinen, sofort ausführbaren Processing (Java) Sketch. Links ist das Fenster mit der Graphikausgabe, daneben das Hauptfenster der IDE mit dem eigentlichen Programmtext. Ein Klick auf den Knopf links oben mit dem Pfeil nach rechts startet einen Sketch, ein Klick auf den Knopf danaben mit dem Quadrat stoppt es wieder. Es gibt natürlich -- je nach Betriebssystem leicht unterschiedliche -- Tastatur-Kurz-Befehle dafür: `CTRL-R` (Windows/Linux) oder `CMD-R` (Apple) starten einen Sketch und `ESC` beendet ihn wieder.
+
+Dadurch wird aber auch klar: Processing ist betriebssystemübergreifend und läuft im Prinzip auf allem, das eine Java Virtuelle Masschine (JVM) beherbergen kann, also mindestens unter Windows, Linux und MacOS X.
+
+Processing soll also in erster Linie den Menschen wieder die Freude am Programmieren zurückbringen, die sie früher mit ihrem BASIC-Interpreter hatten
+
+## Was ist Processing.py?
+
+Processing.py eröffent die Möglichkeit, Processing-Sketche in der Programmiersprache Python zu entwickeln. Python ist eine universelle Programmersprache, die nicht nur in der Lehre, sondern auch in vielen Bereichen von Wissenschaft und Forschung sehr populär ist. Python wurde Anfang der 1990er Jahre von Guido van Rossum am *Centrum Wiskunde & Informatica* in Amsterdam als Programmier-Lehrsprache entwickelt und hat den Anspruch, einen gut lesbaren, knappen Programmierstil zu fördern. o werden beispielsweise Blöcke nicht durch geschweifte Klammern, sondern durch Einrückungen strukturiert. Wegen ihrer klaren und übersichtlichen Syntax gilt Python als einfach zu erlernen.Außerdem ist in der Regel die Python-Syntax so klar und verständlich, daß man Python-Programme oft auch scherzhaft als »lauffähigen Pseudocode« bezeichnet.
+
+Processing.py ist der Versuch, die Einfachheit und Klarheit der Programmiersprache Python mit der Einfachheit der rocessing-IDE zu vermählen. Dazu bedient man sich eines kleinen Tricks. Das eigentliche Python ist in der Programmiersprache C geschrieben und daher kein wirklicher Kandidat für das in Java geschriebene Processing. Aber es gibt eine Python-Version die in Java geschrieben wurde, Jython genannt. Jython ist eine reine Java-Implementierung der Programmiersprache Python und ermöglicht somit die Ausführung von Python-Programmen auf jeder Java-Plattform und damit -- im Prinzip -- auch in Processing. Genau das wurde für die Entwicklung von Processing.py genutzt.
+
+![Das einführende Programm in Processing.py](images/processingpyide.png)
+
+Der Screenshot zeigt das einführende Programm aus dem letzten Abschnitt -- dieses Mal jedoch in der Python-Syntax. Die Ähnlichkeit ist groß, aber auch einige Unterschiede fallen sofort auf:
+
+- Python besitzt im Gegensatz zu Java eine dynamische Typisierung, das sogenannte *Duck Typing*[^1_1], die in Java notwendige Typenvereinbarung entfällt in Python.
+
+[^1_1]: Wenn es quackt wie eine Ente, watschelt wie eine Ente und schwimmt wie eine Ente, dann ist es eine Ente.
+
+- Python verzichtet auf die geschweiften Klammern, um Blöcke zu begrenzen. Blöcke werden ausschließlich durch Einrückungen gekennzeichnet. Diese Einrückungen sind zwingend, andernfalls gibt es eine Fehlermeldung
+
+Ansonsten sind die Processing-eigenen Befehle -- bis auf wenige Ausnahmen (wo sie in Konflikt mit Python eigenen Befehlen geraten) eins zu eins übernommen worden. Das macht die Übertragung von Processing (Java) Sketchen nach Processing.py ziemlich einfach, bei einigen Sprachkosntrukten (zum Beispiel Listen und Objekten existieren dennoch Unterschiede, die aus der unterschiedlichen Philosophe von Java und Python herrühren).
+
+Python hat den Anspruch, komplett mit »Batterien« ausgeliefert zu werden (*batteries included*). Zu Python gehört eine umfangreiche Standard-Bibliothek und alle Befehle aus der Standard-Bibliothek funktionieren auch in Processing.py.
+
+Daneben gibt es noch viele Python-Module und -Bibliotheken, die in »reinem« Python *(pure Python)* geschrieben sind. Wenn in ihnen nicht gerade Seltsames passiert, sollten auch diese in Processing.py laufen. Das heißt, der Entwickler kann auf einen riesigen Fundus von Modulen zurückgreifen.
+
+Umgekehrt funktionieren auch die meisten Processing-(Java)-Bibliotheken mit Processing.py. Das heißt, Python- und Java-Welt wachsen in Processing.py zusammen (das war übrigens auch schon die Motivation für Jython).
+
+Einen Wermutstropfen gibt es allerdings: Jython ist (bis heute) nur »weitestgehend« kompatibel mit Python 2.7, das heißt, alle Neuerungen von Python 3 -- speziell der viel einfachere Umgang mit Umlauten und fremdsprachlichen Schriften (UTF-8 als Default-Codierung)-- stehen in Processing.py nicht zur Verfügung.
+
+Während es in Python 3 einfach genügt
+
+~~~python
+print("Jörg")
+~~~
+
+in ein Programm zu schreiben und Python druckt freudig meinen Vornamen aus, muß in Processing.py diese Zeichenkette maskiert und damit als UTF-8-String gekennzeichnet werden:
+
+~~~python
+print(u"Jörg")
+~~~
+
+Dann gibt auch Processing.py den Umlaut in meinem Vornamen korrekt wieder.
+
+Natürlich stehen auch alle in C oder gar FORTRAN geschriebenen Erweiterungen systembedingt in Jython und damit auch in Processing.py nicht zur Verfügung. Das heißt insbesondere, daß die im wissenschaftlichen Bereich so belibeten Python Pakete für numerische Mathematik, Statistik und *Data Science* wie zum Beispiel `numpy`, `scipy` oder `pandas` mit Processing.py nicht zusammenarbeiten. Aber im Regelfalle will man mit Processing.py auch nicht solche schwergewichtigen Aufgaben lösen und wenn doch: Es gibt fast immer Alternativen[^1_2].
+
+[^1_2]: Und wenn man doch keine findet: Karsten Wolfs Fork der [NodeBox 1](http://cognitiones.kantel-chaos-team.de/programmierung/creativecoding/nodebox/nodebox.html) ist zumindestens für Mac-Nutzer dann eine Alternative. Zwar auch nur Python 2.7, aber er hat in einer *extended Version* all diese numerischen Schwergewichte hineinkompiliert, so daß man sie *out of the box* nutzen kann. Und IDE und Syntax der NodeBox sind der von Processing -- und damit auch von Processing.py -- sehr ähnlich.
+
+Processing.py bietet also die Möglichkeit, all die netten Dinge (und noch vieles mehr), die Processing kann, in Python zu programmieren. Das ist zum einen natürlich nett für Menschen, die sowieso schon in Python zu Hause sind, bietet aber auch ein großes Potential für Programmier-Anfänger, die bei ihren ersten Schritten ein schnelles, visuelles Feedback bekommen, dabei aber in einer Programmier- (genauer: Skript-) Sprache programmieren, die es ihnen erlaubt, das Gelernte auch später in anderen Umgebungen einzusetzen.
+
+Und umgekehrt gilt natürlich auch: Wer schon erste Erfahrungen mit Python gemacht hat, findet hier für seine weiteren Fortschritte eine Umgebung, die es ihm erlaubt, in der Sprache seines Vertrauens viel Spaß bei der Programmierung zu haben. Denn dafür wurde Processing und Processing.py in erster Linie konzipiert: Programmieren soll wieder Spaß machen.
+
+Ich hoffe, Sie als Leser haben damit genau so viel Spaß wie ich es bisher hatte und auch weiterhin haben werde.
+
+**Noch eine Warnung**: Dieses Buch ist keine Einführung in Python. Davon gibt es -- im Netz wie auf dem Buchmarkt -- so viele, daß ich mir dies geschenkt habe. Wer des Englischen mächtig ist, dem empfehle ich »[Think Python](http://greenteapress.com/wp/think-python/)« von *Allen B. Downey*[^1_3], das es nicht nur gedruckt im Buchhandel gibt, sondern das auch kostenlos als PDF heruntergeladen werden kann. Es gibt unter dem Titel »Programmieren lernen mit Python« in der Übersetzung von Stefan Fröhlich auch eine deutsche Fassung (Köln 2012), diese allerdings nur im Buchhandel. Das Buch kann ich vor allem deshalb empfehlen, weil es die Grundlage war für alle Python-Kurse, die ich in den letzten Jahren gegeben hatte, ich also eine große Erfahrung mit diesem Lehrbuch habe. Und mit der darin beschriebenen *Turtle Graphic* lernen Sie auch gleich noch eine weitere Möglichkeit kennen, mit Python graphische Ergebnisse auf den Monitor zu zaubern.
+
+[^1_3]:  Der Link führt auf die Version für Python 2.7, es gibt auch eine neuere Auflage für Python 3, aber da Processing.py ja kompatibel zu Python 2.7 ist, schien mir diese Fassung geeigneter.
+
+
+
 # Download und Installation
+
+
 
 # Start: Rotkäppchen und die drei Tanten
 
