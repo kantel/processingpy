@@ -4,9 +4,10 @@
  <tileset firstgid="9" source="runright.tsx"/>
  <tileset firstgid="17" source="jump.tsx"/>
  <tileset firstgid="21" source="../../../../learningarcade/assets/zangband.tsx"/>
+ <tileset firstgid="3861" source="../../../ressources/Original/gripe.tsx"/>
  <layer name="Kachelebene 1" width="1" height="1">
   <data encoding="csv">
-3733
+3863
 </data>
  </layer>
 </map>

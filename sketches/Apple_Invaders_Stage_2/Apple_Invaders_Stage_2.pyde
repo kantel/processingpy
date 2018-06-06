@@ -9,7 +9,7 @@ def setup():
     global bkg
     size(640, 480)
     frameRate(60)    
-    bkg = loadImage("bkg0.png")
+    bkg = loadImage("bkg1.png")
     for i in range(20):
         block = Block(i*32, 416)
         blocks.append(block)
@@ -25,6 +25,7 @@ def setup():
 def draw():
     global bkg
     background(bkg)
+    noCursor()
     for block in blocks:
         block.display()
         if gripe.checkWall(block) == False:
@@ -50,6 +51,7 @@ def draw():
     if gripe.y > height + 32:
         textSize(50)
         text("Game Over!!!", width/2 - 150, height/2)
+        cursor()
         noLoop()
     gripe.display()
     textSize(25)

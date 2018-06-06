@@ -1,7 +1,5 @@
-tw = 32
 import random as r
 
-th = 32
 tileSize = 32
 
 class Sprite(object):
@@ -9,10 +7,12 @@ class Sprite(object):
     def __init__(self, xPos, yPos):
         self.x = xPos
         self.y = yPos
+        self.th = 32
+        self.tw = 32
     
     def checkCollision(self, otherSprite):
-        if (self.x < otherSprite.x + tw and otherSprite.x < self.x + tw
-            and self.y < otherSprite.y + th and otherSprite.y < self.y + th):
+        if (self.x < otherSprite.x + otherSprite.tw and otherSprite.x < self.x + self.tw
+            and self.y < otherSprite.y + otherSprite.th and otherSprite.y < self.y + self.th):
             return True
         else:
             return False
@@ -31,8 +31,8 @@ class Actor(Sprite):
         self.walkL = []
     
     def loadPics(self):
-        self.standR = loadImage("gripe_stand_right.png")
-        self.standL = loadImage("gripe_stand_left.png")
+        self.standR = loadImage("gripe_stand.png")
+        self.standL = loadImage("gripe_stand.png")
         self.falling = loadImage("grfalling.png")
         for i in range(8):
             imageName = "gr" + str(i) + ".png"
@@ -77,8 +77,8 @@ class Actor(Sprite):
 
         if self.x <= 0:
             self.x = 0
-        if self.x >= 640 - tw:
-            self.x = 640 - tw
+        if self.x >= 640 - self.tw:
+            self.x = 640 - self.tw
     
     def display(self):
         image(self.im, self.x, self.y)
@@ -93,6 +93,8 @@ class Apple(Sprite):
         else:
             self.state = "red"
         self.speed = 1
+        self.tw = 16
+        self.th = 16
     
     def loadPics(self):
         self.imRed = loadImage("applered.png")
@@ -100,11 +102,11 @@ class Apple(Sprite):
     
     def move(self):
         self.y += self.speed
-        if self.y >= height + 32:
+        if self.y >= height + self.th:
             self.reset()
 
     def reset(self):
-        self.x = r.randint(32, width-32)
+        self.x = r.randint(self.tw, width-self.tw)
         self.y = r.randint(-480, -48)
         if r.randint(0, 100) < 10:
             self.state = "green"
