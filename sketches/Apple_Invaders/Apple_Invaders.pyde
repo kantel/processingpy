@@ -5,8 +5,8 @@ blocks = []
 def setup():
     global bkg
     size(640, 480)
-    frameRate(30)    
-    bkg = loadImage("bkg0.png")
+    frameRate(60)    
+    bkg = loadImage("bkg1.png")
     for i in range(20):
         block = Block(i*32, 416)
         blocks.append(block)
@@ -16,8 +16,8 @@ def setup():
 def draw():
     global bkg
     background(bkg)
-    blocks[5].state = "hidden"
-    # blocks[18].state = "hidden"
+    # blocks[5].state = "hidden"
+    blocks[18].state = "hidden"
     for block in blocks:
         block.display()
         if gripe.checkWall(block) == False:

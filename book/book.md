@@ -7271,6 +7271,242 @@ Wenn Ihr das nachprogrammiert und laufen laßt, werdet Ihr sehen, daß das schon
 
 Wenn Ihr Pingus spielen wollt, das Spiel gibt es trotz seines Alters immer noch [hier für Windows, Mac und Linux zum freien Download](https://pingus.seul.org/download.html). Auf meinen Macs läuft es auch noch, macht Spaß und die [Quellen könnt Ihr auf GitHub](https://github.com/Pingus/pingus) finden.
 
+# Apple Invaders
+
+In einem [YouTube-Video](https://www.youtube.com/watch?v=AX-Zfcz1AEs) erzählte der junge Informatik-Student *Matthew Hopson* von einem Programmierwettbewerb an seiner Hochschule, in dem ein Spiel programmiert werden sollte, in dem gute Androiden böse Äpfel fressen oder zermantschen sollen. (Was wollte der Lehrer seinen Studenten bloß damit sagen?)
+
+Bei *Matthew Hopson* kam dabei eine Mischung aus *Spave Invaders* und einem *Plattformer* heraus und diese Version inspirierte mich, so etwas auch einmal mit Processing.py zu versuchen. Im letzten Abschnitt hatte ich ja schon gezeigt, wie man eine Spielfigur mit acht verschiedenen Bildern je Bewegungsrichtung animiert und so etwas ähnliches sollte es dieses Mal auch sein.
+
+![Screenhsot Apple Invaders Stage 1](images/appleinvadersstage1final.png)
+
+Der Held des Spieles ist *Gripe*, ein kleines blaues, haariges Monster und er wie auch die Blöcke der Plattform habe ich dem freien ([CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/deed.de)) Tileset von *Marc Russell* von [Zingot Games](http://www.zingot.com/) entnommen, das es auf OpenGameArt.org zum [Download](https://opengameart.org/content/gfxlib-fuzed) gibt. Die Lizenzbedingungen verlangen die Namensnennung und das habe ich damit erledigt. Hier erst einmal die benötigten Bildchen:
+
+![](images/gl0.png)![](images/gl1.png)![](images/gl2.png)![](images/gl3.png)![](images/gl4.png)![](images/gl5.png)![](images/gl6.png)![](images/gl7.png)
+
+![](images/gr0.png)![](images/gr1.png)![](images/gr2.png)![](images/gr3.png)![](images/gr4.png)![](images/gr5.png)![](images/gr6.png)![](images/gr7.png)
+
+![](images/gripe_stand.png) ![](images/grfalling.png) ![](images/block.png)
+
+Es sind dies acht Bilder für die Bewegugung nach rechts, acht Bilder für die Bewegung nach links ein Bild des stehenden und ein Bild des fallenden Gripes und schließlich noch der Block, aus dem die Plattform zusammengesetzt wird.
+
+Dann habe ich noch ein Hintergrundbild gebastelt, das nicht wirklich schön ist (mir fehlt jede Befähigung zum Künstler), für die Zwecke des Spiels sollte es aber ausreichen:
+
+![Hintergrundbild 640 x 480 Pixel](images/bkg1.png)
+
+## Das Spiel
+
+Der *Gripe* bewegt sich auf einer Plattform. Von oben fallen Äpfel herab, die der Gripe fangen und fressen muß. Erreichen die roten Äpfel die Plattform, zerstören sie den Block, auf den sie gefallen sind. Hin und wieder tauchen auch grüne Äpfel auf. Wenn diese einen Block der Plattform berühren, wird die gesamte Plattform wieder vollständig instand gesetzt.
+
+Für jeden gefangenen Apfel erhält der *Gripe* zehn Punkte. Er lebt solange, wie er nicht durch ein Loch in der Plattform ins Bodenlose stürzt.
+
+## Stage 1
+
+In einer ersten Fassung will ich nur die Plattform und den *Gripe* mit all seinen Bewegungen realisieren. Um sie zu separieren, habe ich in der Processing IDE einen neuen Reiter für die im Spiel verwendeten Klassen aufgemacht. Wie schon so oft, habe ich erst einmal eine Oberklasse `Sprite` definiert:
+
+~~~python
+class Sprite(object):
+    
+    def __init__(self, xPos, yPos):
+        self.x = xPos
+        self.y = yPos
+        self.th = 32
+        self.tw = 32
+    
+    def checkCollision(self, otherSprite):
+        if (self.x < otherSprite.x + otherSprite.tw and 
+        otherSprite.x < self.x + self.tw and
+        self.y < otherSprite.y + otherSprite.th
+        and otherSprite.y < self.y + self.th):
+            return True
+        else:
+            return False
+~~~
+
+Der Konstruktor ist trivial und die Kollisionserkennung habe ich sehr großzügig angelegt. Denn der *Gripe* soll mit den Pfeiltasten nach rechts und links bewegt werden und diese reagieren zumindest auf meinem betagten MacBook Pro doch recht träge. Bei einer exakteren Kollisionserkennung hätte unser kleiner Held nur wenige Chancen, seine Äpfel einzufangen.
+
+Nun also die Klasse für den Helden:
+
+~~~python
+class Actor(Sprite):
+    
+    def __init__(self, xPos, yPos):
+        super(Actor, self).__init__(xPos, yPos)
+        self.speed = 5
+        self.dy = 0
+        self.d = 3
+        self.dir = "right"
+        self.state = "standing"
+        self.walkR = []
+        self.walkL = []
+    
+    def loadPics(self):
+        self.standing = loadImage("gripe_stand.png")
+        self.falling = loadImage("grfalling.png")
+        for i in range(8):
+            imageName = "gr" + str(i) + ".png"
+            self.walkR.append(loadImage(imageName))
+        for i in range(8):
+            imageName = "gl" + str(i) + ".png"
+            self.walkL.append(loadImage(imageName))
+            
+    def checkWall(self, wall):
+        if wall.state == "hidden":
+            if (self.x >= wall.x - self.d and
+                    (self.x + 32 <= wall.x + 32 + self.d)):
+                return False
+    
+    def move(self):
+        if self.dir == "right":
+            if self.state == "walking":
+                self.im = self.walkR[frameCount % 8]
+                self.dx = self.speed
+            elif self.state == "standing":
+                self.im = self.standing
+                self.dx = 0
+            elif self.state == "falling":
+                self.im = self.falling
+                self.dx = 0
+                self.dy = 5
+        elif self.dir == "left":
+            if self.state == "walking":
+                self.im = self.walkL[frameCount % 8]
+                self.dx = -self.speed
+            elif self.state == "standing":
+                self.im = self.standing
+                self.dx = 0
+            elif self.state == "falling":
+                self.im = self.falling
+                self.dx = 0
+                self.dy = 5
+        else:
+            self.dx = 0
+        self.x += self.dx
+        self.y += self.dy
+
+        if self.x <= 0:
+            self.x = 0
+        if self.x >= 640 - self.tw:
+            self.x = 640 -self.tw
+    
+    def display(self):
+        image(self.im, self.x, self.y)
+~~~
+
+Er ist als eine endliche Maschine *(Finite State Machine)* mit drei Zuständen angelegt: Sie besitzt die Zustände `walking`, `standing` und `falling`.
+
+Danach werden nach der Initialisierung erst einmal alle Bilder des *Gripe* geladen. Damit die jeweils acht Bilder je Bewegungsrichtung nicht einzeln geladen werden müssen, was den Programmcode nur unnötig aufblähen würde, habe ich das jeweils in einer Schleife erledigt:
+
+~~~python
+        for i in range(8):
+            imageName = "gr" + str(i) + ".png"
+            self.walkR.append(loadImage(imageName))
+~~~
+
+lädt die Bilder für die Bewegung nach rechts und diese Schleife
+
+~~~python
+        for i in range(8):
+            imageName = "gl" + str(i) + ".png"
+            self.walkL.append(loadImage(imageName))
+~~~
+
+die Bilder für die Bewegung nach links. Eine geschickte Benennung der Dateinamen machte es möglich.
+
+Damit die einzelnen Bilder genauso platzsparend bei den Bewegungen aufgerufen werden, werden diese in eine Liste gesteckt, so daß wir sie über den Index der Liste aufrufen können.
+
+Das geschieht in der Methode `move()` mit diesem Aufruf:
+
+~~~python
+            if self.state == "walking":
+                self.im = self.walkR[frameCount % 8]
+~~~
+
+`frameCount % 8` nimmt nacheinander immer einen Wert zwischen 0 und 7 an und so wird sichergestellt, daß die Indizes in dieser Reihenfolge aufgerufen werden.
+
+In der Methode `checkWall()` wird erst einmal überprüft, ob der Zustand des Blocks auch `hidden`, das heißt ob er unsichtbar (also zerstört) ist. Den Abstand von 3 Pixeln (`self.d`) habe ich experimentell herausgefunden, um sicherzustellen, daß das kleine blaue Fellmonster die Löcher nicht einfach überläuft. Das bedeutet aber auch, daß es, wenn es noch mit mindestens 3 Pixeln einen bestehenden Block berührt, nicht abstürzt -- das kann schon gelegentlich sehr seltsam aussehen.
+
+Der Wert von `self.d` hängt übrigens auch von der Geschwindigkeit (`self.speed`) ab. Wenn Ihr diese verändert, müßt Ihr unter Umständen auch `self.d` anpassen.
+
+Die letzten vier Zeilen der Methode `move()` dienen der Randerkennung und sorgen dafür, daß der Spieler links und rechts das Fenster nicht verlassen kann.
+
+Die Methode `display()` ist wieder sehr einfach. Sie zeigt nur das gerade aktuelle Bild an.
+
+Zuletzt bleibt nur noch die Klasse `Block`, die ebenfalls von `Sprite` erbt.
+
+~~~python
+class Block(Sprite):
+    
+    def __init__(self, xPos, yPos):
+        super(Block, self).__init__(xPos, yPos)
+        self.state = "visible"
+    
+    def loadPics(self):
+        self.im = loadImage("block.png")
+    
+    def display(self):
+        if self.state == "visible":
+            image(self.im, self.x, self.y)
+~~~
+
+Der Konstrukor setzt den Status jeden Blocks auf sichtbar (`visible`), dann wird das Bild geladen und da sich solch ein Block ja nicht bewegt, entfällt die Methode `move()` und es kommt nur die Methode `display()` zum Einsatz, die den Block zeichnet, aber natürlich nur, wenn er sichtbar ist.
+
+Jetzt das Hauptprogramm:
+
+~~~python
+from sprites import Actor, Block
+gripe = Actor(304, 384)
+blocks = []
+
+def setup():
+    global bkg
+    size(640, 480)
+    frameRate(60)    
+    bkg = loadImage("bkg1.png")
+    for i in range(20):
+        block = Block(i*32, 416)
+        blocks.append(block)
+        blocks[i].loadPics()
+    gripe.loadPics()
+
+def draw():
+    global bkg
+    background(bkg)
+    blocks[5].state = "hidden"
+    blocks[18].state = "hidden"
+    for block in blocks:
+        block.display()
+        if gripe.checkWall(block) == False:
+            gripe.state = "falling"
+            
+    gripe.move()
+    gripe.display()
+
+def keyPressed():
+    if keyPressed and key == CODED:
+        if keyCode == RIGHT:
+            gripe.state = "walking"
+            gripe.dir = "right"
+        if keyCode == LEFT:
+            gripe.state = "walking"
+            gripe.dir = "left"
+
+def keyReleased():
+    gripe.state = "standing"
+~~~
+
+Zuerst werden die benötigten Klassen importiert, der Held ungefähr in die Mitte des Spielfeldes auf seine Plattform gesetzt und dann für die Blöcke eine Liste initialisiert.
+
+In `setup()` werden alle benötigten Bilder geladen und die Liste mit den Blöcken erstellt.
+
+in der Funktion `draw()` habe ich zu Testzwecken zwei Blöcke manuell auf `hidden` gesetzt, um herauszufinden, ob der *Gripe* auch tatsächlich herunterfällt. Wenn Ihr testen wollt, ob er auch nicht das Spielfeld verläßt, müßt Ihr diese beiden Zeilen auskommentieren.
+
+Über alle Blocks wird geprüft, ob der *Gripe* sie überhaupt betreten kann. Betritt er einen Block, dessen Zustand `hidden` ist, wird der Zustand des *Gripes* auf `falling` gesetzt. Zum Schluß werden dann nur noch die `move()` und die `display()` Methode des blauen Monsters aufgerufen.
+
+In der Funktion `keyPressed()` wird überprüft, ob die rechte oder die linke Pfeiltate gedrückt ist. Wenn ja, ist der Zustand des *Gripes* `walking` und die Richtung des *Gripes* entweder rechts oder links.
+
+Werden die Pfeiltasten wieder losgelassen, setzt die Funktion `keyReleased()` den Status des *Gripes* auf `standing`.
+
+Damit sind alle Stati abgedeckt, der *Gripe* steht, fällt oder läuft. Mehr Zustände kennt und braucht er nicht. 
 
 # Epilog
 

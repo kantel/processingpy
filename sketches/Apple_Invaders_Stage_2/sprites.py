@@ -1,7 +1,5 @@
 import random as r
 
-tileSize = 32
-
 class Sprite(object):
     
     def __init__(self, xPos, yPos):
@@ -21,8 +19,9 @@ class Actor(Sprite):
     
     def __init__(self, xPos, yPos):
         super(Actor, self).__init__(xPos, yPos)
-        self.dx = 10
+        self.speed = 5
         self.dy = 0
+        self.d = 3
         self.score = 0
         self.dir = "right"
         # self.newdir = "right"
@@ -31,8 +30,7 @@ class Actor(Sprite):
         self.walkL = []
     
     def loadPics(self):
-        self.standR = loadImage("gripe_stand.png")
-        self.standL = loadImage("gripe_stand.png")
+        self.standing = loadImage("gripe_stand.png")
         self.falling = loadImage("grfalling.png")
         for i in range(8):
             imageName = "gr" + str(i) + ".png"
@@ -43,17 +41,17 @@ class Actor(Sprite):
             
     def checkWall(self, wall):
         if wall.state == "hidden":
-            if (self.x >= wall.x - 3 and
-                    (self.x + 32 <= wall.x + 32 + 3)):
+            if (self.x >= wall.x - self.d and
+                    (self.x + 32 <= wall.x + 32 + self.d)):
                 return False
     
     def move(self):
         if self.dir == "right":
             if self.state == "walking":
                 self.im = self.walkR[frameCount % 8]
-                self.dx = 3
+                self.dx = self.speed
             elif self.state == "standing":
-                self.im = self.standR
+                self.im = self.standing
                 self.dx = 0
             elif self.state == "falling":
                 self.im = self.falling
@@ -62,9 +60,9 @@ class Actor(Sprite):
         elif self.dir == "left":
             if self.state == "walking":
                 self.im = self.walkL[frameCount % 8]
-                self.dx = -3
+                self.dx = -self.speed
             elif self.state == "standing":
-                self.im = self.standL
+                self.im = self.standing
                 self.dx = 0
             elif self.state == "falling":
                 self.im = self.falling
