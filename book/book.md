@@ -7506,7 +7506,384 @@ In der Funktion `keyPressed()` wird überprüft, ob die rechte oder die linke Pf
 
 Werden die Pfeiltasten wieder losgelassen, setzt die Funktion `keyReleased()` den Status des *Gripes* auf `standing`.
 
-Damit sind alle Stati abgedeckt, der *Gripe* steht, fällt oder läuft. Mehr Zustände kennt und braucht er nicht. 
+Damit sind alle Stati abgedeckt, der *Gripe* steht, fällt oder läuft. Mehr Zustände kennt und braucht er nicht.
+
+## Stage 2
+
+![Apple Invaders Stage 2 final](images/appleinvadersstage2.jpg)
+
+Um das Spiel nun abzuschließen, müssen jetzt nur noch die Äpfel vom Himmel regnen, die der *Gripe* entweder einfangen und zermantschen (rote Äpfel) oder durchlassen muß, damit sie seine ramponierte Plattform wieder reparieren (grüne Äpfel). Wie schon so vieles andere auch habe ich die Bilder der Äpfel Twitters freiem ([CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) Emoji-Set [Twemoji](https://github.com/twitter/twemoji) entnommen[^20_1] und mit einem Bildverarbeitungsprogramm meines Vertrauens auf 16 x 16 Pixel herunergerechnet.
+
+![](images/applered.png) ![](images/applegreen.png)
+
+[^20_1]: Hier gibt es übrigens eine immer aktuell gehaltene [Vorschau](https://twitter.github.io/twemoji/2/test/preview.html) der kleinen Bildchen. Es sind mittlerweile mehr als 2.800 Emojis, die Verwendung in eigenen Projekten finden können. Für jemanden mit so geringen Fähigkeiten zum Graphiker wie mich eine Goldgrube.
+
+Um die Äpfel im Spiel zum Leben zu erwecken, müssen sie natürlich ebenfalls eine eigen Klasse bekommen, die -- wie sollte es anders sein -- ebenfalls von `Sprite` erbt. Ich habe die Klasse wenig überraschend `Apple` genannt:
+
+~~~python
+class Apple(Sprite):
+    
+    def __init__(self, xPos, yPos):
+        super(Apple, self).__init__(xPos, yPos)
+        if r.randint(0, 100) < 5:
+            self.state = "green"
+        else:
+            self.state = "red"
+        self.speed = 1
+        self.tw = 16
+        self.th = 16
+    
+    def loadPics(self):
+        self.imRed = loadImage("applered.png")
+        self.imGreen = loadImage("applegreen.png")
+    
+    def move(self):
+        self.y += self.speed
+        if self.y >= height + self.th:
+            self.reset()
+
+    def reset(self):
+        self.x = r.randint(self.tw, width-self.tw)
+        self.y = r.randint(-480, -48)
+        if r.randint(0, 100) < 5:
+            self.state = "green"
+        else:
+            self.state = "red"
+                            
+    def display(self):
+        if self.state == "green":
+            self.im = self.imGreen
+        elif self.state == "red":
+            self.im = self.imRed
+        image(self.im, self.x, self.y)
+~~~
+
+Im Konstruktor wird festgelegt, daß etwa fünf Prozent der Äpfle gute (grüne) Äpfel sind und die restlichen Äpfel rot. Sie sollen sich bei jedem Durchlauf um einen Pixel nach unten bewegen (`self.speed = 1` -- hier könnt Ihr durchaus mit anderen Geschwindigkeiten experimentieren) und natürlich muß die Höhe und Weite auf dei tatsächliche Größe (16 x 16 Pixel) angepaßt werden. Hier werden die Festlegungen der Oberklasse überschrieben.
+
+Die Methode `loadPics()` ist simpel, sie lädt einfach nur die Bildchen der roten und grünen Äpfel und auch die Methode `move()` ist hier sehr schlicht gehalten: Sie sorgt dafür, daß die Äpfel nach unten fallen und wenn sie den unteren Fensterrand verlassen haben, wird die Methode `reset()` aufgerufen.
+
+Diese katapultiert die Äpfel wieder an eine zufällige Stelle oberhalb des Fensterrandes. Damit nicht alle Äpfel gleichzeitig vom Himmel fallen, kann ihre Startposition bei bis zu 480 Pixel oberhalb des Fensterrandes liegen.
+
+Außerdem wird wieder dafür gesorgt, daß nur etwa fünf Prozent der Äpfel grüne Äpfel sind, alle anderen sind wieder rot.
+
+Eine kleine Änderung gab es noch im Konstruktor der Klasse `Actor`. Da der *Gripe* ja auch Punkte einkassieren können soll, wird mit
+
+~~~python
+        self.score = 0
+~~~
+
+die Punkte-Variable vorinitialisiert.
+
+Das ist eigentlich alles, was sich in der Datei `sprite.py` geändert hat. Alle anderen Änderungen finden im Hauptprogramm statt:
+
+~~~python
+from sprites import Actor, Apple, Block
+import random as r
+
+gripe = Actor(304, 384)
+blocks = []
+apples = []
+~~~
+
+Erst einmal werden alle *Sprites* importiert und -- weil es nun benötigt wird -- auch hier das Modul `random` importiert. Neben der schon bekannten Liste `blocks[]`  muß nun auch die Liste `apples[]` initialisiert werden.
+
+In der Funktion `setup()` ist nur die Schleife zum Auffüllen der Apfel-Liste hinzugekommen:
+
+~~~python
+    for i in range(5):
+        x = r.randint(32, width-32)
+        y = r.randint(-480, -48)
+        apple = Apple(x, y)
+        apples.append(apple)
+        apples[i].loadPics()
+~~~
+
+Zum Üben habe ich es erst einmal bei fünf Äpfeln belassen. Der *Gripe* steht dann zwar manchmal einige Sekunden dumm herum, aber bei viel mehr Äpfeln hetzt er nur noch um sein Leben.
+
+Bei der `draw()`-Funktion gibt es so viele Änderungen, daß ich sie her noch einmal komplett aufliste:
+
+~~~python
+def draw():
+    global bkg
+    background(bkg)
+    noCursor()
+    for block in blocks:
+        block.display()
+        if gripe.checkWall(block) == False:
+            gripe.state = "falling"
+    
+    for apple in apples:
+        apple.move()
+        if apple.checkCollision(gripe):
+            apple.reset()
+            gripe.score += 10
+        for block in blocks:
+            if (block.state == "visible" and
+            apple.checkCollision(block)):
+                if apple.state == "red":
+                    block.state = "hidden"
+                    apple.reset()
+                elif apple.state == "green":
+                    for block in blocks:
+                        block.state = "visible"
+                    apple.reset()
+        apple.display()
+            
+    gripe.move()
+    if gripe.y > height + 32:
+        textSize(50)
+        text("Game Over!!!", width/2 - 150, height/2)
+        cursor()
+        noLoop()
+    gripe.display()
+    textSize(25)
+    text("Score: " + str(gripe.score), 15, 35)
+~~~
+
+Eine nur kosmetische Änderung ist das Verstecken des Mauzeigers mit `noCursor()` zu Begenn der Funktion und die Schleife über die Blöcke ist unverändert geblieben.
+
+Vollständig neu ist die Schleife über die Äpfel-Liste. Hier wird zu erst einmal geprüft, ob einer der Äpfel mit dem *Gripe* kollidiert. Passiert dies, wird mit `reset()` der Apfel wieder nach oben katapultiert und der *Gripe* erhält 10 Punkte gutgeschrieben. Hier unterscheide ich nicht zwischen rot und grün, es ist das Probelm des *Gripe*, wenn er versehentlich einen grünen Apfel auffrißt oder zermanscht -- Apfel ist Apfel. Die Kollisionsüberprüfung ist auch hier sehr großzügig. Wegen der oben schon erwähnten Trägheit der Zeigertasten wollte ich dem *Gripe* wenigstens den Hauch einer Chance geben.
+
+Anders ist es bei der Kollisionsüberprüfung der Äpfel mit den Blöcken -- sinnvollerweise findet sie nur mit den sichtbaren Blöcken statt: Trifft ein roter Apfel auf einen Block, dann wird dieser zerstört und der Apfel beginnt ein neues Leben oberhalb des Bildschirmfensters. Ist es dagegen ein grüner Apfel, der auf einen unzerstörten Block trifft, dann werden alle Blöcke wieder repariert und erst danach wird auch dieser Apfel erneut auf die Reise geschickt.
+
+Für das Nazeigen der Punkte habe ich dieses Mal auf eine Klasse `HUD` (für *Head Up Display*) verzichtet, sondern diese Anzeige mit
+
+~~~
+    textSize(25)
+    text("Score: " + str(gripe.score), 15, 35)
+~~~
+
+einfach an das Ende der `draw()`-Funktion geschrieben. Doch zuerst wird übeerprüft, ob sich der *Gripe* überhaupt noch im Spiel befindet. Ist er nämlich aus dem Fensterrand herausgefallen, wird mit
+
+~~~python
+        textSize(50)
+        text("Game Over!!!", width/2 - 150, height/2)
+        cursor()
+        noLoop()
+~~~
+
+das Ende des Spiels angezeigt, der Mauszeiger wieder hervorgekramt und mit `noLoop()` auch die `draw()`-Funktion angehalten.
+
+Damit ist das Spiel vollständig. Natürlich gibt es noch vieles, was man verbessern oder hinzufügen könnte. Als erstes würde mir eine exaktere Kollisionserkennung einfallen. Dann könnte man den *Gripe* auch kleine Bomben nach oben werfen lassen, mit denen er die Äpfel schon im Flug zerstören kann. Das [GFXlib-fuzed](https://opengameart.org/content/gfxlib-fuzed)-Tileset bietet die Bildchen dafür. Aber auch *power ups* und/oder *power downs* sind denkbar und was hindert eine Spielewelt daran, daß sich Äpfel immer gerade von oben nach unten bewegen müssen, andere Flugbahnen sind doch auch denkbar. Grenzen setzt eigentlich nur Eure Phantasie.
+
+Zum Schluß wie immer der Vollständigkeit halber noch einmal der komplette Sketch, erst einmal die Datei `sprites.py`:
+
+~~~python
+import random as r
+
+class Sprite(object):
+    
+    def __init__(self, xPos, yPos):
+        self.x = xPos
+        self.y = yPos
+        self.th = 32
+        self.tw = 32
+    
+    def checkCollision(self, otherSprite):
+        if (self.x < otherSprite.x + otherSprite.tw
+			and otherSprite.x < self.x + self.tw
+            and self.y < otherSprite.y + otherSprite.th
+			and otherSprite.y < self.y + self.th):
+            return True
+        else:
+            return False
+
+class Actor(Sprite):
+    
+    def __init__(self, xPos, yPos):
+        super(Actor, self).__init__(xPos, yPos)
+        self.speed = 5
+        self.dy = 0
+        self.d = 3
+        self.score = 0
+        self.dir = "right"
+        # self.newdir = "right"
+        self.state = "standing"
+        self.walkR = []
+        self.walkL = []
+    
+    def loadPics(self):
+        self.standing = loadImage("gripe_stand.png")
+        self.falling = loadImage("grfalling.png")
+        for i in range(8):
+            imageName = "gr" + str(i) + ".png"
+            self.walkR.append(loadImage(imageName))
+        for i in range(8):
+            imageName = "gl" + str(i) + ".png"
+            self.walkL.append(loadImage(imageName))
+            
+    def checkWall(self, wall):
+        if wall.state == "hidden":
+            if (self.x >= wall.x - self.d and
+                    (self.x + 32 <= wall.x + 32 + self.d)):
+                return False
+    
+    def move(self):
+        if self.dir == "right":
+            if self.state == "walking":
+                self.im = self.walkR[frameCount % 8]
+                self.dx = self.speed
+            elif self.state == "standing":
+                self.im = self.standing
+                self.dx = 0
+            elif self.state == "falling":
+                self.im = self.falling
+                self.dx = 0
+                self.dy = 5
+        elif self.dir == "left":
+            if self.state == "walking":
+                self.im = self.walkL[frameCount % 8]
+                self.dx = -self.speed
+            elif self.state == "standing":
+                self.im = self.standing
+                self.dx = 0
+            elif self.state == "falling":
+                self.im = self.falling
+                self.dx = 0
+                self.dy = 5
+        else:
+            self.dx = 0
+        self.x += self.dx
+        self.y += self.dy
+
+        if self.x <= 0:
+            self.x = 0
+        if self.x >= 640 - self.tw:
+            self.x = 640 - self.tw
+    
+    def display(self):
+        image(self.im, self.x, self.y)
+        
+
+class Apple(Sprite):
+    
+    def __init__(self, xPos, yPos):
+        super(Apple, self).__init__(xPos, yPos)
+        if r.randint(0, 100) < 5:
+            self.state = "green"
+        else:
+            self.state = "red"
+        self.speed = 1
+        self.tw = 16
+        self.th = 16
+    
+    def loadPics(self):
+        self.imRed = loadImage("applered.png")
+        self.imGreen = loadImage("applegreen.png")
+    
+    def move(self):
+        self.y += self.speed
+        if self.y >= height + self.th:
+            self.reset()
+
+    def reset(self):
+        self.x = r.randint(self.tw, width-self.tw)
+        self.y = r.randint(-480, -48)
+        if r.randint(0, 100) < 5:
+            self.state = "green"
+        else:
+            self.state = "red"
+                            
+    def display(self):
+        if self.state == "green":
+            self.im = self.imGreen
+        elif self.state == "red":
+            self.im = self.imRed
+        image(self.im, self.x, self.y)
+
+
+class Block(Sprite):
+    
+    def __init__(self, xPos, yPos):
+        super(Block, self).__init__(xPos, yPos)
+        self.state = "visible"
+    
+    def loadPics(self):
+        self.im = loadImage("block.png")
+    
+    def display(self):
+        if self.state == "visible":
+            image(self.im, self.x, self.y)
+~~~
+
+Und dann das eigentlich Hauptprogramm:
+
+~~~python
+from sprites import Actor, Apple, Block
+import random as r
+
+gripe = Actor(304, 384)
+blocks = []
+apples = []
+
+def setup():
+    global bkg
+    size(640, 480)
+    frameRate(60)    
+    bkg = loadImage("bkg1.png")
+    for i in range(20):
+        block = Block(i*32, 416)
+        blocks.append(block)
+        blocks[i].loadPics()
+    for i in range(5):
+        x = r.randint(32, width-32)
+        y = r.randint(-480, -48)
+        apple = Apple(x, y)
+        apples.append(apple)
+        apples[i].loadPics()
+    gripe.loadPics()
+
+def draw():
+    global bkg
+    background(bkg)
+    noCursor()
+    for block in blocks:
+        block.display()
+        if gripe.checkWall(block) == False:
+            gripe.state = "falling"
+    
+    for apple in apples:
+        apple.move()
+        if apple.checkCollision(gripe):
+            apple.reset()
+            gripe.score += 10
+        for block in blocks:
+            if (block.state == "visible" and
+            apple.checkCollision(block)):
+                if apple.state == "red":
+                    block.state = "hidden"
+                    apple.reset()
+                elif apple.state == "green":
+                    for block in blocks:
+                        block.state = "visible"
+                    apple.reset()
+        apple.display()
+            
+    gripe.move()
+    if gripe.y > height + 32:
+        textSize(50)
+        text("Game Over!!!", width/2 - 150, height/2)
+        cursor()
+        noLoop()
+    gripe.display()
+    textSize(25)
+    text("Score: " + str(gripe.score), 15, 35)
+
+def keyPressed():
+    if keyPressed and key == CODED:
+        if keyCode == RIGHT:
+            gripe.state = "walking"
+            gripe.dir = "right"
+        if keyCode == LEFT:
+            gripe.state = "walking"
+            gripe.dir = "left"
+
+def keyReleased():
+    gripe.state = "standing"
+~~~
+
+Die Funktionen `keyPressed()` und `keyReleased()` sind übrigens gegenüber der Vorversion unverändert geblieben.
+
 
 # Epilog
 

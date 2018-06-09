@@ -106,7 +106,7 @@ class Apple(Sprite):
     def reset(self):
         self.x = r.randint(self.tw, width-self.tw)
         self.y = r.randint(-480, -48)
-        if r.randint(0, 100) < 10:
+        if r.randint(0, 100) < 5:
             self.state = "green"
         else:
             self.state = "red"
