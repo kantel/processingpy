@@ -2338,6 +2338,95 @@ Das Programm konvertiert ein Farbphoto zu einem Schwarz-Weiß-Bild und zeigt, wo
 
 Das von [mir verwendete Photo](https://www.flickr.com/photos/schockwellenreiter/7780799276/) (&copy; 2012 by *Stefanie Radon*) hatte ich auf 420 x 420 Pixel zurechtgeschnitten. Wenn ihr ein anderes Photo mit einer anderen Größe verwendet, müßt Ihr natürlich die Größe des Ausgabefensters an dieses Photo anpassen.
 
+## Gesichtserkennung mit OpenCV und Processing.py
+
+Eine der meist zitierten Anwendungen von OpenCV ist ja die Gesichtserkennung und da wollte ich mal testen, wie gut dies mit Processing.py und OpenCV funktioniert:
+
+![Gesichtserkennung und Processing (Python](images/opencvprocessingpy.jpg)
+
+OpenCV besitzt mehrere Bibliotheken zur Gesichtserkennung, eine davon ist der *Haar Cascade Classifier*, der auf ein *Paper* von Viola und Jones aus dem Jahr 2000 zurückgeht. OpenCV bringt bereits einige vortrainierte *Haar Cascade Classifier* mit – unter anderem um Gesichter von Menschen oder Katzen zu erkennen. Der Algorothmus ist ziemlich schnell, allerdings -- wie wir sehen werden -- nicht ganz fehlerfrei.
+
+In der `setup()`-Funktion habe ich diesen Classifier initialisiert,
+
+~~~python
+add_library('opencv_processing')
+
+faces = []
+
+def setup():
+    global opencv, faces
+    size(640, 480)
+    opencv = OpenCV(this, "puppen.jpg")
+    
+    opencv.loadCascade(OpenCV.CASCADE_FRONTALFACE)
+    faces = opencv.detect()
+	# print(len(faces))
+~~~
+
+und zwar den, der Gesichter von vorne erkennen soll. Als Testbild habe ich [dieses Photo mit Schaufensterpuppen](https://www.flickr.com/photos/schockwellenreiter/28373719489/) genommen, denn Schaufensterpuppen sind vermutlich die einzige Möglichkeit, Gesichtserkennungsalgorithmen zu testen, ohne Probleme mit dem Datenschutz zu bekommen. (Das Photo hat *Gabi* geschossen, ein paar [andere Photos](https://www.flickr.com/search/?user_id=14539247%40N00&page=&view_all=1&text=Schaufenster) mit Schaufensterpuppen habe ich ebenfalls für Tests genutzt -- siehe unten)
+
+Der Rest ist *straightforward*, zuerst wird die OpenCV-Bibliothek geladen und das Array mit den Gesichtern (`faces[]`) initialisiert. In der `setup()`-Funktion werden dann alle Gesichter, die der *Haar Cascade Classifier* erkennt, abgespeichert.
+
+Wenn man kontrollieren will, ob überhaupt Gesichter erkannt wurden, kann man sich die Anzahl der erkannten Gesichter mit der auskommentierten `print()`-Anweisung anzeigen lassen.
+
+Die `draw()`-Funktion zeigt das Photo und platziert um jedes erkannte Gesicht ein lindgrünes Viereck:
+
+~~~python
+def draw():
+    global opencv, faces
+    image(opencv.getInput(), 0, 0)
+    noFill()
+    stroke(0, 255, 0)
+    strokeWeight(2)
+    for i in range(len(faces)):
+        rect(faces[i].x, faces[i].y, faces[i].width, faces[i].height)
+~~~
+
+Das ist schon alles. Wie man dem Screenshot entnehmen kann, werden zwar die beiden Gesichter der Schaufensterpuppen erkannt, aber mit dem Batik-Muster der Puppe rechts hat der Classifier so seine Probleme. Und das ist kein Einzelfall: Wie *Olver Moser* in seiner schönen »[Einführung in Computer Vision mit OpenCV und Python](https://blog.codecentric.de/2017/06/einfuehrung-in-computer-vision-mit-opencv-und-python/)« berichtet, erkennt der Classifier auch regelmäßig die Rückenlehne seines Stuhls als Gesicht. Hier muß man also entweder einen anderen, rechenintensiveren Classifier, wie zum Beispiel den »HOG Detector« verwenden, oder versuchen, den *Haar Cascade Classifier* weiter trainiern. Beides ist sehr rechenaufwendig, daher habe ich mich mit dem Ergebnis erst einmal abgefunden.
+
+Hier sind noch ein paar Bilder aus Neuköllner Schaufenstern, mit denen sich der Classifier mal mehr und mal weniger gut geschlagen hat:
+
+![Dieses halbverschleierte Gesicht wurde  gut erkannt.](images/screenshot01.png)
+
+![Auch beim Gesicht von dieser Puppe zeigte der Classifier keine Probleme.](images/screenshot02.png)
+
+![Hier will ich nicht meckern, die Gesichter der zwei links stehenden Schaufensterpuppen sind durch Spiegelungen auch kaum zu erkennen.](images/screenshot03.png)
+
+![Nicht nur die Nofretete hat ein Gesicht, sondern auch die Rückenlehen des Sessels im Hintergrund (mit den drei Knöpfen ist sie aber auch ziemlich gesichtsähnlich).](images/screenshot04.png)
+
+![Hier hat der Algorithmus kläglch versagt. Gerade mal das Gesicht eines der Gartenzwerge und die Putte wurden erkannt.](images/screenshot05.png)
+
+![Nun ja, Elvis muß natürlich jeder Classifier erkennen, sonst gibt es Ärger mit den Fans.](images/screenshot06.png)
+
+### Der Quellcode
+
+Hier noch einmal für Neugierige der komplette Quellcode zum Nachprogrammieren:
+
+~~~python
+add_library('opencv_processing')
+
+faces = []
+
+def setup():
+    global opencv, faces
+    size(640, 480)
+    opencv = OpenCV(this, "elvis.jpg")
+    
+    opencv.loadCascade(OpenCV.CASCADE_FRONTALFACE)
+    faces = opencv.detect()
+    # print(len(faces))
+    
+def draw():
+    global opencv, faces
+    image(opencv.getInput(), 0, 0)
+    noFill()
+    stroke(0, 255, 0)
+    strokeWeight(2)
+    for i in range(len(faces)):
+        rect(faces[i].x, faces[i].y, faces[i].width, faces[i].height)
+~~~
+
+
 # Animationen
 
 ## Ein kleiner roter Luftballon

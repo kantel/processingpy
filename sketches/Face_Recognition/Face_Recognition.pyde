@@ -5,7 +5,7 @@ faces = []
 def setup():
     global opencv, faces
     size(640, 480)
-    opencv = OpenCV(this, "puppen.jpg")
+    opencv = OpenCV(this, "elvis.jpg")
     
     opencv.loadCascade(OpenCV.CASCADE_FRONTALFACE)
     faces = opencv.detect()
