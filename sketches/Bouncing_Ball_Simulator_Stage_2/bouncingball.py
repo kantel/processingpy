@@ -1,11 +1,9 @@
 class BouncingBall(object):
-    
-    
-    
+        
     def __init__(self, x, y, dia, col):
         self.location = PVector(x, y)
         self.velocity = PVector(0, 0)
-        self.diameter = dia
+        self.d = dia
         self.col = col
         self.gravity = 0.1
         
@@ -20,4 +18,4 @@ class BouncingBall(object):
     
     def display(self):
         fill(self.col)
-        ellipse(self.location.x, self.location.y, self.diameter, self.diameter)
+        ellipse(self.location.x, self.location.y, self.d, self.d)
