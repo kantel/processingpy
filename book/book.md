@@ -2429,6 +2429,287 @@ def draw():
 
 # Animationen
 
+## Ein Bouncing-Ball-Simulator in Processing.py
+
+Angeregt durch [diese vierteilige Videoserie](https://www.youtube.com/watch?v=HHQV3ifJopo&list=PLlEgNdBJEO-mRsbxRND_Cu805SCrXoOZB) auf YouTube, in der *Christian Thompson* zeigt, wie man einen Bouncing-Ball-Simulator mit dem Turtle-Modul in Python realisiert, wollte ich so etwas auch in Processing.py implementieren. Ähnlich wie Thompson wollte ich dabei Schritt für Schritt vorgehen, den Sketch also tatsächlich *bottom up* entwickeln. Auch bei mir kamen dabei vier *»Stages«* heraus, wobei diese aber nicht identisch mit den vier Videos von Thompson sind. Aber hier erst einmal ein Screenshot des Endproduktes (Stage 4):
+
+![Screenshot Stage 4](images/bouncingball.jpg)
+
+### Stage 1: Ein Ball
+
+Doch ich beginne einfach. Zuerst einmal soll nur ein Ball im Fenster auf- und ab hüpfen. Daher habe ich einen Reiter `bouncingball` angelegt und dort die Klasse `BouncingBall` impelmentiert:
+
+~~~python
+class BouncingBall(object):
+    
+    def __init__(self, x, y, dia, col):
+        self.x = x
+        self.y = y
+        self.d = dia
+        self.col = col
+        self.dy = 0
+        self.gravity = 0.1
+        
+    def move(self):
+        self.dy += self.gravity
+        self.y += self.dy
+        
+        # check borders
+        if self.y >= height:
+            self.dy *= -1
+            self.y = height
+    
+    def display(self):
+        fill(self.col)
+        ellipse(self.x, self.y, self.d, self.d)
+
+~~~
+
+Der Konstruktor ist zu Beginn noch ein wenig überfrachtet, weil er bekommt neben den Startkoordinaten des Balls noch den Durchmesser (`dia`) und die Farbe (`col`) mitgegeben. Zu Beginn wird die Geschwindigkeit des Balls mit Null (`dy = 0`) vorbelegt und und die Gravitätskonstante beträgt `0.1` (dieser Wert brachte experimentell das für mich beste Ergebnis).
+
+Der Ball soll sich bewegen, das erledigt die Methode `move()` und er soll natürlich angezeigt werden, dafür ist die Methode `display()` zuständig.
+
+In der Methode `move()` wird die Gravitätskonstante zu `dy` und dies dann zur y-Position des Balls hinzuaddiert. Dadurch fällt der Ball zu Beginn erst einmal immer schneller nach unten. Damit er nicht im Nirwana entschwindet, wird abgeprüft, ob er den unteren Bildschirmrand erreicht hat. Ist dies der Fall, wird `dy` negativ und damit steigt der Ballimmer langsamer werdend wieder nach oben, bis er den Scheitelpunkt erreicht hat und wieder schneller werdend nach unten fällt. Die Zeile
+
+~~~python
+            self.y = height
+~~~
+
+ist notwendig, da unter Umständen die Abfrage nicht genau am Fensterrand greift und der Ball sonst zitternd da unten verharrt.
+
+Der Hauptsketch ist nur sehr kruz und wird es während der ganzen Entwicklung auch bleiben:
+
+~~~python
+from bouncingball import BouncingBall
+
+def setup():
+    global ball
+    size(600, 600)
+    col = color(150, 255, 100)
+    ball = BouncingBall(width/2, 10, 20, col)
+
+def draw():
+    global ball
+    background(0, 0, 0)
+    ball.move()
+    ball.display()
+~~~
+
+### Stage 2: Vektoren
+
+Jeder, der hier aufschreit, daß das nach Vektoren schreit, hat recht. Daher habe ich in der zweiten Fassung den hüpfenden Ball vektorisiert, daß heißt, `location` und `velocity` zu Mitgliedern der Klasse `PVector` erklärt. Dafür mußte ich in der Klassenfunktion nur den Konstruktor und die Methoden `move()` und `display()` verändern, alles andere (auch der Hauptsketch) bleiben wie gehabt:
+
+~~~python
+    def __init__(self, x, y, dia, col):
+        self.location = PVector(x, y)
+        self.velocity = PVector(0, 0)
+        self.d = dia
+        self.col = col
+        self.gravity = 0.1
+        
+    def move(self):
+        self.velocity.y += self.gravity
+        self.location.add(self.velocity)
+        
+        # check borders
+        if self.location.y >= height:
+            self.velocity.y *= -1
+            self.location.y = height
+
+   def display(self):
+        fill(self.col)
+        ellipse(self.location.x, self.location.y, self.d, self.d)
+~~~
+
+Außer das der Code nun verständlicher ist (die Gravitation wird zur Geschwindigkeit hinzuaddiert und der neue Ortsvektor wird dadurch bestimmt, daß ihm die Geschwindigkeit aufaddiert wird), ändert sich nichts -- das Programm verhält sich wie der Sketch von Stage 1.
+
+### Stage 3: Bewegung nach rechts und links
+
+Nun soll der Ball (respektive später die Bälle) nicht nur stur auf und ab hüpfen, sondern sich auch nach rechts oder links bewegen. Auch hierzu waren nur wenige Änderungen in der Klasse `BouncingBall` notwendig. Dem Konstruktor wurde am Ende nur eine einzige Zeile hinzugefügt:
+
+~~~python
+        self.dx = 2
+~~~
+
+Etwas aufwändiger waren die Änderungen in der Methode `move()`, aber eigentlich auch nur, weil nun die Kollisionsabfragen für den rechten und den linken Rand des Fensters hinzukamen:
+
+~~~python
+   def move(self):
+        
+        # self.location.x += self.dx
+        self.velocity.y += self.gravity
+        self.location.add(self.velocity)
+        self.location.x += self.dx
+        
+        # check borders
+        if self.location.y >= height:
+            self.velocity.y *= -1
+            self.location.y = height
+            
+        if self.location.x >= width:
+            self.location.x = width - self.d
+            self.dx *= -1
+        
+        if (self.location.x <= 0):
+            self.location.x = 0
+            self.dx *= -1
+~~~
+
+Die eigentliche Änderung ist nur die Zeile:
+
+~~~python
+        self.location.x += self.dx
+~~~
+
+Der Rest ist tatsächlich nur die Randabfrage, bei der die Bewegungsrichtung der x-Koordinate mit 
+
+~~~python
+            self.dx *= -1
+~~~
+einfach umgekehrt wird. Auch hier bleibt sonst alles andere wie gehabt, nur daß sich jetzt der Ball etwas interessanter bewegt.
+
+### Stage 4: Viele Bälle und ein paar Verschönerungen
+
+Im letzten Stage sollen nun viele bunte Bälle in verschiedenen Farben und Größen durch das Fenster hüpfen. Dabei hat sich erst einmal der Hauptsketch deutlich verschlankt:
+
+~~~python
+from bouncingball import BouncingBall
+
+balls = []
+
+def setup():
+    size(600, 600)
+    for _ in range(30):
+        balls.append(BouncingBall())
+
+def draw():
+    background("#2b3e50")
+    for ball in balls:
+        ball.move()
+        ball.display()
+~~~
+
+Global wurde erst einmal eine Liste `balls[]` angelegt, die die Bälle aufnehmen soll. Dafür mußten dann in den Funktionen `setup()` und `draw()` keine Variable `ball` mehr als gloabl deklariert werden.
+
+In `setup()` werden dann 30 Bälle an die Liste angehängt. Wie man sieht, benötigt der Konstruktor keine Parameter mehr, diese werden nun alle in der Klasse `BouncingBall` erzeugt.
+
+In der Funktion `draw()` habe ich erst einmal dem Fenster meine Lieblingshintergrundfarbe verpaßt, die -- wie man dem obigen Screenshot entnehmen kann -- leicht transparenten Bälle wirken da besser als vor einem satten schwarz.
+
+Ja und dann werden die beiden Methoden `move()` und `display()` eben für **alle** Bälle und nicht nur für einen aufgerufen.
+
+Es wird aber sicher niemanden wundern, daß in der Reiter `bouncingball` mit der Klasse `BouncingBall` massiven Änderungen unterworfen war. Er sieht nun so aus (die Methoden `move()` und `display()` blieben unverändert:
+
+~~~python
+import random as r
+
+class BouncingBall(object):
+
+    def __init__(self):
+        self.x = r.randint(20, width - 20)
+        self.y = r.randint(20, 200)
+        self.location = PVector(self.x, self.y)
+        self.velocity = PVector(0, 0)
+        self.d = r.randint(15, 30)
+        a = 200
+        colors = [color(230, 96, 55, a), color(17, 42, 106, a),
+                  color(183, 116, 64, a), color(212, 251, 69, a),
+                  color(252, 75, 200, a), color(159, 53, 233, a),
+                  color(57, 218, 56, a), color(67, 253, 133, a),
+                  color(78, 148, 42, a), color(67, 254, 211, a),
+                  color(74, 143, 186, a), color(52, 99, 234, a)] 
+        self.col = r.choice(colors)
+        self.gravity = 0.1
+        self.dx = r.randint(-3, 3)        
+~~~
+
+Da ich mit Pythons `random`-Funktionen aus der Standardbibliothek vertrauter bin (insbesondere `randint()` und `choice()`) als mit den Processing-eigenen, habe ich diese zu Beginn importiert Und dann wird im Konstrukotr eigentlich alles, was ihm vorher als Parameter übergeben wurde, per Zufallsgenerator erzeugt. Das betrifft wowohl die Startposition wie auch der ruchmesser jedes einzelnen Balls.
+
+Für die Farben habe ich eine Liste mit zwölf Farben angelegt, denen ich auch noch einen Transparenz- (Alpha-) Faktor von 200 zugewiesen habe.
+
+Bekanntlich kann man in Processings-`color()`Funktion Farben im RGB-Raum wie folgt definieren:
+
+- `color(c)` legt eine Graustufenfarbe fest,
+- `color(c, a)` ergibt eine Graustufenfarbe mit der Transparenz `a`,
+- `color(r, g, b)` ergibt eine RGB-Farbe, und
+- `color(r, g, b, a)` analog eine RGB-Farbe mit der Transparenz `a`.
+
+Zum Schluß habe ich auch noch die Bewegung in x-Richtung zufällig bestimmen lassen.
+
+Das war schon alles. Wenn Ihr den Sketch nun startet, hüpfen 30 Bälle in verschiednen Farben und Größen fröhlich durch das Fenster.
+
+### Der komplette Quellcode
+
+Wie immer bei allen meinen Tutorien gibt es zum Schluß den kompletten Quellcode, damit Ihr alles nachprogrammieren und nachvollziehen könnt. Zuerst den Reiter `bouncingball`:
+
+~~~python
+import random as r
+
+class BouncingBall(object):
+
+    def __init__(self):
+        self.x = r.randint(20, width - 20)
+        self.y = r.randint(20, 200)
+        self.location = PVector(self.x, self.y)
+        self.velocity = PVector(0, 0)
+        self.d = r.randint(15, 30)
+        a = 200
+        colors = [color(230, 96, 55, a), color(17, 42, 106, a),
+                  color(183, 116, 64, a), color(212, 251, 69, a),
+                  color(252, 75, 200, a), color(159, 53, 233, a),
+                  color(57, 218, 56, a), color(67, 253, 133, a),
+                  color(78, 148, 42, a), color(67, 254, 211, a),
+                  color(74, 143, 186, a), color(52, 99, 234, a)] 
+        self.col = r.choice(colors)
+        self.gravity = 0.1
+        self.dx = r.randint(-3, 3)
+        
+    def move(self):
+        
+        self.velocity.y += self.gravity
+        self.location.add(self.velocity)
+        self.location.x += self.dx
+        
+        # check borders
+        if self.location.y >= height:
+            self.velocity.y *= -1
+            self.location.y = height
+            
+        if self.location.x >= width:
+            self.location.x = width - self.d
+            self.dx *= -1
+        
+        if (self.location.x <= 0):
+            self.location.x = 0
+            self.dx *= -1
+
+
+    def display(self):
+        fill(self.col)
+        ellipse(self.location.x, self.location.y, self.d, self.d)
+~~~
+
+Und dann noch einmal den immer noch sehr kurzen Hauptsketch:
+
+~~~python
+from bouncingball import BouncingBall
+
+balls = []
+
+def setup():
+    size(600, 600)
+    for _ in range(30):
+        balls.append(BouncingBall())
+
+def draw():
+    background("#2b3e50")
+    for ball in balls:
+        ball.move()
+        ball.display()
+~~~
+
+Als nächsten Schritt könnte man natürlich noch die Reibung berücksichtigen, die die Simualtion wirklichkeitsnäher macht und dafür sorgen würde, daß die Bewegungen immer schlaffer werden und irgendwann alle Bälle ermattet am Boden liegen.
+
+
 ## Ein kleiner roter Luftballon
 
 *Ein roter Luftballon am Himmel.   
