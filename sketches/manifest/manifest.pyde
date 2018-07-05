@@ -2,7 +2,6 @@
 def setup():
     global txt, y
     size(800, 600, P3D)
-    # fullScreen(P3D)
     y = height/2
 
     lines = loadStrings("manifest.txt")
@@ -22,6 +21,5 @@ def draw():
     text(txt, -w/2, y, w, height*10)
     
     y -= 1
-    # print(y)
     if y <= -3300:
         y = height/2
