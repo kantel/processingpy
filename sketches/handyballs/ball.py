@@ -18,7 +18,6 @@ class Ball(object):
 
     def display(self):
         fill(self.red, self.green, self.blue)
-        # self.h.noStroke()
         self.h.ellipse(self.pos.x, self.pos.y, self.r*2, self.r*2)
 
     def checkEdges(self):
