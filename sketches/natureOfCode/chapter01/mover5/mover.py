@@ -1,16 +1,16 @@
 class Mover(object):
     
     def __init__(self):
-        self.location = PVector(width/2, height/2)
+        self.location = PVector(random(width), random(height))
         self.velocity = PVector(0, 0)
-        self.topspeed = 10
+        self.topspeed = 4
         self.r = 15
     
     def update(self):
         mouse = PVector(mouseX, mouseY)
         dir = PVector.sub(mouse, self.location)
         dir.normalize()
-        dir.mult(0.5)
+        dir.mult(0.05)
         self.acceleration = dir
         self.velocity.add(self.acceleration)
         self.velocity.limit(self.topspeed)
