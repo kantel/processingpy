@@ -3,11 +3,13 @@ class Mover(object):
     def __init__(self):
         self.location = PVector(width/2, height/2)
         self.velocity = PVector(0, 0)
-        self.acceleration = PVector(-0.001, 0.01)
         self.topspeed = 10
         self.r = 15
     
     def update(self):
+        self.acceleration = PVector.random2D()
+        # self.acceleration.mult(0.5)
+        self.acceleration.mult(random(2))
         self.velocity.add(self.acceleration)
         self.velocity.limit(self.topspeed)
         self.location.add(self.velocity)
