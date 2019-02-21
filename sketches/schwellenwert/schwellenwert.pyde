@@ -17,10 +17,10 @@ def draw():
     
     for y in range(akt.height):
         for x in range(akt.width):
-            r = 120  # Schwellenwert
+            s = 100
             pix = akt.pixels[index(x, y)]
             c = red(pix)
-            if c <= r:
+            if c <= s:
                 akt.pixels[index(x, y)] = color(0)
             else:
                 akt.pixels[index(x, y)] = color(255)
