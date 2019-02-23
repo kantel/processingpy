@@ -23,7 +23,6 @@ def draw():
             strokeWeight(map(greyscale, 0, 255, 7, 0))
             stroke(cc)
             w = tileWidth             
-            # w = map(greyscale, 0, 255, 12, 0)
             rect(posX, posY, w, w)
     
     
