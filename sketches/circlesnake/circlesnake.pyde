@@ -2,7 +2,7 @@ from random import randint
 
 def setup():
     global x, y, dx, dy
-    size(600, 600)
+    size(560, 315)
     x = width/2
     y = height/2
     dx = 4
@@ -20,6 +20,7 @@ def draw():
     if x > width - 30: dx = -4
     if y < 30: dy = 4
     if y > height - 30: dy = -4
+    saveFrame("output/circlesnake_####.png")
     dx += randint(-1, 1)
     dy += randint(-1, 1)
-    if frameCount > 2500: noLoop()
+    if frameCount > 2000: noLoop()
