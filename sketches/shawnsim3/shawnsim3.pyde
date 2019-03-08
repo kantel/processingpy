@@ -10,7 +10,7 @@ lawn = []
 
 def setup():
     size(s.WIDTH, s.HEIGHT)
-    this.surface.setTitle("Shawn das Schaf (2)")
+    this.surface.setTitle("Shawn das Schaf (3): Geburt und Tod")
     frameRate(s.FPS)
     for _ in range(20):
         sheeps.append(Sheep(randint(50, width - 50), random(50, height - 50)))
@@ -26,3 +26,7 @@ def draw():
         sheep.update(lawn)
         if sheep.energy <= 0:
             sheeps.remove(sheep)
+        if sheep.energy >= 50:
+            sheep.energy -= 30
+            sheeps.append(Sheep(sheep.x, sheep.y))
+    print(len(sheeps))

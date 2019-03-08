@@ -2,17 +2,18 @@
 from random import randint
 from config import Settings
 
-s = Settings()
+# s = Settings()
 
 class Sheep():
     
-    def __init__(self, x, y):
+    def __init__(self, x, y, c):
         self.x = x
         self.y = y
         self.sz = 10     # Shapesize
         self.move = 10
         self.energy = 20
         self.rows = height/self.sz
+        self.col = c
 
     
     def update(self, lawn):
@@ -33,5 +34,5 @@ class Sheep():
         if not grass.eaten:
             self.energy += grass.energy
             grass.eaten = True
-        fill(s.WHITE)
+        fill(self.col)
         circle(self.x, self.y, self.sz)
