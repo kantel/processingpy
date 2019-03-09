@@ -7,7 +7,7 @@ class Settings():
         # Einige nützliche Konstanten:
         self.WIDTH = 640
         self.HEIGHT = 480
-        self.FPS = 5
+        self.FPS = 60
         self.PATCHSIZE = 10
         
         # Ein paar Farbdefinitionen

@@ -9,7 +9,7 @@ class Sheep():
     def __init__(self, x, y):
         self.x = x
         self.y = y
-        self.sz = 10     # Shapesize
+        self.sz = s.PATCHSIZE     # Shapesize
         self.move = 10
         self.energy = 20
         self.rows = height/self.sz

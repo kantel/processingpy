@@ -2,7 +2,7 @@
 
 from random import randint
 
-class Sheep:
+class Sheep():
     
     def __init__(self, x, y):
         self.x = x
