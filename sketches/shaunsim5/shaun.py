@@ -2,7 +2,7 @@
 from random import randint
 from config import Settings
 
-# s = Settings()
+s = Settings()
 
 class Sheep():
     
@@ -18,6 +18,8 @@ class Sheep():
     
     def update(self, lawn):
         self.energy -= 1
+        # if self.col == s.RED and randint(0, 1000) < 5:
+        #     self.move = 25
         self.x += randint(-self.move, self.move)
         self.y += randint(-self.move, self.move)
         if self.x >= width - self.sz:

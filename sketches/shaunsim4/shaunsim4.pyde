@@ -1,5 +1,5 @@
 from config import Settings
-from shawn import Sheep
+from shaun import Sheep
 from grass import Grass
 from random import randint, choice
 
@@ -11,7 +11,7 @@ colors = [s.WHITE, s.RED, s.BLUE, s.YELLOW]
 
 def setup():
     size(s.WIDTH, s.HEIGHT)
-    this.surface.setTitle("Shawn das Schaf (4): Es kann nur einen geben!")
+    this.surface.setTitle("Shaun das Schaf (4): Es kann nur einen geben!")
     frameRate(s.FPS)
     for _ in range(20):
         c = choice(colors)
