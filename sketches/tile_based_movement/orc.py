@@ -58,5 +58,5 @@ class Orc():
             self.offset_y = -1 + (0.25 * self.frame)
             
     def display(self):
-        image(self.images[self.dir][self.frame], 0 + self.x * self.sz + self.offset_x * self.sz,
-              0 + self.y * self.sz + self.offset_y * self.sz)
+        image(self.images[self.dir][self.frame], self.x * self.sz + self.offset_x * self.sz,
+              self.y * self.sz + self.offset_y * self.sz)
