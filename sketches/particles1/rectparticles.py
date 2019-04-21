@@ -5,8 +5,8 @@ from particles import Particle
 class RectParticle(Particle):
     
     def __init__(self, l):
-        # Particle.__init__(self, l)
-        super(RectParticle, self).__init__(l)
+        Particle.__init__(self, l)
+        # super(RectParticle, self).__init__(l)
         rectMode(CENTER)
         self.rota = PI/3
     
