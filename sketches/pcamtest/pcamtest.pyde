@@ -6,7 +6,6 @@ def setup():
 
 def draw():
     background(235)
-    
     stroke(0)
     noFill()
     box(600)
