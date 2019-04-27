@@ -1,5 +1,7 @@
 from random import randint
 
+margin = 5
+
 def setup():
     size(400, 600)
     this.surface.setTitle("Re-Enactment A. Michael Noll")
@@ -7,7 +9,6 @@ def setup():
     
 def draw():
     background(235, 215, 182)
-    margin = 5
     strokeWeight(2)
     x1 = randint(margin, width - margin)
     y1 = randint(margin, height - margin)

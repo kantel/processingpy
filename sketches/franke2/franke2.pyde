@@ -8,7 +8,7 @@ darkgrey = color(84, 72, 74)
 def setup():
     global h
     size(400, 600)
-    this.surface.setTitle("2. Re-Enactment Herbert W. Franke")
+    this.surface.setTitle("2. Re-Mixing Herbert W. Franke")
     h = HandyRenderer(this)
     rectMode(CENTER)
     h.setRoughness(0.6)
