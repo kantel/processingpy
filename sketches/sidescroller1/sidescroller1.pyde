@@ -2,6 +2,8 @@
 from backgrounds import Hill, Cloud
 from sprites import Alien
 
+FPS = 60
+
 clouds = []
 bighills = []
 smallhills = []
@@ -15,7 +17,8 @@ def setup():
         bighills.append(Hill(i*400, 200, -2, "#63e06b"))
     for i in range(6):
         smallhills.append(Hill(i*200, 100, -3, "#217424"))
-    sprites.append(Alien(66, 308, loadImage("alien.png")))
+    sprites.append(Alien(66, 320))
+    frameRate(FPS)
     noStroke()
 
 def draw():
@@ -37,4 +40,5 @@ def draw():
     rect(0, 400, width, 50)
     # Sprites (erst einmal nur das rosa Alien)
     for sprite in sprites:
+        sprite.update()
         sprite.show()
