@@ -17,4 +17,4 @@ class RectParticle(Particle):
             translate(self.location.x, self.location.y)
             rotate(self.rota)
             rect(0, 0, 20, 20)
-            self.rota += random(0.02, .10)
+        self.rota += random(0.02, .10)
