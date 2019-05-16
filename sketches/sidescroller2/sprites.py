@@ -2,11 +2,11 @@
 
 class Sprite(object):
     
-    def __init__(self, x, y, step = 0):
+    def __init__(self, x, y):
         self.x = x
         self.y = y
         self.vely = 0
-        self.step = step
+        self.step = 0
         
     
     def update(self):
@@ -46,4 +46,17 @@ class Alien(Sprite):
                 self.status = "walking"
 
 
-        
+class Obstacle(Sprite):
+    
+            def __init__(self, x, y, im):
+                Sprite.__init__(self, x, y)
+                self.im = loadImage(im + ".png")
+                self.step = -4
+           
+            def update(self):
+                self.x += self.step
+                if self.x <= -150:
+                    self.x = width + 750
+            
+            def show(self):
+                image(self.im, self.x, self.y)    

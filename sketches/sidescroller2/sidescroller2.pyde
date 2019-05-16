@@ -1,6 +1,6 @@
 # Side Scroller 2
 from backgrounds import Hill, Cloud
-from sprites import Alien
+from sprites import Alien, Obstacle
 
 FPS = 60
 
@@ -8,6 +8,7 @@ clouds = []
 bighills = []
 smallhills = []
 sprites = []
+obstacles = []
 
 def setup():
     size(800, 450)
@@ -17,6 +18,12 @@ def setup():
         bighills.append(Hill(i*400, 200, -2, "#63e06b"))
     for i in range(6):
         smallhills.append(Hill(i*200, 100, -3, "#217424"))
+    obstacles.append(Obstacle(width + 150, 330, "spikes"))
+    obstacles.append(Obstacle(width + 650, 330, "spikesBottomAlt"))
+    obstacles.append(Obstacle(width + 750, 330, "spikesBottom"))
+    obstacles.append(Obstacle(width + 1190, 330, "fence"))
+    obstacles.append(Obstacle(width + 1250, 330, "fenceBroken"))
+    obstacles.append(Obstacle(width + 1310, 330, "fence"))
     sprites.append(Alien(66, 320))
     frameRate(FPS)
     noStroke()
@@ -38,6 +45,10 @@ def draw():
     # Erdboden    
     fill("#ffd05e")
     rect(0, 400, width, 50)
+    # Obstacles
+    for obstacle in obstacles:
+        obstacle.update()
+        obstacle.show()
     # Sprites (erst einmal nur das rosa Alien)
     for sprite in sprites:
         sprite.update()
