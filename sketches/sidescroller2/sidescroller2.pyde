@@ -53,6 +53,7 @@ def draw():
     for sprite in sprites:
         sprite.update()
         sprite.show()
+    # saveFrame("frames/####.png")
 
 def keyPressed():
     alien = sprites[0]
