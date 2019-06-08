@@ -4,10 +4,9 @@ n = 0
 c = 6
 
 def setup():
-    size(600, 600)
+    size(800, 600)
     this.surface.setTitle("Phyllotaxis 1")
     background(235, 215, 182)
-    # noLoop()
 
 def draw():
     global n
@@ -16,7 +15,7 @@ def draw():
     x = r*cos(a)
     y = r*sin(a)
     
-    fill(myMagma[(n%7) + 4])
+    fill(myMagma[(n%5) + 3])
     translate(width/2, height/2)
     circle(x, y, 8)
     n += 1
