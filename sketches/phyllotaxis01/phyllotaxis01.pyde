@@ -15,10 +15,11 @@ def draw():
     x = r*cos(a)
     y = r*sin(a)
     
-    fill(myMagma[(n%5) + 3])
+    fill(myMagma[(n%5) + 6])
     translate(width/2, height/2)
     circle(x, y, 8)
     n += 1
     if n > 2095:
         print("I did it, Babe!")
+        saveFrame("magma11nmod5plus6.png")
         noLoop()
