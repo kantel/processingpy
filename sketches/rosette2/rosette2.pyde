@@ -5,6 +5,7 @@ def setup():
     size(420, 420)
     this.surface.setTitle("Maurer Rose")
     noFill()
+    noLoop()
 
 def draw():
     global n, d
