@@ -3,7 +3,7 @@ from player import Player
 
 def setup():
     global enemy, player
-    size(640, 480)
+    size(420, 420)
     this.surface.setTitle("Circle Collision Detection")
     enemy = Enemy(width/2, height/2)
     player = Player(20, 20)
