@@ -10,11 +10,11 @@ def setup():
 
 def draw():
     global enemy, player
-    background("#95ee0f5")
+    background("#95e0f5")
     if circle_collision(enemy, player):
         background("#817ac6")
     else:
-        background("#95ee0f5")
+        background("#95e0f5")
     enemy.show()
     player.update()
     player.show()
