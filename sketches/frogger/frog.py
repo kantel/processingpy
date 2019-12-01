@@ -3,7 +3,7 @@ from rectangle import Rectangle
 class Frog(Rectangle):
     
     def __init__(self, x, y, w):
-        # super(Rectangle, self).__init__(x, y, 40, 40)
+        # super(Rectangle, self).__init__(x, y, w, w)
         self.x = x
         self.y = y
         self.w = w

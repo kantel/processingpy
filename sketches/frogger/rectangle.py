@@ -4,6 +4,7 @@ class Rectangle(object):
         self.y = y
         self.w = w
         self.h = h
+
     def move(self, dx, dy):
         self.x += dx
         self.y += dy
