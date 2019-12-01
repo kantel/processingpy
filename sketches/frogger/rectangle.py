@@ -4,12 +4,6 @@ class Rectangle(object):
         self.y = y
         self.w = w
         self.h = h
-
-    def move(self, dx, dy):
-        self.x += dx
-        self.y += dy
-        self.x = constrain(self.x, 0, width-self.w)
-        self.y = constrain(self.y, 0, height-self.h)
     
     def intersects(self, other):
         distanceX = (self.x + self.w/2) - (other.x + other.w/2)

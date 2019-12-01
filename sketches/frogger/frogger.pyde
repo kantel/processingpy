@@ -1,20 +1,31 @@
 from frog import Frog
 
 # bg = None
+SAFETY = 0
+CAR = 1
+FLOAT = 2
 GRID = 40
 dx = dy = 0
 
+def reset_game():
+    global frog
+    frog = Frog(400, 560, GRID)
+    frog.attach(None)
+    
 def setup():
-    global bg, frog
+    global bg
     size(800, 600)
     this.surface.setTitle("Frogger")
     bg = loadImage("background.png")
-    frog = Frog(400, 560, GRID)
+    # frog = Frog(400, 560, GRID)
+    reset_game()
     
 def draw():
     global dx, dy
     image(bg, 0, 0)
     frog.show()
+    if (frog.y == 0):
+        reset_game()
 
 def keyPressed():
     if key == CODED:
