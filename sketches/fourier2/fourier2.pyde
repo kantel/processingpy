@@ -24,7 +24,6 @@ def draw():
         r1 = 100 * (4 / (n * PI))
         x += r1 * cos(n * t)
         y += r1 * sin(n * t)
-        # 
 
         # Großer Kreis
         noFill()
