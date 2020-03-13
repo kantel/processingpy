@@ -46,6 +46,4 @@ def draw():
         for pt in points:
             vertex(pt[0], pt[1])
 
-            
-    
     t += 0.05
