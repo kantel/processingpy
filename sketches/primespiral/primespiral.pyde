@@ -9,11 +9,12 @@ def setup():
     frameRate(1000)
         
 def draw():
+    colorMode(HSB)
     global p, f, i
     translate(width/2, height/2)
     noStroke()
-    fill(0, 200, 0)
-    # Sieb des Eratosthenes
+    fill(p%255, 255, 255)
+    # Satz von Wilson
     if f%p%2:
         x = p*sin(p)*0.005
         y = p*cos(p)*0.005
