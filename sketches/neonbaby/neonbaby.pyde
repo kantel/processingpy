@@ -7,7 +7,7 @@ neon1 = [color(230, 96, 55), color(183, 116, 64), color(212, 251, 69),
 
 def setup():
     size(600, 600)
-    frame.setTitle("Neonbaby")
+    this.surface.setTitle("Neonbaby")
     background(0)
     
 def draw():
