@@ -5,9 +5,9 @@ colors = [color(155, 46, 105, a), color(217, 55, 80, a), color(226, 114, 79, a),
           color(243, 220, 123, a), color(78, 147, 151, a)]
 
 def setup():
-    size(940, 300)
+    size(600, 600)
     rectMode(CENTER)
-    strokeWeight(2)
+    strokeWeight(5)
     # noStroke()
     background(255)
 
