@@ -17,11 +17,10 @@ def draw():
     n2 = noise(t.y)
     x = map(n1, 0, 1, 0, width)
     y = map(n2, 0, 1, 0, height)
-    pg.beginDraw()
-    pg.background(98, 199, 119, a)
-    pg.fill(colors[i])
-    pg.circle(x, y, 32)
-    pg.endDraw()
+    with pg.beginDraw():
+        pg.background(98, 199, 119, a)
+        pg.fill(colors[i])
+        pg.circle(x, y, 32)
     image(pg, 0, 0)
     t.x += 0.01
     t.y += 0.01
