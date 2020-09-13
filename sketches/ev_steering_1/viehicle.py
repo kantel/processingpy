@@ -14,7 +14,7 @@ class Viehicle():
         self.velocity.limit(self.maxspeed)
         self.location.add(self.velocity)
         self.acceleration.mult(0)
-        
+    
     def applyForce(self, force):
         self.acceleration.add(force)
         
