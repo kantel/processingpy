@@ -4,7 +4,7 @@ d = 25
 
 def setup():
     global v, debug
-    size(640, 360)
+    size(940, 295)
     this.surface.setTitle("Viehicle Part 2")
     v = Viehicle(width/2, height/2)
     debug = False
