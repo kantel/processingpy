@@ -1,24 +1,30 @@
+import cmath
+
 imgx = 512
 imgy = 512
 
 # Drawing area
-xa = -1.0
-xb = 1.0
-ya = -1.0
-yb = 1.0
+# xa = 1.126
+xa = -2.0
+xb = 2.0
+ya = -2.0
+yb = 2.0
+# ya = -1.0
+# yb = 1.0
 
 maxIt = 20 # max iterations allowed
 h = 1e-6   # stepsize for numerical derivative
 eps = 1e-3 # max error allowed
 
 def f(z):
-    # return z*z*z - 1.0
-    return z*z*z*z*z*z - 1.0
+    # return cmath.sin(z)
+    # return z*z*z*z*z*z - 1.0
+    return z*(z*z*z*z*z*z - 1.0)
 
 def setup():
     global img
     size(imgx, imgy)
-    this.surface.setTitle("Newton Fractal")
+    this.surface.setTitle("Newton Fractal (2)")
     img = createImage(width, height, RGB)
     noLoop()
 
