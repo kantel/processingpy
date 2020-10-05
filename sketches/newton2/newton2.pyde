@@ -9,8 +9,6 @@ xa = -2.0
 xb = 2.0
 ya = -2.0
 yb = 2.0
-# ya = -1.0
-# yb = 1.0
 
 maxIt = 20 # max iterations allowed
 h = 1e-6   # stepsize for numerical derivative
