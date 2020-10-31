@@ -1,14 +1,21 @@
 from unicornrainbow import UnicornRainbow
+from codingtrain import CodingTrain
 
 def setup():
-    global unicorn
+    global unicorn, train
     size(920, 360)
     this.surface.setTitle("Coding Train Unicorn Rainbow")
-    unicorn = UnicornRainbow()    
+    unicorn = UnicornRainbow()
+    train = CodingTrain()    
 
 def draw():
-    global unicorn
-    background(10, 52, 101)
-    unicorn.add_rainbow_stripes(200, color(255, 0, 0))
+    global unicorn, train
+    background(146, 82, 161)
+    train.update()
+    unicorn.add_rainbow_stripes()
     unicorn.update()
+    train.show()
     unicorn.show()
+    
+def mousePressed():
+    noLoop()
