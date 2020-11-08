@@ -3,14 +3,14 @@ from codingtrain import CodingTrain
 
 def setup():
     global unicorn, train
-    size(920, 360)
+    size(940, 360)
     this.surface.setTitle("Coding Train Unicorn Rainbow")
     unicorn = UnicornRainbow()
     train = CodingTrain()    
 
 def draw():
     global unicorn, train
-    background(146, 82, 161)
+    background(64)
     train.update()
     unicorn.add_rainbow_stripes()
     unicorn.update()
@@ -18,4 +18,4 @@ def draw():
     unicorn.show()
     
 def mousePressed():
-    noLoop()
+    noLoop() # Für Screenshot
