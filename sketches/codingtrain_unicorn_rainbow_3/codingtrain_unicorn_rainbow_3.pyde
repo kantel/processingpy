@@ -7,7 +7,10 @@ NO_TRAINS = 2
 def setup():
     global unicorn, trains
     size(720, 360)
-    this.surface.setTitle("Coding Train Unicorn Rainbow Stage 2")
+    this.surface.setTitle("Coding Train Unicorn Rainbow Stage 3")
+    # Font: https://fonts.google.com/specimen/Ranchers
+    font = createFont("Ranchers-Regular.ttf", 30)
+    textFont(font)
     unicorn = UnicornRainbow()
     for i in range(NO_TRAINS):
         train = CodingTrain((i * 400) + 200)
@@ -30,6 +33,8 @@ def draw():
         if train.rect_collision(unicorn):
             print("Game Over")
             noLoop()
+    textSize(30)
+    text("Score: " + str(unicorn.score), 15, 40)
 
 def keyPressed():
     if (key == " "):
