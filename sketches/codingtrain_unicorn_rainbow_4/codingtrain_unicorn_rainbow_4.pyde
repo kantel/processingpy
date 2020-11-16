@@ -7,7 +7,7 @@ NO_TRAINS = 2
 def setup():
     global unicorn, trains, bg
     size(720, 360)
-    this.surface.setTitle("Coding Train Unicorn Rainbow Stage 3")
+    this.surface.setTitle("Coding Train Unicorn Rainbow Stage 4")
     bg = loadImage("bg.gif")
     # Font: https://fonts.google.com/specimen/Ranchers
     font = createFont("Ranchers-Regular.ttf", 30)
