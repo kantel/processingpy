@@ -46,6 +46,7 @@ def draw():
             fail.play()
             # print("Game Over")
             noLoop()
+    fill(129, 122, 198)
     textSize(30)
     text("Score: " + str(unicorn.score), 15, 40)
 
