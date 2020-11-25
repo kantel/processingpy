@@ -2,7 +2,7 @@ def setup():
     global hero, ground01
     size(512, 512)
     
-    hero = loadImage("knt1_fr1.gif")
+    hero = loadImage("knt1_bk1.gif")
     ground01 = loadImage("ground01.png")
 
 def draw():
