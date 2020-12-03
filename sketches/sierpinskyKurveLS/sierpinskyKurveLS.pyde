@@ -1,20 +1,19 @@
 iterations = 7
 stroke_len = 600
-delta = 90
-axiom = 'X'
+delta = radians(60)
+axiom = 'G'
 sentence = axiom
 rules = {
-    'X': '+YF-XFX-FY+',
-    'Y': '-XF+YFY+FX-',
+    'F': 'G-F-G',
+    'G': 'F+G+F',
 }
 
-i = 0
 def setup():
     global x0, y0
     size(700, 700)
-    this.surface.setTitle("Hilbert-Kurve")
+    this.surface.setTitle("Sierpinski-Kurve (mittels L-System)")
     colorMode(HSB, 360, 100, 100)
-    x0, y0 = 50, height - 50
+    x0, y0 = 340, height - 210
     strokeWeight(2)
     noFill()
     generate(iterations)
@@ -22,8 +21,9 @@ def setup():
  
 def draw():
     background(0)
+    rotate(radians(30))
     translate(x0, y0)
-    plot(radians(delta))
+    plot(delta)
  
 def generate(n):
     global stroke_len, sentence
@@ -38,11 +38,11 @@ def generate(n):
 def plot(angle):
     k = 0
     for c in sentence:
-        if c == 'F':
+        if c == 'F' or c == 'G':
             stroke(int(k%360), 50, 100)
             line(0, 0, 0, -stroke_len)
             translate(0, -stroke_len)
-            k += 0.05
+            k += 0.25
         elif c == '+':
             rotate(angle)
         elif c == '-':
