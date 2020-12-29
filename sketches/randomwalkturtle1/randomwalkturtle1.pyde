@@ -18,7 +18,7 @@ def setup():
 def draw():
     i = 0
     for t in turtles:
-        stroke(colors[i % len(turtles)])
+        stroke(colors[i % len(colors)])
         distance = randint(1, 5)
         t.forward(distance)
         angle = randint(0, 360)
