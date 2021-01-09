@@ -18,7 +18,6 @@ def draw():
         x1 = b*y + f(x)
         y = -x + f(x1)
         x = x1
-        # print(x*26, y*26)
         fill(i%255, 100, 100)
         p = 350 + x*26
         q = 280 - y*26
