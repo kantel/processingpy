@@ -2,7 +2,7 @@ a = -.48
 b = .93
 
 def setup():
-    size(400, 400)
+    size(640, 480)
     background(235, 215, 182)
     colorMode(HSB, 255, 100, 100)
     stroke(0)
@@ -18,9 +18,12 @@ def draw():
         x1 = b*y + f(x)
         y = -x + f(x1)
         x = x1
+        # print(x*26, y*26)
         fill(i%255, 100, 100)
-        p = 235 + x*20
-        q = 230 - y*20
+        p = 350 + x*26
+        q = 280 - y*26
+        # p = 235 + x*20
+        # q = 230 - y*20
         circle(p, q, 5)
 
 def f(x):
