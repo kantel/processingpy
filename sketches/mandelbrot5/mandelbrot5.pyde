@@ -1,3 +1,5 @@
+import math
+
 left   = -0.25 # -2.25
 right  = 0.25  # 0.75
 bottom = -1.0  # -1.5
@@ -8,7 +10,6 @@ maxiter = 100
 
 def setup():
     size(600, 600)
-    colorMode(HSB, 255, 100, 100)
     noLoop()
 
 def draw():
@@ -25,7 +26,10 @@ def draw():
                 if i == (maxiter - 1):
                     set(x, y, color(0, 0, 0))
                 else:
-                    # set(x, y, color((i*3)%255, 100, 100))
-                    set(x, y, color((255 - i*15)%255, 100, 100))
+                    log_iter = math.log(i)
+                    r = int(255*(1 + math.cos(3.32*log_iter))/2)
+                    g = int(255*(1 + math.cos(0.774*log_iter))/2)
+                    b = int(255*(1 + math.cos(0.412*log_iter))/2)
+                    set(x, y, color(r, g, b))
     println(millis())
         
