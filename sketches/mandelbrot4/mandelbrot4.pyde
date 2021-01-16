@@ -1,7 +1,7 @@
-left   = -0.25 # -2.25
-right  = 0.25  # 0.75
-bottom = -1.0  # -1.5
-top    = -0.5  # 1.5
+left   = -0.25 # -0.25 -2.25
+right  = 0.25  # 0.25 0.75
+bottom = -1.0  # -1.0 -1.5
+top    = -0.5  # -0.5 1.5
 
 maxlimit = 4.0
 maxiter = 100
@@ -28,4 +28,3 @@ def draw():
                     # set(x, y, color((i*3)%255, 100, 100))
                     set(x, y, color((255 - i*15)%255, 100, 100))
     println(millis())
-        

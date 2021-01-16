@@ -7,7 +7,7 @@ maxiter = 100
 
 def setup():
     size(600, 600)
-    background("#ffffff")
+    # background("#ffffff")
     colorMode(HSB, 255, 100, 100)
     noLoop()
 

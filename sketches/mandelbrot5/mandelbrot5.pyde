@@ -1,9 +1,9 @@
 import math
 
-left   = -0.25 # -2.25
-right  = 0.25  # 0.75
-bottom = -1.0  # -1.5
-top    = -0.5  # 1.5
+left   = -2.25 # -2.25 -0.25
+right  = 0.75  # 0.75 0.25
+bottom = -1.5  # -1.5 -1.0
+top    = 1.5  # 1.5 -0.5
 
 maxlimit = 4.0
 maxiter = 100
