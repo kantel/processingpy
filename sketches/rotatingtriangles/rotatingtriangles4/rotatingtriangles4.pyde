@@ -15,7 +15,6 @@ def setup():
 def draw():
     global t
     noFill()
-    stroke(150, 100, 100)    
     translate(width/2, height/2)
     colorMode(HSB)
     for i in range(90):
