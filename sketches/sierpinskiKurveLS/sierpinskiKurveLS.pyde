@@ -1,5 +1,5 @@
 iterations = 7
-stroke_len = 600
+stroke_len = 400
 delta = radians(60)
 axiom = 'G'
 sentence = axiom
@@ -10,19 +10,19 @@ rules = {
 
 def setup():
     global x0, y0
-    size(700, 700)
+    size(500, 440)
     this.surface.setTitle("Sierpinski-Kurve (mittels L-System)")
-    colorMode(HSB, 360, 100, 100)
-    x0, y0 = 340, height - 210
+    x0, y0 = 230, height - 140
     strokeWeight(2)
     noFill()
     generate(iterations)
     noLoop()
  
 def draw():
-    background(0)
+    background(234, 218, 184)
     rotate(radians(30))
     translate(x0, y0)
+    colorMode(HSB, 360, 255, 255)
     plot(delta)
  
 def generate(n):
@@ -33,13 +33,12 @@ def generate(n):
         for c in sentence:
             next_sentence += rules.get(c, c)
         sentence = next_sentence
-        
- 
+         
 def plot(angle):
     k = 0
     for c in sentence:
         if c == 'F' or c == 'G':
-            stroke(int(k%360), 50, 100)
+            stroke(int(k%360), 255, 180)
             line(0, 0, 0, -stroke_len)
             translate(0, -stroke_len)
             k += 0.25
