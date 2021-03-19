@@ -24,7 +24,7 @@ x_max = 10
 y_min = -2
 y_max = 2
 stepsize_x = 2   # Ticks auf der x-Achse
-stepsize_y = -1  # Ticks auf der y_Achse
+stepsize_y = -1  # Ticks auf der y-Achse
 
 def setup():
     size(WIDTH, HEIGHT)
@@ -56,7 +56,6 @@ def draw_function():
     stroke(255, 0, 0)
     x = x_min
     while x <= x_max - dt:
-        # print(f(col))
         x_0 = map(x, x_min, x_max, plot_x1, plot_x2)
         x_1 = map(x + dt, x_min, x_max, plot_x1, plot_x2)
         y_0 = map(f(x), y_min, y_max, plot_y2, plot_y1)
