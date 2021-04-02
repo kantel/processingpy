@@ -55,7 +55,7 @@ def draw():
     print("I did it, Babe!")
     
 def f(t):
-    return(math.exp(r*t)*(K - t))
+    return(math.exp(t)*(1 - t/K))
 
 def draw_function():
     stroke(255, 0, 0)
