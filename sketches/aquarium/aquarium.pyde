@@ -2,18 +2,18 @@ from fish import Fish
 
 WIDTH = 640
 HEIGHT = 416
-NFISHES = 12  # Anzahl der Fische
+NFISHES = 15  # Anzahl der Fische
 FPS = 60
 
 fishes = []
 
 def setup():
-    global bg, fish1
+    global bg
     size(WIDTH, HEIGHT)
-    this.surface.setTitle("Mein kleines, bonbonbuntes Aquarium")
+    this.surface.setTitle(u"Jörgs kleines, bonbonbuntes Aquarium")
     bg = loadImage("background.png")
     for _ in range(NFISHES):
-        fishes.append(Fish("fish"))
+        fishes.append(Fish())
     frameRate(FPS)
     
 
