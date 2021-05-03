@@ -8,7 +8,6 @@ class Fish():
         self.iml0 = loadImage("fish" + no + "_l0.png")
         self.imr1 = loadImage("fish" + no + "_r1.png")
         self.iml1 = loadImage("fish" + no + "_l1.png")
-        # self.im = self.imr0
         self.reset()
         self.w = self.h = 32
         self.pos = PVector(randint(30, width - 30), randint(10, height - 120))
@@ -28,13 +27,13 @@ class Fish():
                 self.im = self.iml1
             elif self.im == self.iml1:
                 self.im = self.iml0
-        if self.pos.x > width + self.w:
-            self.pos.x = randint(width + self.w, width + self.w)
+        if self.pos.x > width + 2*self.w:
+            self.pos.x = randint(width + self.w, width + 2*self.w)
             self.pos.y = randint(10, height - 120)
             self.speed = -randint(1, 3)
             self.im = self.iml0
-        elif self.pos.x < -self.w:
-            self.pos.x = randint(self.w, self.w)
+        elif self.pos.x < -2*self.w:
+            self.pos.x = randint(-2*self.w, -self.w)
             self.pos.y = randint(10, height - 120)
             self.speed = randint(1, 3)
             self.im = self.imr0
