@@ -1,5 +1,8 @@
 from random import randint
 
+MIN_R = 10
+MAX_R = 25
+
 class Disk():
     
     def __init__(self, _x, _y, _ax, _ay, _r, _clr):
@@ -31,9 +34,12 @@ class Disk():
         if other != self:
             distance = abs(dist(self.pos.x, self.pos.y, other.pos.x, other.pos.y))
             if distance <= self.radius + other.radius:
-                self.dir *= -1
-                other.pos = PVector(randint(2*other.radius, width - 2*other.radius),
-                                    randint(2*other.radius, height - 2*other.radius))
-                other.dir *= -1
-                other.radius = randint(5, 15)
-                other.clr = color(randint(20, 250), randint(20, 250), randint(20, 250), 180)
+                self.reset()
+                other.reset()
+       
+    def reset(self):
+        self.pos = PVector(randint(2*self.radius, width - 2*self.radius),
+                           randint(2*self.radius, height - 2*self.radius))
+        self.dir *= -1
+        self.radius = randint(MIN_R, MAX_R)
+        self.clr = color(randint(20, 250), randint(20, 250), randint(20, 250), 180)
