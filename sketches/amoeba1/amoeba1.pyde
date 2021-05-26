@@ -39,3 +39,8 @@ def draw():
             if distance.mag() < sum_radii:
                 amoeba.propulsion += distance.limit(0.05)
                 other.propulsion -= distance.limit(0.05)
+    # if frameCount <= 3600:
+    #     saveFrame("pics/####.png")
+    # else:
+    #     print("I did it Babe")
+    #     noLoop()
