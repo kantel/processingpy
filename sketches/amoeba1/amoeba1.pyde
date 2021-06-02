@@ -3,7 +3,7 @@ from amoeba import Amoeba
 WIDTH = 960
 HEIGHT = 540
 
-FPS = 120
+FPS = 60
 counter = 0
 
 amoebas = []

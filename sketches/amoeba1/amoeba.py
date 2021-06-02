@@ -30,7 +30,7 @@ class Amoeba():
         strokeWeight(3)
         r = self.d/2.0
         cpl = r*0.55
-        cpx, cpy = self.circle_point(frameCount/(r/2), r/8)
+        cpx, cpy = self.circle_point(2*frameCount/(r/2), r/8)
         xp, xm = self.location.x + cpx, self.location.x - cpx
         yp, ym = self.location.y + cpy, self.location.y - cpy
         with beginShape():
