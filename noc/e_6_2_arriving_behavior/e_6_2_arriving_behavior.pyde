@@ -1,10 +1,12 @@
 from viehicle import Viehicle
 
 d = 25
+WIDTH = 960
+HEIGHT = 540
 
 def setup():
     global v, debug
-    size(940, 295)
+    size(WIDTH, HEIGHT)
     this.surface.setTitle("Viehicle Part 2")
     v = Viehicle(width/2, height/2)
     debug = False
