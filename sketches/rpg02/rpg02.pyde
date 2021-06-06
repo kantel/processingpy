@@ -1,31 +1,32 @@
 from player import Player
 from enemy import Enemy
 from settings import *
-
-WIDTH = 800
-HEIGHT = 600
+enemies = []
 
 def setup():
     global enemy, player
     size(WIDTH, HEIGHT)
     this.surface.setTitle("Flucht & Verfolgung v02")
+    my_font = createFont("American Typewriter", 30)
+    textFont(my_font)
     player = Player()
-    enemy = Enemy()
+    for _ in range(no_enemies):
+        enemies.append(Enemy())
     
 def draw():
     global enemy, player
     background(107, 142, 35)
+    for enemy in enemies:
+        enemy.chase(player.pos)
+        enemy.update()
+        enemy.display()
     player.update()
     player.display()
-    
-    enemy.chase(player.pos)
-    enemy.update()
-    enemy.display()
-    if (abs(enemy.pos.x - player.pos.x) <= epsilon and 
-        abs(enemy.pos.y - player.pos.y) <= epsilon): 
-        print("Player lost!")
+    if player.check_collision(enemy):
+        fill(200, 0, 0)
+        text(u"Du hast verloren!", 20, 40)
         noLoop() 
-        
+    
 def keyPressed():
     global player
     if key == CODED:

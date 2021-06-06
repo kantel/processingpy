@@ -4,7 +4,8 @@ class Enemy():
     
     def __init__(self):
         self.pos = PVector(random(width - 200) + 100, random(height - 200) + 100)
-        self.w = self.h = 32
+        self.w = self.h = self.d = 32
+        self.r = self.d/2  # Radius
         self.vel = PVector(0, 0)
         self.img = loadImage("npc3_fr1.gif")
                     

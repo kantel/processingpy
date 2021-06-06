@@ -1,3 +1,6 @@
+WIDTH = 960
+HEIGHT = 540
+
 vel = 2
 distance = 100
-epsilon = 1
+no_enemies = 7

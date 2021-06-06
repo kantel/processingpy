@@ -4,7 +4,8 @@ class Player():
     
     def __init__(self):
         self.pos = PVector(width/2, height/2)
-        self.w = self.h = 32
+        self.w = self.h = self.d = 32
+        self.r = self.d/2  # Radius
         self.max_speed = 3
         self.speed = PVector(0, 0)
         self.img = loadImage("knt1_fr1.gif")
@@ -31,3 +32,10 @@ class Player():
             self.pos.y = height - self.h
         elif self.pos.y <= 0:
             self.pos.y = 0
+    
+    # Kreis-Kollision
+    def check_collision(self, other):
+        distance = dist(self.pos.x, self.pos.y, other.pos.x, other.pos.y)
+        if distance < self.r/2 + other.r/2:
+            return(True)
+        return(False)
