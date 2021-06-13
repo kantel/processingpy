@@ -20,12 +20,12 @@ def draw():
         enemy.chase(player.pos)
         enemy.update()
         enemy.display()
+        if player.check_collision(enemy):
+            fill(200, 0, 0)
+            text(u"Du hast verloren!", 20, 40)
+            noLoop() 
     player.update()
     player.display()
-    if player.check_collision(enemy):
-        fill(200, 0, 0)
-        text(u"Du hast verloren!", 20, 40)
-        noLoop() 
     
 def keyPressed():
     global player

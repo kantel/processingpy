@@ -36,6 +36,7 @@ class Player():
     # Kreis-Kollision
     def check_collision(self, other):
         distance = dist(self.pos.x, self.pos.y, other.pos.x, other.pos.y)
-        if distance < self.r/2 + other.r/2:
+        if abs(distance) > self.r + other.r:
+            return(False)
+        else:
             return(True)
-        return(False)
