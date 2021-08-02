@@ -13,6 +13,7 @@ def setup():
     this.surface.setTitle("Image Palette")
     img = loadImage("akt.jpg")
     image(img, 0, 0)
+    # image(img, width/2, 0)
     noLoop()
 
 def draw():
