@@ -4,7 +4,7 @@
 WIDTH = 800
 HEIGHT = 640
 
-genuary23 = ["#264653", "#2a9d8f", "#e9c46a", "#f4a261", "#e76f51"]
+palette = ["#264653", "#2a9d8f", "#e9c46a", "#f4a261", "#e76f51"]
 
 def setup():
     global img
@@ -27,7 +27,7 @@ def get_palette_color(img_color):
     img_r = red(img_color)
     img_g = green(img_color)
     img_b = blue(img_color)
-    for c in genuary23:
+    for c in palette:
         palette_r = red(c)
         palette_g = green(c)
         palette_b = blue(c)
