@@ -1,11 +1,10 @@
 WIDTH = 640
 HEIGHT = 480
 
-
-
 def setup():
     global bg, crab
     size(WIDTH, HEIGHT)
+    this.surface.setTitle("Krabbenspiel")
     bg = loadImage("bg.png")
     crab = loadImage("crab.png")
     
