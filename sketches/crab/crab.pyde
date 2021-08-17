@@ -1,6 +1,6 @@
 # Mein kleines Krabbenspiel, in Processing.py implementiert von Jörg Kantel
 # Nach einer Idee von Hauke Fehr in TigerJython: Let's code Python, Bonn (Rheinwerk Verlag) 2019, Seite 247 - 266
-# Font: »Gorditas« von Gustave Dipre (Google Fonts, Open Font Licence, https://fonts.google.com/specimen/Gorditas)
+# Font: »Gorditas« von Gustave Dipre ®(Google Fonts, Open Font Licence, https://fonts.google.com/specimen/Gorditas)
 # Sprites: TigerJython Sprites (https://www.tigerjython.ch/index.php?inhalt_links=navigation.inc.php&inhalt_mitte=sprites.html)
 
 from random import randint
