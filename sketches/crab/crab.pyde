@@ -1,6 +1,6 @@
 # Mein kleines Krabbenspiel, in Processing.py implementiert von Jörg Kantel
 # Nach einer Idee von Hauke Fehr in TigerJython: Let's code Python, Bonn (Rheinwerk Verlag) 2019, Seite 247 - 266
-# Font: »Gorditas« von Gustave Dipre ®(Google Fonts, Open Font Licence, https://fonts.google.com/specimen/Gorditas)
+# Font: »Gorditas« von Gustave Dipre (Google Fonts, Open Font Licence, https://fonts.google.com/specimen/Gorditas)
 # Sprites: TigerJython Sprites (https://www.tigerjython.ch/index.php?inhalt_links=navigation.inc.php&inhalt_mitte=sprites.html)
 
 from random import randint
@@ -41,7 +41,6 @@ class Crab():
         if distance < self.r + other.r:
             other.reset()
             self.score += 1
-            # print(self.score)
 
 class Bubble():
     
@@ -89,7 +88,7 @@ class Enemy():
             return(True)
 
 def setup():
-    global bg, crab, you_lost
+    global bg, crab
     size(WIDTH, HEIGHT)
     this.surface.setTitle(u"Jörgs kleines Krabbenspiel")
     font = createFont("Gorditas-Bold.ttf", 40)
@@ -136,5 +135,3 @@ def keyReleased():
     if key == CODED:
         if keyCode == LEFT or keyCode == RIGHT:
             crab.speed.x = 0
-            
-    
