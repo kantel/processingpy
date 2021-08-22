@@ -1,4 +1,6 @@
-
+# hatter_pos (630, 65) (840, 300)
+# march_hare_pos (380, 155) (540, 290)
+# alice_pos (140, 190) (250, 340) 
 
 
 def setup():
