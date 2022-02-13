@@ -1,7 +1,7 @@
 from random import randint
 
 WIDTH, HEIGHT = 600, 400
-ROWS, COLS = 10, 15
+COLS, ROWS = 15, 10
 
 codingtrain = ["#f05025", "#f89e50", "#f8ef22", "#31c5f4", "#f063a4",
                "#9252a1", "#817ac6", "#62c777"]
@@ -9,7 +9,6 @@ codingtrain = ["#f05025", "#f89e50", "#f8ef22", "#31c5f4", "#f063a4",
 def setup():
     size(WIDTH, HEIGHT)
     this.windowTitle("Re-enactment Victor Vasarely (2)")
-    # strokeWeight(2)
     noStroke()
     rectMode(CENTER)
     noLoop()
