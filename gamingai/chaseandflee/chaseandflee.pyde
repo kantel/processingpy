@@ -50,5 +50,6 @@ def draw():
     fill(240, 99, 164)
     circle(flee.x, flee.y, dia)
     
+# Programm für Screenshot anhalten
 def keyPressed():
     noLoop()
