@@ -40,5 +40,9 @@ def draw():
 def mousePressed():
     global ready
     ready = True
+    
+def keyPressed():
+    if key == "S" or key == "s":
+        saveFrame("mondrian-######.png")
         
     
