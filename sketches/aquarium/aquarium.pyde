@@ -10,13 +10,13 @@ fishes = []
 def setup():
     global bg
     size(WIDTH, HEIGHT)
-    this.surface.setTitle(u"Jörgs kleines, bonbonbuntes Aquarium")
+    this.windowTitle(u"Jörgs kleines, bonbonbuntes Aquarium")
+    this.windowMove(1400, 30)
     bg = loadImage("background.png")
     for _ in range(NFISHES):
         fishes.append(Fish())
     frameRate(FPS)
     
-
 def draw():
     background(49, 197, 224) # Himmelblau
     image(bg, 0, 0)
