@@ -10,8 +10,11 @@ fishes = []
 def setup():
     global bg
     size(WIDTH, HEIGHT)
-    this.windowTitle(u"Jörgs kleines, bonbonbuntes Aquarium")
-    this.windowMove(1400, 30)
+    # Processing.py 3
+    this.surface.setTitle(u"Jörgs kleines, bonbonbuntes Aquarium")
+    # Processing.py 4
+    # this.windowTitle(u"Jörgs kleines, bonbonbuntes Aquarium")
+    # this.windowMove(1400, 30)
     bg = loadImage("background.png")
     for _ in range(NFISHES):
         fishes.append(Fish())
