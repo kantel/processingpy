@@ -1,6 +1,6 @@
 from random import randint
 
-WIDTH, HEIGHT = 800, 600
+WIDTH, HEIGHT = 940, 293
 lmargin = 40   # unterer Rand und Rand links
 umargin = 100  # oberer Rand und Rand rechts
 nIter   = 30   # Anzahl der Shapes
