@@ -7,7 +7,7 @@ planes = []
 
 def setup():
     global back1, back2, bx, r
-    size(720, 520)
+    size(720, 420)
     this.windowTitle("Endless Scrolling Background")
     this.windowMove(1300, 30)
     back1 = loadImage("desert.png")
